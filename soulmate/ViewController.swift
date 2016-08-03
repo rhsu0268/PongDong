@@ -43,7 +43,8 @@ extension ViewController: CLLocationManagerDelegate
         else
         {
             guard let latest = locations.first else { return }
-            let distanceInMeters
+            let distanceInMeters = startLocation?.distanceFromLocation(latest)
+            print("distance in meters: \(distanceInMeters)")
         }
     }
     
