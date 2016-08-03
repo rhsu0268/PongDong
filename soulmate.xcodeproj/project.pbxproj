@@ -15,6 +15,7 @@
 		D1DC2EFE1D517B5300921DAC /* soulmateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1DC2EFD1D517B5300921DAC /* soulmateTests.swift */; };
 		D1DC2F091D517B5300921DAC /* soulmateUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1DC2F081D517B5300921DAC /* soulmateUITests.swift */; };
 		D1DC2F171D52328300921DAC /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1DC2F161D52328300921DAC /* MapKit.framework */; };
+		D1DC2F191D52839200921DAC /* UserLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1DC2F181D52839200921DAC /* UserLocation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		D1DC2F081D517B5300921DAC /* soulmateUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = soulmateUITests.swift; sourceTree = "<group>"; };
 		D1DC2F0A1D517B5300921DAC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D1DC2F161D52328300921DAC /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		D1DC2F181D52839200921DAC /* UserLocation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserLocation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +106,7 @@
 				D1DC2EE81D517B5300921DAC /* AppDelegate.swift */,
 				D1DC2EEA1D517B5300921DAC /* ViewController.swift */,
 				D1DC2EEC1D517B5300921DAC /* Main.storyboard */,
+				D1DC2F181D52839200921DAC /* UserLocation.swift */,
 				D1DC2EEF1D517B5300921DAC /* Assets.xcassets */,
 				D1DC2EF11D517B5300921DAC /* LaunchScreen.storyboard */,
 				D1DC2EF41D517B5300921DAC /* Info.plist */,
@@ -260,6 +263,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D1DC2F191D52839200921DAC /* UserLocation.swift in Sources */,
 				D1DC2EEB1D517B5300921DAC /* ViewController.swift in Sources */,
 				D1DC2EE91D517B5300921DAC /* AppDelegate.swift in Sources */,
 			);

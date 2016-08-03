@@ -21,13 +21,26 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
+        
+        /*
         let userLocation = CLLocation(latitude: 38.9075, longitude: -77.0365)
         let regionRadius: CLLocationDistance = 2000.0
         let region = MKCoordinateRegionMakeWithDistance(userLocation.coordinate, regionRadius, regionRadius)
-        mapView.setRegion(region, animated: true)
+ 
+        */
+        
+        let userLocation = UserLocation(name: "You", type: "You are here!", imageName: "yourLocation.png", latitude: 38.9075, longitude: -77.0365)
+        //mapView.setRegion(region, animated: true)
         
         
         mapView.delegate = self
+        mapView.mapType = .Standard
+        mapView.rotateEnabled = false
+        mapView.addAnnotation(userLocation)
+        
+        let regionRadius: CLLocationDistance = 15000
+        let coordinateRegion = MKCoordinateRegionMakeWithDistance((userLocation.location.coordinate), regionRadius, regionRadius)
+        mapView.setRegion(coordinateRegion, animated: true)
         
         locationManager = CLLocationManager()
         locationManager?.delegate = self
@@ -78,5 +91,7 @@ extension ViewController: CLLocationManagerDelegate
         }
     }
 }
+
+
 
 
