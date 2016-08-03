@@ -25,16 +25,31 @@
                                 <rect key="frame" x="67" y="488" width="154" height="30"/>
                                 <state key="normal" title="Declare an Emergency"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hvy-pt-mYW">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hvy-pt-mYW">
                                 <rect key="frame" x="282" y="415" width="240" height="30"/>
                                 <state key="normal" title="Alerts In the Area (Weather/Health)"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E7W-Pf-ehQ">
                                 <rect key="frame" x="296" y="488" width="30" height="30"/>
                             </button>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="QcS-Od-P3f">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="318"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="318" id="2dI-27-dwg"/>
+                                </constraints>
+                            </mapView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="QcS-Od-P3f" secondAttribute="trailing" id="D0h-yS-hma"/>
+                            <constraint firstItem="QcS-Od-P3f" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="NbK-wh-H3m"/>
+                            <constraint firstItem="hvy-pt-mYW" firstAttribute="top" secondItem="QcS-Od-P3f" secondAttribute="bottom" constant="97" id="PvW-dH-HKC"/>
+                            <constraint firstItem="QcS-Od-P3f" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="xqD-Cx-evT"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="mapView" destination="QcS-Od-P3f" id="ESu-2c-eBs"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

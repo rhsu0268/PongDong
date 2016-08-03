@@ -7,16 +7,27 @@
 //
 
 import UIKit
-import CoreLocation
+import MapKit
 
 class ViewController: UIViewController {
     
     var locationManager: CLLocationManager?
     var startLocation: CLLocation?
+    
+    
+    @IBOutlet weak var mapView: MKMapView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        let userLocation = CLLocation(latitude: 38.9075, longitude: -77.0365)
+        let regionRadius: CLLocationDistance = 2000.0
+        let region = MKCoordinateRegionMakeWithDistance(userLocation.coordinate, regionRadius, regionRadius)
+        mapView.setRegion(region, animated: true)
+        
+        
+        mapView.delegate = self
         
         locationManager = CLLocationManager()
         locationManager?.delegate = self
@@ -32,6 +43,15 @@ class ViewController: UIViewController {
 
 }
 
+
+extension ViewController: MKMapViewDelegate
+{
+    func mapViewWillStartRenderingMap(mapView: MKMapView)
+    {
+        print("rendering")
+    }
+}
+
 extension ViewController: CLLocationManagerDelegate
 {
     
@@ -39,6 +59,7 @@ extension ViewController: CLLocationManagerDelegate
         if startLocation == nil
         {
             startLocation = locations.first
+            print(startLocation)
         }
         else
         {
@@ -57,4 +78,5 @@ extension ViewController: CLLocationManagerDelegate
         }
     }
 }
+
 

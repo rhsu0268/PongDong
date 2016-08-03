@@ -14,6 +14,7 @@
 		D1DC2EF31D517B5300921DAC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D1DC2EF11D517B5300921DAC /* LaunchScreen.storyboard */; };
 		D1DC2EFE1D517B5300921DAC /* soulmateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1DC2EFD1D517B5300921DAC /* soulmateTests.swift */; };
 		D1DC2F091D517B5300921DAC /* soulmateUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1DC2F081D517B5300921DAC /* soulmateUITests.swift */; };
+		D1DC2F171D52328300921DAC /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1DC2F161D52328300921DAC /* MapKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		D1DC2F041D517B5300921DAC /* soulmateUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = soulmateUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1DC2F081D517B5300921DAC /* soulmateUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = soulmateUITests.swift; sourceTree = "<group>"; };
 		D1DC2F0A1D517B5300921DAC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D1DC2F161D52328300921DAC /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +56,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D1DC2F171D52328300921DAC /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -77,6 +80,7 @@
 		D1DC2EDC1D517B5200921DAC = {
 			isa = PBXGroup;
 			children = (
+				D1DC2F161D52328300921DAC /* MapKit.framework */,
 				D1DC2EE71D517B5300921DAC /* soulmate */,
 				D1DC2EFC1D517B5300921DAC /* soulmateTests */,
 				D1DC2F071D517B5300921DAC /* soulmateUITests */,
