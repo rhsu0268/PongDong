@@ -1,10 +1,28 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Zy7-H8-vEr">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
+        <!--View Controller-->
+        <scene sceneID="YaS-nr-xBC">
+            <objects>
+                <viewController id="Zy7-H8-vEr" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="mav-P8-SuI"/>
+                        <viewControllerLayoutGuide type="bottom" id="ahw-QU-gIt"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="9LG-u5-U3d">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CxF-j5-zZm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-41" y="167"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -17,21 +35,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aLw-6w-qaK">
-                                <rect key="frame" x="67" y="415" width="177" height="30"/>
-                                <state key="normal" title="My Previous Emergencies"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e5U-2P-Vd7">
-                                <rect key="frame" x="67" y="488" width="154" height="30"/>
-                                <state key="normal" title="Declare an Emergency"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hvy-pt-mYW">
-                                <rect key="frame" x="282" y="415" width="240" height="30"/>
-                                <state key="normal" title="Alerts In the Area (Weather/Health)"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E7W-Pf-ehQ">
-                                <rect key="frame" x="296" y="488" width="30" height="30"/>
-                            </button>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="QcS-Od-P3f">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="318"/>
                                 <constraints>
@@ -43,7 +46,6 @@
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="QcS-Od-P3f" secondAttribute="trailing" id="D0h-yS-hma"/>
                             <constraint firstItem="QcS-Od-P3f" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="NbK-wh-H3m"/>
-                            <constraint firstItem="hvy-pt-mYW" firstAttribute="top" secondItem="QcS-Od-P3f" secondAttribute="bottom" constant="97" id="PvW-dH-HKC"/>
                             <constraint firstItem="QcS-Od-P3f" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="xqD-Cx-evT"/>
                         </constraints>
                     </view>
@@ -53,7 +55,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="380" y="307"/>
+            <point key="canvasLocation" x="611" y="167"/>
         </scene>
     </scenes>
 </document>
