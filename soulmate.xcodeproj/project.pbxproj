@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		D1C6C6371D877E890041B80D /* Bitmap.png in Resources */ = {isa = PBXBuildFile; fileRef = D1C6C6361D877E890041B80D /* Bitmap.png */; };
+		D1C6C63B1D8798870041B80D /* key-modified.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D1C6C63A1D8798870041B80D /* key-modified.jpg */; };
 		D1DC2EE91D517B5300921DAC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1DC2EE81D517B5300921DAC /* AppDelegate.swift */; };
 		D1DC2EEB1D517B5300921DAC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1DC2EEA1D517B5300921DAC /* ViewController.swift */; };
 		D1DC2EEE1D517B5300921DAC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D1DC2EEC1D517B5300921DAC /* Main.storyboard */; };
@@ -37,7 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		D1C6C6361D877E890041B80D /* Bitmap.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Bitmap.png; sourceTree = "<group>"; };
+		D1C6C63A1D8798870041B80D /* key-modified.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "key-modified.jpg"; sourceTree = "<group>"; };
 		D1DC2EE51D517B5300921DAC /* soulmate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = soulmate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1DC2EE81D517B5300921DAC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D1DC2EEA1D517B5300921DAC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -112,7 +112,7 @@
 				D1DC2EEF1D517B5300921DAC /* Assets.xcassets */,
 				D1DC2EF11D517B5300921DAC /* LaunchScreen.storyboard */,
 				D1DC2EF41D517B5300921DAC /* Info.plist */,
-				D1C6C6361D877E890041B80D /* Bitmap.png */,
+				D1C6C63A1D8798870041B80D /* key-modified.jpg */,
 			);
 			path = soulmate;
 			sourceTree = "<group>";
@@ -241,7 +241,7 @@
 			files = (
 				D1DC2EF31D517B5300921DAC /* LaunchScreen.storyboard in Resources */,
 				D1DC2EF01D517B5300921DAC /* Assets.xcassets in Resources */,
-				D1C6C6371D877E890041B80D /* Bitmap.png in Resources */,
+				D1C6C63B1D8798870041B80D /* key-modified.jpg in Resources */,
 				D1DC2EEE1D517B5300921DAC /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
