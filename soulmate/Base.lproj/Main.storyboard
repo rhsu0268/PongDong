@@ -5,10 +5,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Home View Controller-->
         <scene sceneID="YaS-nr-xBC">
             <objects>
-                <viewController id="Zy7-H8-vEr" sceneMemberID="viewController">
+                <viewController id="Zy7-H8-vEr" customClass="HomeViewController" customModule="soulmate" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="mav-P8-SuI"/>
                         <viewControllerLayoutGuide type="bottom" id="ahw-QU-gIt"/>
@@ -20,9 +20,12 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="key-modified.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="tOS-Rj-Lgb">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qOe-VD-acj">
-                                <rect key="frame" x="189" y="355" width="310" height="80"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qOe-VD-acj">
+                                <rect key="frame" x="145" y="351" width="310" height="80"/>
                                 <state key="normal" image="start"/>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="show" identifier="goToMapView" id="Wan-fM-EjQ"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -30,6 +33,8 @@
                             <constraint firstItem="tOS-Rj-Lgb" firstAttribute="top" secondItem="9LG-u5-U3d" secondAttribute="top" id="5z3-TU-ZVP"/>
                             <constraint firstAttribute="trailing" secondItem="tOS-Rj-Lgb" secondAttribute="trailing" id="CQM-01-4ll"/>
                             <constraint firstItem="tOS-Rj-Lgb" firstAttribute="leading" secondItem="9LG-u5-U3d" secondAttribute="leading" id="SHj-gg-Ieg"/>
+                            <constraint firstItem="qOe-VD-acj" firstAttribute="centerX" secondItem="tOS-Rj-Lgb" secondAttribute="centerX" id="Uzy-Qw-mQF"/>
+                            <constraint firstItem="ahw-QU-gIt" firstAttribute="top" secondItem="qOe-VD-acj" secondAttribute="bottom" constant="169" id="WK1-e6-Dn1"/>
                             <constraint firstItem="tOS-Rj-Lgb" firstAttribute="bottom" secondItem="ahw-QU-gIt" secondAttribute="top" id="aFg-nP-5pH"/>
                         </constraints>
                     </view>
