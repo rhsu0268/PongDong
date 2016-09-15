@@ -20,6 +20,10 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="key-modified.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="tOS-Rj-Lgb">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qOe-VD-acj">
+                                <rect key="frame" x="189" y="355" width="310" height="80"/>
+                                <state key="normal" image="start"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -71,5 +75,6 @@
     </scenes>
     <resources>
         <image name="key-modified.jpg" width="252" height="333"/>
+        <image name="start" width="310" height="80"/>
     </resources>
 </document>
