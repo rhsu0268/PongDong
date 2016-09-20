@@ -67,19 +67,27 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="QcS-Od-P3f">
-                                <frame key="frameInset" width="600" height="318"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="318" id="2dI-27-dwg"/>
-                                </constraints>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="QcS-Od-P3f">
+                                <frame key="frameInset" minY="71" width="414" height="318"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W5U-mH-sU7">
+                                <frame key="frameInset" minY="670" width="138" height="66"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="rectangle"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AJB-pT-aFP">
+                                <frame key="frameInset" minX="276" minY="670" width="138" height="66"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="rectangle"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="buC-KW-Q3X">
+                                <frame key="frameInset" minX="138" minY="670" width="138" height="66"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="rectangle"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstAttribute="trailing" secondItem="QcS-Od-P3f" secondAttribute="trailing" id="D0h-yS-hma"/>
-                            <constraint firstItem="QcS-Od-P3f" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="NbK-wh-H3m"/>
-                            <constraint firstItem="QcS-Od-P3f" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="xqD-Cx-evT"/>
-                        </constraints>
                     </view>
                     <connections>
                         <outlet property="mapView" destination="QcS-Od-P3f" id="ESu-2c-eBs"/>
@@ -87,11 +95,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="611" y="167"/>
+            <point key="canvasLocation" x="608.69565217391312" y="166.30434782608697"/>
         </scene>
     </scenes>
     <resources>
         <image name="key-modified.jpg" width="252" height="333"/>
+        <image name="rectangle" width="250" height="101"/>
         <image name="start-2" width="310" height="80"/>
     </resources>
 </document>
