@@ -14,6 +14,8 @@ class ViewController: UIViewController {
     var locationManager: CLLocationManager?
     var startLocation: CLLocation?
     
+    //var userMapLocation: CLLocation?
+    
     
     @IBOutlet weak var mapView: MKMapView!
 
@@ -29,6 +31,9 @@ class ViewController: UIViewController {
  
         */
         
+        print("userMapLocation")
+       
+        
         let userLocation = UserLocation(name: "You", type: "You are here!", imageName: "yourLocation.png", latitude: 38.9075, longitude: -77.0365)
         //mapView.setRegion(region, animated: true)
         
@@ -36,7 +41,7 @@ class ViewController: UIViewController {
         mapView.delegate = self
         mapView.mapType = .Standard
         mapView.rotateEnabled = false
-        mapView.addAnnotation(userLocation)
+        //mapView.addAnnotation(userLocation)
         
         let regionRadius: CLLocationDistance = 15000
         let coordinateRegion = MKCoordinateRegionMakeWithDistance((userLocation.location.coordinate), regionRadius, regionRadius)
@@ -75,7 +80,12 @@ extension ViewController: CLLocationManagerDelegate
         {
             startLocation = locations.first
             print("---startLocation---")
-            print(startLocation)
+            //print(startLocation)
+            
+            print(startLocation?.coordinate.latitude)
+            print(startLocation?.coordinate.longitude)
+            let userLocation = UserLocation(name: "You", type: "You are here!", imageName: "yourLocation.png", latitude: (startLocation?.coordinate.latitude)!, longitude: (startLocation?.coordinate.longitude)!)
+            self.mapView.addAnnotation(userLocation)
             print("---")
         }
         else
