@@ -74,13 +74,15 @@ extension ViewController: CLLocationManagerDelegate
         if startLocation == nil
         {
             startLocation = locations.first
+            print("---startLocation---")
             print(startLocation)
+            print("---")
         }
         else
         {
             guard let latest = locations.first else { return }
             let distanceInMeters = startLocation?.distanceFromLocation(latest)
-            print("distance in meters: \(distanceInMeters)")
+            print("distance in meters: \(distanceInMeters!)")
         }
     }
     
@@ -89,8 +91,16 @@ extension ViewController: CLLocationManagerDelegate
     {
         if status == .AuthorizedWhenInUse || status == .AuthorizedAlways
         {
+            //locationManager?.startUpdatingLocation()
+            //locationManager?.allowsBackgroundLocationUpdates = true
+            
+            //locationManager?.requestLocation();
             locationManager?.startUpdatingLocation()
         }
+    }
+    
+    func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {
+    
     }
 }
 

@@ -207,6 +207,11 @@
 					D1DC2EE41D517B5300921DAC = {
 						CreatedOnToolsVersion = 7.3.1;
 						LastSwiftMigration = 0800;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 					D1DC2EF81D517B5300921DAC = {
 						CreatedOnToolsVersion = 7.3.1;
