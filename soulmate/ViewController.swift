@@ -42,6 +42,7 @@ class ViewController: UIViewController {
         let coordinateRegion = MKCoordinateRegionMakeWithDistance((userLocation.location.coordinate), regionRadius, regionRadius)
         mapView.setRegion(coordinateRegion, animated: true)
         
+        // set up the locationManager
         locationManager = CLLocationManager()
         locationManager?.delegate = self
         locationManager?.desiredAccuracy = kCLLocationAccuracyBest
@@ -65,6 +66,7 @@ extension ViewController: MKMapViewDelegate
     }
 }
 
+// implement the CLLocationManagerDelegate protocol 
 extension ViewController: CLLocationManagerDelegate
 {
     
