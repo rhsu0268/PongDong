@@ -3,6 +3,8 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -67,27 +69,43 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="QcS-Od-P3f">
-                                <frame key="frameInset" minY="71" width="414" height="318"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="QcS-Od-P3f">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="426" id="mc4-ga-kY9"/>
+                                    <constraint firstAttribute="width" constant="414" id="wRf-Qk-thT"/>
+                                </constraints>
                             </mapView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W5U-mH-sU7">
-                                <frame key="frameInset" minY="670" width="138" height="66"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button" image="rectangle"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xUc-BN-vVD" userLabel="ProfileButton">
+                                <state key="normal" title="Button" backgroundImage="rectangle"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AJB-pT-aFP">
-                                <frame key="frameInset" minX="276" minY="670" width="138" height="66"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button" image="rectangle"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1BT-GZ-lnp" userLabel="HomeButton">
+                                <state key="normal" title="Button" backgroundImage="rectangle2-1"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="buC-KW-Q3X">
-                                <frame key="frameInset" minX="138" minY="670" width="138" height="66"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button" image="rectangle"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YLc-pF-y6b" userLabel="AlertsButton">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="138" id="FYh-hh-ROm"/>
+                                    <constraint firstAttribute="height" constant="50" id="HUb-nM-xtX"/>
+                                </constraints>
+                                <state key="normal" title="Button" backgroundImage="rectangle"/>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="xUc-BN-vVD" firstAttribute="top" secondItem="1BT-GZ-lnp" secondAttribute="top" id="4RU-gK-nZe"/>
+                            <constraint firstItem="YLc-pF-y6b" firstAttribute="leading" secondItem="1BT-GZ-lnp" secondAttribute="trailing" id="57z-5z-1kY"/>
+                            <constraint firstItem="YLc-pF-y6b" firstAttribute="bottom" secondItem="1BT-GZ-lnp" secondAttribute="bottom" id="8U8-zi-LE1"/>
+                            <constraint firstItem="YLc-pF-y6b" firstAttribute="trailing" secondItem="QcS-Od-P3f" secondAttribute="trailing" id="BI0-Xs-DLV"/>
+                            <constraint firstItem="YLc-pF-y6b" firstAttribute="width" secondItem="1BT-GZ-lnp" secondAttribute="width" id="DWe-rh-ud0"/>
+                            <constraint firstItem="YLc-pF-y6b" firstAttribute="top" secondItem="QcS-Od-P3f" secondAttribute="bottom" id="KvP-5S-beB"/>
+                            <constraint firstItem="1BT-GZ-lnp" firstAttribute="leading" secondItem="xUc-BN-vVD" secondAttribute="trailing" id="NRN-gq-FaC"/>
+                            <constraint firstItem="YLc-pF-y6b" firstAttribute="firstBaseline" secondItem="1BT-GZ-lnp" secondAttribute="baseline" id="SRA-uH-SLV"/>
+                            <constraint firstItem="YLc-pF-y6b" firstAttribute="baseline" secondItem="1BT-GZ-lnp" secondAttribute="firstBaseline" id="VE0-T1-bLi"/>
+                            <constraint firstItem="xUc-BN-vVD" firstAttribute="firstBaseline" secondItem="1BT-GZ-lnp" secondAttribute="baseline" id="Xwd-ts-68Z"/>
+                            <constraint firstItem="xUc-BN-vVD" firstAttribute="leading" secondItem="QcS-Od-P3f" secondAttribute="leading" id="Zbs-lg-sfv"/>
+                            <constraint firstItem="QcS-Od-P3f" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Zs3-bW-5iV"/>
+                            <constraint firstItem="YLc-pF-y6b" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="ay7-HT-5xH"/>
+                            <constraint firstItem="xUc-BN-vVD" firstAttribute="baseline" secondItem="YLc-pF-y6b" secondAttribute="baseline" id="wqJ-VE-w8x"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="mapView" destination="QcS-Od-P3f" id="ESu-2c-eBs"/>
@@ -101,6 +119,7 @@
     <resources>
         <image name="key-modified.jpg" width="252" height="333"/>
         <image name="rectangle" width="250" height="101"/>
+        <image name="rectangle2-1" width="250" height="101"/>
         <image name="start-2" width="310" height="80"/>
     </resources>
 </document>
