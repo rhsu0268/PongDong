@@ -83,6 +83,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D19655041D945D0800F39DD0 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				D1DC2F181D52839200921DAC /* UserLocation.swift */,
+			);
+			name = model;
+			sourceTree = "<group>";
+		};
 		D1DC2EDC1D517B5200921DAC = {
 			isa = PBXGroup;
 			children = (
@@ -107,11 +115,11 @@
 		D1DC2EE71D517B5300921DAC /* soulmate */ = {
 			isa = PBXGroup;
 			children = (
+				D19655041D945D0800F39DD0 /* model */,
 				D1DC2EE81D517B5300921DAC /* AppDelegate.swift */,
 				D1DC2EEA1D517B5300921DAC /* ViewController.swift */,
 				D1DC2EEC1D517B5300921DAC /* Main.storyboard */,
 				D167152F1D8A23E700EF68D1 /* HomeViewController.swift */,
-				D1DC2F181D52839200921DAC /* UserLocation.swift */,
 				D1DC2EEF1D517B5300921DAC /* Assets.xcassets */,
 				D1DC2EF11D517B5300921DAC /* LaunchScreen.storyboard */,
 				D1DC2EF41D517B5300921DAC /* Info.plist */,
