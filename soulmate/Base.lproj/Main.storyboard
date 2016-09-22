@@ -75,19 +75,26 @@
                                     <constraint firstAttribute="width" constant="414" id="wRf-Qk-thT"/>
                                 </constraints>
                             </mapView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xUc-BN-vVD" userLabel="ProfileButton">
-                                <state key="normal" title="Button" backgroundImage="rectangle"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1BT-GZ-lnp" userLabel="HomeButton">
-                                <state key="normal" title="Button" backgroundImage="rectangle2-1"/>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YLc-pF-y6b" userLabel="AlertsButton">
                                 <constraints>
                                     <constraint firstAttribute="width" constant="138" id="FYh-hh-ROm"/>
                                     <constraint firstAttribute="height" constant="50" id="HUb-nM-xtX"/>
                                 </constraints>
-                                <state key="normal" title="Button" backgroundImage="rectangle"/>
+                                <state key="normal" title="Alert" backgroundImage="rectangle"/>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xUc-BN-vVD" userLabel="ProfileButton">
+                                <state key="normal" title="Profile" backgroundImage="rectangle"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1BT-GZ-lnp" userLabel="HomeButton">
+                                <state key="normal" title="Home" backgroundImage="rectangle2-1"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9LA-3Z-0WP">
+                                <frame key="frameInset" minX="20" minY="28" width="374" height="43"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
