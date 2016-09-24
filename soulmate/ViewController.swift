@@ -31,12 +31,35 @@ class ViewController: UIViewController {
         
         let task = session.dataTaskWithURL(url!)
         {
-            (data, response, error) in
-            guard let data = data else { print(error); return }
+            (data, response, error) -> Void in //in
+            //guard let data = data else { print(error); return }
         
         
-            let result = NSString(data: data, encoding: NSUTF8StringEncoding)
-            print(result)
+            //let result = NSString(data: data, encoding: NSUTF8StringEncoding)
+            //print(result);
+            
+            let httpResponse = response as! NSHTTPURLResponse
+            let statusCode = httpResponse.statusCode
+            
+            if (statusCode == 200)
+            {
+                print("Request data is successful!")
+                
+                do
+                {
+                    let json = try NSJSONSerialization.JSONObjectWithData(data!, options: .AllowFragments)
+                    print(json)
+                    
+                }
+                catch
+                {
+                    print("Error with JSON!")
+                }
+            }
+         
+            
+            
+            
         }
         task.resume();
        
