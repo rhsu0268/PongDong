@@ -15,7 +15,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "94"
             endingLineNumber = "94"
-            landmarkName = "locationManager(_:didUpdateLocations:)"
+            landmarkName = "locationManager(manager:didUpdateLocations:)"
             landmarkType = "7">
             <Locations>
                <Location
