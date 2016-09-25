@@ -95,14 +95,19 @@ class ViewController: UIViewController {
                 {
                     for article in object
                     {
-                        print(article)
-                        print("---")
+                        //print(article)
+                        
                         //print(article["source"]!["enriched"]!!["url"])
                         
                         
                         if let url = article["source"]!["enriched"]!!["url"]!!["url"] as? String
                         {
                             print(url)
+                        }
+                        print("---")
+                        if let title = article["source"]!["enriched"]!!["url"]!!["title"] as? String
+                        {
+                            print(title)
                         }
                     }
                 }
