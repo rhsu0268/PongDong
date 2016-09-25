@@ -48,7 +48,10 @@ class ViewController: UIViewController {
                 do
                 {
                     let json = try NSJSONSerialization.JSONObjectWithData(data!, options: .AllowFragments)
-                    print(json)
+                    //print(json)
+                    let result = json["result"]!
+                    let newsArticles = result!["docs"]
+                    print(newsArticles)
                     
                 }
                 catch
