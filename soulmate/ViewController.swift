@@ -29,6 +29,7 @@ class ViewController: UIViewController {
         
         let url = NSURL(string: "https://access.alchemyapi.com/calls/data/GetNews?apikey=0c946bde49878224025230853ec995cc1693dc3e&return=enriched.url.title,enriched.url.url&start=1473897600&end=1474585200&q.enriched.url.cleanedTitle=charlotte&q.enriched.url.enrichedTitle.docSentiment.type=negative&q.enriched.url.enrichedTitle.taxonomy.taxonomy_.label=society&count=25&outputMode=json")
         
+        /*
         let task = session.dataTaskWithURL(url!)
         {
             (data, response, error) -> Void in //in
@@ -45,14 +46,10 @@ class ViewController: UIViewController {
             {
                 print("Request data is successful!")
                 
+                //var err: NSError?
                 do
                 {
-                    let json = try NSJSONSerialization.JSONObjectWithData(data!, options: .AllowFragments)
-                    //print(json)
-                    let result = json["result"]!
-                    let newsArticles = result!["docs"]
-                    print(newsArticles)
-                    
+                  
                 }
                 catch
                 {
@@ -65,6 +62,52 @@ class ViewController: UIViewController {
             
         }
         task.resume();
+         */
+        
+        func getJson(url:NSURL, completion: (json:NSDictionary?, error:NSError?)->()) {
+            
+            let session = NSURLSession.sharedSession()
+            let task = session.dataTaskWithURL(url) {
+                (data:NSData?, response:NSURLResponse?, error:NSError?) in
+                
+                do {
+                    let json = try NSJSONSerialization.JSONObjectWithData(data!, options: .AllowFragments) as? NSDictionary
+                    completion(json: json, error:nil)
+                } catch let caught as NSError {
+                    completion(json: nil, error:caught)
+                } catch {
+                    // Something else happened.
+                    let error: NSError = NSError(domain: "<Your domain>", code: 1, userInfo: nil)
+                    completion(json: nil, error:error)
+                }
+            }
+            
+            task.resume()
+        }
+        
+        getJson(url!) { (json, error) -> () in
+            if error != nil {
+                print(error!)
+            } else {
+                //print(json!)
+                // do something with the json dictionary
+                if let object = json!["result"]!["docs"] as? [[String : AnyObject]]
+                {
+                    for article in object
+                    {
+                        print(article)
+                        print("---")
+                        //print(article["source"]!["enriched"]!!["url"])
+                        
+                        
+                        if let url = article["source"]!["enriched"]!!["url"]!!["url"] as? String
+                        {
+                            print(url)
+                        }
+                    }
+                }
+            }
+        }
        
         
         let userLocation = UserLocation(name: "You", type: "You are here!", imageName: "yourLocation.png", latitude: 38.9075, longitude: -77.0365)
