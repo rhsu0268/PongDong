@@ -1,1 +1,3 @@
 # soulmate
+
+An application that serves as the lifeline for everyone including those with disabilities.
