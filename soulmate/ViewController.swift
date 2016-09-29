@@ -97,20 +97,28 @@ class ViewController: UIViewController {
                     {
                         //print(article)
                         
-                        //print(article["source"]!["enriched"]!!["url"])
+                        // create a new NewsInformation object
+                        let newsInformation = NewsInformation(title: "", url: "")
                         
-                        
-                        if let url = article["source"]!["enriched"]!!["url"]!!["url"] as? String
-                        {
-                            print(url)
-                        }
-                        print("---")
                         if let title = article["source"]!["enriched"]!!["url"]!!["title"] as? String
                         {
-                            print(title)
+                            //print(title)
+                            newsInformation.title = title
                         }
+                        //print("---")
+                        if let url = article["source"]!["enriched"]!!["url"]!!["url"] as? String
+                        {
+                            //print(url)
+                            newsInformation.url = url;
+                        }
+                        print(newsInformation)
+                        self.newsArticles.append(newsInformation)
+                        print("---")
+                        
+                    
                     }
                 }
+                print(self.newsArticles)
             }
         }
        
