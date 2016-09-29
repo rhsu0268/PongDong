@@ -14,7 +14,7 @@ class ViewController: UIViewController {
     var locationManager: CLLocationManager?
     var startLocation: CLLocation?
     
-    //var userMapLocation: CLLocation?
+    var newsArticles = [NewsInformation]()
     
     
     @IBOutlet weak var mapView: MKMapView!
