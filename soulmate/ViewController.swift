@@ -203,6 +203,12 @@ extension ViewController: CLLocationManagerDelegate
     }
 }
 
+extension ViewController:UITableViewDataSource
+{
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return newsArticles.count
+    }
+}
 
 
 
