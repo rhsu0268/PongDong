@@ -18,7 +18,7 @@
                         <viewControllerLayoutGuide type="bottom" id="ahw-QU-gIt"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="9LG-u5-U3d">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="key-modified.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="tOS-Rj-Lgb">
@@ -66,7 +66,7 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="QcS-Od-P3f">
@@ -94,7 +94,7 @@
                                     <constraint firstAttribute="height" constant="225" id="P6o-uA-g7h"/>
                                 </constraints>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="IconCell" textLabel="K7n-3j-g1w" detailTextLabel="BWO-Pj-McP" style="IBUITableViewCellStyleSubtitle" id="nzx-Ae-Jzn">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="newsArticleCell" textLabel="K7n-3j-g1w" detailTextLabel="BWO-Pj-McP" style="IBUITableViewCellStyleSubtitle" id="nzx-Ae-Jzn">
                                         <rect key="frame" x="0.0" y="28" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="nzx-Ae-Jzn" id="bz4-gM-y6i">

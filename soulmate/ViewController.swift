@@ -208,6 +208,16 @@ extension ViewController:UITableViewDataSource
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return newsArticles.count
     }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("newsArticleCell", forIndexPath: indexPath)
+        
+        let newsArticle = newsArticles[indexPath.row]
+        cell.textLabel?.text = newsArticle.title
+        cell.detailTextLabel?.text = newsArticle.url
+        
+        return cell
+    }
 }
 
 
