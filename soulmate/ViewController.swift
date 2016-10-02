@@ -11,10 +11,13 @@ import MapKit
 
 class ViewController: UIViewController {
     
+    @IBOutlet weak var tableView: UITableView!
     var locationManager: CLLocationManager?
     var startLocation: CLLocation?
     
     var newsArticles = [NewsInformation]()
+    
+    var myGroup = dispatch_group_create()
     
     
     @IBOutlet weak var mapView: MKMapView!
@@ -64,8 +67,10 @@ class ViewController: UIViewController {
         task.resume();
          */
         
+       
         func getJson(url:NSURL, completion: (json:NSDictionary?, error:NSError?)->()) {
             
+            dispatch_group_enter(myGroup)
             let session = NSURLSession.sharedSession()
             let task = session.dataTaskWithURL(url) {
                 (data:NSData?, response:NSURLResponse?, error:NSError?) in
@@ -118,11 +123,18 @@ class ViewController: UIViewController {
                     
                     }
                 }
+                dispatch_group_leave(self.myGroup)
                 print(self.newsArticles)
+               
             }
         }
        
-        
+        dispatch_async(dispatch_get_main_queue(), {
+            
+            [unowned self] in
+            self.tableView.reloadData()
+        })
+    
         let userLocation = UserLocation(name: "You", type: "You are here!", imageName: "yourLocation.png", latitude: 38.9075, longitude: -77.0365)
         //mapView.setRegion(region, animated: true)
         
@@ -213,6 +225,9 @@ extension ViewController:UITableViewDataSource
         let cell = tableView.dequeueReusableCellWithIdentifier("newsArticleCell", forIndexPath: indexPath)
         
         let newsArticle = newsArticles[indexPath.row]
+        print("---newsArticle---")
+        print(newsArticle)
+        print("---")
         cell.textLabel?.text = newsArticle.title
         cell.detailTextLabel?.text = newsArticle.url
         

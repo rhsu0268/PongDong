@@ -29,7 +29,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qOe-VD-acj">
                                 <state key="normal" image="start-2"/>
                                 <connections>
-                                    <segue destination="BYZ-38-t0r" kind="show" identifier="goToMapView" id="Wan-fM-EjQ"/>
+                                    <segue destination="bJI-wn-yJA" kind="show" identifier="goToMapView" id="Wan-fM-EjQ"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="START" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZBu-iD-w6j">
@@ -119,6 +119,9 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="Uxj-Hy-wUO"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -142,13 +145,33 @@
                             <constraint firstItem="xUc-BN-vVD" firstAttribute="baseline" secondItem="YLc-pF-y6b" secondAttribute="baseline" id="wqJ-VE-w8x"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="z0G-4I-vFP"/>
                     <connections>
                         <outlet property="mapView" destination="QcS-Od-P3f" id="ESu-2c-eBs"/>
+                        <outlet property="tableView" destination="jZt-3X-zHZ" id="I2G-bk-oUW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="608.69565217391312" y="166.30434782608697"/>
+            <point key="canvasLocation" x="1546.4000000000001" y="165.96701649175412"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="tD7-Y3-di1">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="bJI-wn-yJA" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="dZU-gB-gGS">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="tZi-3j-PBF"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LcT-il-syC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="607.20000000000005" y="165.96701649175412"/>
         </scene>
     </scenes>
     <resources>

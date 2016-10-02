@@ -10,12 +10,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "soulmate/ViewController.swift"
-            timestampString = "496803178.374004"
+            timestampString = "497031320.326589"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "176"
-            endingLineNumber = "176"
-            landmarkName = "locationManager(manager:didUpdateLocations:)"
+            startingLineNumber = "188"
+            endingLineNumber = "188"
+            landmarkName = "locationManager(_:didUpdateLocations:)"
             landmarkType = "7">
             <Locations>
                <Location
@@ -58,11 +58,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "soulmate/ViewController.swift"
-            timestampString = "496802956.129581"
+            timestampString = "497031110.262549"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "106"
-            endingLineNumber = "106"
+            startingLineNumber = "111"
+            endingLineNumber = "111"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
