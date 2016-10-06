@@ -70,7 +70,7 @@ class ViewController: UIViewController {
        
         func getJson(url:NSURL, completion: (json:NSDictionary?, error:NSError?)->()) {
             
-            dispatch_group_enter(myGroup)
+            
             let session = NSURLSession.sharedSession()
             let task = session.dataTaskWithURL(url) {
                 (data:NSData?, response:NSURLResponse?, error:NSError?) in
@@ -89,7 +89,7 @@ class ViewController: UIViewController {
             
             task.resume()
         }
-        
+        dispatch_group_enter(myGroup)
         getJson(url!) { (json, error) -> () in
             if error != nil {
                 print(error!)
