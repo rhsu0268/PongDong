@@ -8,6 +8,38 @@
 
 import Foundation
 
+struct Coordinate
+{
+    let latitude: Double
+    let longitude: Double
+    
+}
+
+enum Forecast: Endpoint
+{
+    case Current(token: String, coordinate: Coordinate)
+    
+    var basURL: NSURL
+    {
+        return NSURL(string: "https://api.forecast.io")!
+    }
+    
+    var path: String
+    {
+        switch self
+        {
+            case .Current(let  token, let coordinate):
+                return "/forecast/\(token)/\(coordinate.latitude),\(coordinate.longitude)"
+        }
+    }
+    
+    var request: NSURLRequest
+    {
+        let url = NSURL(string: path, relativeToURL: baseURL)!
+        return NSURLRequest(URL: url)
+    }
+    
+}
 
 final class NewsClient: APIClient
 {
@@ -32,6 +64,12 @@ final class NewsClient: APIClient
         self.init(config: NSURLSessionConfiguration.defaultSessionConfiguration(),
                   APIKey: APIKey)
         
+    }
+    
+    // fetch news 
+    func fetchCurrentWeather(coordinate: Coordinate, completion: APIResult<NewsInformation> -> Void)
+    {
+        let request = Forecast.Current(token: self.token, coordinate: coordinate).request
     }
     
     
