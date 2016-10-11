@@ -10,6 +10,7 @@ import Foundation
 
 public let RCHNetworkingErrorDomain = "com.rch.soleLife.NetworkingError"
 public let MissingHTTPResponseError: Int = 10
+public let UnexpectedResponseError: Int = 20
 
 typealias JSON = [String : AnyObject]
 typealias JSONTaskCompletion = (JSON?, NSHTTPURLResponse?, NSError?) -> Void
@@ -114,5 +115,43 @@ extension APIClient
         return task
         // convert data to JSONdata
         
+    }
+    
+    
+    func fetch<T>(request: NSURLRequest, parse: JSON -> T?, completion: APIResult <T> -> Void)
+    {
+        // make a request with a JSON object
+        let task = JSONTaskWithRequest(request)
+        {
+            json, response, error in
+            
+            guard let json = json else
+            {
+                if let error = error
+                {
+                    completion(.Failure(error))
+                }
+                else
+                {
+                    // TODO: Implement Error Hnadling
+                    
+                }
+                return
+            }
+            
+            if let value = parse(json)
+            {
+                completion(.Success(value))
+            }
+            else
+            {
+                let error = NSError(domain: RCHNetworkingErrorDomain, code: UnexpectedResponseError, userInfo: nil)
+                completion(.Failure(error))
+            }
+            
+        }
+        
+        // start the task
+        task.resume()
     }
 }
