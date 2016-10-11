@@ -95,8 +95,16 @@ extension APIClient
                     case 200:
                         do
                         {
-                            let json = try NSJSONSerialization.JSONObjectWithData(data!, options: [])
+                            let json = try NSJSONSerialization.JSONObjectWithData(data!, options: []) as? [String : AnyObject]
+                            completion(json, HTTPResponse, nil)
                         }
+                        catch let error as NSError
+                        {
+                            completion(nil, HTTPResponse, error)
+                        }
+                    
+                    default: print("Recieved HTTP Response: \(HTTPResponse.statusCode) - not handled")
+                    
                     
                 }
             }
