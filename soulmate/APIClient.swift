@@ -25,6 +25,11 @@ enum APIResult<T>
     
 }
 
+protocol JSONDecodable
+{
+    init?(JSON: [String : AnyObject])
+}
+
 protocol Endpoint
 {
     var baseURL: NSURL
@@ -65,7 +70,7 @@ protocol APIClient
     // take JSON returned from the handler and convert it to any model instance
     
     // 2nd closure:
-    func fetch<T>(request: NSURLRequest, parse: JSON -> T?, completion: APIResult <T> -> Void)
+    func fetch<T: JSONDecodable>(request: NSURLRequest, parse: JSON -> T?, completion: APIResult <T> -> Void)
 
 }
 

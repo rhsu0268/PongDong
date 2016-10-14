@@ -70,7 +70,26 @@ final class NewsClient: APIClient
     func fetchCurrentWeather(coordinate: Coordinate, completion: APIResult<NewsInformation> -> Void)
     {
         let request = Forecast.Current(token: self.token, coordinate: coordinate).request
+        
+        
+        fetch(request, parse: { json -> NewsInforation? in
+            
+            // Parse from JSON response to NewsInformation
+            if let currentNewsDictionary = json["results"] as? [String: AnyObject]
+            {
+                return NewsInformation(JSON: currentNewsDictionary)
+                
+            }
+            else
+            {
+                return nil
+            }
+        }, completion: completion)
+ 
     }
+    
+    
+    
     
     
 }
