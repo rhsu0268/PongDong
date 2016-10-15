@@ -7,7 +7,7 @@
 //
 
 import Foundation
-
+/*
 struct Coordinate
 {
     let latitude: Double
@@ -19,7 +19,7 @@ enum Forecast: Endpoint
 {
     case Current(token: String, coordinate: Coordinate)
     
-    var basURL: NSURL
+    var baseURL: NSURL
     {
         return NSURL(string: "https://api.forecast.io")!
     }
@@ -72,7 +72,7 @@ final class NewsClient: APIClient
         let request = Forecast.Current(token: self.token, coordinate: coordinate).request
         
         
-        fetch(request, parse: { json -> NewsInforation? in
+        fetch(request, parse: { json -> NewsInformation? in
             
             // Parse from JSON response to NewsInformation
             if let currentNewsDictionary = json["results"] as? [String: AnyObject]
@@ -93,5 +93,5 @@ final class NewsClient: APIClient
     
     
 }
-
+*/
 
