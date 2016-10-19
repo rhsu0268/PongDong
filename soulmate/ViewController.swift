@@ -21,6 +21,9 @@ class ViewController: UIViewController {
     
     
     @IBOutlet weak var mapView: MKMapView!
+    
+    lazy var forecastAPIClient = ForecastAPIClient(APIKey: "e7d8d21f3e7c1c515d68fba89aa058ba")
+    let coordinate = Coordinate(latitude: 37.8267, longitude: -122.423)
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,6 +35,26 @@ class ViewController: UIViewController {
         
         let url = NSURL(string: "https://access.alchemyapi.com/calls/data/GetNews?apikey=0c946bde49878224025230853ec995cc1693dc3e&return=enriched.url.title,enriched.url.url&start=1473897600&end=1474585200&q.enriched.url.cleanedTitle=charlotte&q.enriched.url.enrichedTitle.docSentiment.type=negative&q.enriched.url.enrichedTitle.taxonomy.taxonomy_.label=society&count=25&outputMode=json")
         
+        
+        
+        forecastAPIClient.fetchCurrentWeather(coordinate) { result in
+            switch result
+            {
+                case .Success(let currentWeather):
+                    dispatch_async(dispatch_get_main_queue())
+                    {
+                        //self.display(currentWeather)
+                    }
+                case .Failure(let error as NSError):
+                    dispatch_async(dispatch_get_main_queue())
+                    {
+                        //self.showAlert("Unable to retrieve forecast", message: error.localizedDescription)
+                    }
+                default: break
+                }
+        }
+        
+
         /*
         let task = session.dataTaskWithURL(url!)
         {
