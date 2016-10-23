@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		D107A9311D9616E200E7D74A /* NewsInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D107A9301D9616E200E7D74A /* NewsInformation.swift */; };
 		D16715301D8A23E700EF68D1 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D167152F1D8A23E700EF68D1 /* HomeViewController.swift */; };
+		D19C528D1DBC4EB900D664B4 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D19C528C1DBC4EB900D664B4 /* APIClient.swift */; };
 		D1C6C63B1D8798870041B80D /* key-modified.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D1C6C63A1D8798870041B80D /* key-modified.jpg */; };
 		D1DC2EE91D517B5300921DAC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1DC2EE81D517B5300921DAC /* AppDelegate.swift */; };
 		D1DC2EEB1D517B5300921DAC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1DC2EEA1D517B5300921DAC /* ViewController.swift */; };
@@ -41,6 +42,7 @@
 /* Begin PBXFileReference section */
 		D107A9301D9616E200E7D74A /* NewsInformation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsInformation.swift; sourceTree = "<group>"; };
 		D167152F1D8A23E700EF68D1 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		D19C528C1DBC4EB900D664B4 /* APIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		D1C6C63A1D8798870041B80D /* key-modified.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "key-modified.jpg"; sourceTree = "<group>"; };
 		D1DC2EE51D517B5300921DAC /* soulmate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = soulmate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1DC2EE81D517B5300921DAC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -127,6 +129,7 @@
 				D1DC2EF11D517B5300921DAC /* LaunchScreen.storyboard */,
 				D1DC2EF41D517B5300921DAC /* Info.plist */,
 				D1C6C63A1D8798870041B80D /* key-modified.jpg */,
+				D19C528C1DBC4EB900D664B4 /* APIClient.swift */,
 			);
 			path = soulmate;
 			sourceTree = "<group>";
@@ -294,6 +297,7 @@
 				D1DC2EEB1D517B5300921DAC /* ViewController.swift in Sources */,
 				D1DC2EE91D517B5300921DAC /* AppDelegate.swift in Sources */,
 				D16715301D8A23E700EF68D1 /* HomeViewController.swift in Sources */,
+				D19C528D1DBC4EB900D664B4 /* APIClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
