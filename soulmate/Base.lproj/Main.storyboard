@@ -119,9 +119,6 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
-                                <connections>
-                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="Uxj-Hy-wUO"/>
-                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -148,7 +145,6 @@
                     <navigationItem key="navigationItem" id="z0G-4I-vFP"/>
                     <connections>
                         <outlet property="mapView" destination="QcS-Od-P3f" id="ESu-2c-eBs"/>
-                        <outlet property="tableView" destination="jZt-3X-zHZ" id="I2G-bk-oUW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

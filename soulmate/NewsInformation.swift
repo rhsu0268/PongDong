@@ -8,6 +8,7 @@
 
 import Foundation
 
+/*
 class NewsInformation: NSObject
 {
     var title: String
@@ -21,5 +22,24 @@ class NewsInformation: NSObject
     }
  
 }
+ */
 
+struct NewsInformation
+{
+    let news: [String : AnyObject]
+}
+
+extension NewsInformation: JSONDecodable
+{
+    init? (JSON: [String : AnyObject])
+    {
+        guard let data = JSON as? [String : AnyObject]
+        else
+        {
+            return nil
+        }
+        
+        self.news = data
+    }
+}
 

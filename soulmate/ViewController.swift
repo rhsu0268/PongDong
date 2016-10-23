@@ -11,7 +11,7 @@ import MapKit
 
 class ViewController: UIViewController {
     
-    @IBOutlet weak var tableView: UITableView!
+    //@IBOutlet weak var tableView: UITableView!
     var locationManager: CLLocationManager?
     var startLocation: CLLocation?
     
@@ -71,7 +71,7 @@ class ViewController: UIViewController {
         task.resume();
          */
         
-       
+        /*
         func getJson(url:NSURL, completion: (json:NSDictionary?, error:NSError?)->()) {
             
             
@@ -138,7 +138,7 @@ class ViewController: UIViewController {
             [unowned self] in
             self.tableView.reloadData()
         })
-    
+        */
         let userLocation = UserLocation(name: "You", type: "You are here!", imageName: "yourLocation.png", latitude: 38.9075, longitude: -77.0365)
         //mapView.setRegion(region, animated: true)
         
@@ -219,6 +219,7 @@ extension ViewController: CLLocationManagerDelegate
     }
 }
 
+/*
 extension ViewController:UITableViewDataSource
 {
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -238,6 +239,7 @@ extension ViewController:UITableViewDataSource
         return cell
     }
 }
+ */
 
 
 

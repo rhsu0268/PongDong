@@ -49,6 +49,20 @@ final class NewsAPIClient: APIClient
     func fetchCurrentNews(completion: APIResult <NewsInformation> -> Void)
     {
         let request = News.Current(token: self.token).request
+        
+        
+        fetch(request, parse: { json -> NewsInformation? in
+            
+            if let currentNewsDictionary = json["result"]!["docs"] as? [String : AnyObject]
+            {
+                return NewsInformation(JSON: currentNewsDictionary)!
+            }
+            else
+            {
+                return nil
+            }
+            
+        }, completion: completion)
     }
     
 }
