@@ -29,8 +29,8 @@ protocol JSONDecodable
 
 protocol Endpoint
 {
-    var baseURL: NSURL { get }
-    var path: String { get }
+    //var baseURL: NSURL { get }
+    //var path: String { get }
     var request: NSURLRequest { get }
 
 }
