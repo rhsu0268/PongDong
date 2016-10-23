@@ -29,14 +29,13 @@ extension CurrentWeather: JSONDecodable {
                 return nil
         }
         
-        let icon = WeatherIcon(rawValue: iconString).image
+        //let icon = WeatherIcon(rawValue: iconString).image
         
         self.temperature = temperature
         self.humidity = humidity
         self.precipitationProbability = precipitationProbability
         self.summary = summary
-        self.icon = icon
-    }
+        //self.icon = icon
 }
 
 

@@ -22,9 +22,6 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var mapView: MKMapView!
     
-    lazy var forecastAPIClient = ForecastAPIClient(APIKey: "e7d8d21f3e7c1c515d68fba89aa058ba")
-    let coordinate = Coordinate(latitude: 37.8267, longitude: -122.423)
-
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -37,23 +34,7 @@ class ViewController: UIViewController {
         
         
         
-        forecastAPIClient.fetchCurrentWeather(coordinate) { result in
-            switch result
-            {
-                case .Success(let currentWeather):
-                    dispatch_async(dispatch_get_main_queue())
-                    {
-                        //self.display(currentWeather)
-                    }
-                case .Failure(let error as NSError):
-                    dispatch_async(dispatch_get_main_queue())
-                    {
-                        //self.showAlert("Unable to retrieve forecast", message: error.localizedDescription)
-                    }
-                default: break
-                }
-        }
-        
+               
 
         /*
         let task = session.dataTaskWithURL(url!)
