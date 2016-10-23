@@ -97,4 +97,41 @@ extension APIClient
         }
         return task
     }
+    
+    func fetch<T>(request: NSURLRequest, parse: JSON -> T?, completion: APIResult <T> -> Void)
+    {
+        let task = JSONTaskWithRequest(request)
+        {
+            json, response, error in
+            
+            print(json)
+            
+            dispatch_async(dispatch_get_main_queue())
+            {
+                guard let json = json else
+                {
+                    if let error = error
+                    {
+                        completion(.Failure(error))
+                    }
+                    else
+                    {
+                        fatalError("Both json and error variables are set to nil")
+                    }
+                    return
+                }
+                
+                if let value = parse(json)
+                {
+                    completion(.Success(value))
+                }
+                else
+                {
+                    let error = NSError(domain: TRENetworkingErrorDomain, code: UnexpectedResponseError, userInfo: nil)
+                    completion(.Failure(error))
+                }
+            }
+        }
+        task.resume()
+    }
 }
