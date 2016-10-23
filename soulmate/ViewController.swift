@@ -22,6 +22,10 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var mapView: MKMapView!
     
+    lazy var newsAPIClient = {
+        return NewsAPIClient(APIKey: "hello")
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -32,8 +36,21 @@ class ViewController: UIViewController {
         
         let url = NSURL(string: "https://access.alchemyapi.com/calls/data/GetNews?apikey=0c946bde49878224025230853ec995cc1693dc3e&return=enriched.url.title,enriched.url.url&start=1473897600&end=1474585200&q.enriched.url.cleanedTitle=charlotte&q.enriched.url.enrichedTitle.docSentiment.type=negative&q.enriched.url.enrichedTitle.taxonomy.taxonomy_.label=society&count=25&outputMode=json")
         
-        
-        
+        newsAPIClient.fetchCurrentNews()
+        {
+            result in
+            switch result
+            {
+                case .Success(let currentNews):
+                    print(result)
+                
+                case .Failure(let error as NSError):
+                    self.showAlert("Unable to retrieve news", message: error.localizedDescription)
+                
+                default: break
+                
+            }
+        }
                
 
         /*
@@ -162,6 +179,17 @@ class ViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func showAlert(title: String, message: String?, style: UIAlertControllerStyle = .Alert)
+    {
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: style)
+        
+        let dismissAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
+        
+        alertController.addAction(dismissAction)
+        
+        presentViewController(alertController, animated: true, completion: nil)
     }
 
 
