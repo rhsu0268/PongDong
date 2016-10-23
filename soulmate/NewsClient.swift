@@ -10,6 +10,8 @@ import Foundation
 
 enum News: Endpoint
 {
+    case Current(token: String)
+    
     var request: NSURLRequest
     {
         
@@ -19,4 +21,34 @@ enum News: Endpoint
         
      
     }
+}
+
+final class NewsAPIClient: APIClient
+{
+    // 
+    let configuration: NSURLSessionConfiguration
+    
+    lazy var session: NSURLSession = {
+        return NSURLSession(configuration: self.configuration)
+    }()
+    
+    private let token: String
+    
+    init(config: NSURLSessionConfiguration, APIKey: String)
+    {
+        self.configuration = config
+        self.token = APIKey
+    }
+    
+    convenience init(APIKey: String)
+    {
+        self.init(config: NSURLSessionConfiguration.defaultSessionConfiguration(), APIKey: APIKey)
+    }
+    
+    
+    func fetchCurrentNews(completion: APIResult <NewsInformation> -> Void)
+    {
+        let request = News.Current(token: self.token).request
+    }
+    
 }
