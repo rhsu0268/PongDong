@@ -80,10 +80,10 @@
                                     <constraint firstAttribute="width" constant="138" id="FYh-hh-ROm"/>
                                     <constraint firstAttribute="height" constant="50" id="HUb-nM-xtX"/>
                                 </constraints>
-                                <state key="normal" title="Alert" backgroundImage="rectangle"/>
+                                <state key="normal" title="Heroki" backgroundImage="rectangle"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xUc-BN-vVD" userLabel="ProfileButton">
-                                <state key="normal" title="Profile" backgroundImage="rectangle"/>
+                                <state key="normal" title="World" backgroundImage="rectangle"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1BT-GZ-lnp" userLabel="HomeButton">
                                 <state key="normal" title="Home" backgroundImage="rectangle2-1"/>
