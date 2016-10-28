@@ -42,7 +42,9 @@ class ViewController: UIViewController {
             switch result
             {
                 case .Success(let currentNews):
+                    print("---start---")
                     print(result)
+                    print("---end---")
                 
                 case .Failure(let error as NSError):
                     self.showAlert("Unable to retrieve news", message: error.localizedDescription)
