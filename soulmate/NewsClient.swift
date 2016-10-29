@@ -53,8 +53,32 @@ final class NewsAPIClient: APIClient
         
         fetch(request, parse: { json -> NewsInformation? in
             
-            if let currentNewsDictionary = json["result"]!["docs"] as? [String : AnyObject]
+            //print("---Fetching---")
+            //print(json)
+            //print("---End---")
+            print("---Parsing---")
+            if let currentNewsDictionary = json["result"]! as? [String : AnyObject]
             {
+                print("---currentNewsDictionary---")
+                print(currentNewsDictionary["docs"])
+                print("---End---")
+                /*
+                if let object = currentNewsDictionary["docs"]! as?  [String : AnyObject]
+                {
+                    for article in object
+                    {
+                        print(article)
+                    }
+                    
+                }
+ 
+                */
+                for article in (currentNewsDictionary["docs"]! as? [String : AnyObject])!
+                {
+                    print("---ARTICLE---")
+                    print(article)
+                    print("--- ---")
+                }
                 return NewsInformation(JSON: currentNewsDictionary)!
             }
             else

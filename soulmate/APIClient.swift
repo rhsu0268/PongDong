@@ -104,7 +104,9 @@ extension APIClient
         {
             json, response, error in
             
+            print("---")
             print(json)
+            print("---")
             
             dispatch_async(dispatch_get_main_queue())
             {
@@ -123,6 +125,9 @@ extension APIClient
                 
                 if let value = parse(json)
                 {
+                    print("---parsing---")
+                    print(value)
+                    print("---")
                     completion(.Success(value))
                 }
                 else
