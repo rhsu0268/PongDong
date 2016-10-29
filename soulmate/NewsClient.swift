@@ -66,27 +66,23 @@ final class NewsAPIClient: APIClient
                // let object = currentNewsDictionary["docs"] as? [String: AnyObject]
                 for article in (currentNewsDictionary["docs"] as? [AnyObject])!
                 {
-                    print(article)
-                }
-                /*
-                if let object = currentNewsDictionary["docs"]! as?  [String : AnyObject]
-                {
-                    for article in object
+                    //print(article)
+                    
+                    
+                    if let title = article["source"]!!["enriched"]!!["url"]!!["title"] as? String
                     {
-                        print(article)
+                        print("---Title---")
+                        print(title)
+                        print("--- ---")
                     }
                     
+                    if let url = article["source"]!!["enriched"]!!["url"]!!["url"] as? String
+                    {
+                        print("---Url---")
+                        print(url)
+                        print("--- ---")
+                    }
                 }
- 
-                */
-                /*
-                for article in (currentNewsDictionary["docs"]! as? [String : AnyObject])!
-                {
-                    print("---ARTICLE---")
-                    print(article)
-                    print("--- ---")
-                }
-                */
                 return NewsInformation(JSON: currentNewsDictionary)!
             }
             else
