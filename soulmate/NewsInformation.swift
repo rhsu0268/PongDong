@@ -8,25 +8,14 @@
 
 import Foundation
 
-/*
-class NewsInformation: NSObject
-{
-    var title: String
-    var url: String
-    
-    
-    init (title: String, url: String)
-    {
-        self.title = title
-        self.url = url
-    }
- 
-}
- */
+
+
 
 struct NewsInformation
 {
-    let news: [String : AnyObject]
+    let newsArticles: [String : AnyObject]
+    
+
 }
 
 extension NewsInformation: JSONDecodable
@@ -39,7 +28,8 @@ extension NewsInformation: JSONDecodable
             return nil
         }
         
-        self.news = data
+        self.newsArticles = data
     }
 }
+
 

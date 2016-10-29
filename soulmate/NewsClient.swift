@@ -8,6 +8,8 @@
 
 import Foundation
 
+var newsArticleDictionary = [NewsArticle]()
+
 enum News: Endpoint
 {
     case Current(token: String)
@@ -63,10 +65,16 @@ final class NewsAPIClient: APIClient
                 print(currentNewsDictionary["docs"])
                 print("---End---")
                 
-               // let object = currentNewsDictionary["docs"] as? [String: AnyObject]
+                //var title = ""
+                //var url = ""
+                
+                // let object = currentNewsDictionary["docs"] as? [String: AnyObject]
                 for article in (currentNewsDictionary["docs"] as? [AnyObject])!
                 {
                     //print(article)
+                    
+                    // create a new NewsArticle object
+                    let newsArticle = NewsArticle(title: "", url: "")
                     
                     
                     if let title = article["source"]!!["enriched"]!!["url"]!!["title"] as? String
@@ -74,6 +82,7 @@ final class NewsAPIClient: APIClient
                         print("---Title---")
                         print(title)
                         print("--- ---")
+                        newsArticle.title = title
                     }
                     
                     if let url = article["source"]!!["enriched"]!!["url"]!!["url"] as? String
@@ -81,9 +90,14 @@ final class NewsAPIClient: APIClient
                         print("---Url---")
                         print(url)
                         print("--- ---")
+                        newsArticle.url = url
                     }
+                    
+                    newsArticleDictionary.append(newsArticle)
+                    
+                    
                 }
-                return NewsInformation(JSON: currentNewsDictionary)!
+                return NewsInformation(JSON: newsArticleDictionary)!
             }
             else
             {

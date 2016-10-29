@@ -15,7 +15,7 @@ class ViewController: UIViewController {
     var locationManager: CLLocationManager?
     var startLocation: CLLocation?
     
-    var newsArticles = [NewsInformation]()
+    
     
     var myGroup = dispatch_group_create()
     
