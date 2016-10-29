@@ -125,9 +125,9 @@ extension APIClient
                 
                 if let value = parse(json)
                 {
-                    print("---parsing---")
-                    print(value)
-                    print("---")
+                    //print("---parsing---")
+                    //print(value)
+                    //print("---")
                     completion(.Success(value))
                 }
                 else

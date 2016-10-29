@@ -62,6 +62,12 @@ final class NewsAPIClient: APIClient
                 print("---currentNewsDictionary---")
                 print(currentNewsDictionary["docs"])
                 print("---End---")
+                
+               // let object = currentNewsDictionary["docs"] as? [String: AnyObject]
+                for article in (currentNewsDictionary["docs"] as? [AnyObject])!
+                {
+                    print(article)
+                }
                 /*
                 if let object = currentNewsDictionary["docs"]! as?  [String : AnyObject]
                 {
@@ -73,12 +79,14 @@ final class NewsAPIClient: APIClient
                 }
  
                 */
+                /*
                 for article in (currentNewsDictionary["docs"]! as? [String : AnyObject])!
                 {
                     print("---ARTICLE---")
                     print(article)
                     print("--- ---")
                 }
+                */
                 return NewsInformation(JSON: currentNewsDictionary)!
             }
             else
