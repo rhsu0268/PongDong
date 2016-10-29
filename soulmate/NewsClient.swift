@@ -97,7 +97,7 @@ final class NewsAPIClient: APIClient
                     
                     
                 }
-                return NewsInformation(JSON: newsArticleDictionary)!
+                return NewsInformation(JSON: newsArticleDictionary)
             }
             else
             {

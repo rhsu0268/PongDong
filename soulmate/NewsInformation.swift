@@ -9,26 +9,26 @@
 import Foundation
 
 
-
-
 struct NewsInformation
 {
-    let newsArticles: [String : AnyObject]
+    let newsArticles: [NewsArticle]
     
 
 }
 
-extension NewsInformation: JSONDecodable
+extension NewsInformation
 {
-    init? (JSON: [String : AnyObject])
+    init? (JSON: [NewsArticle])
     {
-        guard let data = JSON as? [String : AnyObject]
+        /*
+        guard let data = JSON as? [NewsArticle]
         else
         {
             return nil
         }
+        */
         
-        self.newsArticles = data
+        self.newsArticles = JSON
     }
 }
 
