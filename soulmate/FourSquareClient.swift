@@ -8,12 +8,13 @@
 
 import Foundation
 
+/*
 enum FourSquare
 {
     case Venues(VenueEndpoint)
     
     
-    enum VenueEndpoint
+    enum VenueEndpoint: Endpoint
     {
         case Search(clientID: String, clientSecret: String, coordinate: Coordinate, category: Category, query: String?, searchRadius: Int?, limit: Int?)
         
@@ -52,5 +53,58 @@ enum FourSquare
             
             
         }
+        // MARK: Venue - Endpoint
+    var baseURL: String {
+    
+        return "https://api.foursquare.com"
+    
+    }
+    
+    var path: String
+    {
+        switch self
+        {
+            case .Search: return "/v2/venues/search"
+        }
+    
+    }
+    
+    
+
+    private struct ParameterKeys {
+        static let clientID = "client_id"
+        static let clientSecret = "client_secret"
+        static let version = "v"
+        static let category = "categoryId"
+        static let location = "ll"
+        static let query = "query"
+        static let limit = "limit"
+        static let searchRadius = "radius"
+    }
+    
+    private struct DefaultValues {
+        static let version = "20160301"
+        static let limit = "50"
+        static let searchRadius = "2000"
+    }
+
+
+    var parameters: [String : AnyObject]
+    {
+        switch self
+        {
+            case .Search(let clientId, let clientSecret, let coordinate, let category, let query, let searchRadius, let limit):
+    
+            var parameters: [String : AnyObject] = [
+                ParameterKeys.clientID,
+                ParameterKeys.clientServer: clientSecret,
+                ParameterKeys.version: DefaultValues.version,
+                ParameterKeys.location: coordinate.description,
+                ParameterKeys.cateogry: category.description
+                
+            ]
+            return parameters
+        }
     }
 }
+ */
