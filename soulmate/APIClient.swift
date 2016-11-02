@@ -31,13 +31,14 @@ protocol JSONDecodable
 
 protocol Endpoint
 {
-    var baseURL: String { get }
-    var path: String { get }
+    //var baseURL: String { get }
+    //var path: String { get }
     var request: NSURLRequest { get }
-    var parameters: [String : AnyObject] { get }
+    //var parameters: [String : AnyObject] { get }
 
 }
 
+/*
 extension Endpoint
 {
     // create an object that contains one name, value pair. 
@@ -69,7 +70,7 @@ extension Endpoint
         
     }
 }
-
+*/
 protocol APIClient
 {
     var configuration: NSURLSessionConfiguration { get }
