@@ -8,14 +8,14 @@
 
 import Foundation
 
-enum FourSquare: Endpoint
+enum FourSquare
 {
     case Venues(VenueEndpoint)
     
     
     enum VenueEndpoint
     {
-        case Search(clientID: String, clientSecret: String, coordinate: Coordinate)
+        case Search(clientID: String, clientSecret: String, coordinate: Coordinate, category: Category, query: String?, searchRadius: Int?, limit: Int?)
         
         
         
@@ -26,6 +26,28 @@ enum FourSquare: Endpoint
             enum FoodCategory: String
             {
                 case Afghan = "503288ae91d4c4b30a586d67"
+            }
+            
+            
+            var description: String {
+                
+                switch self
+                {
+                    case .Food(let categories):
+                        if let categories = categories
+                        {
+                            let commaSeperatedString = categories.reduce("") {
+                                categoryString, category in "\(categoryString),\(category.rawValue)"
+                                
+                                
+                            }
+                            return commaSeperatedString.substringFromIndex(commaSeperatedString.startIndex.advancedBy(1))
+                        }
+                        else
+                        {
+                            return "4d4b7105d754a06374d81259"
+                        }
+                }
             }
             
             
