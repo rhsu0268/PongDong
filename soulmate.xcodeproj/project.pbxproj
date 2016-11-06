@@ -136,6 +136,7 @@
 				D1DC2EEA1D517B5300921DAC /* ViewController.swift */,
 				D1DC2EEC1D517B5300921DAC /* Main.storyboard */,
 				D167152F1D8A23E700EF68D1 /* HomeViewController.swift */,
+				D19A1AE11DCA9BD700C9CE4D /* NewsArticlesTableViewController.swift */,
 				D1DC2EEF1D517B5300921DAC /* Assets.xcassets */,
 				D1DC2EF11D517B5300921DAC /* LaunchScreen.storyboard */,
 				D1DC2EF41D517B5300921DAC /* Info.plist */,
@@ -144,7 +145,6 @@
 				D19C528E1DBC56F600D664B4 /* NewsClient.swift */,
 				D19A1ADD1DCA46A500C9CE4D /* FourSquareClient.swift */,
 				D19A1ADF1DCA47FB00C9CE4D /* FoursquareModels.swift */,
-				D19A1AE11DCA9BD700C9CE4D /* NewsArticlesTableViewController.swift */,
 			);
 			path = soulmate;
 			sourceTree = "<group>";
