@@ -9,6 +9,11 @@
 import UIKit
 
 class NewsArticlesTableViewController: UITableViewController {
+    
+    
+    lazy var newsAPIClient = {
+        return NewsAPIClient(APIKey: "hello")
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,6 +23,27 @@ class NewsArticlesTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        
+        
+        // start network request to alchemyapi
+        newsAPIClient.fetchCurrentNews()
+        {
+                result in
+                switch result
+                {
+                case .Success(let currentNews):
+                    print("---start---")
+                    print(result)
+                    print("---end---")
+                    
+                case .Failure(let error as NSError):
+                    self.showAlert("Unable to retrieve news", message: error.localizedDescription)
+                    
+                default: break
+                    
+                }
+        }
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -46,6 +72,17 @@ class NewsArticlesTableViewController: UITableViewController {
         return cell
     }
     
+    func showAlert(title: String, message: String?, style: UIAlertControllerStyle = .Alert)
+    {
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: style)
+        
+        let dismissAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
+        
+        alertController.addAction(dismissAction)
+        
+        presentViewController(alertController, animated: true, completion: nil)
+    }
+
     
 
     /*

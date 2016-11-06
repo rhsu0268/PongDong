@@ -32,6 +32,7 @@ class ViewController: UIViewController {
         
         
         // start network request to alchemyapi
+        /*
         newsAPIClient.fetchCurrentNews()
         {
             result in
@@ -49,6 +50,7 @@ class ViewController: UIViewController {
                 
             }
         }
+         */
                
 
         /*
@@ -179,6 +181,7 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    /*
     func showAlert(title: String, message: String?, style: UIAlertControllerStyle = .Alert)
     {
         let alertController = UIAlertController(title: title, message: message, preferredStyle: style)
@@ -189,6 +192,7 @@ class ViewController: UIViewController {
         
         presentViewController(alertController, animated: true, completion: nil)
     }
+     */
 
 
 }
