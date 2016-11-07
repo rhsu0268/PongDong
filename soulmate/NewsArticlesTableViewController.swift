@@ -14,6 +14,14 @@ class NewsArticlesTableViewController: UITableViewController {
     lazy var newsAPIClient = {
         return NewsAPIClient(APIKey: "hello")
     }()
+    
+    var articles: [NewsArticle] = []
+    {
+        didSet
+        {
+            tableView.reloadData()
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,7 +41,8 @@ class NewsArticlesTableViewController: UITableViewController {
                 {
                 case .Success(let currentNews):
                     print("---start---")
-                    print(result)
+                    print(currentNews.newsArticles)
+                    self.articles = currentNews.newsArticles
                     print("---end---")
                     
                 case .Failure(let error as NSError):
@@ -60,7 +69,7 @@ class NewsArticlesTableViewController: UITableViewController {
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 1
+        return articles.count
     }
 
     
@@ -68,6 +77,8 @@ class NewsArticlesTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath)
 
         // Configure the cell...
+        let article = articles[indexPath.row]
+        cell.textLabel?.text = article.title
 
         return cell
     }

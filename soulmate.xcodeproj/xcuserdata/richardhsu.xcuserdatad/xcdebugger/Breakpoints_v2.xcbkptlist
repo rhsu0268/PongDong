@@ -148,11 +148,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "soulmate/NewsArticlesTableViewController.swift"
-            timestampString = "500156192.167897"
+            timestampString = "500189403.737828"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "56"
-            endingLineNumber = "56"
+            startingLineNumber = "65"
+            endingLineNumber = "65"
             landmarkName = "numberOfSections(in:)"
             landmarkType = "7">
          </BreakpointContent>
