@@ -13,6 +13,7 @@ class NewsArticle: NSObject
 {
     var title: String
     var url: String
+    
  
  
     init (title: String, url: String)

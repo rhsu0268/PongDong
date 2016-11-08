@@ -17,7 +17,7 @@ enum News: Endpoint
     var request: NSURLRequest
     {
         
-        let url = NSURL(string: "https://access.alchemyapi.com/calls/data/GetNews?apikey=0c946bde49878224025230853ec995cc1693dc3e&return=enriched.url.title,enriched.url.url&start=1473897600&end=1474585200&q.enriched.url.cleanedTitle=charlotte&q.enriched.url.enrichedTitle.docSentiment.type=negative&q.enriched.url.enrichedTitle.taxonomy.taxonomy_.label=society&count=25&outputMode=json")
+        let url = NSURL(string: "https://newsapi.org/v1/articles?source=cnn&apiKey=d2ca6d7c23544c9fb982048fd0b1f6d7&category=general")
         return NSURLRequest(URL: url!)
         
         
@@ -59,16 +59,24 @@ final class NewsAPIClient: APIClient
             //print(json)
             //print("---End---")
             print("---Parsing---")
-            if let currentNewsDictionary = json["result"]! as? [String : AnyObject]
+            if let currentNewsDictionary = json["articles"]! as? [AnyObject]
             {
                 print("---currentNewsDictionary---")
-                print(currentNewsDictionary["docs"])
+                //print(currentNewsDictionary["docs"])
+                print(currentNewsDictionary)
                 print("---End---")
+                
+                
+                for article in currentNewsDictionary
+                {
+                    let newsArticle = newsArticle(title: "", url: "")
+                }
                 
                 //var title = ""
                 //var url = ""
                 
                 // let object = currentNewsDictionary["docs"] as? [String: AnyObject]
+                /*
                 for article in (currentNewsDictionary["docs"] as? [AnyObject])!
                 {
                     //print(article)
@@ -97,6 +105,7 @@ final class NewsAPIClient: APIClient
                     
                     
                 }
+                */
                 return NewsInformation(JSON: newsArticleDictionary)
             }
             else
