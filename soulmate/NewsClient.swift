@@ -69,7 +69,13 @@ final class NewsAPIClient: APIClient
                 
                 for article in currentNewsDictionary
                 {
-                    let newsArticle = newsArticle(title: "", url: "")
+                    let newsArticle = NewsArticle(author: "", newsDescription: "", publishedAt: "", title: "", url: "", urlToImage: "")
+                    
+                    
+                    if let author = article["author"] as? String
+                    {
+                        newsArticle.author = author
+                    }
                 }
                 
                 //var title = ""

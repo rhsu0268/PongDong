@@ -20,10 +20,10 @@ class NewsArticle: NSObject
     
  
  
-    init (author: String, descripton: String, publishedAt: String, title: String, url: String, urlToImage: String)
+    init (author: String, newsDescription: String, publishedAt: String, title: String, url: String, urlToImage: String)
     {
         self.author = author
-        self.newsDescription = description
+        self.newsDescription = newsDescription
         self.publishedAt = publishedAt
         self.title = title
         self.url = url
