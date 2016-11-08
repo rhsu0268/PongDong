@@ -66,17 +66,39 @@ final class NewsAPIClient: APIClient
                 print(currentNewsDictionary)
                 print("---End---")
                 
-                
+                let newsArticle = NewsArticle(author: "", newsDescription: "", publishedAt: "", title: "", url: "", urlToImage: "")
                 for article in currentNewsDictionary
                 {
-                    let newsArticle = NewsArticle(author: "", newsDescription: "", publishedAt: "", title: "", url: "", urlToImage: "")
+                    
                     
                     
                     if let author = article["author"] as? String
                     {
                         newsArticle.author = author
                     }
+                    else if let newsDescription = article["newsDescription"] as? String
+                    {
+                        newsArticle.newsDescription = newsDescription
+                    }
+                    else if let publishedAt = article["publishedAt"] as? String
+                    {
+                        newsArticle.publishedAt = publishedAt
+                    }
+                    else if let title = article["title"] as? String
+                    {
+                        newsArticle.title = title
+                    }
+                    else if let url = article["url"] as? String
+                    {
+                        newsArticle.url = url
+                    }
+                    else if let urlToImage = article["urlToImage"] as? String
+                    {
+                        newsArticle.urlToImage = urlToImage
+                    }
+
                 }
+                newsArticleDictionary.append(newsArticle)
                 
                 //var title = ""
                 //var url = ""
