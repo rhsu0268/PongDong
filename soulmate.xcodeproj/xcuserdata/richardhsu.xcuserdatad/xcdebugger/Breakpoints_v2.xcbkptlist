@@ -157,5 +157,53 @@
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "soulmate/NewsArticle.swift"
+            timestampString = "500330207.552018"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "15"
+            endingLineNumber = "15"
+            landmarkName = "NewsArticle"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "soulmate.NewsArticle.url.getter : Swift.String"
+                  moduleName = "soulmate"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/richardhsu/Desktop/iOS/soulmate/soulmate/NewsArticle.swift"
+                  timestampString = "500330207.605179"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "41">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "soulmate.NewsArticle.url.setter : Swift.String"
+                  moduleName = "soulmate"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/richardhsu/Desktop/iOS/soulmate/soulmate/NewsArticle.swift"
+                  timestampString = "500330207.606814"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "85">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>
