@@ -33,6 +33,7 @@ class ViewController: UIViewController {
         
         // start network request to alchemyapi
         
+        /*
         newsAPIClient.fetchCurrentNews()
         {
             result in
@@ -50,6 +51,7 @@ class ViewController: UIViewController {
                 
             }
         }
+         */
  
                
 

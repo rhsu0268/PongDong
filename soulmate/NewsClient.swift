@@ -75,23 +75,25 @@ final class NewsAPIClient: APIClient
                     {
                         newsArticle.author = author
                     }
-                    else if let newsDescription = article["newsDescription"] as? String
+                    if let newsDescription = article["newsDescription"] as? String
                     {
                         newsArticle.newsDescription = newsDescription
                     }
-                    else if let publishedAt = article["publishedAt"] as? String
+                    if let publishedAt = article["publishedAt"] as? String
                     {
                         newsArticle.publishedAt = publishedAt
                     }
-                    else if let title = article["title"] as? String
+                    if let title = article["title"] as? String
                     {
+                        print("---title---")
                         newsArticle.title = title
+                        print("---end---")
                     }
-                    else if let url = article["url"] as? String
+                    if let url = article["url"] as? String
                     {
                         newsArticle.url = url
                     }
-                    else if let urlToImage = article["urlToImage"] as? String
+                    if let urlToImage = article["urlToImage"] as? String
                     {
                         newsArticle.urlToImage = urlToImage
                     }
