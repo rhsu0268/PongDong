@@ -212,11 +212,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "soulmate/NewsArticleCell.swift"
-            timestampString = "500675547.750536"
+            timestampString = "500676473.590359"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "14"
-            endingLineNumber = "14"
+            startingLineNumber = "19"
+            endingLineNumber = "19"
             landmarkName = "NewsArticleCell"
             landmarkType = "3">
          </BreakpointContent>

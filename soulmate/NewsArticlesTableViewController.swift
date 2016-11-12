@@ -74,12 +74,13 @@ class NewsArticlesTableViewController: UITableViewController {
 
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath)
+        let cell = tableView.dequeueReusableCellWithIdentifier("NewsArticleCell", forIndexPath: indexPath) as! NewsArticleCell
 
         // Configure the cell...
         let article = articles[indexPath.row]
-        cell.textLabel?.text = article.title
-        //cell.newsTitleLabel
+        //cell.textLabel?.text = article.title
+        cell.articleTitleLabel.text = article.title
+        cell.articleAuthorLabel.text = article.author
 
         return cell
     }

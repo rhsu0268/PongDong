@@ -174,7 +174,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="TPG-6o-ZxT">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="NewsArticleCell" id="TPG-6o-ZxT" customClass="NewsArticleCell" customModule="soulmate" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="TPG-6o-ZxT" id="cvu-iy-MO9">
@@ -201,6 +201,10 @@
                                         <constraint firstItem="DCP-QN-67y" firstAttribute="centerY" secondItem="cvu-iy-MO9" secondAttribute="centerY" id="YV4-Zq-ca1"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="articleAuthorLabel" destination="DCP-QN-67y" id="4KV-2V-apj"/>
+                                    <outlet property="articleTitleLabel" destination="l5u-zm-y4C" id="S9A-CT-4sk"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
