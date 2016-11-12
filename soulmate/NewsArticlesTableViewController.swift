@@ -95,6 +95,18 @@ class NewsArticlesTableViewController: UITableViewController {
         
         presentViewController(alertController, animated: true, completion: nil)
     }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "showNewsDetail"
+        {
+            if let indexPath = self.tableView.indexPathForSelectedRow
+            {
+                let controller = segue.destinationViewController as! NewsDetailController
+                controller.navigationItem.leftBarButtonItem = self.splitViewController?.displayModeButtonItem()
+                controller.navigationItem.leftItemsSupplementBackButton = true
+            }
+        }
+    }
 
     
 

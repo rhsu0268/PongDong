@@ -204,6 +204,7 @@
                                 <connections>
                                     <outlet property="articleAuthorLabel" destination="DCP-QN-67y" id="4KV-2V-apj"/>
                                     <outlet property="articleTitleLabel" destination="l5u-zm-y4C" id="S9A-CT-4sk"/>
+                                    <segue destination="nTo-mQ-r5v" kind="show" identifier="showNewsDetail" id="ReH-Yk-5jR"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -216,6 +217,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hhz-YD-TRe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2301.5999999999999" y="-137.18140929535232"/>
+        </scene>
+        <!--News Detail Controller-->
+        <scene sceneID="PyL-Y2-eTT">
+            <objects>
+                <viewController id="nTo-mQ-r5v" customClass="NewsDetailController" customModule="soulmate" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="R88-Pc-8gv"/>
+                        <viewControllerLayoutGuide type="bottom" id="yGu-nm-q7b"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="4yL-rQ-QIY" customClass="NewsDet">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FeC-jy-h1i" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3097" y="-137"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="tD7-Y3-di1">
