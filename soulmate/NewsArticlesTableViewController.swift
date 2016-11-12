@@ -79,6 +79,7 @@ class NewsArticlesTableViewController: UITableViewController {
         // Configure the cell...
         let article = articles[indexPath.row]
         cell.textLabel?.text = article.title
+        //cell.newsTitleLabel
 
         return cell
     }
