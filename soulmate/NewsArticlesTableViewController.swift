@@ -26,7 +26,7 @@ class NewsArticlesTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
+        // Uncomment the following line to /Users/richardhsu/Desktop/iOS/soulmate/soulmate/Assets.xcassetspreserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
@@ -41,7 +41,11 @@ class NewsArticlesTableViewController: UITableViewController {
                 {
                 case .Success(let currentNews):
                     print("---start---")
-                    print(currentNews.newsArticles)
+                    //print(currentNews.newsArticles)
+                    for news in currentNews.newsArticles
+                    {
+                        print(news)
+                    }
                     self.articles = currentNews.newsArticles
                     print("---end---")
                     
@@ -79,6 +83,10 @@ class NewsArticlesTableViewController: UITableViewController {
         // Configure the cell...
         let article = articles[indexPath.row]
         //cell.textLabel?.text = article.title
+        
+        print("---Test---")
+        print(article.description)
+        print("---    ---")
         cell.articleTitleLabel.text = article.title
         cell.articleAuthorLabel.text = article.author
 
@@ -102,8 +110,17 @@ class NewsArticlesTableViewController: UITableViewController {
             if let indexPath = self.tableView.indexPathForSelectedRow
             {
                 let controller = segue.destinationViewController as! NewsDetailController
-                controller.navigationItem.leftBarButtonItem = self.splitViewController?.displayModeButtonItem()
-                controller.navigationItem.leftItemsSupplementBackButton = true
+                
+                let article = articles[indexPath.row]
+                
+                print("---Passing data---")
+                print(article.newsDescription)
+                print("--- ---")
+                
+                controller.article = article                 
+                
+                //controller.navigationItem.leftBarButtonItem = self.splitViewController?.displayModeButtonItem()
+                //controller.navigationItem.leftItemsSupplementBackButton = true
             }
         }
     }

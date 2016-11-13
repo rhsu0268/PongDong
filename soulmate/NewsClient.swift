@@ -75,7 +75,7 @@ final class NewsAPIClient: APIClient
                     {
                         newsArticle.author = author
                     }
-                    if let newsDescription = article["newsDescription"] as? String
+                    if let newsDescription = article["description"] as? String
                     {
                         newsArticle.newsDescription = newsDescription
                     }

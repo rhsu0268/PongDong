@@ -226,11 +226,26 @@
                         <viewControllerLayoutGuide type="top" id="R88-Pc-8gv"/>
                         <viewControllerLayoutGuide type="bottom" id="yGu-nm-q7b"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="4yL-rQ-QIY" customClass="NewsDet">
+                    <view key="view" contentMode="scaleToFill" id="4yL-rQ-QIY">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ey5-uk-Fnz">
+                                <rect key="frame" x="166" y="323" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ey5-uk-Fnz" firstAttribute="centerY" secondItem="4yL-rQ-QIY" secondAttribute="centerY" id="nPj-Ag-86H"/>
+                            <constraint firstItem="ey5-uk-Fnz" firstAttribute="centerX" secondItem="4yL-rQ-QIY" secondAttribute="centerX" id="wgB-PT-8s7"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="newsArticleDescriptionLabel" destination="ey5-uk-Fnz" id="Z8P-hG-8Q6"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FeC-jy-h1i" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
