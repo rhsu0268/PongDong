@@ -230,17 +230,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ey5-uk-Fnz">
-                                <rect key="frame" x="166" y="323" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ey5-uk-Fnz">
+                                <rect key="frame" x="16" y="209" width="343" height="248"/>
+                                <string key="text">Donald Trump says social media helped him win the presidential election -- but he'll be "restrained" about using Twitter and Facebook once in power.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="ey5-uk-Fnz" firstAttribute="centerY" secondItem="4yL-rQ-QIY" secondAttribute="centerY" id="nPj-Ag-86H"/>
-                            <constraint firstItem="ey5-uk-Fnz" firstAttribute="centerX" secondItem="4yL-rQ-QIY" secondAttribute="centerX" id="wgB-PT-8s7"/>
+                            <constraint firstItem="ey5-uk-Fnz" firstAttribute="centerY" secondItem="4yL-rQ-QIY" secondAttribute="centerY" id="0qw-7W-D6G"/>
+                            <constraint firstItem="ey5-uk-Fnz" firstAttribute="top" secondItem="R88-Pc-8gv" secondAttribute="bottom" constant="145" id="KKk-l0-4BT"/>
+                            <constraint firstItem="ey5-uk-Fnz" firstAttribute="trailing" secondItem="4yL-rQ-QIY" secondAttribute="trailingMargin" id="U66-qN-T02"/>
+                            <constraint firstItem="ey5-uk-Fnz" firstAttribute="leading" secondItem="4yL-rQ-QIY" secondAttribute="leadingMargin" id="h8N-GL-llY"/>
                         </constraints>
                     </view>
                     <connections>
@@ -249,7 +252,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FeC-jy-h1i" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3097" y="-137"/>
+            <point key="canvasLocation" x="3096.8000000000002" y="-137.18140929535232"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="tD7-Y3-di1">
