@@ -171,5 +171,34 @@ class NewsArticlesTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    
+    @IBAction func refreshNewsArticleData(sender: AnyObject) {
+        newsAPIClient.fetchCurrentNews()
+        {
+            result in
+            switch result
+            {
+                case .Success(let currentNews):
+                    print("---start---")
+                    //print(currentNews.newsArticles)
+                    for news in currentNews.newsArticles
+                    {
+                        print(news)
+                    }
+                    self.articles = currentNews.newsArticles
+                    print("---end---")
+                    
+                case .Failure(let error as NSError):
+                    self.showAlert("Unable to retrieve news", message: error.localizedDescription)
+                    
+                default: break
+                    
+            }
+            self.refreshControl?.endRefreshing()
+        }
+
+    }
+    
 
 }

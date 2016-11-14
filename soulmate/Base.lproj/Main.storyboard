@@ -213,6 +213,12 @@
                             <outlet property="delegate" destination="uUO-GG-I5g" id="uvG-L3-Xrd"/>
                         </connections>
                     </tableView>
+                    <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="fM8-kq-d3R">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <connections>
+                            <action selector="refreshNewsArticleData:" destination="uUO-GG-I5g" eventType="valueChanged" id="1Tm-xP-Fak"/>
+                        </connections>
+                    </refreshControl>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hhz-YD-TRe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
