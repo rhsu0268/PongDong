@@ -244,10 +244,15 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Tg-JD-7Gd">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Tg-JD-7Gd">
                                 <rect key="frame" x="130" y="430" width="114" height="114"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="114" id="WEU-ET-enB"/>
+                                </constraints>
                                 <state key="normal" title="Speak" image="speech-icon-1"/>
+                                <connections>
+                                    <action selector="speakButton:" destination="nTo-mQ-r5v" eventType="touchUpInside" id="LQg-0T-3Ab"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -255,7 +260,10 @@
                             <constraint firstItem="ey5-uk-Fnz" firstAttribute="centerY" secondItem="4yL-rQ-QIY" secondAttribute="centerY" id="0qw-7W-D6G"/>
                             <constraint firstItem="ey5-uk-Fnz" firstAttribute="top" secondItem="R88-Pc-8gv" secondAttribute="bottom" constant="145" id="KKk-l0-4BT"/>
                             <constraint firstItem="ey5-uk-Fnz" firstAttribute="trailing" secondItem="4yL-rQ-QIY" secondAttribute="trailingMargin" id="U66-qN-T02"/>
+                            <constraint firstItem="1Tg-JD-7Gd" firstAttribute="top" secondItem="R88-Pc-8gv" secondAttribute="bottom" constant="366" id="bgB-kC-5Ka"/>
                             <constraint firstItem="ey5-uk-Fnz" firstAttribute="leading" secondItem="4yL-rQ-QIY" secondAttribute="leadingMargin" id="h8N-GL-llY"/>
+                            <constraint firstItem="1Tg-JD-7Gd" firstAttribute="centerX" secondItem="ey5-uk-Fnz" secondAttribute="centerX" id="t4r-Hc-ag2"/>
+                            <constraint firstItem="yGu-nm-q7b" firstAttribute="top" secondItem="1Tg-JD-7Gd" secondAttribute="bottom" constant="123" id="wuf-Tx-Cfq"/>
                         </constraints>
                     </view>
                     <connections>

@@ -7,11 +7,20 @@
 //
 
 import UIKit
+import AVFoundation
 
 class NewsDetailController: UIViewController {
 
     @IBOutlet weak var newsArticleDescriptionLabel: UILabel!
     
+    
+    let speechSynthesizer = AVSpeechSynthesizer()
+    
+    @IBAction func speakButton(sender: UIButton) {
+        let speechUtterance = AVSpeechUtterance(string: newsArticleDescriptionLabel.text!)
+        
+        speechSynthesizer.speakUtterance(speechUtterance)
+    }
     
     var article: NewsArticle?
     {
