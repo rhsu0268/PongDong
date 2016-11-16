@@ -16,8 +16,16 @@ class NewsDetailController: UIViewController {
     
     let speechSynthesizer = AVSpeechSynthesizer()
     
+    var rate: Float!
+    var pitch: Float!
+    var volume: Float!
+    
     @IBAction func speakButton(sender: UIButton) {
         let speechUtterance = AVSpeechUtterance(string: newsArticleDescriptionLabel.text!)
+        
+        speechUtterance.rate = rate
+        speechUtterance.pitchMultiplier = pitch
+        speechUtterance.volume = volume
         
         speechSynthesizer.speakUtterance(speechUtterance)
     }
@@ -58,6 +66,11 @@ class NewsDetailController: UIViewController {
         self.configureView()
         // Do any additional setup after loading the view.
         //newsArticleDescriptionLabel.text = article?.description
+        
+        if !loadSettings()
+        {
+            registerDefaultSettings()
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -75,5 +88,33 @@ class NewsDetailController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    func registerDefaultSettings()
+    {
+        rate = AVSpeechUtteranceDefaultSpeechRate
+        pitch = 1.0
+        volume = 1.0
+        
+        let defaultSpeechSettings: Dictionary<String, AnyObject> = ["rate": rate, "pitch": pitch, "volume": volume]
+        
+        NSUserDefaults.standardUserDefaults().registerDefaults(defaultSpeechSettings)
+        
+    }
+    
+    func loadSettings() -> Bool
+    {
+        let userDefaults = NSUserDefaults.standardUserDefaults() as NSUserDefaults
+        
+        
+        if let theRate: Float = userDefaults.valueForKey("rate") as? Float
+        {
+            rate = theRate
+            pitch = userDefaults.valueForKey("pitch") as! Float
+            volume = userDefaults.valueForKey("volume") as! Float
+            
+            return true
+        }
+        return false
+    }
 
 }
