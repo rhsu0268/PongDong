@@ -254,14 +254,40 @@
                                     <action selector="speakButton:" destination="nTo-mQ-r5v" eventType="touchUpInside" id="LQg-0T-3Ab"/>
                                 </connections>
                             </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="sVm-fk-9Gx">
+                                <rect key="frame" x="18" y="472" width="100" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="woS-Hh-anq">
+                                        <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="wte-Lk-t5n">
+                                                <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qal-s3-LiS">
+                                <rect key="frame" x="14" y="439" width="100" height="100"/>
+                                <state key="normal" image="pause_button"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Emb-SJ-zZA">
+                                <rect key="frame" x="263" y="439" width="100" height="100"/>
+                                <state key="normal" image="stop_button"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="ey5-uk-Fnz" firstAttribute="centerY" secondItem="4yL-rQ-QIY" secondAttribute="centerY" id="0qw-7W-D6G"/>
+                            <constraint firstItem="Emb-SJ-zZA" firstAttribute="leading" secondItem="1Tg-JD-7Gd" secondAttribute="trailing" constant="19" id="6Sp-WA-Cdg"/>
                             <constraint firstItem="ey5-uk-Fnz" firstAttribute="top" secondItem="R88-Pc-8gv" secondAttribute="bottom" constant="145" id="KKk-l0-4BT"/>
+                            <constraint firstItem="yGu-nm-q7b" firstAttribute="top" secondItem="qal-s3-LiS" secondAttribute="bottom" constant="128" id="TK3-sB-bcH"/>
                             <constraint firstItem="ey5-uk-Fnz" firstAttribute="trailing" secondItem="4yL-rQ-QIY" secondAttribute="trailingMargin" id="U66-qN-T02"/>
                             <constraint firstItem="1Tg-JD-7Gd" firstAttribute="top" secondItem="R88-Pc-8gv" secondAttribute="bottom" constant="366" id="bgB-kC-5Ka"/>
+                            <constraint firstItem="1Tg-JD-7Gd" firstAttribute="leading" secondItem="qal-s3-LiS" secondAttribute="trailing" constant="16" id="bsK-GX-wwx"/>
                             <constraint firstItem="ey5-uk-Fnz" firstAttribute="leading" secondItem="4yL-rQ-QIY" secondAttribute="leadingMargin" id="h8N-GL-llY"/>
+                            <constraint firstItem="Emb-SJ-zZA" firstAttribute="top" secondItem="qal-s3-LiS" secondAttribute="top" id="qen-sf-cfF"/>
                             <constraint firstItem="1Tg-JD-7Gd" firstAttribute="centerX" secondItem="ey5-uk-Fnz" secondAttribute="centerX" id="t4r-Hc-ag2"/>
                             <constraint firstItem="yGu-nm-q7b" firstAttribute="top" secondItem="1Tg-JD-7Gd" secondAttribute="bottom" constant="123" id="wuf-Tx-Cfq"/>
                         </constraints>
@@ -272,7 +298,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FeC-jy-h1i" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3096.8000000000002" y="-137.18140929535232"/>
+            <point key="canvasLocation" x="3096.5" y="-137.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="tD7-Y3-di1">
@@ -295,9 +321,11 @@
     </scenes>
     <resources>
         <image name="key-modified.jpg" width="252" height="333"/>
+        <image name="pause_button" width="100" height="100"/>
         <image name="rectangle" width="250" height="101"/>
         <image name="rectangle2-1" width="250" height="101"/>
         <image name="speech-icon-1" width="150" height="150"/>
         <image name="start-2" width="310" height="80"/>
+        <image name="stop_button" width="100" height="100"/>
     </resources>
 </document>
