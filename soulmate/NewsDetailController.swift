@@ -14,6 +14,13 @@ class NewsDetailController: UIViewController {
     @IBOutlet weak var newsArticleDescriptionLabel: UILabel!
     
     
+    @IBOutlet weak var speakButtonLabel: UIButton!
+    
+    
+    @IBOutlet weak var pauseButtonLabel: UIButton!
+    
+    @IBOutlet weak var stopButtonLabel: UIButton!
+    
     let speechSynthesizer = AVSpeechSynthesizer()
     
     var rate: Float!
@@ -21,13 +28,22 @@ class NewsDetailController: UIViewController {
     var volume: Float!
     
     @IBAction func speakButton(sender: UIButton) {
-        let speechUtterance = AVSpeechUtterance(string: newsArticleDescriptionLabel.text!)
         
-        speechUtterance.rate = rate
-        speechUtterance.pitchMultiplier = pitch
-        speechUtterance.volume = volume
+        if !speechSynthesizer.speaking
+        {
+            let speechUtterance = AVSpeechUtterance(string: newsArticleDescriptionLabel.text!)
         
-        speechSynthesizer.speakUtterance(speechUtterance)
+            speechUtterance.rate = rate
+            speechUtterance.pitchMultiplier = pitch
+            speechUtterance.volume = volume
+        
+            speechSynthesizer.speakUtterance(speechUtterance)
+        }
+        else
+        {
+            speechSynthesizer.continueSpeaking()
+        }
+        animateActionButtonAppearaance(true)
     }
     
     var article: NewsArticle?
@@ -66,11 +82,16 @@ class NewsDetailController: UIViewController {
         self.configureView()
         // Do any additional setup after loading the view.
         //newsArticleDescriptionLabel.text = article?.description
+        pauseButtonLabel.alpha = 0.0
+        stopButtonLabel.alpha = 0.0
+        
+        print(AVSpeechSynthesisVoice.speechVoices())
         
         if !loadSettings()
         {
             registerDefaultSettings()
         }
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -116,5 +137,45 @@ class NewsDetailController: UIViewController {
         }
         return false
     }
+    
+    
+    
+    @IBAction func pauseButton(sender: UIButton) {
+        
+        speechSynthesizer.pauseSpeakingAtBoundary(AVSpeechBoundary.Word)
+        
+        animateActionButtonAppearaance(false)
+    }
+    
+    
+    @IBAction func stopButton(sender: UIButton) {
+        
+        speechSynthesizer.stopSpeakingAtBoundary(AVSpeechBoundary.Immediate)
+        
+        animateActionButtonAppearaance(false)
+    }
+    
+    func animateActionButtonAppearaance(shouldHideSpeakButton: Bool)
+    {
+        var speakButtonAlphaValue: CGFloat = 1.0
+        var pauseStopButtonAlphaValue: CGFloat = 0.0
+        
+        if shouldHideSpeakButton
+        {
+            speakButtonAlphaValue = 0.0
+            pauseStopButtonAlphaValue = 1.0
+        }
+        
+        UIView.animateWithDuration(0.25, animations: { () -> Void in
+            
+            self.speakButtonLabel.alpha = speakButtonAlphaValue
+            
+            self.pauseButtonLabel.alpha = pauseStopButtonAlphaValue
+            
+            self.stopButtonLabel.alpha = pauseStopButtonAlphaValue
+            
+        })
+    }
+    
 
 }

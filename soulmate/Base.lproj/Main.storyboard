@@ -271,10 +271,16 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qal-s3-LiS">
                                 <rect key="frame" x="14" y="439" width="100" height="100"/>
                                 <state key="normal" image="pause_button"/>
+                                <connections>
+                                    <action selector="pauseButton:" destination="nTo-mQ-r5v" eventType="touchUpInside" id="kxG-oH-nOO"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Emb-SJ-zZA">
                                 <rect key="frame" x="263" y="439" width="100" height="100"/>
                                 <state key="normal" image="stop_button"/>
+                                <connections>
+                                    <action selector="stopButton:" destination="nTo-mQ-r5v" eventType="touchUpInside" id="Ay9-gA-AvA"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -294,6 +300,9 @@
                     </view>
                     <connections>
                         <outlet property="newsArticleDescriptionLabel" destination="ey5-uk-Fnz" id="Z8P-hG-8Q6"/>
+                        <outlet property="pauseButtonLabel" destination="qal-s3-LiS" id="S24-T3-Xz4"/>
+                        <outlet property="speakButtonLabel" destination="1Tg-JD-7Gd" id="2zu-AO-KGf"/>
+                        <outlet property="stopButtonLabel" destination="Emb-SJ-zZA" id="5ff-Sr-KBd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FeC-jy-h1i" userLabel="First Responder" sceneMemberID="firstResponder"/>
