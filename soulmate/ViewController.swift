@@ -11,6 +11,9 @@ import MapKit
 
 class ViewController: UIViewController {
     
+    
+    let manager = locationManager()
+    
     //@IBOutlet weak var tableView: UITableView!
     var locationManager: CLLocationManager?
     var startLocation: CLLocation?
@@ -29,7 +32,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        
+        manager.getPermission()
         
         // start network request to alchemyapi
         
