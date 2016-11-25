@@ -12,7 +12,7 @@ import MapKit
 class ViewController: UIViewController {
     
     
-    let manager = locationManager()
+    let manager = LocationManager()
     
     //@IBOutlet weak var tableView: UITableView!
     var locationManager: CLLocationManager?

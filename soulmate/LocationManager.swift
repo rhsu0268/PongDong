@@ -23,6 +23,7 @@ final class LocationManager: NSObject, CLLocationManagerDelegate
     {
         super.init()
         manager.delegate = self
+        manager.desiredAccuracy = kCLLocationAccuracyBest
         
         
     }
@@ -37,5 +38,22 @@ final class LocationManager: NSObject, CLLocationManagerDelegate
             manager.requestWhenInUseAuthorization()
         }
     
+    }
+    
+    // MARK: CLLocationManagerDelegate
+    
+    func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
+        if status == .AuthorizedWhenInUse
+        {
+            manager.requestLocation()
+        }
+    }
+    
+    func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {
+        print(error.description)
+    }
+    
+    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        <#code#>
     }
 }
