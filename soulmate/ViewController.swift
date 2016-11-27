@@ -9,7 +9,7 @@
 import UIKit
 import MapKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, MKMapViewDelegate {
     
     
     let manager = LocationManager()
@@ -33,7 +33,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         manager.getPermission()
-        manager.onLocationFix = { [weak self] coordinate in
+        manager.onLocationFix = { coordinate in
             
             print("---LocationManager---")
             print(coordinate)
@@ -184,7 +184,7 @@ class ViewController: UIViewController {
         
         // set up the locationManager
         locationManager = CLLocationManager()
-        locationManager?.delegate = self
+        //locationManager?.delegate = self
         locationManager?.desiredAccuracy = kCLLocationAccuracyBest
         locationManager?.requestWhenInUseAuthorization()
     }
@@ -206,11 +206,17 @@ class ViewController: UIViewController {
         presentViewController(alertController, animated: true, completion: nil)
     }
     
+    // MARK: MKMapViewDelegate
+    
+    func mapView(mapView: MKMapView, didUpdateUserLocation userLocation: MKUserLocation) {
+        //
+    }
+    
 
 
 }
 
-
+/*
 extension ViewController: MKMapViewDelegate
 {
     func mapViewWillStartRenderingMap(mapView: MKMapView)
@@ -218,7 +224,12 @@ extension ViewController: MKMapViewDelegate
         print("rendering")
     }
 }
+*/
 
+
+
+
+/*
 // implement the CLLocationManagerDelegate protocol 
 extension ViewController: CLLocationManagerDelegate
 {
@@ -263,5 +274,5 @@ extension ViewController: CLLocationManagerDelegate
 }
 
 
-
+*/
 
