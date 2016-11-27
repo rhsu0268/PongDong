@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "soulmate/ViewController.swift"
-            timestampString = "501916735.56697"
+            timestampString = "501917201.693576"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "206"
-            endingLineNumber = "206">
+            startingLineNumber = "212"
+            endingLineNumber = "212">
             <Locations>
                <Location
                   shouldBeEnabled = "No"

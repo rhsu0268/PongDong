@@ -33,7 +33,13 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         manager.getPermission()
-        
+        manager.onLocationFix = { [weak self] coordinate in
+            
+            print("---LocationManager---")
+            print(coordinate)
+            print("---")
+            
+        }
       
         
         // start network request to alchemyapi
