@@ -173,20 +173,20 @@ class ViewController: UIViewController, MKMapViewDelegate {
         //mapView.setRegion(region, animated: true)
         
         
-        mapView.delegate = self
-        mapView.mapType = .Standard
-        mapView.rotateEnabled = false
+        //mapView.delegate = self
+        //mapView.mapType = .Standard
+        //mapView.rotateEnabled = false
         //mapView.addAnnotation(userLocation)
         
-        let regionRadius: CLLocationDistance = 15000
-        let coordinateRegion = MKCoordinateRegionMakeWithDistance((userLocation.location.coordinate), regionRadius, regionRadius)
-        mapView.setRegion(coordinateRegion, animated: true)
+        //let regionRadius: CLLocationDistance = 15000
+        //let coordinateRegion = MKCoordinateRegionMakeWithDistance((userLocation.location.coordinate), regionRadius, regionRadius)
+        //mapView.setRegion(coordinateRegion, animated: true)
         
         // set up the locationManager
-        locationManager = CLLocationManager()
+        //locationManager = CLLocationManager()
         //locationManager?.delegate = self
-        locationManager?.desiredAccuracy = kCLLocationAccuracyBest
-        locationManager?.requestWhenInUseAuthorization()
+        //locationManager?.desiredAccuracy = kCLLocationAccuracyBest
+        //locationManager?.requestWhenInUseAuthorization()
     }
 
     override func didReceiveMemoryWarning() {
@@ -209,7 +209,14 @@ class ViewController: UIViewController, MKMapViewDelegate {
     // MARK: MKMapViewDelegate
     
     func mapView(mapView: MKMapView, didUpdateUserLocation userLocation: MKUserLocation) {
-        //
+        // create a region instance
+        
+        var region = MKCoordinateRegion()
+        region.center = mapView.userLocation.coordinate
+        region.span.latitudeDelta = 0.01
+        region.span.longitudeDelta = 0.01
+        
+        mapView.setRegion(region, animated: true)
     }
     
 
