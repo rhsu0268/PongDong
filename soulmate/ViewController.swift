@@ -34,10 +34,7 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         manager.getPermission()
         
-        manager.onLocationFix = { coordinate in
-            
-            
-        }
+      
         
         // start network request to alchemyapi
         
@@ -236,8 +233,8 @@ extension ViewController: CLLocationManagerDelegate
         else
         {
             guard let latest = locations.first else { return }
-            let distanceInMeters = startLocation?.distanceFromLocation(latest)
-            print("distance in meters: \(distanceInMeters!)")
+            //let distanceInMeters = startLocation?.distanceFromLocation(latest)
+            //print("distance in meters: \(distanceInMeters!)")
         }
     }
     
@@ -259,27 +256,6 @@ extension ViewController: CLLocationManagerDelegate
     }
 }
 
-/*
-extension ViewController:UITableViewDataSource
-{
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return newsArticles.count
-    }
-    
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("newsArticleCell", forIndexPath: indexPath)
-        
-        let newsArticle = newsArticles[indexPath.row]
-        print("---newsArticle---")
-        print(newsArticle)
-        print("---")
-        cell.textLabel?.text = newsArticle.title
-        cell.detailTextLabel?.text = newsArticle.url
-        
-        return cell
-    }
-}
- */
 
 
 

@@ -73,6 +73,7 @@ final class LocationManager: NSObject, CLLocationManagerDelegate
         print(location)
         
         let coordinate = Coordinate(location: location)
+        
         if let onLocationFix = onLocationFix
         {
             onLocationFix(coordinate)
