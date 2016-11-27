@@ -9,6 +9,15 @@
 import Foundation
 import CoreLocation
 
+extension Coordinate
+{
+    init(location: CLLocation)
+    {
+        latitude = location.coordinate.latitude
+        longitude = location.coordinate.longitude
+    }
+}
+
 
 // Location Manager is delegate to CLLocationManager
 
@@ -17,6 +26,8 @@ final class LocationManager: NSObject, CLLocationManagerDelegate
 {
     // need a location manager to ask for permission from the user
     let manager = CLLocationManager()
+    
+    var onLocationFix: (Coordinate -> Void)?
     
     
     override init()
@@ -54,6 +65,17 @@ final class LocationManager: NSObject, CLLocationManagerDelegate
     }
     
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        <#code#>
+        // get location
+        
+        guard let location = locations.first else { return }
+        
+        
+        print(location)
+        
+        let coordinate = Coordinate(location: location)
+        if let onLocationFix = onLocationFix
+        {
+            onLocationFix(coordinate)
+        }
     }
 }

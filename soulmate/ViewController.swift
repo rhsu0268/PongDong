@@ -34,6 +34,11 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         manager.getPermission()
         
+        manager.onLocationFix = { coordinate in
+            
+            
+        }
+        
         // start network request to alchemyapi
         
         /*
