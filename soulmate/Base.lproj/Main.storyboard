@@ -81,6 +81,9 @@
                                     <constraint firstAttribute="height" constant="426" id="mc4-ga-kY9"/>
                                     <constraint firstAttribute="width" constant="414" id="wRf-Qk-thT"/>
                                 </constraints>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="8ag-Gq-sDx"/>
+                                </connections>
                             </mapView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YLc-pF-y6b" userLabel="AlertsButton">
                                 <rect key="frame" x="256.5" y="617" width="138" height="50"/>

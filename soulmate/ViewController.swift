@@ -21,7 +21,7 @@ class ViewController: UIViewController, MKMapViewDelegate {
     
     
     var myGroup = dispatch_group_create()
-    
+    var coordinate: Coordinate?
     
     @IBOutlet weak var mapView: MKMapView!
     
@@ -33,10 +33,11 @@ class ViewController: UIViewController, MKMapViewDelegate {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         manager.getPermission()
-        manager.onLocationFix = { coordinate in
+        manager.onLocationFix = { [weak self] coordinate in
             
             print("---LocationManager---")
             print(coordinate)
+            self?.coordinate = coordinate
             print("---")
             
         }
@@ -211,13 +212,23 @@ class ViewController: UIViewController, MKMapViewDelegate {
     func mapView(mapView: MKMapView, didUpdateUserLocation userLocation: MKUserLocation) {
         // create a region instance
         
+        //let userLocation = UserLocation(name: "You", type: "You are here!", imageName: "yourLocation.png", latitude: 38.9075, longitude: -77.0365)
         var region = MKCoordinateRegion()
+        print("---Inside mapview---")
+        print(mapView.userLocation.coordinate)
+        print("--- ---")
         region.center = mapView.userLocation.coordinate
-        region.span.latitudeDelta = 0.01
-        region.span.longitudeDelta = 0.01
         
+        region.span.latitudeDelta = 0.1
+        region.span.longitudeDelta = 0.1
+        
+  
+        //let regionRadius: CLLocationDistance = 15000
+        //let coordinateRegion = MKCoordinateRegionMakeWithDistance((userLocation.location.coordinate), regionRadius, regionRadius)
+        //mapView.setRegion(coordinateRegion, animated: true)
         mapView.setRegion(region, animated: true)
     }
+ 
     
 
 
