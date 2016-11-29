@@ -31,46 +31,44 @@ protocol FourSquareJSONDecodable
 
 protocol FourSquareEndpoint
 {
-    //var baseURL: String { get }
-    //var path: String { get }
-    var request: NSURLRequest { get }
-    //var parameters: [String : AnyObject] { get }
+    var baseURL: String { get }
+    var path: String { get }
+    var parameters: [String: AnyObject] { get }
     
 }
 
-/*
- extension Endpoint
- {
- // create an object that contains one name, value pair.
- // doesn't acutally encode the pairs.
- 
- var queryComponents: [NSURLQueryItem]
- {
- var components = [NSURLQueryItem]()
- 
- for (key, value) in parameters
- {
- let queryItem = NSURLQueryItem(name: key, value: "\(value)")
- components.append(queryItem)
- }
- return components
- }
- 
- var request: NSURLRequest
- {
- let components = NSURLComponents(string: baseURL)!
- components.path = path
- components.queryItems = queryComponents
- 
- 
- 
- let url = components.URL!
- return NSURLRequest(URL: url)
- 
- 
- }
- }
- */
+
+extension FourSquareEndpoint
+{
+    var queryComponents: [NSURLQueryItem]
+    {
+        var components = [NSURLQueryItem]()
+        
+        for (key, value) in parameters
+        {
+            let queryItem = NSURLQueryItem(name: key, value: "\(value)")
+            components.append(queryItem)
+        }
+        
+        return components
+    }
+    
+    
+    var request: NSURLRequest
+    {
+        let components = NSURLComponents(string: baseURL)!
+        components.path = path
+        components.queryItems = queryComponents
+        
+        
+        //components.percentEncodedQuery
+        
+        let url = components.URL!
+        
+        return NSURLRequest(URL: url)
+    }
+}
+
 protocol FourSquareAPIClient
 {
     var configuration: NSURLSessionConfiguration { get }
