@@ -219,8 +219,8 @@ class ViewController: UIViewController, MKMapViewDelegate {
         print("--- ---")
         region.center = mapView.userLocation.coordinate
         
-        region.span.latitudeDelta = 0.1
-        region.span.longitudeDelta = 0.1
+        region.span.latitudeDelta = 0.01
+        region.span.longitudeDelta = 0.01
         
   
         //let regionRadius: CLLocationDistance = 15000
