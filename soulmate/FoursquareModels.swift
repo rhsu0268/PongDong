@@ -14,6 +14,7 @@ struct Coordinate
     let longitude: Double
 }
 
+// get a string out of coordinate
 extension Coordinate: CustomStringConvertible
 {
     var description: String

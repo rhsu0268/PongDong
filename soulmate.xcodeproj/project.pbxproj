@@ -111,6 +111,7 @@
 				D1DC2F181D52839200921DAC /* UserLocation.swift */,
 				D107A9301D9616E200E7D74A /* NewsInformation.swift */,
 				D161D0141DC43B0B00CABEB8 /* NewsArticle.swift */,
+				D19A1ADF1DCA47FB00C9CE4D /* FoursquareModels.swift */,
 			);
 			name = model;
 			sourceTree = "<group>";
@@ -155,7 +156,6 @@
 				D19C528E1DBC56F600D664B4 /* NewsClient.swift */,
 				D19A1ADD1DCA46A500C9CE4D /* FourSquareClient.swift */,
 				D1285A721DED2E09000DF187 /* FourSquareAPIClient.swift */,
-				D19A1ADF1DCA47FB00C9CE4D /* FoursquareModels.swift */,
 				D1285A701DE407B0000DF187 /* LocationManager.swift */,
 			);
 			path = soulmate;
