@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum FourSquare
+enum FourSquare : FourSquareEndpoint
 {
     // search endpoint
     case Venues(VenueEndpoint)
@@ -129,6 +129,36 @@ enum FourSquare
         }
         
         
+    }
+    
+    
+    // MARK: Foursquare - FourSquareEndpoint
+    
+    var baseURL: String
+    {
+        switch self
+        {
+            case .Venues(let endpoint):
+                return endpoint.baseURL
+        }
+    }
+    
+    var path: String
+    {
+        switch self
+        {
+            case .Venues(let endpoint):
+                return endpoint.path
+        }
+    }
+    
+    var parameters: [String : AnyObject]
+    {
+        switch self
+        {
+        case .Venues(let endpoint):
+            return endpoint.parameters
+        }
     }
 
 }
