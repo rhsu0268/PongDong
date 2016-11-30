@@ -67,6 +67,66 @@ enum FourSquare
             }
         }
         
+        private struct ParameterKeys
+        {
+            static let clientID = "client_id"
+            static let clientSecret = "client_secret"
+            static let version = "v"
+            static let category = "categoryId"
+            static let location = "ll"
+            static let query = "query"
+            static let limit = "limit"
+            static let searchRadius = "radius"
+        }
+        
+        private struct DefaultValues
+        {
+            static let version = "20160301"
+            static let limit = "50"
+            static let searchRadius = "2000"
+        }
+        
+        var parameters: [String : AnyObject]
+        {
+            switch self
+            {
+                case .Search(let clientID, let clientSecret, let coordinate, let category, let query, let searchRadius, let limit):
+                
+                    var parameters: [String : AnyObject] = [
+                    
+                        ParameterKeys.clientID : clientID,
+                        ParameterKeys.clientSecret : clientSecret,
+                        ParameterKeys.version : DefaultValues.version,
+                        ParameterKeys.location : coordinate.description,
+                        ParameterKeys.category : category.description
+    
+                    ]
+                    
+                    if let searchRadius = searchRadius
+                    {
+                        parameters[ParameterKeys.searchRadius] = searchRadius
+                    }
+                    else
+                    {
+                        parameters[ParameterKeys.searchRadius] = DefaultValues.searchRadius
+                    }
+                    
+                    if let limit = limit
+                    {
+                        parameters[ParameterKeys.limit] = limit
+                    }
+                    else
+                    {
+                        parameters[ParameterKeys.limit] = DefaultValues.limit
+                    }
+                    
+                    if let query = query
+                    {
+                        parameters[ParameterKeys.query] = query
+                    }
+                    return parameters
+            }
+        }
         
         
     }
