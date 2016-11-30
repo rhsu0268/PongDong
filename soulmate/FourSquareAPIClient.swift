@@ -178,7 +178,7 @@ extension FourSquareAPIClient
     }
     
     
-    func fetch <T: JSONDecodable>(fourSquareEndpoint: FourSquareEndpoint, parse: JSON -> [T]?, completion: APIResult<[T]> -> Void)
+    func fetch <T: FourSquareJSONDecodable>(fourSquareEndpoint: FourSquareEndpoint, parse: JSON -> [T]?, completion: APIResult<[T]> -> Void)
         
         
     {
@@ -228,4 +228,58 @@ extension FourSquareAPIClient
         task.resume()
         
     }
+}
+
+
+// make a class that interfaces with the FourSquareAPIClient
+// conform FourSquareAPIClient protocol
+final class FoursquareClient: FourSquareAPIClient
+{
+    let configuration: NSURLSessionConfiguration
+    
+    lazy var session: NSURLSession = {
+        return NSURLSession(configuration: self.configuration)
+    }()
+    
+    let clientID: String
+    let clientSecret: String
+    
+    init(configuration: NSURLSessionConfiguration, clientID: String, clientSecret: String)
+    
+    {
+        self.configuration = configuration
+        self.clientID = clientID
+        self.clientSecret = clientSecret
+    }
+    
+    convenience init(clientID: String, clientSecret: String)
+    {
+        self.init(configuration: .defaultSessionConfiguration(), clientID: clientID, clientSecret:clientSecret)
+    }
+    
+    // wrapper method to fetch restarunts
+    func fetchRestaurantsFor(location: Coordinate, category: FourSquare.VenueEndpoint.Category , query: String? = nil, searchRadius: Int? = nil, limit: Int? = nil, completion: APIResult<[Venue]> -> Void)
+    {
+        
+        let searchEndpoint = FourSquare.VenueEndpoint.Search(clientID: self.clientID, clientSecret: self.clientSecret, coordinate: location, category: category, query: query, searchRadius: searchRadius, limit: limit)
+        
+        let endpoint = FourSquare.Venues(searchEndpoint)
+        
+        fetch(endpoint, parse: { json -> [Venue]? in
+            
+            guard let venues = json["response"]?["venues"] as? [[String : AnyObject]] else
+            {
+                return nil
+            }
+            
+            return venues.flatMap { venueDict in
+                
+                return Venue(JSON: venueDict)
+            }
+            
+            
+        }, completion: completion)
+    }
+    
+    
 }
