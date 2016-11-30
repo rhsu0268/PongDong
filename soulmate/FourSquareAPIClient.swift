@@ -77,6 +77,9 @@ protocol FourSquareAPIClient
     func JSONTaskWithRequest(request: NSURLRequest, completion: JSONTaskCompletion) -> JSONTask
     func fetch<T: JSONDecodable>(request: NSURLRequest, parse: JSON -> T?, completion: APIResult <T> -> Void)
     
+    
+    
+    
 }
 
 extension FourSquareAPIClient
@@ -95,7 +98,7 @@ extension FourSquareAPIClient
                     
                 ]
                 
-                let error = NSError(domain: TRENetworkingErrorDomain, code: MissingHttpResponseError, userInfo: userInfo)
+                let error = NSError(domain: FTRENetworkingErrorDomain, code: FMissingHttpResponseError, userInfo: userInfo)
                 
                 
                 completion(nil, nil, error)
@@ -166,11 +169,63 @@ extension FourSquareAPIClient
                 }
                 else
                 {
-                    let error = NSError(domain: TRENetworkingErrorDomain, code: UnexpectedResponseError, userInfo: nil)
+                    let error = NSError(domain: FTRENetworkingErrorDomain, code: FUnexpectedResponseError, userInfo: nil)
                     completion(.Failure(error))
                 }
             }
         }
         task.resume()
+    }
+    
+    
+    func fetch <T: JSONDecodable>(fourSquareEndpoint: FourSquareEndpoint, parse: JSON -> [T]?, completion: APIResult<[T]> -> Void)
+        
+        
+    {
+        
+        
+        /// takes endpoint directly
+        
+        let request = fourSquareEndpoint.request
+        
+        let task = JSONTaskWithRequest(request)
+        {
+            json, response, error in
+            
+            //print("---")
+            //print(json)
+            //print("---")
+            
+            dispatch_async(dispatch_get_main_queue())
+            {
+                guard let json = json else
+                {
+                    if let error = error
+                    {
+                        completion(.Failure(error))
+                    }
+                    else
+                    {
+                        fatalError("Both json and error variables are set to nil")
+                    }
+                    return
+                }
+                
+                if let value = parse(json)
+                {
+                    //print("---parsing---")
+                    //print(value)
+                    //print("---")
+                    completion(.Success(value))
+                }
+                else
+                {
+                    let error = NSError(domain: FTRENetworkingErrorDomain, code: FUnexpectedResponseError, userInfo: nil)
+                    completion(.Failure(error))
+                }
+            }
+        }
+        task.resume()
+        
     }
 }
