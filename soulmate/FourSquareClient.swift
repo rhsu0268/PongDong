@@ -13,7 +13,7 @@ enum FourSquare
     // search endpoint
     case Venues(VenueEndpoint)
     
-    enum VenueEndpoint
+    enum VenueEndpoint : FourSquareEndpoint
     {
         case Search(clientID: String, clientSecret: String, coordinate: Coordinate, category: Category, query: String?, searchRadius: Int?, limit: Int?)
         
@@ -50,6 +50,24 @@ enum FourSquare
                 }
             }
         }
+        
+        
+        // MARK: Venue Endpoint - FourSquareEdpoint
+        var baseURL: String
+        {
+            return "http://api.foursquare.com"
+        }
+        
+        
+        var path: String
+        {
+            switch self
+            {
+                case .Search: return "/v2/venues/search"
+            }
+        }
+        
+        
         
     }
 
