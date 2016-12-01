@@ -21,8 +21,10 @@ class ViewController: UIViewController, MKMapViewDelegate {
     
     
     var myGroup = dispatch_group_create()
-    var coordinate: Coordinate?
+    //var coordinate: Coordinate?
+    var coordinate = Coordinate(latitude: 38.897547, longitude: -77.05191)
     
+    let fourSquareClient = FoursquareClient(clientID: "XT5GDVEGI5LKPYG13BIT05Q0JSIWRCKFBVGSAQ3MYNMATULL", clientSecret: "QJBM0MGDWYFZ3GHAANWLM2T1CTIZUXJ3Q0UQCQAXQGZSSXQC")
     @IBOutlet weak var mapView: MKMapView!
     
     lazy var newsAPIClient = {
@@ -41,7 +43,21 @@ class ViewController: UIViewController, MKMapViewDelegate {
             print("---")
             
         }
-      
+        
+        fourSquareClient.fetchRestaurantsFor(coordinate, category: .Food(nil)) {
+            
+            result in
+            switch result
+            {
+                case .Success(let venues):
+                    print(venues)
+                case .Failure(let error):
+                    print(error)
+            }
+    
+        
+            
+        }
         
         // start network request to alchemyapi
         
@@ -170,7 +186,7 @@ class ViewController: UIViewController, MKMapViewDelegate {
             self.tableView.reloadData()
         })
         */
-        let userLocation = UserLocation(name: "You", type: "You are here!", imageName: "yourLocation.png", latitude: 38.9075, longitude: -77.0365)
+        //let userLocation = UserLocation(name: "You", type: "You are here!", imageName: "yourLocation.png", latitude: 38.9075, longitude: -77.0365)
         //mapView.setRegion(region, animated: true)
         
         
