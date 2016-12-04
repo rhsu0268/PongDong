@@ -25,6 +25,17 @@ class ViewController: UIViewController, MKMapViewDelegate {
     var coordinate = Coordinate(latitude: 38.897547, longitude: -77.05191)
     
     let fourSquareClient = FoursquareClient(clientID: "XT5GDVEGI5LKPYG13BIT05Q0JSIWRCKFBVGSAQ3MYNMATULL", clientSecret: "QJBM0MGDWYFZ3GHAANWLM2T1CTIZUXJ3Q0UQCQAXQGZSSXQC")
+    
+    var venues : [Venue] = []
+    {
+        didSet
+        {
+            //tableView.reloadData()
+        }
+            
+    }
+    
+    
     @IBOutlet weak var mapView: MKMapView!
     
     lazy var newsAPIClient = {
@@ -50,7 +61,8 @@ class ViewController: UIViewController, MKMapViewDelegate {
             switch result
             {
                 case .Success(let venues):
-                    print(venues)
+                    //print(venues)
+                    self.venues = venues
                 case .Failure(let error):
                     print(error)
             }
@@ -58,6 +70,7 @@ class ViewController: UIViewController, MKMapViewDelegate {
         
             
         }
+        
         
         // start network request to alchemyapi
         
@@ -244,11 +257,39 @@ class ViewController: UIViewController, MKMapViewDelegate {
         //mapView.setRegion(coordinateRegion, animated: true)
         mapView.setRegion(region, animated: true)
     }
- 
     
+    // MARK: - Table view data source
+    /*
+    func numberOfSections(in tableView: UITableView) -> Int {
+        // #warning Incomplete implementation, return the number of sections
+        return 1
+    }
+    
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        // #warning Incomplete implementation, return the number of rows
+        //return //articles.count
+        return venues.count
+    }
+    
+    
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("RestaurantCell", forIndexPath: indexPath) as! RestaurantCell
+        
+        let venue = venues[indexPath.row]
+        cell.restaurantTitleLabel.text = venue.name
+        cell.restaurantCheckinLabel.text = venue.checkins.description
+        cell.restaurantCategoryLabel.text = venue.categoryName
+        
+        
+        return cell
+    }
+
+    */
 
 
 }
+
+
 
 /*
 extension ViewController: MKMapViewDelegate
