@@ -111,28 +111,41 @@
                                     <constraint firstAttribute="height" constant="225" id="P6o-uA-g7h"/>
                                 </constraints>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="newsArticleCell" textLabel="K7n-3j-g1w" detailTextLabel="BWO-Pj-McP" style="IBUITableViewCellStyleSubtitle" id="nzx-Ae-Jzn">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="newsArticleCell" id="nzx-Ae-Jzn">
                                         <rect key="frame" x="0.0" y="28" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="nzx-Ae-Jzn" id="bz4-gM-y6i">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="K7n-3j-g1w">
-                                                    <rect key="frame" x="15" y="4" width="34" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="The Cheesecake Factory" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7LY-qZ-n4S">
+                                                    <rect key="frame" x="33" y="11" width="190" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="BWO-Pj-McP">
-                                                    <rect key="frame" x="15" y="25" width="44" height="15"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ASe-On-hee">
+                                                    <rect key="frame" x="105" y="11" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b2c-jn-Kjm">
+                                                    <rect key="frame" x="334" y="12" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="7LY-qZ-n4S" firstAttribute="centerY" secondItem="bz4-gM-y6i" secondAttribute="centerY" id="THX-Bm-KFo"/>
+                                                <constraint firstItem="b2c-jn-Kjm" firstAttribute="centerY" secondItem="bz4-gM-y6i" secondAttribute="centerY" id="aph-pf-spd"/>
+                                                <constraint firstItem="ASe-On-hee" firstAttribute="leading" secondItem="bz4-gM-y6i" secondAttribute="leading" constant="105" id="dz4-XR-gPz"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="b2c-jn-Kjm" secondAttribute="trailing" id="gt8-29-4gV"/>
+                                                <constraint firstItem="ASe-On-hee" firstAttribute="baseline" secondItem="7LY-qZ-n4S" secondAttribute="baseline" id="hxW-eg-aq4"/>
+                                                <constraint firstItem="7LY-qZ-n4S" firstAttribute="leading" secondItem="bz4-gM-y6i" secondAttribute="leadingMargin" id="ie2-3O-WF7"/>
+                                                <constraint firstItem="ASe-On-hee" firstAttribute="leading" secondItem="7LY-qZ-n4S" secondAttribute="trailing" constant="30" id="q7G-ef-pnj"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
@@ -181,7 +194,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="TPG-6o-ZxT" id="cvu-iy-MO9">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pathway to 270" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l5u-zm-y4C">
