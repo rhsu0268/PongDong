@@ -54,3 +54,8 @@ extension Endpoint
         return URLRequest(url: url)
     }
 }
+
+
+typealias JSON = [String : AnyObject]
+typealias JSONCompletion = (JSON?, HTTPURLResponse?, NSError?) -> Void
+typealias JSONTask = URLSessionDataTask
