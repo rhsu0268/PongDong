@@ -68,7 +68,36 @@ enum APIResult<T>
 }
 
 
+protocol APIClient
+{
+    var configuration: URLSessionConfiguration { get }
+    var session: URLSession { get }
+    
+    func JSONTaskWithRequest(_ request: URLRequest, completion: @escaping JSONCompletion) -> JSONTask
+    
+}
 
+extension APIClient
+
+{
+    func JSONTaskWithRequest(_ request: URLRequest, completion: @escaping JSONCompletion) -> JSONTask
+    {
+        let task = session.dataTask(with: request, completionHandler: { data, response, error in
+            
+            guard let HTTPResponse = response as? HTTPURLResponse else {
+                let userInfo = [NSLocalizedDescriptionKey : NSLocalizedString("Missing HTTP Response", comment: "")]
+                let error = NSError(domain: soulLifeNetworkingErrorDomain, code: MissingHTTPResponseError, userInfo: userInfo)
+                completion(nil, nil, error)
+                return
+                
+                
+            }
+            
+            
+        })
+    }
+
+}
 
 
 
