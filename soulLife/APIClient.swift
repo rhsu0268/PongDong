@@ -59,3 +59,36 @@ extension Endpoint
 typealias JSON = [String : AnyObject]
 typealias JSONCompletion = (JSON?, HTTPURLResponse?, NSError?) -> Void
 typealias JSONTask = URLSessionDataTask
+
+
+enum APIResult<T>
+{
+    case success(T)
+    case failure(Error)
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
