@@ -94,9 +94,38 @@ extension APIClient
             }
             
             
+            if data == nil
+            {
+                if let error = error
+                {
+                    completion(nil, HTTPResponse, error as NSError?)
+                }
+            }
+            else
+            {
+                switch HTTPResponse.statusCode
+                {
+                    case 200:
+                        do
+                        {
+                            let json = try JSONSerialization.jsonObject(with: data!, options: []) as? [String : AnyObject]
+                            completion(json, HTTPResponse, nil)
+                            
+                        }
+                        catch let error as NSError
+                        {
+                            completion(nil, HTTPResponse, error)
+                        }
+                    default:
+                        print("Recieved HTTP response: \(HTTPResponse.statusCode), which was not handled!")
+                }
+            }
+            
+            
         })
+        return task
     }
-    return task
+    
 
 }
 
