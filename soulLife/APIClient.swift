@@ -138,13 +138,27 @@ extension APIClient
                 {
                     if let error = error
                     {
-                        completion(.failure)
+                        completion(.failure(error))
                     }
+                    else
+                    {
+                        
+                    }
+                    return
+                }
+                
+                if let resource = parse(json)
+                {
+                    completion(.success(resource))
+                }
+                else
+                {
+                    let error = NSError(domain: soulLifeNetworkingErrorDomain, code: UnexpectedResponseError, userInfo: nil)
+                    completion(.failure(error))
                 }
             }
-            
-            
         }
+        task.resume()
     }
     
 
