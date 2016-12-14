@@ -126,6 +126,27 @@ extension APIClient
         return task
     }
     
+    
+    func fetch<T>(_ request: URLRequest, parse: @escaping (JSON) -> T?, completion: @escaping
+    (APIResult<T>) -> Void)
+    {
+        let task = JSONTaskWithRequest(request) { json, response, error in
+            
+            DispatchQueue.main.async
+            {
+                guard let json = json else
+                {
+                    if let error = error
+                    {
+                        completion(.failure)
+                    }
+                }
+            }
+            
+            
+        }
+    }
+    
 
 }
 
