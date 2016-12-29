@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D11BA1E61E15C2AB00222DEC /* FoursquareClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D11BA1E51E15C2AB00222DEC /* FoursquareClient.swift */; };
+		D11BA1E81E15CDEA00222DEC /* FoursquareModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = D11BA1E71E15CDEA00222DEC /* FoursquareModels.swift */; };
 		D11C2F3F1DF8DA9B00CC3FBA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D11C2F3E1DF8DA9B00CC3FBA /* AppDelegate.swift */; };
 		D11C2F411DF8DA9B00CC3FBA /* RootController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D11C2F401DF8DA9B00CC3FBA /* RootController.swift */; };
 		D11C2F441DF8DA9B00CC3FBA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D11C2F421DF8DA9B00CC3FBA /* Main.storyboard */; };
@@ -16,6 +18,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D11BA1E51E15C2AB00222DEC /* FoursquareClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoursquareClient.swift; sourceTree = "<group>"; };
+		D11BA1E71E15CDEA00222DEC /* FoursquareModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoursquareModels.swift; sourceTree = "<group>"; };
 		D11C2F3B1DF8DA9B00CC3FBA /* soulLife.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = soulLife.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D11C2F3E1DF8DA9B00CC3FBA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D11C2F401DF8DA9B00CC3FBA /* RootController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootController.swift; sourceTree = "<group>"; };
@@ -63,6 +67,8 @@
 				D11C2F471DF8DA9B00CC3FBA /* LaunchScreen.storyboard */,
 				D11C2F4A1DF8DA9B00CC3FBA /* Info.plist */,
 				D11C2F501DF8FBB200CC3FBA /* APIClient.swift */,
+				D11BA1E51E15C2AB00222DEC /* FoursquareClient.swift */,
+				D11BA1E71E15CDEA00222DEC /* FoursquareModels.swift */,
 			);
 			path = soulLife;
 			sourceTree = "<group>";
@@ -141,6 +147,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				D11C2F411DF8DA9B00CC3FBA /* RootController.swift in Sources */,
+				D11BA1E61E15C2AB00222DEC /* FoursquareClient.swift in Sources */,
+				D11BA1E81E15CDEA00222DEC /* FoursquareModels.swift in Sources */,
 				D11C2F3F1DF8DA9B00CC3FBA /* AppDelegate.swift in Sources */,
 				D11C2F511DF8FBB200CC3FBA /* APIClient.swift in Sources */,
 			);
