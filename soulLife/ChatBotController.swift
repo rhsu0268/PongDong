@@ -26,7 +26,7 @@ class ChatbotController: UIViewController, SFSpeechRecognizerDelegate {
 
         // Do any additional setup after loading the view.
         microphoneButton.isEnabled = false
-        speechRecognizer.delegate = self
+        speechRecognizer?.delegate = self
         
         SFSpeechRecognizer.requestAuthorization
         {
