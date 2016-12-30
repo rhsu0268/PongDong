@@ -19,11 +19,48 @@ class ChatbotController: UIViewController, SFSpeechRecognizerDelegate {
     
     @IBOutlet weak var microphoneButton: UIButton!
     
+    private let speechRecognizer = SFSpeechRecognizer(locale: Locale.init(identifier: "en-US"))
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        microphoneButton.isEnabled = false
+        speechRecognizer.delegate = self
+        
+        SFSpeechRecognizer.requestAuthorization
+        {
+            (authStatus) in
+            
+            
+            var isMicrophoneButtonEnabled = false
+            
+            switch authStatus
+            {
+                case .authorized:
+                    isMicrophoneButtonEnabled = true
+                
+                case .denied:
+                    isMicrophoneButtonEnabled = false
+                    print("User denied access to speech recognition!")
+                
+                case .restricted:
+                    isMicrophoneButtonEnabled = false
+                    print("Speech recognition restricted on this device!")
+                case .notDetermined:
+                    isMicrophoneButtonEnabled = false
+                    print("Speech recognition not yet authorized!")
+            }
+            
+            OperationQueue.main.addOperation()
+            {
+                self.microphoneButton.isEnabled = isMicrophoneButtonEnabled
+            }
+        }
+      
+        
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
