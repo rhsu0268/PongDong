@@ -64,10 +64,10 @@
             </objects>
             <point key="canvasLocation" x="1140" y="38"/>
         </scene>
-        <!--View Controller-->
+        <!--Chatbot Controller-->
         <scene sceneID="5s4-JY-L3g">
             <objects>
-                <viewController id="RFN-BJ-F2T" sceneMemberID="viewController">
+                <viewController id="RFN-BJ-F2T" customClass="ChatbotController" customModule="soulLife" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="eDQ-df-cMZ"/>
                         <viewControllerLayoutGuide type="bottom" id="d9Y-00-F0R"/>
@@ -94,11 +94,19 @@
                                 <rect key="frame" x="155" y="545" width="43" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Speak"/>
+                                <connections>
+                                    <action selector="microphoneTapped:" destination="RFN-BJ-F2T" eventType="touchUpInside" id="ucs-oR-ahg"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="1d8-GZ-9ml"/>
+                    <connections>
+                        <outlet property="microphoneButton" destination="eq7-tZ-n0m" id="K0r-bu-Yg4"/>
+                        <outlet property="speechQuestionLabel" destination="rs0-Qj-ilp" id="wnU-aB-vuu"/>
+                        <outlet property="userText" destination="MTJ-Qz-RGr" id="uiH-2C-Jes"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qez-4C-gdR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
