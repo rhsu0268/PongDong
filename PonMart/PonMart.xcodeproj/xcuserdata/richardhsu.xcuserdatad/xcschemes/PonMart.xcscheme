@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "D11C2F3A1DF8DA9B00CC3FBA"
-               BuildableName = "soulLife.app"
-               BlueprintName = "soulLife"
-               ReferencedContainer = "container:soulLife.xcodeproj">
+               BlueprintIdentifier = "D11BA1F51E1C1EBB00222DEC"
+               BuildableName = "PonMart.app"
+               BlueprintName = "PonMart"
+               ReferencedContainer = "container:PonMart.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -32,10 +32,10 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "D11C2F3A1DF8DA9B00CC3FBA"
-            BuildableName = "soulLife.app"
-            BlueprintName = "soulLife"
-            ReferencedContainer = "container:soulLife.xcodeproj">
+            BlueprintIdentifier = "D11BA1F51E1C1EBB00222DEC"
+            BuildableName = "PonMart.app"
+            BlueprintName = "PonMart"
+            ReferencedContainer = "container:PonMart.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -55,10 +55,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "D11C2F3A1DF8DA9B00CC3FBA"
-            BuildableName = "soulLife.app"
-            BlueprintName = "soulLife"
-            ReferencedContainer = "container:soulLife.xcodeproj">
+            BlueprintIdentifier = "D11BA1F51E1C1EBB00222DEC"
+            BuildableName = "PonMart.app"
+            BlueprintName = "PonMart"
+            ReferencedContainer = "container:PonMart.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -74,10 +74,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "D11C2F3A1DF8DA9B00CC3FBA"
-            BuildableName = "soulLife.app"
-            BlueprintName = "soulLife"
-            ReferencedContainer = "container:soulLife.xcodeproj">
+            BlueprintIdentifier = "D11BA1F51E1C1EBB00222DEC"
+            BuildableName = "PonMart.app"
+            BlueprintName = "PonMart"
+            ReferencedContainer = "container:PonMart.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

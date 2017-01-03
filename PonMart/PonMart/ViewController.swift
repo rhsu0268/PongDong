@@ -1,17 +1,14 @@
 //
 //  ViewController.swift
-//  soulLife
+//  PonMart
 //
-//  Created by Richard Hsu on 12/7/16.
-//  Copyright © 2016 Richard Hsu. All rights reserved.
+//  Created by Richard Hsu on 1/3/17.
+//  Copyright © 2017 Richard Hsu. All rights reserved.
 //
 
 import UIKit
 
-class RootController: UIViewController {
-    
-    
-    
+class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
