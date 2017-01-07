@@ -17,7 +17,10 @@ class SampleItemData
         items = [
             
             Item(name: "Sofa", description: "A foldable sofa bed", type: "Furniture", condition: "Used", price: 50.00, itemImage: UIImage(named: "sofa.png")!),
-            Item(name: "Table", description: "A table able to be used for proper dining", type: "Furniture", condition: "Used", price: 25.00, itemImage: UIImage(named: "table.png")!)
+            Item(name: "Table", description: "A table able to be used for proper dining", type: "Furniture", condition: "Used", price: 25.00, itemImage: UIImage(named: "table.png")!),
+            Item(name: "Chair", description: "A chair for the dining room", type: "Furniture", condition: "Used", price: 6.00, itemImage: UIImage(named: "chair.png")!),
+            Item(name: "Bed", description: "A single person bed", type: "Furniture", condition: "Used", price: 17.00, itemImage: UIImage(named: "bed.png")!),
+            Item(name: "Computer Chair", description: "A chair for the computer desk", type: "Furniture", condition: "Used", price: 12.00, itemImage: UIImage(named: "computerChair.png")!)
             
         ]
         
