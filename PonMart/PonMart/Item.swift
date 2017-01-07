@@ -7,17 +7,25 @@
 //
 
 import Foundation
+import UIKit
 
 class Item
 {
+    public var name : String
+    public var description : String
     public var type : String
     public var condition : String
     public var price : Double
+    public var itemImage : UIImage
     
-    init(type : String, condition : String, price : Double) {
+    init(name : String, description : String, type : String, condition : String, price : Double, itemImage : UIImage) {
         
+        self.name = name
+        self.description = description
         self.type = type
         self.condition = condition
         self.price = price
+        self.itemImage = itemImage
+        
     }
 }
