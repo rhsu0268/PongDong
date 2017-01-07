@@ -103,7 +103,9 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Login"/>
                                 <connections>
-                                    <segue destination="vwi-Lo-XwT" kind="show" id="Re6-31-u09"/>
+                                    <segue destination="vwi-Lo-XwT" kind="popoverPresentation" popoverAnchorView="K33-6c-xq5" id="Re6-31-u09">
+                                        <popoverArrowDirection key="popoverArrowDirection" left="YES"/>
+                                    </segue>
                                 </connections>
                             </button>
                         </subviews>
@@ -203,6 +205,26 @@
                                 <rect key="frame" x="250" y="657" width="126" height="10"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YMU-ck-UZn">
+                                <rect key="frame" x="52" y="631" width="20" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="profile-button"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dym-tg-wMf">
+                                <rect key="frame" x="174" y="630" width="20" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="search-button"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uId-bC-yFK">
+                                <rect key="frame" x="303" y="629" width="20" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="rating-button"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fsZ-It-GJq">
+                                <rect key="frame" x="0.0" y="552" width="380" height="70"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="search-item-button"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -216,6 +238,10 @@
         <image name="furniture-button" width="375" height="100"/>
         <image name="login-sign" width="750" height="563"/>
         <image name="new-button" width="375" height="100"/>
+        <image name="profile-button" width="45" height="45"/>
+        <image name="rating-button" width="49" height="48"/>
+        <image name="search-button" width="40" height="39"/>
+        <image name="search-item-button" width="748" height="130"/>
         <image name="tag-dark" width="250" height="12"/>
         <image name="tag-light" width="250" height="12"/>
         <image name="textbook-button" width="374" height="100"/>
