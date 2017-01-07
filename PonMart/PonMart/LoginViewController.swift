@@ -1,5 +1,5 @@
 //
-//  SearchItemController.swift
+//  LoginViewController.swift
 //  PonMart
 //
 //  Created by Richard Hsu on 1/7/17.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SearchItemController: UIViewController {
+class LoginViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,18 +21,7 @@ class SearchItemController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func searchButtonClicked(_ sender: UIButton) {
-        
-        print("searchButton clicked!")
-        
-        // seed data
-        var sampleItemData = SampleItemData()
-        print(sampleItemData.items)
-        
-        
-    }
 
-   
     /*
     // MARK: - Navigation
 

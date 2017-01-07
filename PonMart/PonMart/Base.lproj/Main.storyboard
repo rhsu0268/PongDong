@@ -225,7 +225,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="search-item-button"/>
                                 <connections>
-                                    <segue destination="fkT-EI-7EJ" kind="show" id="rlG-r8-FOu"/>
+                                    <action selector="searchButtonClicked:" destination="vwi-Lo-XwT" eventType="touchUpInside" id="hj3-pT-TTb"/>
                                 </connections>
                             </button>
                         </subviews>
