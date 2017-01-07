@@ -116,10 +116,10 @@
             </objects>
             <point key="canvasLocation" x="1205.5999999999999" y="-31.03448275862069"/>
         </scene>
-        <!--View Controller-->
+        <!--Search Item Controller-->
         <scene sceneID="tdO-rb-hgV">
             <objects>
-                <viewController id="vwi-Lo-XwT" sceneMemberID="viewController">
+                <viewController id="vwi-Lo-XwT" customClass="SearchItemController" customModule="PonMart" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="zzm-Jb-KIb"/>
                         <viewControllerLayoutGuide type="bottom" id="Uc4-6c-5yy"/>
@@ -224,6 +224,9 @@
                                 <rect key="frame" x="0.0" y="552" width="380" height="70"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="search-item-button"/>
+                                <connections>
+                                    <segue destination="fkT-EI-7EJ" kind="show" id="rlG-r8-FOu"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -232,6 +235,34 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kwq-Vm-BiL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2020" y="-31.03448275862069"/>
+        </scene>
+        <!--Search Result Table View Controller-->
+        <scene sceneID="YDn-ja-fA1">
+            <objects>
+                <tableViewController id="fkT-EI-7EJ" customClass="SearchResultTableViewController" customModule="PonMart" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="JPV-VW-5jX">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="9tf-VI-UVl">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="9tf-VI-UVl" id="8hX-UO-sII">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="fkT-EI-7EJ" id="H9V-VK-ga2"/>
+                            <outlet property="delegate" destination="fkT-EI-7EJ" id="KQk-Ax-0mB"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0dI-M0-W0h" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2764" y="-31"/>
         </scene>
     </scenes>
     <resources>
