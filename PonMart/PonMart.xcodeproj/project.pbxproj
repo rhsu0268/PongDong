@@ -13,6 +13,7 @@
 		D11BA2021E1C1EBB00222DEC /* PonMart.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D11BA2001E1C1EBB00222DEC /* PonMart.xcdatamodeld */; };
 		D11BA2041E1C1EBB00222DEC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D11BA2031E1C1EBB00222DEC /* Assets.xcassets */; };
 		D11BA2071E1C1EBB00222DEC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D11BA2051E1C1EBB00222DEC /* LaunchScreen.storyboard */; };
+		D11BA20F1E21881800222DEC /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = D11BA20E1E21881800222DEC /* Item.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		D11BA2031E1C1EBB00222DEC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D11BA2061E1C1EBB00222DEC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D11BA2081E1C1EBB00222DEC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D11BA20E1E21881800222DEC /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 				D11BA1F91E1C1EBB00222DEC /* AppDelegate.swift */,
 				D11BA1FB1E1C1EBB00222DEC /* ViewController.swift */,
 				D11BA1FD1E1C1EBB00222DEC /* Main.storyboard */,
+				D11BA20E1E21881800222DEC /* Item.swift */,
 				D11BA2031E1C1EBB00222DEC /* Assets.xcassets */,
 				D11BA2051E1C1EBB00222DEC /* LaunchScreen.storyboard */,
 				D11BA2081E1C1EBB00222DEC /* Info.plist */,
@@ -140,6 +143,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D11BA20F1E21881800222DEC /* Item.swift in Sources */,
 				D11BA1FC1E1C1EBB00222DEC /* ViewController.swift in Sources */,
 				D11BA2021E1C1EBB00222DEC /* PonMart.xcdatamodeld in Sources */,
 				D11BA1FA1E1C1EBB00222DEC /* AppDelegate.swift in Sources */,
