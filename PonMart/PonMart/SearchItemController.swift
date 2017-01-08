@@ -38,9 +38,10 @@ class SearchItemController: UIViewController {
         // create a variable to send
         var sampleItemData = SampleItemData()
         
-        let searchResultTableViewController = segue.destination as! SearchResultTableViewController
+        let navigationController = segue.destination as! UINavigationController
+        let searchResultTableViewController = navigationController.topViewController as! SearchResultTableViewController
         
-        searchResultTableViewController.items = sampleItemData.items 
+        searchResultTableViewController.items = sampleItemData.items
         
     }
 
