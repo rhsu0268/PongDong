@@ -12,6 +12,7 @@ class ItemCell: UITableViewCell {
 
     @IBOutlet var itemNameLabel: UILabel!
     
+    
     @IBOutlet var itemImage: UIImageView!
     
     

@@ -258,7 +258,7 @@
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Sofa" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KSn-xi-cDF">
                                             <rect key="frame" x="174" y="43" width="100" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" name="Symbol" family="Symbol" pointSize="16"/>
+                                            <fontDescription key="fontDescription" name="Symbol" family="Symbol" pointSize="14"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -269,7 +269,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="itemImage" destination="k6H-1W-qv2" id="gs2-M4-3W4"/>
+                                    <outlet property="itemImage" destination="k6H-1W-qv2" id="tXV-ks-Kcs"/>
                                     <outlet property="itemNameLabel" destination="KSn-xi-cDF" id="0yz-dj-H3v"/>
                                 </connections>
                             </tableViewCell>
@@ -279,6 +279,7 @@
                             <outlet property="delegate" destination="fkT-EI-7EJ" id="KQk-Ax-0mB"/>
                         </connections>
                     </tableView>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0dI-M0-W0h" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
