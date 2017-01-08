@@ -10,6 +10,10 @@ import UIKit
 
 class SearchResultTableViewController: UITableViewController {
     
+    
+    
+    
+    
     var items : [Item] = []
 
     override func viewDidLoad() {
@@ -33,23 +37,27 @@ class SearchResultTableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return items.count
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ItemCell", for: indexPath) as! ItemCell
 
         // Configure the cell...
-
+        //itemNameLabel.text = items[0].name
+        
+        let item = items[indexPath.row]
+        cell.itemNameLabel.text = item.name
+        
         return cell
     }
-    */
+    
 
     /*
     // Override to support conditional editing of the table view.
