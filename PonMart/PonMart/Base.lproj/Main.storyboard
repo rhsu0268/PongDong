@@ -226,6 +226,9 @@
                                 <state key="normal" image="search-item-button"/>
                                 <connections>
                                     <action selector="searchButtonClicked:" destination="vwi-Lo-XwT" eventType="touchUpInside" id="hj3-pT-TTb"/>
+                                    <segue destination="fkT-EI-7EJ" kind="popoverPresentation" popoverAnchorView="fsZ-It-GJq" id="FIs-fe-HKg">
+                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                    </segue>
                                 </connections>
                             </button>
                         </subviews>
