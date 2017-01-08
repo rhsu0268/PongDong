@@ -66,13 +66,13 @@
 		D11BA1F81E1C1EBB00222DEC /* PonMart */ = {
 			isa = PBXGroup;
 			children = (
+				D11BA2181E220B8D00222DEC /* Model */,
 				D11BA1F91E1C1EBB00222DEC /* AppDelegate.swift */,
 				D11BA1FB1E1C1EBB00222DEC /* ViewController.swift */,
 				D11BA1FD1E1C1EBB00222DEC /* Main.storyboard */,
 				D11BA2121E21899500222DEC /* SearchResultTableViewController.swift */,
 				D11BA2101E21895600222DEC /* SearchItemController.swift */,
 				D11BA2161E21AF7E00222DEC /* LoginViewController.swift */,
-				D11BA20E1E21881800222DEC /* Item.swift */,
 				D11BA2141E21989F00222DEC /* SampleItemData.swift */,
 				D11BA2031E1C1EBB00222DEC /* Assets.xcassets */,
 				D11BA2051E1C1EBB00222DEC /* LaunchScreen.storyboard */,
@@ -80,6 +80,14 @@
 				D11BA2001E1C1EBB00222DEC /* PonMart.xcdatamodeld */,
 			);
 			path = PonMart;
+			sourceTree = "<group>";
+		};
+		D11BA2181E220B8D00222DEC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D11BA20E1E21881800222DEC /* Item.swift */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
