@@ -9,9 +9,13 @@
 import UIKit
 
 class SearchResultTableViewController: UITableViewController {
+    
+    var items : [Item] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        print(items)
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
