@@ -54,6 +54,7 @@ class SearchResultTableViewController: UITableViewController {
         
         let item = items[indexPath.row]
         cell.itemNameLabel.text = item.name
+        cell.itemImage.image = item.itemImage
         
         return cell
     }

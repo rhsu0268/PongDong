@@ -269,6 +269,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="itemImage" destination="k6H-1W-qv2" id="gs2-M4-3W4"/>
                                     <outlet property="itemNameLabel" destination="KSn-xi-cDF" id="0yz-dj-H3v"/>
                                 </connections>
                             </tableViewCell>
