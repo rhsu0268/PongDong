@@ -54,9 +54,16 @@ class SearchResultTableViewController: UITableViewController {
         
         let item = items[indexPath.row]
         cell.itemNameLabel.text = item.name
-        print(item.itemImage)
         cell.itemImage.image = item.itemImage
         
+        if (item.condition == "New")
+        {
+            var image : UIImage = UIImage(named: "new-label.png")!
+            //cell.conditionImage = UIImage(image: image)
+        }
+        cell.priceLabel.text = "$\(item.price)"
+        
+
         return cell
     }
     

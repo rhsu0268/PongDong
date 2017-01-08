@@ -11,10 +11,9 @@ import UIKit
 class ItemCell: UITableViewCell {
 
     @IBOutlet var itemNameLabel: UILabel!
-    
-    
     @IBOutlet var itemImage: UIImageView!
-    
+    @IBOutlet var priceLabel: UILabel!
+    @IBOutlet var conditionImage: UIImageView!
     
     
     override func awakeFromNib() {
