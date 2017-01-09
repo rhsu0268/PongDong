@@ -291,7 +291,12 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Results" id="e7B-tq-YZd">
-                        <barButtonItem key="leftBarButtonItem" title="Back" id="fIi-bd-ox7"/>
+                        <barButtonItem key="leftBarButtonItem" title="Back" id="fIi-bd-ox7">
+                            <connections>
+                                <action selector="backToSearchController:" destination="fkT-EI-7EJ" id="H93-ip-mY1"/>
+                                <segue destination="vwi-Lo-XwT" kind="presentation" id="atc-AP-sJL"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                 </tableViewController>
@@ -331,4 +336,7 @@
         <image name="textbook-button" width="374" height="100"/>
         <image name="used-button" width="374" height="100"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="atc-AP-sJL"/>
+    </inferredMetricsTieBreakers>
 </document>

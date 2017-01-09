@@ -12,6 +12,17 @@ class SearchResultTableViewController: UITableViewController {
     
     
     
+    @IBAction func backToSearchController(_ sender: Any) {
+        
+        print("Back pressed")
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        let navigationController = segue.destination as! SearchItemController
+        //let searchViewController = navigationController.popViewController(animated: true)
+        
+    }
     
     
     var items : [Item] = []
