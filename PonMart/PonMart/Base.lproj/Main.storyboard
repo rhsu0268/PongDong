@@ -235,7 +235,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kwq-Vm-BiL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2020" y="-31.03448275862069"/>
+            <point key="canvasLocation" x="2332" y="-31"/>
         </scene>
         <!--Results-->
         <scene sceneID="YDn-ja-fA1">
@@ -265,7 +265,7 @@
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </imageView>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vB6-5Z-ZIw">
-                                            <rect key="frame" x="162" y="40" width="55" height="26"/>
+                                            <rect key="frame" x="162" y="40" width="58" height="26"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="$15.99" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AVA-Li-LDC">
@@ -290,12 +290,14 @@
                             <outlet property="delegate" destination="fkT-EI-7EJ" id="KQk-Ax-0mB"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Results" id="e7B-tq-YZd"/>
+                    <navigationItem key="navigationItem" title="Results" id="e7B-tq-YZd">
+                        <barButtonItem key="leftBarButtonItem" title="Back" id="fIi-bd-ox7"/>
+                    </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0dI-M0-W0h" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4024.8000000000002" y="-31.03448275862069"/>
+            <point key="canvasLocation" x="3805.5999999999999" y="-31.03448275862069"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="SqL-Mc-V1v">
