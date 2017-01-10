@@ -369,12 +369,8 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="used-button-selected" translatesAutoresizingMaskIntoConstraints="NO" id="nAm-6p-p2g">
-                                <rect key="frame" x="16" y="383" width="49" height="28"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="used-label" translatesAutoresizingMaskIntoConstraints="NO" id="hds-5l-jDL">
-                                <rect key="frame" x="73" y="383" width="59" height="27"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="furniture-label" translatesAutoresizingMaskIntoConstraints="NO" id="nAm-6p-p2g">
+                                <rect key="frame" x="16" y="383" width="84" height="28"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="A good sofa that can be folded down and be used as a bed. " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jlb-cS-wcN">
@@ -384,6 +380,10 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="used-label" translatesAutoresizingMaskIntoConstraints="NO" id="hds-5l-jDL">
+                                <rect key="frame" x="108" y="383" width="59" height="27"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -413,6 +413,7 @@
     </scenes>
     <resources>
         <image name="furniture-button-selected" width="375" height="100"/>
+        <image name="furniture-label" width="126" height="40"/>
         <image name="login-sign" width="750" height="563"/>
         <image name="new-button-selected" width="375" height="100"/>
         <image name="profile-button" width="45" height="45"/>
@@ -423,7 +424,6 @@
         <image name="tag-dark" width="250" height="12"/>
         <image name="tag-light" width="250" height="12"/>
         <image name="textbook-button-unselected" width="374" height="100"/>
-        <image name="used-button-selected" width="374" height="100"/>
         <image name="used-button-unselected" width="374" height="100"/>
         <image name="used-label" width="89" height="40"/>
     </resources>
