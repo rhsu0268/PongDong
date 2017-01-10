@@ -12,8 +12,10 @@ class SearchItemController: UIViewController {
     
     
     @IBOutlet var textbookOption: UIButton!
-    
     @IBOutlet var furnitureOption: UIButton!
+    
+    @IBOutlet var newOption: UIButton!
+    @IBOutlet var usedOption: UIButton!
     
     @IBAction func textbookOptionClicked(_ sender: UIButton) {
         
@@ -29,6 +31,20 @@ class SearchItemController: UIViewController {
         textbookOption.setImage(UIImage(named: "textbook-button-unselected.png"), for: .normal)
         
     }
+    
+    @IBAction func newOptionClicked(_ sender: UIButton) {
+        
+        newOption.setImage(UIImage(named: "new-button-selected.png"), for: .normal)
+        usedOption.setImage(UIImage(named: "used-button-unselected.png"), for: .normal)
+    }
+    
+    
+    @IBAction func usedOptionClicked(_ sender: UIButton) {
+        
+        usedOption.setImage(UIImage(named: "used-button-selected.png"), for: .normal)
+        newOption.setImage(UIImage(named: "new-button-unselected.png"), for: .normal)
+    }
+    
     
     
     override func viewDidLoad() {

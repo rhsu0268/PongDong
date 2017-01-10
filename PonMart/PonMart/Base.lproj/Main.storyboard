@@ -159,12 +159,18 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0tt-3Y-ORS">
                                 <rect key="frame" x="0.0" y="251" width="190" height="48"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="new-button"/>
+                                <state key="normal" image="new-button-selected"/>
+                                <connections>
+                                    <action selector="newOptionClicked:" destination="vwi-Lo-XwT" eventType="touchUpInside" id="53U-hJ-3e7"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yym-or-zh2">
                                 <rect key="frame" x="190" y="251" width="190" height="48"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="used-button"/>
+                                <state key="normal" image="used-button-unselected"/>
+                                <connections>
+                                    <action selector="usedOptionClicked:" destination="vwi-Lo-XwT" eventType="touchUpInside" id="j6p-K8-PQJ"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Price" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zIV-rt-bV3">
                                 <rect key="frame" x="167" y="350" width="41" height="21"/>
@@ -240,7 +246,9 @@
                     </view>
                     <connections>
                         <outlet property="furnitureOption" destination="TYn-l8-02r" id="CR0-8D-Tpi"/>
+                        <outlet property="newOption" destination="0tt-3Y-ORS" id="zTr-bm-4fS"/>
                         <outlet property="textbookOption" destination="doZ-Gy-yxF" id="vjd-uk-GIX"/>
+                        <outlet property="usedOption" destination="Yym-or-zh2" id="PkP-xO-08C"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kwq-Vm-BiL" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -336,7 +344,7 @@
     <resources>
         <image name="furniture-button-selected" width="375" height="100"/>
         <image name="login-sign" width="750" height="563"/>
-        <image name="new-button" width="375" height="100"/>
+        <image name="new-button-selected" width="375" height="100"/>
         <image name="profile-button" width="45" height="45"/>
         <image name="rating-button" width="49" height="48"/>
         <image name="search-button" width="40" height="39"/>
@@ -344,7 +352,7 @@
         <image name="tag-dark" width="250" height="12"/>
         <image name="tag-light" width="250" height="12"/>
         <image name="textbook-button-unselected" width="374" height="100"/>
-        <image name="used-button" width="374" height="100"/>
+        <image name="used-button-unselected" width="374" height="100"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="atc-AP-sJL"/>
