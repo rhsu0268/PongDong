@@ -221,6 +221,9 @@
                                 <rect key="frame" x="52" y="631" width="20" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button" image="profile-button"/>
+                                <connections>
+                                    <segue destination="p5r-ME-fq9" kind="show" id="ute-SD-HoJ"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dym-tg-wMf">
                                 <rect key="frame" x="174" y="630" width="20" height="20"/>
@@ -238,7 +241,7 @@
                                 <state key="normal" image="search-item-button"/>
                                 <connections>
                                     <action selector="searchButtonClicked:" destination="vwi-Lo-XwT" eventType="touchUpInside" id="hj3-pT-TTb"/>
-                                    <segue destination="mZh-ox-faG" kind="show" id="oWT-Mv-U2f"/>
+                                    <segue destination="mZh-ox-faG" kind="show" identifier="SearchItemViewToResultsTableView" id="oWT-Mv-U2f"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -254,6 +257,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kwq-Vm-BiL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2332" y="-31"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="2Hr-Es-5gv">
+            <objects>
+                <viewController id="p5r-ME-fq9" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Soh-tf-lBN"/>
+                        <viewControllerLayoutGuide type="bottom" id="fog-gq-YRt"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="wEd-cJ-kST">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6Do-Q7-dik" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2332" y="702"/>
         </scene>
         <!--Results-->
         <scene sceneID="YDn-ja-fA1">

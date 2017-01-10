@@ -72,14 +72,18 @@ class SearchItemController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         
-        // create a variable to send
-        var sampleItemData = SampleItemData()
         
-        let navigationController = segue.destination as! UINavigationController
-        let searchResultTableViewController = navigationController.topViewController as! SearchResultTableViewController
+        if (segue.identifier == "SearchItemViewToResultsTableView")
+        {
+            // create a variable to send
+            var sampleItemData = SampleItemData()
         
-        searchResultTableViewController.items = sampleItemData.items
         
+            let navigationController = segue.destination as! UINavigationController
+            let searchResultTableViewController = navigationController.topViewController as! SearchResultTableViewController
+        
+            searchResultTableViewController.items = sampleItemData.items
+        }
     }
 
    
