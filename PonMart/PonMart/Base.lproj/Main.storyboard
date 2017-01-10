@@ -339,7 +339,7 @@
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
-                        <segue destination="yhZ-IL-UI5" kind="show" identifier="ResultTableViewToDetail" id="8yT-PU-fqR"/>
+                        <segue destination="yhZ-IL-UI5" kind="show" identifier="ResultTableViewToDetailView" id="8yT-PU-fqR"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0dI-M0-W0h" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -369,12 +369,12 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nAm-6p-p2g">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="used-button-selected" translatesAutoresizingMaskIntoConstraints="NO" id="nAm-6p-p2g">
                                 <rect key="frame" x="16" y="383" width="49" height="28"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hds-5l-jDL">
-                                <rect key="frame" x="73" y="383" width="45" height="27"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="used-label" translatesAutoresizingMaskIntoConstraints="NO" id="hds-5l-jDL">
+                                <rect key="frame" x="73" y="383" width="59" height="27"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="A good sofa that can be folded down and be used as a bed. " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jlb-cS-wcN">
@@ -423,7 +423,9 @@
         <image name="tag-dark" width="250" height="12"/>
         <image name="tag-light" width="250" height="12"/>
         <image name="textbook-button-unselected" width="374" height="100"/>
+        <image name="used-button-selected" width="374" height="100"/>
         <image name="used-button-unselected" width="374" height="100"/>
+        <image name="used-label" width="89" height="40"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="atc-AP-sJL"/>

@@ -9,10 +9,13 @@
 import UIKit
 
 class ItemDetailViewController: UIViewController {
-
+    
+    var item : Item? = nil
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        //print(item)
+        print(item?.name)
         // Do any additional setup after loading the view.
     }
 

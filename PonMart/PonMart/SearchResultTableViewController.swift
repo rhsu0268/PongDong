@@ -17,11 +17,23 @@ class SearchResultTableViewController: UITableViewController {
         print("Back pressed")
     }
     
+    
+    
+    var items : [Item] = []
+    var item : Item? = nil
+    var itemIndex : Int? = nil
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        if (segue.identifier == "ResultTableViewToDetail")
+        if (segue.identifier == "ResultTableViewToDetailView")
         {
             var itemDetailViewController = segue.destination as! ItemDetailViewController
+            
+            
+            itemIndex = tableView.indexPathForSelectedRow?.row
+            
+            print(items[itemIndex!])
+            itemDetailViewController.item = items[itemIndex!]
             
         }
         else
@@ -30,9 +42,7 @@ class SearchResultTableViewController: UITableViewController {
             //let searchViewController = navigationController.popViewController(animated: true)
         }
     }
-    
-    
-    var items : [Item] = []
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -97,7 +107,7 @@ class SearchResultTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("You selected cell #\(indexPath.row)!")
         
-        performSegue(withIdentifier: "ResultTableViewToDetail", sender: self)
+        performSegue(withIdentifier: "ResultTableViewToDetailView", sender: self)
     }
     
     
