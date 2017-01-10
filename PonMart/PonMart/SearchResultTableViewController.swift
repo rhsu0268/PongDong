@@ -19,9 +19,16 @@ class SearchResultTableViewController: UITableViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        let navigationController = segue.destination as! SearchItemController
-        //let searchViewController = navigationController.popViewController(animated: true)
-        
+        if (segue.identifier == "ResultTableViewToDetail")
+        {
+            var itemDetailViewController = segue.destination as! ItemDetailViewController
+            
+        }
+        else
+        {
+            let navigationController = segue.destination as! SearchItemController
+            //let searchViewController = navigationController.popViewController(animated: true)
+        }
     }
     
     
@@ -87,7 +94,15 @@ class SearchResultTableViewController: UITableViewController {
         return cell
     }
     
-
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("You selected cell #\(indexPath.row)!")
+        
+        performSegue(withIdentifier: "ResultTableViewToDetail", sender: self)
+    }
+    
+    
+    
+    
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
@@ -122,6 +137,8 @@ class SearchResultTableViewController: UITableViewController {
         return true
     }
     */
+    
+    
 
     /*
     // MARK: - Navigation
@@ -130,7 +147,10 @@ class SearchResultTableViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        
+        
     }
-    */
+     */
+ 
 
 }

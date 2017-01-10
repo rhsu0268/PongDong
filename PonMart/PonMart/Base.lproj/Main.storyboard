@@ -317,15 +317,18 @@
                         </barButtonItem>
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <segue destination="yhZ-IL-UI5" kind="show" identifier="ResultTableViewToDetail" id="8yT-PU-fqR"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0dI-M0-W0h" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3805.5999999999999" y="-31.03448275862069"/>
         </scene>
-        <!--View Controller-->
+        <!--Item Detail View Controller-->
         <scene sceneID="Ten-P7-SNz">
             <objects>
-                <viewController id="yhZ-IL-UI5" sceneMemberID="viewController">
+                <viewController id="yhZ-IL-UI5" customClass="ItemDetailViewController" customModule="PonMart" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Sjo-pE-3uI"/>
                         <viewControllerLayoutGuide type="bottom" id="jjV-WR-oBu"/>

@@ -19,7 +19,7 @@
 		D11BA2151E21989F00222DEC /* SampleItemData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D11BA2141E21989F00222DEC /* SampleItemData.swift */; };
 		D11BA2171E21AF7E00222DEC /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D11BA2161E21AF7E00222DEC /* LoginViewController.swift */; };
 		D11BA21A1E229D5B00222DEC /* ItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D11BA2191E229D5B00222DEC /* ItemCell.swift */; };
-		D11BA21C1E254F2D00222DEC /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D11BA21B1E254F2D00222DEC /* DetailViewController.swift */; };
+		D11BA21C1E254F2D00222DEC /* ItemDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D11BA21B1E254F2D00222DEC /* ItemDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,7 +37,7 @@
 		D11BA2141E21989F00222DEC /* SampleItemData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SampleItemData.swift; sourceTree = "<group>"; };
 		D11BA2161E21AF7E00222DEC /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		D11BA2191E229D5B00222DEC /* ItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemCell.swift; sourceTree = "<group>"; };
-		D11BA21B1E254F2D00222DEC /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		D11BA21B1E254F2D00222DEC /* ItemDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,7 +74,7 @@
 				D11BA1F91E1C1EBB00222DEC /* AppDelegate.swift */,
 				D11BA1FB1E1C1EBB00222DEC /* ViewController.swift */,
 				D11BA1FD1E1C1EBB00222DEC /* Main.storyboard */,
-				D11BA21B1E254F2D00222DEC /* DetailViewController.swift */,
+				D11BA21B1E254F2D00222DEC /* ItemDetailViewController.swift */,
 				D11BA2121E21899500222DEC /* SearchResultTableViewController.swift */,
 				D11BA2191E229D5B00222DEC /* ItemCell.swift */,
 				D11BA2101E21895600222DEC /* SearchItemController.swift */,
@@ -176,7 +176,7 @@
 				D11BA2151E21989F00222DEC /* SampleItemData.swift in Sources */,
 				D11BA2171E21AF7E00222DEC /* LoginViewController.swift in Sources */,
 				D11BA2021E1C1EBB00222DEC /* PonMart.xcdatamodeld in Sources */,
-				D11BA21C1E254F2D00222DEC /* DetailViewController.swift in Sources */,
+				D11BA21C1E254F2D00222DEC /* ItemDetailViewController.swift in Sources */,
 				D11BA2111E21895600222DEC /* SearchItemController.swift in Sources */,
 				D11BA1FA1E1C1EBB00222DEC /* AppDelegate.swift in Sources */,
 			);
