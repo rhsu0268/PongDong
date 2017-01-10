@@ -2,7 +2,7 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "furniture-button.png",
+      "filename" : "furniture-button-unselected.png",
       "scale" : "1x"
     },
     {

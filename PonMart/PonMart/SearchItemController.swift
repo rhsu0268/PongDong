@@ -9,7 +9,19 @@
 import UIKit
 
 class SearchItemController: UIViewController {
-
+    
+    
+    @IBOutlet var textbookOption: UIButton!
+    
+    @IBOutlet var furnitureOption: UIButton!
+    
+    @IBAction func textbookOptionClicked(_ sender: UIButton) {
+        
+        print("TextBook selected!")
+        textbookOption.setImage(UIImage(named: "textbook-button-selected.png"), for: .normal)
+        furnitureOption.setImage(UIImage(named: "furniture-button-unselected.png"), for: .normal)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
