@@ -137,6 +137,9 @@
                                 <rect key="frame" x="0.0" y="119" width="190" height="47"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button" image="furniture-button-selected"/>
+                                <connections>
+                                    <action selector="furnitureOptionClicked:" destination="vwi-Lo-XwT" eventType="touchUpInside" id="MGf-jb-f6s"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="doZ-Gy-yxF">
                                 <rect key="frame" x="190" y="119" width="190" height="47"/>

@@ -22,6 +22,15 @@ class SearchItemController: UIViewController {
         furnitureOption.setImage(UIImage(named: "furniture-button-unselected.png"), for: .normal)
     }
     
+    
+    @IBAction func furnitureOptionClicked(_ sender: UIButton) {
+        
+        furnitureOption.setImage(UIImage(named: "furniture-button-selected.png"), for: .normal)
+        textbookOption.setImage(UIImage(named: "textbook-button-unselected.png"), for: .normal)
+        
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
