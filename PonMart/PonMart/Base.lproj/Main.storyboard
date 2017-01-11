@@ -369,7 +369,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="furniture-label" translatesAutoresizingMaskIntoConstraints="NO" id="nAm-6p-p2g">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="textbook-label" translatesAutoresizingMaskIntoConstraints="NO" id="nAm-6p-p2g">
                                 <rect key="frame" x="16" y="383" width="84" height="28"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -380,7 +380,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="used-label" translatesAutoresizingMaskIntoConstraints="NO" id="hds-5l-jDL">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="new-label" translatesAutoresizingMaskIntoConstraints="NO" id="hds-5l-jDL">
                                 <rect key="frame" x="108" y="383" width="59" height="27"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -388,8 +388,8 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
-                        <outlet property="categoryImage" destination="nAm-6p-p2g" id="gPQ-5o-SBL"/>
-                        <outlet property="conditionImage" destination="hds-5l-jDL" id="dJG-Tk-9ly"/>
+                        <outlet property="itemCategory" destination="nAm-6p-p2g" id="n4E-WB-fQG"/>
+                        <outlet property="itemCondition" destination="hds-5l-jDL" id="nfP-ga-LK6"/>
                         <outlet property="itemDescription" destination="Jlb-cS-wcN" id="0YC-bf-whV"/>
                         <outlet property="itemImage" destination="kkF-AW-7xN" id="x1m-YT-kMq"/>
                         <outlet property="itemName" destination="1c0-Uv-my1" id="DKj-Ni-30F"/>
@@ -420,9 +420,9 @@
     </scenes>
     <resources>
         <image name="furniture-button-selected" width="375" height="100"/>
-        <image name="furniture-label" width="126" height="40"/>
         <image name="login-sign" width="750" height="563"/>
         <image name="new-button-selected" width="375" height="100"/>
+        <image name="new-label" width="89" height="40"/>
         <image name="profile-button" width="45" height="45"/>
         <image name="rating-button" width="49" height="48"/>
         <image name="search-button" width="40" height="39"/>
@@ -431,8 +431,8 @@
         <image name="tag-dark" width="250" height="12"/>
         <image name="tag-light" width="250" height="12"/>
         <image name="textbook-button-unselected" width="374" height="100"/>
+        <image name="textbook-label" width="126" height="40"/>
         <image name="used-button-unselected" width="374" height="100"/>
-        <image name="used-label" width="89" height="40"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="atc-AP-sJL"/>

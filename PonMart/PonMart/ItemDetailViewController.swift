@@ -14,9 +14,8 @@ class ItemDetailViewController: UIViewController {
     
     @IBOutlet var itemImage: UIImageView!
     @IBOutlet var itemName: UILabel!
-    
-    @IBOutlet var categoryImage: UIImageView!
-    @IBOutlet var conditionImage: UIImageView!
+    @IBOutlet var itemCategory: UIImageView!
+    @IBOutlet var itemCondition: UIImageView!
     @IBOutlet var itemDescription: UILabel!
     
     
@@ -34,6 +33,22 @@ class ItemDetailViewController: UIViewController {
         {
             self.itemName.text = itemName
         }
+        
+        if let itemCategory = item?.type
+        {
+            //self.itemCategory.image = UIImage(named: "furniture-label.png")
+            /*
+            if itemCategory == "Furniture"
+            {
+                self.itemCategory.image = UIImage(named: "furniture-label.png")
+            }
+            else
+            {
+                self.itemCategory.image = UIImage(named: "textbook-label.png")
+            }
+            */
+        }
+    
         if let itemDescription = item?.description
         {
             self.itemDescription.text = itemDescription
