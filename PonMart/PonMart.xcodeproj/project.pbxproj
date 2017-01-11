@@ -21,6 +21,7 @@
 		D11BA21A1E229D5B00222DEC /* ItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D11BA2191E229D5B00222DEC /* ItemCell.swift */; };
 		D11BA21C1E254F2D00222DEC /* ItemDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D11BA21B1E254F2D00222DEC /* ItemDetailViewController.swift */; };
 		D11BA21E1E2698BE00222DEC /* UserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D11BA21D1E2698BE00222DEC /* UserProfileViewController.swift */; };
+		D11BA2201E26ADDE00222DEC /* AddPongViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D11BA21F1E26ADDE00222DEC /* AddPongViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		D11BA2191E229D5B00222DEC /* ItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemCell.swift; sourceTree = "<group>"; };
 		D11BA21B1E254F2D00222DEC /* ItemDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemDetailViewController.swift; sourceTree = "<group>"; };
 		D11BA21D1E2698BE00222DEC /* UserProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfileViewController.swift; sourceTree = "<group>"; };
+		D11BA21F1E26ADDE00222DEC /* AddPongViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddPongViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +78,7 @@
 				D11BA1F91E1C1EBB00222DEC /* AppDelegate.swift */,
 				D11BA1FB1E1C1EBB00222DEC /* ViewController.swift */,
 				D11BA1FD1E1C1EBB00222DEC /* Main.storyboard */,
+				D11BA21F1E26ADDE00222DEC /* AddPongViewController.swift */,
 				D11BA21D1E2698BE00222DEC /* UserProfileViewController.swift */,
 				D11BA21B1E254F2D00222DEC /* ItemDetailViewController.swift */,
 				D11BA2121E21899500222DEC /* SearchResultTableViewController.swift */,
@@ -182,6 +185,7 @@
 				D11BA21C1E254F2D00222DEC /* ItemDetailViewController.swift in Sources */,
 				D11BA2111E21895600222DEC /* SearchItemController.swift in Sources */,
 				D11BA21E1E2698BE00222DEC /* UserProfileViewController.swift in Sources */,
+				D11BA2201E26ADDE00222DEC /* AddPongViewController.swift in Sources */,
 				D11BA1FA1E1C1EBB00222DEC /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
