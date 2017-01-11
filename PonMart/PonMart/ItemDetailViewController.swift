@@ -24,6 +24,12 @@ class ItemDetailViewController: UIViewController {
         super.viewDidLoad()
         //print(item)
         print(item?.name)
+        
+        
+        if let itemName = item?.name
+        {
+            self.itemName.text = itemName
+        }
         // Do any additional setup after loading the view.
     }
 
