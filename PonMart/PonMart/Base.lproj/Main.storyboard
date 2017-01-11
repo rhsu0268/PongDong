@@ -291,6 +291,9 @@
                                 <rect key="frame" x="178" y="627" width="20" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="search-button"/>
+                                <connections>
+                                    <segue destination="vwi-Lo-XwT" kind="show" id="1FK-Yj-of3"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SOf-H0-wsZ">
                                 <rect key="frame" x="302" y="627" width="20" height="20"/>
@@ -453,7 +456,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Do-Q7-dik" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2332" y="701.19940029985014"/>
+            <point key="canvasLocation" x="2311" y="701"/>
         </scene>
         <!--Results-->
         <scene sceneID="YDn-ja-fA1">
@@ -756,7 +759,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Please enter a description for the item..." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Jr4-8t-bzh">
-                                <rect key="frame" x="16" y="538" width="265" height="69"/>
+                                <rect key="frame" x="16" y="538" width="343" height="69"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -796,6 +799,6 @@
         <image name="used-label" width="89" height="40"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Re6-31-u09"/>
+        <segue reference="1FK-Yj-of3"/>
     </inferredMetricsTieBreakers>
 </document>
