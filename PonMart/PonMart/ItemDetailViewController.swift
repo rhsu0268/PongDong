@@ -26,9 +26,17 @@ class ItemDetailViewController: UIViewController {
         print(item?.name)
         
         
+        if let itemImage = item?.itemImage
+        {
+            self.itemImage.image = itemImage
+        }
         if let itemName = item?.name
         {
             self.itemName.text = itemName
+        }
+        if let itemDescription = item?.description
+        {
+            self.itemDescription.text = itemDescription
         }
         // Do any additional setup after loading the view.
     }
