@@ -14,10 +14,30 @@ class AddPongViewController: UIViewController {
     @IBOutlet var itemName: UITextField!
     @IBOutlet var itemDescription: UITextView!
     
+    var itemNameText : String = ""
+    var itemDescriptionText : String = ""
+    
     @IBAction func AddPongClicked(_ sender: UIButton) {
         
         
         print("Adding item!")
+        
+        // create a new item 
+        
+        if let itemName = itemName.text
+        {
+            itemNameText = itemName
+        }
+        if let itemDescription = itemDescription.text
+        {
+            itemDescriptionText = itemDescription
+        }
+        
+        
+        var item : Item = Item(name: itemNameText, description: itemDescriptionText, type: "Furniture", condition: "Used", price: 12.00, itemImage: UIImage(named:"sofa.jpeg")!)
+        print(item)
+        
+        
     }
     
     
