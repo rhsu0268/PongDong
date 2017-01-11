@@ -258,10 +258,10 @@
             </objects>
             <point key="canvasLocation" x="2332" y="-31"/>
         </scene>
-        <!--View Controller-->
+        <!--User Profile View Controller-->
         <scene sceneID="2Hr-Es-5gv">
             <objects>
-                <viewController id="p5r-ME-fq9" sceneMemberID="viewController">
+                <viewController id="p5r-ME-fq9" customClass="UserProfileViewController" customModule="PonMart" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Soh-tf-lBN"/>
                         <viewControllerLayoutGuide type="bottom" id="fog-gq-YRt"/>
