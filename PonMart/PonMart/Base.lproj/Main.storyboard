@@ -114,7 +114,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mis-Il-6Sv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1205.5999999999999" y="-31.03448275862069"/>
+            <point key="canvasLocation" x="1206" y="-51"/>
         </scene>
         <!--Search Item Controller-->
         <scene sceneID="tdO-rb-hgV">
@@ -456,7 +456,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Do-Q7-dik" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2311" y="701"/>
+            <point key="canvasLocation" x="1543" y="729"/>
         </scene>
         <!--Results-->
         <scene sceneID="YDn-ja-fA1">
@@ -627,6 +627,9 @@
                                 <rect key="frame" x="53" y="627" width="20" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button" image="profile-button"/>
+                                <connections>
+                                    <segue destination="p5r-ME-fq9" kind="show" id="Zy6-pj-qtf"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d49-77-4zu">
                                 <rect key="frame" x="178" y="627" width="20" height="20"/>
@@ -684,10 +687,6 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="profile-button-block" translatesAutoresizingMaskIntoConstraints="NO" id="7Sl-i9-oST">
-                                <rect key="frame" x="186" y="282" width="189" height="70"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Add Pong" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bqp-PI-tnf">
                                 <rect key="frame" x="232" y="305" width="93" height="24"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -766,13 +765,32 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z4o-Yd-Kbc">
+                                <rect key="frame" x="186" y="282" width="189" height="70"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="profile-button-block"/>
+                                <connections>
+                                    <action selector="AddPongClicked:" destination="m4K-5q-gse" eventType="touchUpInside" id="26P-2Z-4eR"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Add Pong" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RMm-xY-Xpu">
+                                <rect key="frame" x="233" y="304" width="93" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="21"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="itemDescription" destination="Jr4-8t-bzh" id="Ogm-gx-tvZ"/>
+                        <outlet property="itemName" destination="Hym-Dw-wz9" id="ONm-ZH-7u6"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Q1b-24-gWs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3063.1999999999998" y="701.19940029985014"/>
+            <point key="canvasLocation" x="2719" y="752"/>
         </scene>
     </scenes>
     <resources>
@@ -800,5 +818,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="1FK-Yj-of3"/>
+        <segue reference="Zy6-pj-qtf"/>
     </inferredMetricsTieBreakers>
 </document>
