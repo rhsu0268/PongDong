@@ -387,6 +387,13 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="categoryImage" destination="nAm-6p-p2g" id="gPQ-5o-SBL"/>
+                        <outlet property="conditionImage" destination="hds-5l-jDL" id="dJG-Tk-9ly"/>
+                        <outlet property="itemDescription" destination="Jlb-cS-wcN" id="0YC-bf-whV"/>
+                        <outlet property="itemImage" destination="kkF-AW-7xN" id="x1m-YT-kMq"/>
+                        <outlet property="itemName" destination="1c0-Uv-my1" id="DKj-Ni-30F"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IZc-Cu-Ut4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -12,6 +12,14 @@ class ItemDetailViewController: UIViewController {
     
     var item : Item? = nil
     
+    @IBOutlet var itemImage: UIImageView!
+    @IBOutlet var itemName: UILabel!
+    
+    @IBOutlet var categoryImage: UIImageView!
+    @IBOutlet var conditionImage: UIImageView!
+    @IBOutlet var itemDescription: UILabel!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         //print(item)
