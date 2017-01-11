@@ -36,8 +36,6 @@ class ItemDetailViewController: UIViewController {
         
         if let itemCategory = item?.type
         {
-            //self.itemCategory.image = UIImage(named: "furniture-label.png")
-            /*
             if itemCategory == "Furniture"
             {
                 self.itemCategory.image = UIImage(named: "furniture-label.png")
@@ -46,9 +44,19 @@ class ItemDetailViewController: UIViewController {
             {
                 self.itemCategory.image = UIImage(named: "textbook-label.png")
             }
-            */
         }
-    
+        if let itemCondition = item?.condition
+        {
+            if itemCondition == "New"
+            {
+                self.itemCondition.image = UIImage(named: "new-label.png")
+            }
+            else
+            {
+                self.itemCondition.image = UIImage(named: "used-label.png")
+            }
+        
+        }
         if let itemDescription = item?.description
         {
             self.itemDescription.text = itemDescription
