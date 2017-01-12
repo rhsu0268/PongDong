@@ -46,6 +46,10 @@ class AddPongViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        self.userProfileImage.layer.cornerRadius = self.userProfileImage.frame.size.width / 2
+        self.userProfileImage.clipsToBounds = true
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
