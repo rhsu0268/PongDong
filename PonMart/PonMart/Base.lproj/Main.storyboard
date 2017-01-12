@@ -798,11 +798,17 @@
                                 <rect key="frame" x="185" y="482" width="48" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="new-label-unselected"/>
+                                <connections>
+                                    <action selector="newOptionClicked:" destination="m4K-5q-gse" eventType="touchUpInside" id="26e-MX-On6"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4gn-7D-rAE">
                                 <rect key="frame" x="233" y="482" width="48" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="used-label-unselected"/>
+                                <connections>
+                                    <action selector="usedOptionClicked:" destination="m4K-5q-gse" eventType="touchUpInside" id="c36-rf-SwF"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

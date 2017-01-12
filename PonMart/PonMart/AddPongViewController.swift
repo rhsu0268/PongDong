@@ -63,6 +63,21 @@ class AddPongViewController: UIViewController {
         furnitureOption.setImage(UIImage(named: "furniture-label-unselected"), for: .normal)
     }
     
+    
+    @IBAction func newOptionClicked(_ sender: UIButton) {
+        
+        newOption.setImage(UIImage(named: "new-label-selected"), for: .normal)
+        usedOption.setImage(UIImage(named: "used-label-unselected"), for: .normal)
+    }
+    
+    @IBAction func usedOptionClicked(_ sender: UIButton) {
+        
+        usedOption.setImage(UIImage(named: "used-label-selected"), for: .normal)
+        newOption.setImage(UIImage(named: "new-label-unselected"), for: .normal)
+        }
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
