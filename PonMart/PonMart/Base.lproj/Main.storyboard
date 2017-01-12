@@ -779,14 +779,20 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7ss-Xl-UZB">
-                                <rect key="frame" x="83" y="482" width="65" height="20"/>
+                                <rect key="frame" x="85" y="482" width="67" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="textbook-label-unselected"/>
+                                <connections>
+                                    <action selector="textbookOptionClicked:" destination="m4K-5q-gse" eventType="touchUpInside" id="sOs-m4-RjJ"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Srv-qu-P1x">
-                                <rect key="frame" x="18" y="482" width="65" height="20"/>
+                                <rect key="frame" x="18" y="482" width="67" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="furniture-label-unselected"/>
+                                <connections>
+                                    <action selector="furnitureOptionClicked:" destination="m4K-5q-gse" eventType="touchUpInside" id="kDn-kq-dEn"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="682-SL-0ce">
                                 <rect key="frame" x="185" y="482" width="48" height="20"/>
@@ -802,8 +808,12 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
+                        <outlet property="furnitureOption" destination="Srv-qu-P1x" id="c3S-Vq-qVL"/>
                         <outlet property="itemDescription" destination="Jr4-8t-bzh" id="Ogm-gx-tvZ"/>
                         <outlet property="itemName" destination="Hym-Dw-wz9" id="ONm-ZH-7u6"/>
+                        <outlet property="newOption" destination="682-SL-0ce" id="sqR-xg-HRq"/>
+                        <outlet property="textbookOption" destination="7ss-Xl-UZB" id="FvF-NR-uPn"/>
+                        <outlet property="usedOption" destination="4gn-7D-rAE" id="8mS-Yy-kd2"/>
                         <outlet property="userProfileImage" destination="GZI-RA-T2K" id="AaT-ay-OEc"/>
                     </connections>
                 </viewController>

@@ -20,6 +20,13 @@ class AddPongViewController: UIViewController {
     var itemDescriptionText : String = ""
     
     
+    @IBOutlet var furnitureOption: UIButton!
+    @IBOutlet var textbookOption: UIButton!
+    
+    
+    @IBOutlet var newOption: UIButton!
+    @IBOutlet var usedOption: UIButton!
+    
     @IBAction func AddPongClicked(_ sender: UIButton) {
         
         print("Adding item!")
@@ -40,6 +47,20 @@ class AddPongViewController: UIViewController {
         print(item)
 
         
+    }
+    
+    
+    @IBAction func furnitureOptionClicked(_ sender: UIButton) {
+        
+        furnitureOption.setImage(UIImage(named: "furniture-label-selected"), for: .normal)
+        textbookOption.setImage(UIImage(named: "textbook-label-unselected"), for: .normal)
+    }
+    
+    
+    @IBAction func textbookOptionClicked(_ sender: UIButton) {
+        
+        textbookOption.setImage(UIImage(named: "textbook-label-selected"), for: .normal)
+        furnitureOption.setImage(UIImage(named: "furniture-label-unselected"), for: .normal)
     }
     
     override func viewDidLoad() {
