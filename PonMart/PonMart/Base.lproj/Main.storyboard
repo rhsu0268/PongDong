@@ -734,19 +734,19 @@
                                 <color key="textColor" red="0.015686274510000001" green="0.43137254899999999" blue="0.01176470588" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="furniture-label" translatesAutoresizingMaskIntoConstraints="NO" id="dU8-Ii-VmT">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="furniture-label-unselected" translatesAutoresizingMaskIntoConstraints="NO" id="dU8-Ii-VmT">
                                 <rect key="frame" x="19" y="482" width="65" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="textbook-label" translatesAutoresizingMaskIntoConstraints="NO" id="Be2-jI-qYv">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="textbook-label-unselected" translatesAutoresizingMaskIntoConstraints="NO" id="Be2-jI-qYv">
                                 <rect key="frame" x="84" y="482" width="65" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="new-label" translatesAutoresizingMaskIntoConstraints="NO" id="uuK-3I-fPt">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="new-label-unselected" translatesAutoresizingMaskIntoConstraints="NO" id="uuK-3I-fPt">
                                 <rect key="frame" x="185" y="482" width="48" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="used-label" translatesAutoresizingMaskIntoConstraints="NO" id="zXn-hh-pD9">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="used-label-unselected" translatesAutoresizingMaskIntoConstraints="NO" id="zXn-hh-pD9">
                                 <rect key="frame" x="233" y="482" width="48" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -807,10 +807,11 @@
     <resources>
         <image name="Richard" width="320" height="400"/>
         <image name="furniture-button-selected" width="375" height="100"/>
-        <image name="furniture-label" width="126" height="40"/>
+        <image name="furniture-label-unselected" width="126" height="40"/>
         <image name="login-sign" width="750" height="563"/>
         <image name="new-button-selected" width="375" height="100"/>
         <image name="new-label" width="89" height="40"/>
+        <image name="new-label-unselected" width="89" height="40"/>
         <image name="pong-block" width="750" height="563"/>
         <image name="profile-block" width="750" height="563"/>
         <image name="profile-button" width="45" height="45"/>
@@ -824,8 +825,9 @@
         <image name="tag-light" width="250" height="12"/>
         <image name="textbook-button-unselected" width="374" height="100"/>
         <image name="textbook-label" width="126" height="40"/>
+        <image name="textbook-label-unselected" width="126" height="40"/>
         <image name="used-button-unselected" width="374" height="100"/>
-        <image name="used-label" width="89" height="40"/>
+        <image name="used-label-unselected" width="89" height="40"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="1FK-Yj-of3"/>
