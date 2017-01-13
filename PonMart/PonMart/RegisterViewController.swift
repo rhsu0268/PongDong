@@ -53,10 +53,34 @@ class RegisterViewController: UIViewController {
         
         newUser.setValue(username, forKey: "username")
         newUser.setValue(userPassword, forKey: "userPassword")
+        
+        do
+        {
+            try context.save()
+            print("SAVED!")
+        }
+        catch
+        {
+            
+        }
+        
 
         
         // display alert message with confirmation
+        var confirmationAlert = UIAlertController(title: "Alert", message: "Your registration was successful! Welcome to PongDong", preferredStyle: UIAlertControllerStyle.alert)
+        
+        let okAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.default)
+        {
+            action in
+            self.dismiss(animated: true, completion: nil)
+        }
+        confirmationAlert.addAction(okAction)
+        self.present(confirmationAlert, animated: true, completion: nil)
+        
+        
+        
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
