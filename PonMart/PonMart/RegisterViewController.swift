@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class RegisterViewController: UIViewController {
 
@@ -17,6 +18,8 @@ class RegisterViewController: UIViewController {
   
     @IBOutlet var userPasswordConfirmationTextfield: UITextField!
     
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
+
     
     
     @IBAction func RegisterButtonClicked(_ sender: UIButton) {
@@ -42,8 +45,15 @@ class RegisterViewController: UIViewController {
             
             return
         }
-        // store data
         
+        // store data
+        let context = appDelegate.persistentContainer.viewContext
+        
+        let newUser = NSEntityDescription.insertNewObject(forEntityName: "Users", into: context)
+        
+        newUser.setValue(username, forKey: "username")
+        newUser.setValue(userPassword, forKey: "userPassword")
+
         
         // display alert message with confirmation
     }
