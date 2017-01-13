@@ -10,6 +10,43 @@ import UIKit
 
 class RegisterViewController: UIViewController {
 
+    @IBOutlet var userNameTextField: UITextField!
+    
+    @IBOutlet var userPasswordTextfield: UITextField!
+    
+  
+    @IBOutlet var userPasswordConfirmationTextfield: UITextField!
+    
+    
+    
+    @IBAction func RegisterButtonClicked(_ sender: UIButton) {
+        
+        // read the fields
+        let username = userNameTextField.text
+        let userPassword = userPasswordTextfield.text
+        let userPasswordConfirm = userPasswordConfirmationTextfield.text
+        
+        
+        // check for empty fields
+        if ((username?.isEmpty)! || (userPassword?.isEmpty)!)
+        {
+            // display alert message
+            displayAlertMessage(userMessage: "All fields are required!")
+            return
+        }
+        // check if the passwords match 
+        if (userPassword != userPasswordConfirm)
+        {
+            // display alert message
+            displayAlertMessage(userMessage: "Your passwords do not match!")
+            
+            return
+        }
+        // store data
+        
+        
+        // display alert message with confirmation
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -21,7 +58,16 @@ class RegisterViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
+    func displayAlertMessage(userMessage: String)
+    {
+        var myAlert = UIAlertController(title: "Alert", message: userMessage, preferredStyle: UIAlertControllerStyle.alert)
+        
+        let okayAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil)
+        
+        myAlert.addAction(okayAction)
+        
+        self.present(myAlert, animated: true, completion: nil)
+    }
     /*
     // MARK: - Navigation
 

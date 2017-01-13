@@ -100,6 +100,9 @@
                                 <rect key="frame" x="159" y="496" width="57" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Register"/>
+                                <connections>
+                                    <action selector="RegisterButtonClicked:" destination="iZ3-Ku-UYP" eventType="touchUpInside" id="tgM-8N-su4"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wSp-GY-AS0">
                                 <rect key="frame" x="42" y="230" width="80" height="30"/>
@@ -120,6 +123,11 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="userNameTextField" destination="BgO-Ui-TOc" id="d0I-5t-NcO"/>
+                        <outlet property="userPasswordConfirmationTextfield" destination="pG7-3h-e0y" id="QUM-4E-n09"/>
+                        <outlet property="userPasswordTextfield" destination="67q-xe-87Y" id="JV5-k7-fJM"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hkw-Vs-ugD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
