@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class SearchItemController: UIViewController {
     
@@ -51,6 +52,41 @@ class SearchItemController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        
+        let context = appDelegate.persistentContainer.viewContext
+        
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Items")
+        
+        request.returnsObjectsAsFaults = false
+        
+        do
+        {
+            let results = try context.fetch(request)
+            if results.count > 0
+            {
+                for result in results as! [NSManagedObject]
+                {
+                    if let itemName = result.value(forKey: "itemName") as? String
+                    {
+                        print(itemName)
+                    }
+                    
+                    if let itemPrice = result.value(forKey: "itemPrice") as? Double
+                    {
+                        print(itemPrice)
+                    }
+                }
+            }
+            
+        }
+        catch
+        {
+            // process error
+        }
+        
     }
 
     override func didReceiveMemoryWarning() {

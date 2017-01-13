@@ -4,7 +4,7 @@
         <attribute name="itemCategory" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="itemCondition" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="itemDescription" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="itemImage" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="itemImage" optional="YES" attributeType="Binary" allowsExternalBinaryDataStorage="YES" syncable="YES"/>
         <attribute name="itemName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="itemPrice" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="username" optional="YES" attributeType="String" syncable="YES"/>

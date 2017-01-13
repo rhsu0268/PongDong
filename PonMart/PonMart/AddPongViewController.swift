@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class AddPongViewController: UIViewController {
 
@@ -19,6 +20,8 @@ class AddPongViewController: UIViewController {
     var itemNameText : String = ""
     var itemDescriptionText : String = ""
     
+    var itemCategory : String = ""
+    var itemCondition : String = ""
     
     @IBOutlet var furnitureOption: UIButton!
     @IBOutlet var textbookOption: UIButton!
@@ -26,6 +29,8 @@ class AddPongViewController: UIViewController {
     
     @IBOutlet var newOption: UIButton!
     @IBOutlet var usedOption: UIButton!
+    
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
     
     @IBAction func AddPongClicked(_ sender: UIButton) {
         
@@ -43,8 +48,34 @@ class AddPongViewController: UIViewController {
         }
         
         
-        var item : Item = Item(name: itemNameText, description: itemDescriptionText, type: "Furniture", condition: "Used", price: 12.00, itemImage: UIImage(named:"sofa.jpeg")!)
-        print(item)
+        //var item : Item = Item(name: itemNameText, description: itemDescriptionText, type: "Furniture", condition: "Used", price: 12.00, itemImage: UIImage(named:"sofa.jpeg")!)
+        //print(item)
+        
+        let context = appDelegate.persistentContainer.viewContext
+        
+        let newItem = NSEntityDescription.insertNewObject(forEntityName: "Items", into: context)
+        
+        newItem.setValue("rhsu0268", forKey: "username")
+        newItem.setValue(itemNameText, forKey: "itemName")
+        newItem.setValue("Furniture", forKey: "itemCategory")
+        newItem.setValue("Used", forKey: "itemCondition")
+        newItem.setValue(150, forKey: "itemPrice")
+        newItem.setValue(itemDescriptionText, forKey: "itemDescription")
+        
+        
+        let imageData : NSData = UIImagePNGRepresentation(UIImage(named: "sofa.jpeg")!)! as NSData
+        newItem.setValue(imageData, forKey: "itemImage")
+        
+        
+        do
+        {
+            try context.save()
+            print("SAVED!")
+        }
+        catch
+        {
+            
+        }
 
         
     }
@@ -84,6 +115,11 @@ class AddPongViewController: UIViewController {
         // Do any additional setup after loading the view.
         self.userProfileImage.layer.cornerRadius = self.userProfileImage.frame.size.width / 2
         self.userProfileImage.clipsToBounds = true
+        
+        // storing core data
+        
+        
+        
         
         
     }
