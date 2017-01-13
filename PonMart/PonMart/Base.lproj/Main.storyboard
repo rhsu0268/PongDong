@@ -38,10 +38,10 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
         </scene>
-        <!--View Controller-->
+        <!--Register View Controller-->
         <scene sceneID="fhb-Us-BI6">
             <objects>
-                <viewController id="iZ3-Ku-UYP" sceneMemberID="viewController">
+                <viewController id="iZ3-Ku-UYP" customClass="RegisterViewController" customModule="PonMart" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="sIo-JP-UDQ"/>
                         <viewControllerLayoutGuide type="bottom" id="nEm-jP-gBw"/>
@@ -125,10 +125,10 @@
             </objects>
             <point key="canvasLocation" x="1224.8" y="-755.17241379310349"/>
         </scene>
-        <!--View Controller-->
+        <!--Login View Controller-->
         <scene sceneID="P0Z-2u-vEh">
             <objects>
-                <viewController id="A14-zg-b4p" sceneMemberID="viewController">
+                <viewController id="A14-zg-b4p" customClass="LoginViewController" customModule="PonMart" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="PnX-fX-NqT"/>
                         <viewControllerLayoutGuide type="bottom" id="LD9-aY-vk5"/>
@@ -184,6 +184,9 @@
                                 <state key="normal" title="SIGN UP">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="iZ3-Ku-UYP" kind="show" id="vqu-Ve-Cmn"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K33-6c-xq5">
                                 <rect key="frame" x="168" y="423" width="38" height="30"/>
