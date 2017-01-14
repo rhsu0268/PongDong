@@ -201,6 +201,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Login"/>
                                 <connections>
+                                    <action selector="LoginButtonClicked:" destination="A14-zg-b4p" eventType="touchUpInside" id="R3Y-8o-aXx"/>
                                     <segue destination="vwi-Lo-XwT" kind="popoverPresentation" popoverAnchorView="K33-6c-xq5" id="Re6-31-u09">
                                         <popoverArrowDirection key="popoverArrowDirection" left="YES"/>
                                     </segue>
@@ -209,6 +210,10 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="userPasswordTextField" destination="KEf-3M-vAz" id="dAV-9T-H10"/>
+                        <outlet property="usernameTextField" destination="RL7-UY-0l7" id="tOh-p7-l2O"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mis-Il-6Sv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
