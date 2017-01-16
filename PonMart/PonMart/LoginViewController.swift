@@ -43,11 +43,20 @@ class LoginViewController: UIViewController {
             {
                 for user in users as! [NSManagedObject]
                 {
-                    if let username = user.value(forKey: "username") as? String
+                    if let currentUsername = user.value(forKey: "username") as? String
                     {
-                        print(username)
+                        print(currentUsername)
                         
-                        
+                        if (username == currentUsername)
+                        {
+                            if let currentPassword = user.value(forKey: "userPassword") as? String
+                            {
+                                if userPassword == currentPassword
+                                {
+                                    print("You are logged in!")
+                                }
+                            }
+                        }
                     }
                 }
             }
