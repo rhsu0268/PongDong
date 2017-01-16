@@ -57,6 +57,10 @@ class LoginViewController: UIViewController {
                                     //displayAlertMessage(userMessage: "You are logged in. Welcome to PongDong!")
                                     //self.presentedViewController("SearchItemController", nil)
                                     
+                                    // keep track of logged in status
+                                    UserDefaults.standard.set(true, forKey: "isUserLoggedIn")
+                                    UserDefaults.standard.synchronize()
+                                    
                                     var confirmationAlert = UIAlertController(title: "Alert", message: "You are logged in. Welcome to PongDong!", preferredStyle: UIAlertControllerStyle.alert)
                                     
                                     let okAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.default)
@@ -117,5 +121,14 @@ class LoginViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    override func viewDidAppear(_ animated: Bool) {
+        
+        let isUserLoggedIn = UserDefaults.standard.bool(forKey: "isUserLoggedIn")
+        if isUserLoggedIn
+        {
+            self.performSegue(withIdentifier: "LoginViewToSearchView", sender: self)
+        }
+    }
 
 }
