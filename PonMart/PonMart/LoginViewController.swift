@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class LoginViewController: UIViewController {
 
@@ -25,7 +26,38 @@ class LoginViewController: UIViewController {
         
         // send username and userPassword and do verification 
         
-        // 
+        // pull out data
+        
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        
+        let context = appDelegate.persistentContainer.viewContext
+        
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Users")
+        
+        request.returnsObjectsAsFaults = false
+        
+        do
+        {
+            let users = try context.fetch(request)
+            if users.count > 0
+            {
+                for user in users as! [NSManagedObject]
+                {
+                    if let username = user.value(forKey: "username") as? String
+                    {
+                        print(username)
+                        
+                        
+                    }
+                }
+            }
+        }
+        catch
+        {
+            // process error
+        }
+        
+        
     }
     
     override func viewDidLoad() {
