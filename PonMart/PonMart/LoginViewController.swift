@@ -54,11 +54,13 @@ class LoginViewController: UIViewController {
                                 if userPassword == currentPassword
                                 {
                                     print("You are logged in!")
+                                    displayAlertMessage(userMessage: "You are logged in. Welcome to PongDong!")
                                 }
                             }
                         }
                     }
                 }
+                displayAlertMessage(userMessage: "Please check your credentails!")
             }
         }
         catch
@@ -80,6 +82,17 @@ class LoginViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    
+    func displayAlertMessage(userMessage: String)
+    {
+        var myAlert = UIAlertController(title: "Alert", message: userMessage, preferredStyle: UIAlertControllerStyle.alert)
+        
+        let okayAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil)
+        
+        myAlert.addAction(okayAction)
+        
+        self.present(myAlert, animated: true, completion: nil)
+    }
 
     /*
     // MARK: - Navigation
