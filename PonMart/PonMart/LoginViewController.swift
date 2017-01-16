@@ -19,7 +19,13 @@ class LoginViewController: UIViewController {
     @IBAction func LoginButtonClicked(_ sender: UIButton) {
         
         
+        let username = usernameTextField.text
+        let userPassword = userPasswordTextField.text
         
+        
+        // send username and userPassword and do verification 
+        
+        // 
     }
     
     override func viewDidLoad() {
