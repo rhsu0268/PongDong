@@ -54,7 +54,21 @@ class LoginViewController: UIViewController {
                                 if userPassword == currentPassword
                                 {
                                     print("You are logged in!")
-                                    displayAlertMessage(userMessage: "You are logged in. Welcome to PongDong!")
+                                    //displayAlertMessage(userMessage: "You are logged in. Welcome to PongDong!")
+                                    //self.presentedViewController("SearchItemController", nil)
+                                    
+                                    var confirmationAlert = UIAlertController(title: "Alert", message: "You are logged in. Welcome to PongDong!", preferredStyle: UIAlertControllerStyle.alert)
+                                    
+                                    let okAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.default)
+                                    {
+                                        action in
+                                        self.performSegue(withIdentifier: "LoginViewToSearchView", sender: nil)
+                                    }
+                                    confirmationAlert.addAction(okAction)
+                                    self.present(confirmationAlert, animated: true, completion: nil)
+                                    
+                                    
+                                    
                                 }
                             }
                         }
