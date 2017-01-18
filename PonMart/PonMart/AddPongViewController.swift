@@ -14,14 +14,18 @@ class AddPongViewController: UIViewController {
     
     @IBOutlet var itemName: UITextField!
     @IBOutlet var itemDescription: UITextView!
+    @IBOutlet var itemPriceTextField: UITextField!
     
     @IBOutlet var userProfileImage: UIImageView!
     
     var itemNameText : String = ""
     var itemDescriptionText : String = ""
+    var itemPriceDouble : Double = 0.0
     
     var itemCategory : String = ""
     var itemCondition : String = ""
+  
+    
     
     @IBOutlet var furnitureOption: UIButton!
     @IBOutlet var textbookOption: UIButton!
@@ -46,6 +50,10 @@ class AddPongViewController: UIViewController {
         {
             itemDescriptionText = itemDescription
         }
+        if let itemPrice = Double(itemPriceTextField.text!)
+        {
+            itemPriceDouble = itemPrice
+        }
         
         
         //var item : Item = Item(name: itemNameText, description: itemDescriptionText, type: "Furniture", condition: "Used", price: 12.00, itemImage: UIImage(named:"sofa.jpeg")!)
@@ -57,9 +65,9 @@ class AddPongViewController: UIViewController {
         
         newItem.setValue("rhsu0268", forKey: "username")
         newItem.setValue(itemNameText, forKey: "itemName")
-        newItem.setValue("Furniture", forKey: "itemCategory")
-        newItem.setValue("Used", forKey: "itemCondition")
-        newItem.setValue(150, forKey: "itemPrice")
+        newItem.setValue(itemCategory, forKey: "itemCategory")
+        newItem.setValue(itemCondition, forKey: "itemCondition")
+        newItem.setValue(itemPriceDouble, forKey: "itemPrice")
         newItem.setValue(itemDescriptionText, forKey: "itemDescription")
         
         
@@ -85,6 +93,7 @@ class AddPongViewController: UIViewController {
         
         furnitureOption.setImage(UIImage(named: "furniture-label-selected"), for: .normal)
         textbookOption.setImage(UIImage(named: "textbook-label-unselected"), for: .normal)
+        itemCategory = "Furniture"
     }
     
     
@@ -92,6 +101,7 @@ class AddPongViewController: UIViewController {
         
         textbookOption.setImage(UIImage(named: "textbook-label-selected"), for: .normal)
         furnitureOption.setImage(UIImage(named: "furniture-label-unselected"), for: .normal)
+        itemCategory = "Textbook"
     }
     
     
@@ -99,13 +109,15 @@ class AddPongViewController: UIViewController {
         
         newOption.setImage(UIImage(named: "new-label-selected"), for: .normal)
         usedOption.setImage(UIImage(named: "used-label-unselected"), for: .normal)
+        itemCondition = "New"
     }
     
     @IBAction func usedOptionClicked(_ sender: UIButton) {
         
         usedOption.setImage(UIImage(named: "used-label-selected"), for: .normal)
         newOption.setImage(UIImage(named: "new-label-unselected"), for: .normal)
-        }
+        itemCondition = "Used"
+    }
     
     
     
