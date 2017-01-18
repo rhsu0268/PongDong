@@ -652,7 +652,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="textbook-label" translatesAutoresizingMaskIntoConstraints="NO" id="nAm-6p-p2g">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="furniture-label-unselected" translatesAutoresizingMaskIntoConstraints="NO" id="nAm-6p-p2g">
                                 <rect key="frame" x="16" y="383" width="84" height="28"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -951,7 +951,6 @@
         <image name="tag-dark" width="250" height="12"/>
         <image name="tag-light" width="250" height="12"/>
         <image name="textbook-button-unselected" width="374" height="100"/>
-        <image name="textbook-label" width="126" height="40"/>
         <image name="textbook-label-unselected" width="126" height="40"/>
         <image name="used-button-unselected" width="374" height="100"/>
         <image name="used-label-unselected" width="89" height="40"/>
