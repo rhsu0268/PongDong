@@ -23,6 +23,7 @@
 		D11BA21E1E2698BE00222DEC /* UserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D11BA21D1E2698BE00222DEC /* UserProfileViewController.swift */; };
 		D11BA2201E26ADDE00222DEC /* AddPongViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D11BA21F1E26ADDE00222DEC /* AddPongViewController.swift */; };
 		D11BA2221E29229A00222DEC /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D11BA2211E29229A00222DEC /* RegisterViewController.swift */; };
+		D173DEA21E31BD53002D1C52 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D173DEA11E31BD53002D1C52 /* EditProfileViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		D11BA21D1E2698BE00222DEC /* UserProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfileViewController.swift; sourceTree = "<group>"; };
 		D11BA21F1E26ADDE00222DEC /* AddPongViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddPongViewController.swift; sourceTree = "<group>"; };
 		D11BA2211E29229A00222DEC /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		D173DEA11E31BD53002D1C52 /* EditProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +82,7 @@
 				D11BA1F91E1C1EBB00222DEC /* AppDelegate.swift */,
 				D11BA1FB1E1C1EBB00222DEC /* ViewController.swift */,
 				D11BA1FD1E1C1EBB00222DEC /* Main.storyboard */,
+				D173DEA11E31BD53002D1C52 /* EditProfileViewController.swift */,
 				D11BA2211E29229A00222DEC /* RegisterViewController.swift */,
 				D11BA21F1E26ADDE00222DEC /* AddPongViewController.swift */,
 				D11BA21D1E2698BE00222DEC /* UserProfileViewController.swift */,
@@ -184,6 +187,7 @@
 				D11BA2131E21899500222DEC /* SearchResultTableViewController.swift in Sources */,
 				D11BA2151E21989F00222DEC /* SampleItemData.swift in Sources */,
 				D11BA2171E21AF7E00222DEC /* LoginViewController.swift in Sources */,
+				D173DEA21E31BD53002D1C52 /* EditProfileViewController.swift in Sources */,
 				D11BA2021E1C1EBB00222DEC /* PonMart.xcdatamodeld in Sources */,
 				D11BA21C1E254F2D00222DEC /* ItemDetailViewController.swift in Sources */,
 				D11BA2111E21895600222DEC /* SearchItemController.swift in Sources */,
