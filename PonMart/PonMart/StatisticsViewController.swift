@@ -7,13 +7,20 @@
 //
 
 import UIKit
+import Charts
 
 class StatisticsViewController: UIViewController {
 
+    
+    @IBOutlet var statsView: BarChartView!
+   
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        statsView.noDataText = "You have no sales!"
     }
 
     override func didReceiveMemoryWarning() {
