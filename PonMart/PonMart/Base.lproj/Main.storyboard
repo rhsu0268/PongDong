@@ -995,6 +995,9 @@
                                 <rect key="frame" x="52" y="629" width="20" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button" image="profile-button"/>
+                                <connections>
+                                    <segue destination="p5r-ME-fq9" kind="show" id="vnC-iW-7vP"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l2x-8T-OvS">
                                 <rect key="frame" x="177" y="629" width="20" height="20"/>
@@ -1265,7 +1268,8 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="lQs-vo-Evf"/>
-        <segue reference="xEO-lN-dgF"/>
+        <segue reference="vnC-iW-7vP"/>
         <segue reference="0K2-We-KYH"/>
+        <segue reference="xEO-lN-dgF"/>
     </inferredMetricsTieBreakers>
 </document>
