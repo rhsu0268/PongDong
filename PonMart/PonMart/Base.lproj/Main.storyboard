@@ -1019,7 +1019,7 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rGd-Ft-omh" customClass="BarChartView" customModule="Charts">
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rGd-Ft-omh" customClass="LineChartView" customModule="Charts">
                                 <rect key="frame" x="16" y="94" width="343" height="453"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1028,7 +1028,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
-                        <outlet property="statsView" destination="rGd-Ft-omh" id="Hnv-Qd-FY1"/>
+                        <outlet property="statsView" destination="rGd-Ft-omh" id="idq-1a-5ab"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aN5-RR-Alm" userLabel="First Responder" sceneMemberID="firstResponder"/>

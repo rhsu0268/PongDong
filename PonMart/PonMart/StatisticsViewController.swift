@@ -12,7 +12,8 @@ import Charts
 class StatisticsViewController: UIViewController {
 
     
-    @IBOutlet var statsView: BarChartView!
+    
+    @IBOutlet var statsView: LineChartView!
     
     var months: [String]!
     
@@ -24,7 +25,9 @@ class StatisticsViewController: UIViewController {
         //statsView.noDataText = "You have no sales!"
         
         months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+        //months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun"]
         let unitsSold = [20.0, 4.0, 6.0, 3.0, 12.0, 16.0, 4.0, 18.0, 2.0, 4.0, 5.0, 4.0]
+        //let unitsSold = [20.0, 4.0, 6.0, 3.0, 12.0, 16.0]
         
         setChart(dataPoints: months, values: unitsSold)
     }
@@ -41,18 +44,22 @@ class StatisticsViewController: UIViewController {
         statsView.xAxis.labelPosition = .bottom
         statsView.animate(xAxisDuration: 2.0, yAxisDuration: 2.0)
         
-        var dataEntries: [BarChartDataEntry] = []
+        
+        var dataEntries: [ChartDataEntry] = []
+        
         
         for i in 0..<dataPoints.count
         {
-            let dataEntry = BarChartDataEntry(x: Double(i), y: values[i])
+            print(i)
+            let dataEntry = ChartDataEntry(x: Double(i), y: values[i])
             dataEntries.append(dataEntry)
         }
         
-        let chartDataSet = BarChartDataSet(values: dataEntries, label: "Units Sold")
-        chartDataSet.colors = [UIColor(red: 230/255, green: 126/255, blue: 34/255, alpha: 1)]
-        let chartData = BarChartData(dataSets: [chartDataSet])
-        statsView.data = chartData
+        let lineChartDataSet = LineChartDataSet(values: dataEntries, label: "Number of Sales")
+ 
+        //lineChartDataSet.colors = [UIColor(red: 230/255, green: 126/255, blue: 34/255, alpha: 1)]
+        let lineChartData = LineChartData(dataSets: [lineChartDataSet])
+        statsView.data = lineChartData
     }
     
 
