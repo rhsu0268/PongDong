@@ -548,6 +548,9 @@
                                 <rect key="frame" x="124" y="282" width="126" height="70"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="profile-button-block"/>
+                                <connections>
+                                    <action selector="LogoutButtonClicked:" destination="p5r-ME-fq9" eventType="touchUpInside" id="QqI-YI-F7b"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Logout" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7rf-rM-3Gv">
                                 <rect key="frame" x="161" y="305" width="54" height="21"/>

@@ -30,6 +30,17 @@ class UserProfileViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    
+    
+    @IBAction func LogoutButtonClicked(_ sender: UIButton) {
+        
+        UserDefaults.standard.set(false, forKey: "isUserLoggedIn")
+        UserDefaults.standard.synchronize()
+        
+        
+        // go to login 
+        
+    }
 
     /*
     // MARK: - Navigation
