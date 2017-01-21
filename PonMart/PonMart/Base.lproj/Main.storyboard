@@ -958,10 +958,10 @@
             </objects>
             <point key="canvasLocation" x="2838" y="748"/>
         </scene>
-        <!--View Controller-->
+        <!--Statistics View Controller-->
         <scene sceneID="EaK-Yv-dyK">
             <objects>
-                <viewController id="boC-HI-9H3" sceneMemberID="viewController">
+                <viewController id="boC-HI-9H3" customClass="StatisticsViewController" customModule="PonMart" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="4WX-aw-huh"/>
                         <viewControllerLayoutGuide type="bottom" id="NKn-zW-4Bg"/>
