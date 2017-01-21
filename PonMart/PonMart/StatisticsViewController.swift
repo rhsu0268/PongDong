@@ -37,7 +37,9 @@ class StatisticsViewController: UIViewController {
     func setChart(dataPoints: [String], values: [Double])
     {
         statsView.noDataText = "You have no data!"
-        
+        statsView.descriptionText = ""
+        statsView.xAxis.labelPosition = .bottom
+        statsView.animate(xAxisDuration: 2.0, yAxisDuration: 2.0)
         
         var dataEntries: [BarChartDataEntry] = []
         
@@ -48,6 +50,7 @@ class StatisticsViewController: UIViewController {
         }
         
         let chartDataSet = BarChartDataSet(values: dataEntries, label: "Units Sold")
+        chartDataSet.colors = [UIColor(red: 230/255, green: 126/255, blue: 34/255, alpha: 1)]
         let chartData = BarChartData(dataSets: [chartDataSet])
         statsView.data = chartData
     }
