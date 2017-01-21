@@ -400,6 +400,9 @@
                                 <rect key="frame" x="302" y="627" width="20" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="rating-button"/>
+                                <connections>
+                                    <segue destination="boC-HI-9H3" kind="show" id="Z9O-BM-kTI"/>
+                                </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="profile-block" translatesAutoresizingMaskIntoConstraints="NO" id="o2j-eX-Oqf">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="283"/>
@@ -952,6 +955,72 @@
             </objects>
             <point key="canvasLocation" x="2838" y="748"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="EaK-Yv-dyK">
+            <objects>
+                <viewController id="boC-HI-9H3" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="4WX-aw-huh"/>
+                        <viewControllerLayoutGuide type="bottom" id="NKn-zW-4Bg"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="yBe-OF-szz">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="stat-panel-bar" translatesAutoresizingMaskIntoConstraints="NO" id="WzX-kG-LEE">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="46"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HRL-uK-OEv">
+                                <rect key="frame" x="39" y="570" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="tag-dark" translatesAutoresizingMaskIntoConstraints="NO" id="y7l-z2-l5p">
+                                <rect key="frame" x="249" y="657" width="126" height="10"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="tag-light" translatesAutoresizingMaskIntoConstraints="NO" id="Yy1-wx-u3y">
+                                <rect key="frame" x="124" y="657" width="126" height="10"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="tag-light" translatesAutoresizingMaskIntoConstraints="NO" id="qyo-GG-Asz">
+                                <rect key="frame" x="-1" y="657" width="126" height="10"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W7m-eU-Nve">
+                                <rect key="frame" x="52" y="629" width="20" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="profile-button"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l2x-8T-OvS">
+                                <rect key="frame" x="177" y="629" width="20" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="search-button"/>
+                                <connections>
+                                    <action selector="SearchOptionButtonClicked:" destination="p5r-ME-fq9" eventType="touchUpInside" id="Oww-NE-VFs"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SYa-EN-KEc">
+                                <rect key="frame" x="302" y="629" width="20" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="rating-button"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Statistics" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="skR-m4-Rap">
+                                <rect key="frame" x="152" y="13" width="71" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aN5-RR-Alm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1509.5999999999999" y="1760.8695652173915"/>
+        </scene>
         <!--Edit Profile View Controller-->
         <scene sceneID="Oa0-Qa-gqb">
             <objects>
@@ -1175,6 +1244,7 @@
         <image name="search-item-button" width="748" height="130"/>
         <image name="sign-up-1" width="750" height="562"/>
         <image name="sofa" width="450" height="450"/>
+        <image name="stat-panel-bar" width="750" height="145"/>
         <image name="tag-dark" width="250" height="12"/>
         <image name="tag-light" width="250" height="12"/>
         <image name="textbook-button-unselected" width="374" height="100"/>
