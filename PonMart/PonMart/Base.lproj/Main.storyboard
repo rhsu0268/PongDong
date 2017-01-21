@@ -393,7 +393,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="search-button"/>
                                 <connections>
-                                    <segue destination="vwi-Lo-XwT" kind="show" id="1FK-Yj-of3"/>
+                                    <action selector="SearchOptionButtonClicked:" destination="p5r-ME-fq9" eventType="touchUpInside" id="Zk7-2B-ENc"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SOf-H0-wsZ">
@@ -1179,7 +1179,7 @@
         <image name="used-label-unselected" width="89" height="40"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="1FK-Yj-of3"/>
+        <segue reference="atc-AP-sJL"/>
         <segue reference="ute-SD-HoJ"/>
         <segue reference="xEO-lN-dgF"/>
     </inferredMetricsTieBreakers>

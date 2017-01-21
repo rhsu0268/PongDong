@@ -43,6 +43,11 @@ class UserProfileViewController: UIViewController {
         
     }
 
+    @IBAction func SearchOptionButtonClicked(_ sender: UIButton) {
+        
+        dismiss(animated: true, completion: nil)
+    }
+    
     /*
     // MARK: - Navigation
 
