@@ -330,6 +330,9 @@
                                 <rect key="frame" x="303" y="629" width="20" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="rating-button"/>
+                                <connections>
+                                    <segue destination="boC-HI-9H3" kind="show" id="0K2-We-KYH"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fsZ-It-GJq">
                                 <rect key="frame" x="0.0" y="552" width="380" height="70"/>
@@ -968,7 +971,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="stat-panel-bar" translatesAutoresizingMaskIntoConstraints="NO" id="WzX-kG-LEE">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="46"/>
+                                <rect key="frame" x="0.0" y="28" width="375" height="46"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HRL-uK-OEv">
@@ -1007,7 +1010,7 @@
                                 <state key="normal" image="rating-button"/>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Statistics" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="skR-m4-Rap">
-                                <rect key="frame" x="152" y="13" width="71" height="21"/>
+                                <rect key="frame" x="152" y="41" width="71" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1019,7 +1022,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aN5-RR-Alm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1509.5999999999999" y="1760.8695652173915"/>
+            <point key="canvasLocation" x="1542" y="1537"/>
         </scene>
         <!--Edit Profile View Controller-->
         <scene sceneID="Oa0-Qa-gqb">
@@ -1255,5 +1258,6 @@
     <inferredMetricsTieBreakers>
         <segue reference="lQs-vo-Evf"/>
         <segue reference="xEO-lN-dgF"/>
+        <segue reference="0K2-We-KYH"/>
     </inferredMetricsTieBreakers>
 </document>
