@@ -141,6 +141,17 @@ class AddPongViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    
+    @IBAction func ProfileOptionButtonClicked(_ sender: UIButton) {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    
+    @IBAction func SearchOptionButtonClicked(_ sender: UIButton) {
+        
+        performSegue(withIdentifier: "addPongViewToSearchView", sender: self)
+    }
+    
 
     /*
     // MARK: - Navigation

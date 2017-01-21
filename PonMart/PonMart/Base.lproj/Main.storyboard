@@ -748,13 +748,17 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button" image="profile-button"/>
                                 <connections>
-                                    <segue destination="p5r-ME-fq9" kind="show" id="Zy6-pj-qtf"/>
+                                    <action selector="ProfileOptionButtonClicked:" destination="m4K-5q-gse" eventType="touchUpInside" id="ycL-OF-7GQ"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d49-77-4zu">
                                 <rect key="frame" x="178" y="627" width="20" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="search-button"/>
+                                <connections>
+                                    <action selector="SearchOptionButtonClicked:" destination="m4K-5q-gse" eventType="touchUpInside" id="mT8-rT-cYa"/>
+                                    <segue destination="vwi-Lo-XwT" kind="show" identifier="addPongViewToSearchView" id="lQs-vo-Evf"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oWt-BM-eRL">
                                 <rect key="frame" x="302" y="627" width="20" height="20"/>
@@ -946,7 +950,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Q1b-24-gWs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2717.5999999999999" y="751.57421289355329"/>
+            <point key="canvasLocation" x="2838" y="748"/>
         </scene>
         <!--Edit Profile View Controller-->
         <scene sceneID="Oa0-Qa-gqb">
@@ -1149,7 +1153,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Sx3-nT-omZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2717.5999999999999" y="1589.9550224887557"/>
+            <point key="canvasLocation" x="2577" y="1577"/>
         </scene>
     </scenes>
     <resources>
@@ -1179,8 +1183,7 @@
         <image name="used-label-unselected" width="89" height="40"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="atc-AP-sJL"/>
-        <segue reference="ute-SD-HoJ"/>
+        <segue reference="lQs-vo-Evf"/>
         <segue reference="xEO-lN-dgF"/>
     </inferredMetricsTieBreakers>
 </document>
