@@ -26,7 +26,7 @@ class StatisticsViewController: UIViewController {
         
         months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
         //months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun"]
-        let unitsSold = [20.0, 4.0, 6.0, 3.0, 12.0, 16.0, 4.0, 18.0, 2.0, 4.0, 5.0, 4.0]
+        let unitsSold = [20.0, 4.0, 6.0, 3.0, 12.0, 0.0, 4.0, 18.0, 2.0, 4.0, 5.0, 4.0]
         //let unitsSold = [20.0, 4.0, 6.0, 3.0, 12.0, 16.0]
         
         setChart(dataPoints: months, values: unitsSold)
