@@ -41,25 +41,31 @@ class StatisticsViewController: UIViewController {
     {
         statsView.noDataText = "You have no data!"
         statsView.descriptionText = ""
+        
         statsView.xAxis.labelPosition = .bottom
+        let formato : LineChartFormatter = LineChartFormatter()
+        let xaxis : XAxis = XAxis()
+        
         statsView.animate(xAxisDuration: 2.0, yAxisDuration: 2.0)
         
         
         var dataEntries: [ChartDataEntry] = []
         
-        
         for i in 0..<dataPoints.count
         {
             print(i)
             let dataEntry = ChartDataEntry(x: Double(i), y: values[i])
+            formato.stringForValue(Double(i), axis: xaxis)
+            xaxis.valueFormatter = formato
             dataEntries.append(dataEntry)
+
         }
         
         let lineChartDataSet = LineChartDataSet(values: dataEntries, label: "Number of Sales")
- 
-        //lineChartDataSet.colors = [UIColor(red: 230/255, green: 126/255, blue: 34/255, alpha: 1)]
+        lineChartDataSet.colors = [UIColor(red: 0.02, green: 0.43, blue: 0.01, alpha: 1)]
         let lineChartData = LineChartData(dataSets: [lineChartDataSet])
         statsView.data = lineChartData
+        statsView.xAxis.valueFormatter = xaxis.valueFormatter
     }
     
 

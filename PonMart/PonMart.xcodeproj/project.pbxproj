@@ -26,6 +26,7 @@
 		D11BA2221E29229A00222DEC /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D11BA2211E29229A00222DEC /* RegisterViewController.swift */; };
 		D173DEA21E31BD53002D1C52 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D173DEA11E31BD53002D1C52 /* EditProfileViewController.swift */; };
 		D173DEA61E331234002D1C52 /* StatisticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D173DEA51E331234002D1C52 /* StatisticsViewController.swift */; };
+		D173DEA91E340E22002D1C52 /* LineChartFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D173DEA81E340E22002D1C52 /* LineChartFormatter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +53,7 @@
 		D11BA2211E29229A00222DEC /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		D173DEA11E31BD53002D1C52 /* EditProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 		D173DEA51E331234002D1C52 /* StatisticsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatisticsViewController.swift; sourceTree = "<group>"; };
+		D173DEA81E340E22002D1C52 /* LineChartFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineChartFormatter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +125,7 @@
 			isa = PBXGroup;
 			children = (
 				D11BA20E1E21881800222DEC /* Item.swift */,
+				D173DEA81E340E22002D1C52 /* LineChartFormatter.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -260,6 +263,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D11BA20F1E21881800222DEC /* Item.swift in Sources */,
+				D173DEA91E340E22002D1C52 /* LineChartFormatter.swift in Sources */,
 				D11BA1FC1E1C1EBB00222DEC /* ViewController.swift in Sources */,
 				D11BA21A1E229D5B00222DEC /* ItemCell.swift in Sources */,
 				D11BA2131E21899500222DEC /* SearchResultTableViewController.swift in Sources */,
