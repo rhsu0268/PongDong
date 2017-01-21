@@ -39,6 +39,7 @@ class UserProfileViewController: UIViewController {
         
         
         // go to login 
+        performSegue(withIdentifier: "profileViewToLoginView", sender: self)
         
     }
 

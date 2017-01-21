@@ -571,6 +571,7 @@
                     </view>
                     <connections>
                         <outlet property="userProfileImage" destination="kAm-Hg-i47" id="AnX-51-pJD"/>
+                        <segue destination="A14-zg-b4p" kind="show" identifier="profileViewToLoginView" id="xEO-lN-dgF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Do-Q7-dik" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1180,5 +1181,6 @@
     <inferredMetricsTieBreakers>
         <segue reference="1FK-Yj-of3"/>
         <segue reference="ute-SD-HoJ"/>
+        <segue reference="xEO-lN-dgF"/>
     </inferredMetricsTieBreakers>
 </document>
