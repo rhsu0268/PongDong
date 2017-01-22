@@ -578,6 +578,7 @@
                     <connections>
                         <outlet property="userProfileImage" destination="kAm-Hg-i47" id="AnX-51-pJD"/>
                         <segue destination="A14-zg-b4p" kind="show" identifier="profileViewToLoginView" id="xEO-lN-dgF"/>
+                        <segue destination="vwi-Lo-XwT" kind="show" identifier="profileViewToSearchView" id="Nya-sh-GOK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Do-Q7-dik" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1286,9 +1287,9 @@
         <image name="used-label-unselected" width="89" height="40"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="lQs-vo-Evf"/>
+        <segue reference="Nya-sh-GOK"/>
         <segue reference="vnC-iW-7vP"/>
-        <segue reference="0K2-We-KYH"/>
+        <segue reference="Z9O-BM-kTI"/>
         <segue reference="xEO-lN-dgF"/>
     </inferredMetricsTieBreakers>
 </document>

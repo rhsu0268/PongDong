@@ -45,7 +45,8 @@ class UserProfileViewController: UIViewController {
 
     @IBAction func SearchOptionButtonClicked(_ sender: UIButton) {
         
-        dismiss(animated: true, completion: nil)
+        //dismiss(animated: true, completion: nil)
+        performSegue(withIdentifier: "profileViewToSearchView", sender: self)
     }
     
     /*
