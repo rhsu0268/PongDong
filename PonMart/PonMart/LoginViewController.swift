@@ -61,6 +61,10 @@ class LoginViewController: UIViewController {
                                     UserDefaults.standard.set(true, forKey: "isUserLoggedIn")
                                     UserDefaults.standard.synchronize()
                                     
+                                    // keep track of logged in user
+                                    UserDefaults.standard.set(username, forKey: "username")
+                                    UserDefaults.standard.synchronize()
+                                    
                                     var confirmationAlert = UIAlertController(title: "Alert", message: "You are logged in. Welcome to PongDong!", preferredStyle: UIAlertControllerStyle.alert)
                                     
                                     let okAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.default)

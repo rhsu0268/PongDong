@@ -14,6 +14,13 @@ class EditProfileViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        
+        // pull data out of NSUserDefaults
+        //let isUserLoggedIn = UserDefaults.standard.bool(forKey: "isUserLoggedIn")
+        let loggedInUsername = UserDefaults.standard.string(forKey: "username")
+        print(loggedInUsername)
+        
     }
 
     override func didReceiveMemoryWarning() {
