@@ -318,7 +318,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button" image="profile-button"/>
                                 <connections>
-                                    <segue destination="p5r-ME-fq9" kind="show" id="ute-SD-HoJ"/>
+                                    <segue destination="p5r-ME-fq9" kind="show" action="showDetailViewController:sender:" id="ute-SD-HoJ"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dym-tg-wMf">
@@ -1288,7 +1288,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="lQs-vo-Evf"/>
-        <segue reference="vnC-iW-7vP"/>
+        <segue reference="ute-SD-HoJ"/>
         <segue reference="Z9O-BM-kTI"/>
         <segue reference="xEO-lN-dgF"/>
     </inferredMetricsTieBreakers>
