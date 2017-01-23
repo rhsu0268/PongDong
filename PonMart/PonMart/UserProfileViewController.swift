@@ -32,17 +32,18 @@ class UserProfileViewController: UIViewController {
     
     
     
-    @IBAction func LogoutButtonClicked(_ sender: UIButton) {
+
+
+    @IBAction func ExitButtonClicked(_ sender: UIButton) {
         
         UserDefaults.standard.set(false, forKey: "isUserLoggedIn")
         UserDefaults.standard.synchronize()
         
         
-        // go to login 
+        // go to login
         performSegue(withIdentifier: "profileViewToLoginView", sender: self)
-        
-    }
 
+    }
     @IBAction func SearchOptionButtonClicked(_ sender: UIButton) {
         
         //dismiss(animated: true, completion: nil)
