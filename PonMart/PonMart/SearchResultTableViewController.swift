@@ -19,7 +19,7 @@ class SearchResultTableViewController: UITableViewController {
     
     
     
-    var items : [Item] = []
+    var items : [Any] = []
     var item : Item? = nil
     var itemIndex : Int? = nil
     
@@ -33,7 +33,7 @@ class SearchResultTableViewController: UITableViewController {
             itemIndex = tableView.indexPathForSelectedRow?.row
             
             print(items[itemIndex!])
-            itemDetailViewController.item = items[itemIndex!]
+            //itemDetailViewController.item = items[itemIndex!]
             
         }
         else
@@ -80,10 +80,11 @@ class SearchResultTableViewController: UITableViewController {
         // Configure the cell...
         //itemNameLabel.text = items[0].name
         
-        let item = items[indexPath.row]
-        cell.itemNameLabel.text = item.name
-        cell.itemImage.image = item.itemImage
-        print(item.condition)
+        //let item = items[indexPath.row]
+        //cell.itemNameLabel.text = item.name
+        //cell.itemImage.image = item.itemImage
+        //print(item.condition)
+        /*
         if (item.condition == "New")
         {
             cell.conditionImage.image = UIImage(named: "new-label.png")!
@@ -95,10 +96,10 @@ class SearchResultTableViewController: UITableViewController {
             cell.conditionImage.image = UIImage(named: "used-label.png")!
             
         }
-
+        */
         
         
-        cell.priceLabel.text = "$\(item.price)"
+        //cell.priceLabel.text = "$\(item.price)"
         
 
         return cell

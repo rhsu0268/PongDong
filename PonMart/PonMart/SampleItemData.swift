@@ -12,6 +12,7 @@ import UIKit
 class SampleItemData
 {
     public var items : [Item]
+    public var storedItems : [Any]
     
     init() {
         items = [
@@ -23,6 +24,7 @@ class SampleItemData
             Item(name: "Computer Chair", description: "A chair for the computer desk", type: "Furniture", condition: "Used", price: 12.00, itemImage: UIImage(named: "sofa.jpeg")!)
             
         ]
+        storedItems = []
         
         
     }

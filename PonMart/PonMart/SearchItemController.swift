@@ -46,46 +46,18 @@ class SearchItemController: UIViewController {
         newOption.setImage(UIImage(named: "new-button-unselected.png"), for: .normal)
     }
     
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
     
+
+    // seed data
+    var sampleItemData = SampleItemData()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
         
+
         
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        
-        let context = appDelegate.persistentContainer.viewContext
-        
-        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Items")
-        
-        request.returnsObjectsAsFaults = false
-        
-        do
-        {
-            let results = try context.fetch(request)
-            if results.count > 0
-            {
-                for result in results as! [NSManagedObject]
-                {
-                    if let itemName = result.value(forKey: "itemName") as? String
-                    {
-                        print(itemName)
-                    }
-                    
-                    if let itemPrice = result.value(forKey: "itemPrice") as? Double
-                    {
-                        print(itemPrice)
-                    }
-                }
-            }
-            
-        }
-        catch
-        {
-            // process error
-        }
         
     }
 
@@ -98,9 +70,9 @@ class SearchItemController: UIViewController {
         
         print("searchButton clicked!")
         
-        // seed data
-        var sampleItemData = SampleItemData()
-        print(sampleItemData.items)
+        //print(sampleItemData.items)
+        
+       
         
         
     }
@@ -112,17 +84,66 @@ class SearchItemController: UIViewController {
         if (segue.identifier == "SearchItemViewToResultsTableView")
         {
             // create a variable to send
-            var sampleItemData = SampleItemData()
+            //var sampleItemData = SampleItemData()
         
         
             let navigationController = segue.destination as! UINavigationController
             let searchResultTableViewController = navigationController.topViewController as! SearchResultTableViewController
+            
+            let searchResults = fetchData()
+            
+            print("--- Passing data---")
+            print(searchResults)
+            print("--- ---")
         
-            searchResultTableViewController.items = sampleItemData.items
+            searchResultTableViewController.items = searchResults
         }
     }
 
-   
+    
+    
+    func fetchData() -> [Any]
+    {
+        // Do any additional setup after loading the view.
+        let context = appDelegate.persistentContainer.viewContext
+        
+        
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Items")
+        
+        request.returnsObjectsAsFaults = false
+        
+        do
+        {
+            let results = try context.fetch(request)
+            if results.count > 0
+            {
+                sampleItemData.storedItems = results
+                print(sampleItemData.storedItems)
+                /*
+                 for result in results as! [NSManagedObject]
+                 {
+                 print(result)
+                 if let itemName = result.value(forKey: "itemName") as? String
+                 {
+                 print(itemName)
+                 }
+                 
+                 if let itemPrice = result.value(forKey: "itemPrice") as? Double
+                 {
+                 print(itemPrice)
+                 }
+                 }
+                 */
+            }
+            
+        }
+        catch
+        {
+            // process error
+        }
+        return sampleItemData.storedItems
+
+    }
     /*
     // MARK: - Navigation
 

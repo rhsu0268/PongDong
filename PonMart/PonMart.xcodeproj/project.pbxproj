@@ -108,11 +108,10 @@
 				D11BA21F1E26ADDE00222DEC /* AddPongViewController.swift */,
 				D11BA21D1E2698BE00222DEC /* UserProfileViewController.swift */,
 				D11BA21B1E254F2D00222DEC /* ItemDetailViewController.swift */,
-				D11BA2121E21899500222DEC /* SearchResultTableViewController.swift */,
 				D11BA2191E229D5B00222DEC /* ItemCell.swift */,
 				D11BA2101E21895600222DEC /* SearchItemController.swift */,
+				D11BA2121E21899500222DEC /* SearchResultTableViewController.swift */,
 				D11BA2161E21AF7E00222DEC /* LoginViewController.swift */,
-				D11BA2141E21989F00222DEC /* SampleItemData.swift */,
 				D11BA2031E1C1EBB00222DEC /* Assets.xcassets */,
 				D11BA2051E1C1EBB00222DEC /* LaunchScreen.storyboard */,
 				D11BA2081E1C1EBB00222DEC /* Info.plist */,
@@ -126,6 +125,7 @@
 			children = (
 				D11BA20E1E21881800222DEC /* Item.swift */,
 				D173DEA81E340E22002D1C52 /* LineChartFormatter.swift */,
+				D11BA2141E21989F00222DEC /* SampleItemData.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
