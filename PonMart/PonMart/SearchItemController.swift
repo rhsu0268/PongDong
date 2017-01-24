@@ -92,9 +92,9 @@ class SearchItemController: UIViewController {
             
             let searchResults = fetchData()
             
-            print("--- Passing data---")
-            print(searchResults)
-            print("--- ---")
+            //print("--- Passing data---")
+            //print(searchResults)
+            //print("--- ---")
         
             searchResultTableViewController.items = searchResults
         }
@@ -118,7 +118,7 @@ class SearchItemController: UIViewController {
             if results.count > 0
             {
                 sampleItemData.storedItems = results
-                print(sampleItemData.storedItems)
+                //print(sampleItemData.storedItems)
                 /*
                  for result in results as! [NSManagedObject]
                  {

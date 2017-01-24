@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class SearchResultTableViewController: UITableViewController {
     
@@ -20,7 +21,7 @@ class SearchResultTableViewController: UITableViewController {
     
     
     var items : [Any] = []
-    var item : Item? = nil
+    var item : NSManagedObject? = nil
     var itemIndex : Int? = nil
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -47,7 +48,7 @@ class SearchResultTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print(items)
+        //print(items)
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -80,8 +81,35 @@ class SearchResultTableViewController: UITableViewController {
         // Configure the cell...
         //itemNameLabel.text = items[0].name
         
-        //let item = items[indexPath.row]
-        //cell.itemNameLabel.text = item.name
+        let item = items[indexPath.row]
+        
+        /*
+        for result in results as! [NSManagedObject]
+        {
+            print(result)
+            if let itemName = result.value(forKey: "itemName") as? String
+            {
+                print(itemName)
+            }
+            
+            if let itemPrice = result.value(forKey: "itemPrice") as? Double
+            {
+                print(itemPrice)
+            }
+
+        }
+         */
+        
+        if let itemName = (item as AnyObject).value(forKey: "itemName") as? String
+        {
+            print(itemName)
+            cell.itemNameLabel.text = itemName
+        }
+        if let itemImage = (item as AnyObject).value(forKey: "itemImage") as? NSData
+        {
+            cell.itemImage.image = UIImage(data: itemImage as Data)
+        }
+       
         //cell.itemImage.image = item.itemImage
         //print(item.condition)
         /*
