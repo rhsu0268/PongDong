@@ -21,6 +21,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="richard-shopping" translatesAutoresizingMaskIntoConstraints="NO" id="7Ow-vw-PEG">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PLD-Na-7bW">
                                 <rect key="frame" x="138" y="538" width="98" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -31,10 +35,6 @@
                                     <segue destination="A14-zg-b4p" kind="show" id="VhL-Yy-arc"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7Ow-vw-PEG">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.015686274509803921" green="0.43137254901960786" blue="0.011764705882352941" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
@@ -1267,6 +1267,7 @@
         <image name="profile-button-block" width="375" height="118"/>
         <image name="profile-line-divider" width="684" height="6"/>
         <image name="rating-button" width="49" height="48"/>
+        <image name="richard-shopping" width="720" height="960"/>
         <image name="search-button" width="40" height="39"/>
         <image name="search-item-button" width="748" height="130"/>
         <image name="sign-up-1" width="750" height="562"/>
@@ -1283,6 +1284,6 @@
         <segue reference="Nya-sh-GOK"/>
         <segue reference="ute-SD-HoJ"/>
         <segue reference="Z9O-BM-kTI"/>
-        <segue reference="xEO-lN-dgF"/>
+        <segue reference="VhL-Yy-arc"/>
     </inferredMetricsTieBreakers>
 </document>
