@@ -21,7 +21,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="richard-shopping" translatesAutoresizingMaskIntoConstraints="NO" id="7Ow-vw-PEG">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="richard-shopping-cropped" translatesAutoresizingMaskIntoConstraints="NO" id="7Ow-vw-PEG">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -1267,7 +1267,7 @@
         <image name="profile-button-block" width="375" height="118"/>
         <image name="profile-line-divider" width="684" height="6"/>
         <image name="rating-button" width="49" height="48"/>
-        <image name="richard-shopping" width="720" height="960"/>
+        <image name="richard-shopping-cropped" width="530" height="854"/>
         <image name="search-button" width="40" height="39"/>
         <image name="search-item-button" width="748" height="130"/>
         <image name="sign-up-1" width="750" height="562"/>
