@@ -33,8 +33,10 @@ class SearchResultTableViewController: UITableViewController {
             
             itemIndex = tableView.indexPathForSelectedRow?.row
             
+            print("--- Item ---")
             print(items[itemIndex!])
-            //itemDetailViewController.item = items[itemIndex!]
+            print("--- ---")
+            itemDetailViewController.item = items[itemIndex!]
             
         }
         else
@@ -110,9 +112,11 @@ class SearchResultTableViewController: UITableViewController {
             cell.itemImage.image = UIImage(data: itemImage as Data)
         }
         
+        /*
         print("--- ---")
         print(item)
         print("--- ---")
+        */
         
         if let itemCondition = (item as AnyObject).value(forKey: "itemCondition") as? String
         {

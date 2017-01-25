@@ -10,7 +10,7 @@ import UIKit
 
 class ItemDetailViewController: UIViewController {
     
-    var item : Item? = nil
+    var item : Any? = nil
     
     @IBOutlet var itemImage: UIImageView!
     @IBOutlet var itemName: UILabel!
@@ -21,14 +21,24 @@ class ItemDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //print(item)
-        print(item?.name)
+        print("--- Detail ---")
+        print(item)
+        print("--- ---")
+        //print(item?.name)
         
         
+        
+        if let itemName = (item as AnyObject).value(forKey: "itemName") as? String
+        {
+            self.itemName.text = itemName
+        }
+        /*
         if let itemImage = item?.itemImage
         {
             self.itemImage.image = itemImage
         }
+         */
+        /*
         if let itemName = item?.name
         {
             self.itemName.text = itemName
@@ -61,6 +71,7 @@ class ItemDetailViewController: UIViewController {
         {
             self.itemDescription.text = itemDescription
         }
+         */
         // Do any additional setup after loading the view.
     }
 
