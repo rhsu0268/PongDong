@@ -109,22 +109,27 @@ class SearchResultTableViewController: UITableViewController {
         {
             cell.itemImage.image = UIImage(data: itemImage as Data)
         }
-       
-        //cell.itemImage.image = item.itemImage
-        //print(item.condition)
-        /*
-        if (item.condition == "New")
+        
+        print("--- ---")
+        print(item)
+        print("--- ---")
+        
+        if let itemCondition = (item as AnyObject).value(forKey: "itemCondition") as? String
         {
-            cell.conditionImage.image = UIImage(named: "new-label.png")!
+            if itemCondition == "New"
+            {
+                cell.conditionImage.image = UIImage(named: "new-label.png")!
+            }
+            else
+            {
+                //cell.conditionImage.image.frame.size.width = 100
+                cell.conditionImage.image = UIImage(named: "used-label.png")!
+                
+            }
 
         }
-        else 
-        {
-            //cell.conditionImage.image.frame.size.width = 100
-            cell.conditionImage.image = UIImage(named: "used-label.png")!
-            
-        }
-        */
+        
+    
         
         
         //cell.priceLabel.text = "$\(item.price)"
