@@ -133,6 +133,11 @@ class SearchResultTableViewController: UITableViewController {
 
         }
         
+        if let itemPrice = (item as AnyObject).value(forKey: "itemPrice") as? Double
+        {
+            cell.priceLabel.text = "$\(itemPrice)"
+        }
+        
     
         
         
