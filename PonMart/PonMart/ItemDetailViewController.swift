@@ -21,9 +21,6 @@ class ItemDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("--- Detail ---")
-        print(item)
-        print("--- ---")
         //print(item?.name)
         
         
@@ -32,20 +29,16 @@ class ItemDetailViewController: UIViewController {
         {
             self.itemName.text = itemName
         }
-        /*
-        if let itemImage = item?.itemImage
+        
+        if let itemImage = (item as AnyObject).value(forKey: "itemImage") as? NSData
         {
-            self.itemImage.image = itemImage
-        }
-         */
-        /*
-        if let itemName = item?.name
-        {
-            self.itemName.text = itemName
+            print("Set image")
+            self.itemImage.image = UIImage(data: itemImage as Data)
         }
         
-        if let itemCategory = item?.type
+        if let itemCategory = (item as AnyObject).value(forKey: "itemCategory") as? String
         {
+            print(itemCategory)
             if itemCategory == "Furniture"
             {
                 self.itemCategory.image = UIImage(named: "furniture-label.png")
@@ -54,7 +47,17 @@ class ItemDetailViewController: UIViewController {
             {
                 self.itemCategory.image = UIImage(named: "textbook-label.png")
             }
+
         }
+        /*
+        if let itemName = item?.name
+        {
+            self.itemName.text = itemName
+        }3
+        
+        if let itemCategory = item?.type
+        {
+                    }
         if let itemCondition = item?.condition
         {
             if itemCondition == "New"
