@@ -49,16 +49,8 @@ class ItemDetailViewController: UIViewController {
             }
 
         }
-        /*
-        if let itemName = item?.name
-        {
-            self.itemName.text = itemName
-        }3
         
-        if let itemCategory = item?.type
-        {
-                    }
-        if let itemCondition = item?.condition
+        if let itemCondition = (item as AnyObject).value(forKey: "itemCondition") as? String
         {
             if itemCondition == "New"
             {
@@ -68,13 +60,15 @@ class ItemDetailViewController: UIViewController {
             {
                 self.itemCondition.image = UIImage(named: "used-label.png")
             }
-        
+
         }
-        if let itemDescription = item?.description
+        
+         
+        if let itemDescription = (item as AnyObject).value(forKey: "itemDescription") as? String
         {
             self.itemDescription.text = itemDescription
         }
-         */
+    
         // Do any additional setup after loading the view.
     }
 
