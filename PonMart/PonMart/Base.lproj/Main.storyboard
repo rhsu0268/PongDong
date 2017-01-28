@@ -888,8 +888,8 @@
                                     <action selector="AddPongClicked:" destination="m4K-5q-gse" eventType="touchUpInside" id="myY-0d-shK"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Add Pong" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RMm-xY-Xpu">
-                                <rect key="frame" x="233" y="304" width="93" height="24"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Add Item" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RMm-xY-Xpu">
+                                <rect key="frame" x="233" y="304" width="85" height="24"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="21"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1217,6 +1217,12 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="emailTextField" destination="L0Q-wz-yae" id="faJ-M2-LTc"/>
+                        <outlet property="phoneNumberTextField" destination="SoR-9p-lpB" id="Lhw-9P-YR6"/>
+                        <outlet property="userProfileImage" destination="ffP-Tv-evh" id="E2D-Kh-A1t"/>
+                        <outlet property="usernameTextField" destination="FkS-we-1lv" id="VqH-ic-2t7"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Sx3-nT-omZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

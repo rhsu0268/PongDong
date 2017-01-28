@@ -10,12 +10,23 @@ import UIKit
 import CoreData
 
 class EditProfileViewController: UIViewController {
+    
+    @IBOutlet var userProfileImage: UIImageView!
+    
+    
+    @IBOutlet var usernameTextField: UITextField!
+    
+    @IBOutlet var emailTextField: UITextField!
+    
+    @IBOutlet var phoneNumberTextField: UITextField!
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        
+        self.userProfileImage.layer.cornerRadius = self.userProfileImage.frame.size.width / 2
+        self.userProfileImage.clipsToBounds = true
         
         // pull data out of NSUserDefaults
         //let isUserLoggedIn = UserDefaults.standard.bool(forKey: "isUserLoggedIn")
@@ -63,14 +74,5 @@ class EditProfileViewController: UIViewController {
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+    
 }
