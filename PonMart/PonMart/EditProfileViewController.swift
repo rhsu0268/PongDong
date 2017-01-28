@@ -9,16 +9,18 @@
 import UIKit
 import CoreData
 
-class EditProfileViewController: UIViewController {
+class EditProfileViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
+    
+    @IBOutlet var cityNameLabel: UILabel!
+    @IBOutlet var cityNamePicker: UIPickerView!
+    
     
     @IBOutlet var userProfileImage: UIImageView!
-    
-    
     @IBOutlet var usernameTextField: UITextField!
-    
     @IBOutlet var emailTextField: UITextField!
-    
     @IBOutlet var phoneNumberTextField: UITextField!
+    
+    let cityNamePickerData = ["New York", "Washington"]
     
 
     override func viewDidLoad() {
@@ -32,6 +34,10 @@ class EditProfileViewController: UIViewController {
         //let isUserLoggedIn = UserDefaults.standard.bool(forKey: "isUserLoggedIn")
         let loggedInUsername = UserDefaults.standard.string(forKey: "username")
         print(loggedInUsername!)
+        
+        
+        cityNamePicker.dataSource = self
+        cityNamePicker.delegate = self
         
         
         // 
@@ -95,4 +101,21 @@ class EditProfileViewController: UIViewController {
         
     }
     
+    // MARK: -Delegates and data sources
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return cityNamePickerData.count
+    }
+    
+    // MARK: Delegates
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return cityNamePickerData[row]
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        cityNameLabel.text = cityNamePickerData[row]
+    }
 }
