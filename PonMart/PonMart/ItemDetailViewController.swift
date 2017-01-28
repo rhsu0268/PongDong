@@ -24,7 +24,6 @@ class ItemDetailViewController: UIViewController {
         //print(item?.name)
         
         
-        
         if let itemName = (item as AnyObject).value(forKey: "itemName") as? String
         {
             self.itemName.text = itemName
@@ -63,7 +62,6 @@ class ItemDetailViewController: UIViewController {
 
         }
         
-         
         if let itemDescription = (item as AnyObject).value(forKey: "itemDescription") as? String
         {
             self.itemDescription.text = itemDescription
