@@ -54,6 +54,10 @@ class EditProfileViewController: UIViewController {
                     if let userName = result.value(forKey: "username") as? String
                     {
                         print(userName)
+                        
+                        
+                        //UserDefaults.standard.set(result, forKey: "userInfo")
+                        //UserDefaults.standard.synchronize()
                     }
                 }
                     
@@ -74,5 +78,21 @@ class EditProfileViewController: UIViewController {
     }
     
 
+    @IBAction func UpdateButtonClicked(_ sender: UIButton) {
+        print("Update button clicked!")
+        
+        var username = usernameTextField.text
+        var email = emailTextField.text
+        var phoneNumber = phoneNumberTextField.text
+        
+       
+        
+        //let user = UserDefaults.standard.object(forKey: "userInfo")
+        //print(user)
+        
+        // find the user
+        
+        
+    }
     
 }
