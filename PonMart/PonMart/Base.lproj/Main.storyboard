@@ -1211,14 +1211,14 @@
                                 <rect key="frame" x="0.0" y="282" width="190" height="71"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             </pickerView>
-                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hRW-ub-iVe">
+                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="City" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hRW-ub-iVe">
                                 <rect key="frame" x="20" y="185" width="142" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5oY-9e-hGp">
+                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="State" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5oY-9e-hGp">
                                 <rect key="frame" x="217" y="186" width="142" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="17"/>
@@ -1230,9 +1230,9 @@
                     </view>
                     <connections>
                         <outlet property="cityNameLabel" destination="hRW-ub-iVe" id="rM4-jZ-gnB"/>
-                        <outlet property="cityNamePicker" destination="hAB-TG-bJS" id="GsG-r2-dqn"/>
                         <outlet property="emailTextField" destination="L0Q-wz-yae" id="faJ-M2-LTc"/>
                         <outlet property="phoneNumberTextField" destination="SoR-9p-lpB" id="Lhw-9P-YR6"/>
+                        <outlet property="placeNamePicker" destination="hAB-TG-bJS" id="QJL-sE-ZFr"/>
                         <outlet property="stateNameLabel" destination="5oY-9e-hGp" id="xCo-Vb-cki"/>
                         <outlet property="userProfileImage" destination="ffP-Tv-evh" id="E2D-Kh-A1t"/>
                         <outlet property="usernameTextField" destination="FkS-we-1lv" id="VqH-ic-2t7"/>

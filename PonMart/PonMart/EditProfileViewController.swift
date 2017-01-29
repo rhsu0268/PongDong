@@ -12,7 +12,10 @@ import CoreData
 class EditProfileViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
     
     @IBOutlet var cityNameLabel: UILabel!
-    @IBOutlet var cityNamePicker: UIPickerView!
+    //@IBOutlet var cityNamePicker: UIPickerView!
+    
+    @IBOutlet var placeNamePicker: UIPickerView!
+    
     @IBOutlet var stateNameLabel: UILabel!
     
     var cityLabelClicked = false
@@ -40,8 +43,8 @@ class EditProfileViewController: UIViewController, UIPickerViewDataSource, UIPic
         print(loggedInUsername!)
         
         
-        cityNamePicker.dataSource = self
-        cityNamePicker.delegate = self
+        placeNamePicker.dataSource = self
+        placeNamePicker.delegate = self
         
         
         let cityTap = UITapGestureRecognizer(target: self, action: #selector(EditProfileViewController.cityTapFunction))
@@ -121,6 +124,9 @@ class EditProfileViewController: UIViewController, UIPickerViewDataSource, UIPic
         print("You tapped city")
         cityLabelClicked = true
         stateLabelClicked = false
+        DispatchQueue.main.async {
+            self.placeNamePicker.reloadAllComponents()
+        }
     }
     
     func stateTapFunction(sender: UITapGestureRecognizer)
@@ -136,15 +142,38 @@ class EditProfileViewController: UIViewController, UIPickerViewDataSource, UIPic
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return cityNamePickerData.count
+        if cityLabelClicked
+        {
+            return cityNamePickerData.count
+        }
+        else
+        {
+            return stateNamePickerData.count
+        }
+        
     }
     
     // MARK: Delegates
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return cityNamePickerData[row]
+        if cityLabelClicked
+        {
+            return cityNamePickerData[row]
+        }
+        else
+        {
+            return stateNamePickerData[row]
+        }
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        cityNameLabel.text = cityNamePickerData[row]
+        if cityLabelClicked
+        {
+            cityNameLabel.text = cityNamePickerData[row]
+        }
+        else
+        {
+            stateNameLabel.text = stateNamePickerData[row]
+        }
+        
     }
 }
