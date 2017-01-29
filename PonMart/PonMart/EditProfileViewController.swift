@@ -13,7 +13,10 @@ class EditProfileViewController: UIViewController, UIPickerViewDataSource, UIPic
     
     @IBOutlet var cityNameLabel: UILabel!
     @IBOutlet var cityNamePicker: UIPickerView!
+    @IBOutlet var stateNameLabel: UILabel!
     
+    var cityLabelClicked = false
+    var stateLabelClicked = false
     
     @IBOutlet var userProfileImage: UIImageView!
     @IBOutlet var usernameTextField: UITextField!
@@ -21,6 +24,7 @@ class EditProfileViewController: UIViewController, UIPickerViewDataSource, UIPic
     @IBOutlet var phoneNumberTextField: UITextField!
     
     let cityNamePickerData = ["New York", "Washington"]
+    let stateNamePickerData = ["New York", "District of Columbia"]
     
 
     override func viewDidLoad() {
@@ -38,6 +42,15 @@ class EditProfileViewController: UIViewController, UIPickerViewDataSource, UIPic
         
         cityNamePicker.dataSource = self
         cityNamePicker.delegate = self
+        
+        
+        let cityTap = UITapGestureRecognizer(target: self, action: #selector(EditProfileViewController.cityTapFunction))
+        
+        let stateTap = UITapGestureRecognizer(target: self, action: #selector(EditProfileViewController.stateTapFunction))
+        
+        cityNameLabel.addGestureRecognizer(cityTap)
+        stateNameLabel.addGestureRecognizer(stateTap)
+    
         
         
         // 
@@ -99,6 +112,22 @@ class EditProfileViewController: UIViewController, UIPickerViewDataSource, UIPic
         // find the user
         
         
+    }
+    
+    
+    // MARK: -Tap recongizers
+    func cityTapFunction(sender: UITapGestureRecognizer)
+    {
+        print("You tapped city")
+        cityLabelClicked = true
+        stateLabelClicked = false
+    }
+    
+    func stateTapFunction(sender: UITapGestureRecognizer)
+    {
+        print("You tapped state")
+        stateLabelClicked = true
+        cityLabelClicked = false
     }
     
     // MARK: -Delegates and data sources
