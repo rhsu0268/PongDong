@@ -27,7 +27,7 @@ class EditProfileViewController: UIViewController, UIPickerViewDataSource, UIPic
     @IBOutlet var phoneNumberTextField: UITextField!
     
     let cityNamePickerData = ["New York", "Washington"]
-    let stateNamePickerData = ["New York", "District of Columbia"]
+    let stateNamePickerData = ["Alabama", "Alaska", "Arizona", "Arkansas", "California", "Colorado", "Connecticut", "Delaware", "DC", "Florida", "Georgia", "Hawaii", "Idaho", "Illinois", "Indiana", "Iowa", "Kansas", "Kentucky", "Louisiana", "Maine", "Maryland", "Massachusetts", "Michigan", "Minnesota", "Mississippi", "Missouri", "Montana", "Nebraska", "Nevada", "New Hampshire", "New Jersey", "New Mexico", "New York", "North Carolina", "North Dakota", "Ohio", "Oklahoma", "Oregon", "Pennsylvania", "Rhode Island", "South Carolina", "South Dakota", "Tennessee", "Texas", "Utah", "Vermont", "Virginia", "Washington", "West Virginia", "Wisconsin", "Wyoming"]
     
 
     override func viewDidLoad() {
@@ -134,6 +134,9 @@ class EditProfileViewController: UIViewController, UIPickerViewDataSource, UIPic
         print("You tapped state")
         stateLabelClicked = true
         cityLabelClicked = false
+        DispatchQueue.main.async {
+            self.placeNamePicker.reloadAllComponents()
+        }
     }
     
     // MARK: -Delegates and data sources
