@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class EditProfileViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
+class EditProfileViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     @IBOutlet var cityNameLabel: UILabel!
     //@IBOutlet var cityNamePicker: UIPickerView!
@@ -105,6 +105,9 @@ class EditProfileViewController: UIViewController, UIPickerViewDataSource, UIPic
     
 
     @IBAction func UpdateButtonClicked(_ sender: UIButton) {
+        
+        // check and see if image is uploaded
+        
         print("Update button clicked!")
         
         var username = usernameTextField.text
@@ -146,6 +149,13 @@ class EditProfileViewController: UIViewController, UIPickerViewDataSource, UIPic
     func profileTapFunction(sender: UITapGestureRecognizer)
     {
         print("You tapped profile")
+        
+        // instantiate a pickerController
+        var imagePickerController = UIImagePickerController()
+        imagePickerController.delegate = self
+        imagePickerController.sourceType = UIImagePickerControllerSourceType.photoLibrary 
+        
+        self.present(imagePickerController, animated: true, completion: nil)
     }
     
     // MARK: -Delegates and data sources
@@ -186,6 +196,13 @@ class EditProfileViewController: UIViewController, UIPickerViewDataSource, UIPic
         {
             stateNameLabel.text = stateNamePickerData[row]
         }
+        
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        userProfileImage.image = info[UIImagePickerControllerOriginalImage] as? UIImage
+        
+        self.dismiss(animated: true, completion: nil)
         
     }
 }
