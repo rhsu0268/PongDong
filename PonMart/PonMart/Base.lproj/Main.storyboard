@@ -1091,7 +1091,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="283"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Richard" translatesAutoresizingMaskIntoConstraints="NO" id="ffP-Tv-evh">
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Richard" translatesAutoresizingMaskIntoConstraints="NO" id="ffP-Tv-evh">
                                 <rect key="frame" x="138" y="20" width="100" height="108"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>

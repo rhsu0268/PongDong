@@ -53,6 +53,10 @@ class EditProfileViewController: UIViewController, UIPickerViewDataSource, UIPic
         
         cityNameLabel.addGestureRecognizer(cityTap)
         stateNameLabel.addGestureRecognizer(stateTap)
+        
+        let profileImageTap = UITapGestureRecognizer(target: self, action: #selector(EditProfileViewController.profileTapFunction))
+        
+        userProfileImage.addGestureRecognizer(profileImageTap)
     
         
         
@@ -137,6 +141,11 @@ class EditProfileViewController: UIViewController, UIPickerViewDataSource, UIPic
         DispatchQueue.main.async {
             self.placeNamePicker.reloadAllComponents()
         }
+    }
+    
+    func profileTapFunction(sender: UITapGestureRecognizer)
+    {
+        print("You tapped profile")
     }
     
     // MARK: -Delegates and data sources
