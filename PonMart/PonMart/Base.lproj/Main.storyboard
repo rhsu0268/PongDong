@@ -365,7 +365,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kwq-Vm-BiL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2332" y="-31"/>
+            <point key="canvasLocation" x="2289" y="-31"/>
         </scene>
         <!--User Profile View Controller-->
         <scene sceneID="2Hr-Es-5gv">
@@ -1084,6 +1084,9 @@
                                 <rect key="frame" x="178" y="627" width="20" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="search-button"/>
+                                <connections>
+                                    <segue destination="vwi-Lo-XwT" kind="show" id="eaX-2Z-5tO"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aBH-N5-ygB">
                                 <rect key="frame" x="302" y="627" width="20" height="20"/>
@@ -1295,9 +1298,9 @@
         <image name="used-label-unselected" width="89" height="40"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="O1m-vN-OlS"/>
-        <segue reference="Hbl-8n-96l"/>
-        <segue reference="Nya-sh-GOK"/>
+        <segue reference="ute-SD-HoJ"/>
+        <segue reference="eaX-2Z-5tO"/>
+        <segue reference="0K2-We-KYH"/>
         <segue reference="xEO-lN-dgF"/>
     </inferredMetricsTieBreakers>
 </document>
