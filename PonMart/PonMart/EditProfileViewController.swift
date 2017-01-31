@@ -158,7 +158,8 @@ class EditProfileViewController: UIViewController, UIPickerViewDataSource, UIPic
         self.present(imagePickerController, animated: true, completion: nil)
     }
     
-    // MARK: -Delegates and data sources
+        
+    // MARK: -Delegates and data source
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
@@ -205,4 +206,12 @@ class EditProfileViewController: UIViewController, UIPickerViewDataSource, UIPic
         self.dismiss(animated: true, completion: nil)
         
     }
+    
+    
+    @IBAction func UploadButtonClicked(_ sender: UIButton) {
+        
+        print("Image uploaded!")
+    }
+    
+    
 }
