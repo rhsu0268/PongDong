@@ -11,6 +11,9 @@ import CoreData
 
 class EditProfileViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
+    
+    @IBOutlet var imageUploadActivityIndicator: UIActivityIndicatorView!
+    
     @IBOutlet var cityNameLabel: UILabel!
     //@IBOutlet var cityNamePicker: UIPickerView!
     
@@ -210,7 +213,42 @@ class EditProfileViewController: UIViewController, UIPickerViewDataSource, UIPic
     
     @IBAction func UploadButtonClicked(_ sender: UIButton) {
         
-        print("Image uploaded!")
+        print("Uploading image!")
+        uploadImageToServer()
+    }
+    
+    
+    
+    func uploadImageToServer()
+    {
+        var request = URLRequest(url: URL(string: "http://localhost:3000/uploadTest")!)
+        request.httpMethod = "POST"
+        
+        let postString = "rhsu0268"
+        request.httpBody = postString.data(using: .utf8)
+        
+        let task = URLSession.shared.dataTask(with: request)
+        {
+            data, response, error in
+            
+            guard let data = data, error == nil else
+            {
+                print("error=\(error)")
+                return
+            }
+            
+            if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200
+            {
+                print("statusCode should be 200, but is \(httpStatus.statusCode)")
+                print("response = \(response)")
+            }
+            
+            let responseString = String(data: data, encoding: .utf8)
+            print("responseString = \(responseString)")
+        }
+        task.resume()
+        
+        
     }
     
     

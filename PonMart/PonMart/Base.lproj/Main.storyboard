@@ -1234,7 +1234,7 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="QvC-QK-qME">
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="QvC-QK-qME">
                                 <rect key="frame" x="106" y="64" width="20" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </activityIndicatorView>
@@ -1259,6 +1259,7 @@
                     <connections>
                         <outlet property="cityNameLabel" destination="hRW-ub-iVe" id="rM4-jZ-gnB"/>
                         <outlet property="emailTextField" destination="L0Q-wz-yae" id="faJ-M2-LTc"/>
+                        <outlet property="imageUploadActivityIndicator" destination="QvC-QK-qME" id="gCd-cG-EQY"/>
                         <outlet property="phoneNumberTextField" destination="SoR-9p-lpB" id="Lhw-9P-YR6"/>
                         <outlet property="placeNamePicker" destination="hAB-TG-bJS" id="QJL-sE-ZFr"/>
                         <outlet property="stateNameLabel" destination="5oY-9e-hGp" id="xCo-Vb-cki"/>
