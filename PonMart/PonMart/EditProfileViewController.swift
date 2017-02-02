@@ -221,35 +221,50 @@ class EditProfileViewController: UIViewController, UIPickerViewDataSource, UIPic
     
     func uploadImageToServer()
     {
-        var request = URLRequest(url: URL(string: "http://localhost:3000/uploadTest")!)
-        request.httpMethod = "POST"
-        
-        let postString = "rhsu0268"
-        request.httpBody = postString.data(using: .utf8)
-        
-        let task = URLSession.shared.dataTask(with: request)
+        if let image = self.userProfileImage.image
         {
-            data, response, error in
+            let imageData = UIImageJPEGRepresentation(image, 1.0)
             
-            guard let data = data, error == nil else
-            {
-                print("error=\(error)")
-                return
-            }
+            let url = "http://localhost:3000/uploadTest"
+            let session = URLSession(configuration: URLSessionConfiguration.default)
             
-            if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200
-            {
-                print("statusCode should be 200, but is \(httpStatus.statusCode)")
-                print("response = \(response)")
-            }
+            let mutableURLRequest = NSMutableURLRequest(url: NSURL(string: url)! as URL)
             
-            let responseString = String(data: data, encoding: .utf8)
-            print("responseString = \(responseString)")
+            mutableURLRequest.httpMethod = "POST"
+            
+            let boundaryConstant = "----------12345"
+            let contentType = "multipart/form-data;boundary=" + boundaryConstant
+            mutableURLRequest.setValue(contentType, forHTTPHeaderField: "Content-Type")
+            
+            // create upload data to send 
+            let uploadData = NSMutableData()
+            
+            // add image
+            
+            uploadData.append("\r\n--\(boundaryConstant)\r\n".data(using: String.Encoding.utf8)!)
+            uploadData.append("Content-Disposition: form-data; name=\"picture\"; filename=\"file.jpeg\"\r\n".data(using: String.Encoding.utf8)!)
+            uploadData.append("Content-Type: image/jpeg\r\n\r\n".data(using: String.Encoding.utf8)!)
+            uploadData.append(imageData!)
+            uploadData.append("\r\n--\(boundaryConstant)--\r\n".data(using: String.Encoding.utf8)!)
+            
+            mutableURLRequest.httpBody = uploadData as Data
+            
+            let task = session.dataTask(with: mutableURLRequest as URLRequest, completionHandler: { (data, response, error) -> Void in // 16
+                if error == nil { // 17
+                    // Image uploaded
+                }
+            })
+            task.resume()
         }
-        task.resume()
-        
-        
+    }
+ 
+    
+    func generateBoundaryString() -> String
+    {
+        return "Boundary-\(NSUUID().uuidString)"
     }
     
     
+    
 }
+
