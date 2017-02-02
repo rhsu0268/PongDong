@@ -7,4 +7,5 @@ target 'PonMart' do
 
   # Pods for PonMart
   pod 'Charts', '~> 3.0.1'
+  pod 'SwiftHTTP', '~> 2.0.0'
 end

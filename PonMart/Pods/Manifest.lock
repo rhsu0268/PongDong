@@ -2,13 +2,16 @@ PODS:
   - Charts (3.0.1):
     - Charts/Core (= 3.0.1)
   - Charts/Core (3.0.1)
+  - SwiftHTTP (2.0.2)
 
 DEPENDENCIES:
   - Charts (~> 3.0.1)
+  - SwiftHTTP (~> 2.0.0)
 
 SPEC CHECKSUMS:
   Charts: 0e84f4418e87dad6a9edde221fba37ebb51d3ba7
+  SwiftHTTP: faa1a5f7670568ffc9361898229dbe84a6088468
 
-PODFILE CHECKSUM: 95599fd8447c65ec6c8b1342bb8e3c5a67a1e494
+PODFILE CHECKSUM: df617cad4c305a7fd8913146023ee0d5c6aba6cb
 
 COCOAPODS: 1.1.1

@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import SwiftHTTP
 
 class EditProfileViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
@@ -203,13 +204,15 @@ class EditProfileViewController: UIViewController, UIPickerViewDataSource, UIPic
         
     }
     
+    /*
+    
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         userProfileImage.image = info[UIImagePickerControllerOriginalImage] as? UIImage
         
         self.dismiss(animated: true, completion: nil)
         
     }
-    
+    */
     
     @IBAction func UploadButtonClicked(_ sender: UIButton) {
         
@@ -221,50 +224,57 @@ class EditProfileViewController: UIViewController, UIPickerViewDataSource, UIPic
     
     func uploadImageToServer()
     {
-        if let image = self.userProfileImage.image
+        let params = ["name": "Richard Hsu"]
+        
+        do
         {
-            let imageData = UIImageJPEGRepresentation(image, 1.0)
             
-            let url = "http://localhost:3000/uploadTest"
-            let session = URLSession(configuration: URLSessionConfiguration.default)
-            
-            let mutableURLRequest = NSMutableURLRequest(url: NSURL(string: url)! as URL)
-            
-            mutableURLRequest.httpMethod = "POST"
-            
-            let boundaryConstant = "----------12345"
-            let contentType = "multipart/form-data;boundary=" + boundaryConstant
-            mutableURLRequest.setValue(contentType, forHTTPHeaderField: "Content-Type")
-            
-            // create upload data to send 
-            let uploadData = NSMutableData()
-            
-            // add image
-            
-            uploadData.append("\r\n--\(boundaryConstant)\r\n".data(using: String.Encoding.utf8)!)
-            uploadData.append("Content-Disposition: form-data; name=\"picture\"; filename=\"file.jpeg\"\r\n".data(using: String.Encoding.utf8)!)
-            uploadData.append("Content-Type: image/jpeg\r\n\r\n".data(using: String.Encoding.utf8)!)
-            uploadData.append(imageData!)
-            uploadData.append("\r\n--\(boundaryConstant)--\r\n".data(using: String.Encoding.utf8)!)
-            
-            mutableURLRequest.httpBody = uploadData as Data
-            
-            let task = session.dataTask(with: mutableURLRequest as URLRequest, completionHandler: { (data, response, error) -> Void in // 16
-                if error == nil { // 17
-                    // Image uploaded
+            let opt = try HTTP.POST("http://localhost:3000/uploadTest", parameters: params)
+            opt.start
+            {
+                response in
+                if let err = response.error
+                {
+                    print("error: \(err.localizedDescription)")
+                    return
                 }
-            })
-            task.resume()
+                print("opt finished: \(response.description)")
+            }
+        }
+        catch let error
+        {
+            print("got an error creating the request: \(error)")
         }
     }
- 
     
-    func generateBoundaryString() -> String
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any])
     {
-        return "Boundary-\(NSUUID().uuidString)"
+        let imageUrl          = info[UIImagePickerControllerReferenceURL] as! NSURL
+        let imageName         = imageUrl.lastPathComponent
+        let documentDirectory = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first!
+        let photoURL          = NSURL(fileURLWithPath: documentDirectory)
+        let localPath         = photoURL.appendingPathComponent(imageName!)
+        let image             = info[UIImagePickerControllerOriginalImage]as! UIImage
+        let data              = UIImagePNGRepresentation(image)
+        
+        do
+        {
+            try data?.write(to: localPath!, options: Data.WritingOptions.atomic)
+        }
+        catch
+        {
+            // Catch exception here and act accordingly
+        }
+        print("--- ---")
+        print(imageUrl)
+        print(photoURL)
+        print("--- ---")
+        userProfileImage.image = info[UIImagePickerControllerOriginalImage] as? UIImage
+        
+
+
+        self.dismiss(animated: true, completion: nil)
     }
-    
-    
     
 }
 
