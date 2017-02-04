@@ -12,7 +12,8 @@ import Firebase
 
 class RegisterViewController: UIViewController {
 
-    @IBOutlet var userNameTextField: UITextField!
+    //@IBOutlet var userNameTextField: UITextField!
+    @IBOutlet var userEmailTextField: UITextField!
     
     @IBOutlet var userPasswordTextfield: UITextField!
     
@@ -26,14 +27,14 @@ class RegisterViewController: UIViewController {
     @IBAction func RegisterButtonClicked(_ sender: UIButton) {
         
         // read the fields
-        let username = userNameTextField.text
+        let userEmail = userEmailTextField.text
         let userPassword = userPasswordTextfield.text
         let userPasswordConfirm = userPasswordConfirmationTextfield.text
         
         
         // check for empty fields
         
-        if ((username?.isEmpty)! || (userPassword?.isEmpty)!)
+        if ((userEmail?.isEmpty)! || (userPassword?.isEmpty)!)
         {
             // display alert message
             displayAlertMessage(userMessage: "All fields are required!")
@@ -80,7 +81,7 @@ class RegisterViewController: UIViewController {
         confirmationAlert.addAction(okAction)
         self.present(confirmationAlert, animated: true, completion: nil)
         */
-        FIRAuth.auth()?.createUser(withEmail: "rhsu0268@gmail.com", password: "Sponge^123", completion: {
+        FIRAuth.auth()?.createUser(withEmail: userEmail!, password: userPassword!, completion: {
             
             (user: FIRUser?, error) in
             
