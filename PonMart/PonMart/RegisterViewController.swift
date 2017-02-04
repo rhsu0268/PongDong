@@ -93,10 +93,15 @@ class RegisterViewController: UIViewController {
                 
             }
             
+            guard let uid = user?.uid else
+            {
+                return
+            }
+            
             // successfully authenticared user
             let ref = FIRDatabase.database().reference(fromURL: "https://pongdong-a73db.firebaseio.com/")
             
-            let usersReference = ref.child("users")
+            let usersReference = ref.child("users").child(uid)
             
             let values = ["email": userEmail]
             usersReference.updateChildValues(values, withCompletionBlock: {
