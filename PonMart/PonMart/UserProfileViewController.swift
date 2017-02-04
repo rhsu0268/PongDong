@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class UserProfileViewController: UIViewController {
 
@@ -36,9 +37,16 @@ class UserProfileViewController: UIViewController {
 
     @IBAction func ExitButtonClicked(_ sender: UIButton) {
         
-        UserDefaults.standard.set(false, forKey: "isUserLoggedIn")
-        UserDefaults.standard.synchronize()
-        
+        //UserDefaults.standard.set(false, forKey: "isUserLoggedIn")
+        //UserDefaults.standard.synchronize()
+        do
+        {
+            try FIRAuth.auth()?.signOut()
+        }
+        catch let logoutError
+        {
+            print(logoutError)
+        }
         
         // go to login
         performSegue(withIdentifier: "profileViewToLoginView", sender: self)

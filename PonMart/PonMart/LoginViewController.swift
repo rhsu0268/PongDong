@@ -8,24 +8,47 @@
 
 import UIKit
 import CoreData
+import Firebase
 
 class LoginViewController: UIViewController {
 
     
+    @IBOutlet var emailTextField: UITextField!
     
-    @IBOutlet var usernameTextField: UITextField!
     
     @IBOutlet var userPasswordTextField: UITextField!
     
     @IBAction func LoginButtonClicked(_ sender: UIButton) {
         
         
-        let username = usernameTextField.text
-        let userPassword = userPasswordTextField.text
+        //let username = usernameTextField.text
+        //let userPassword = userPasswordTextField.text
         
         
         // send username and userPassword and do verification 
         
+        guard let email = emailTextField.text, let password = userPasswordTextField.text
+        else
+        {
+            print("Form is not valid!")
+            return
+        }
+        
+        FIRAuth.auth()?.signIn(withEmail: email, password: password, completion: {
+            (user, error) in
+            
+            if error != nil
+            {
+                print(error)
+                return
+            }
+            
+            print("Success")
+            // login the user
+            self.performSegue(withIdentifier: "LoginViewToSearchView", sender: nil)
+        })
+        
+        /*
         // pull out data
         
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
@@ -89,6 +112,9 @@ class LoginViewController: UIViewController {
         {
             // process error
         }
+        
+        */
+        
         
         
     }
