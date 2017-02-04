@@ -114,6 +114,8 @@ class RegisterViewController: UIViewController {
                 }
                 print("Saved user sccessfully into firebase db!")
                 
+                self.dismiss(animated: true, completion: nil)
+                
                 
             })
 
