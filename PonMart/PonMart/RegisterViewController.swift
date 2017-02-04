@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import Firebase
 
 class RegisterViewController: UIViewController {
 
@@ -31,6 +32,7 @@ class RegisterViewController: UIViewController {
         
         
         // check for empty fields
+        
         if ((username?.isEmpty)! || (userPassword?.isEmpty)!)
         {
             // display alert message
@@ -47,6 +49,7 @@ class RegisterViewController: UIViewController {
         }
         
         // store data
+        /*
         let context = appDelegate.persistentContainer.viewContext
         
         let newUser = NSEntityDescription.insertNewObject(forEntityName: "Users", into: context)
@@ -76,8 +79,21 @@ class RegisterViewController: UIViewController {
         }
         confirmationAlert.addAction(okAction)
         self.present(confirmationAlert, animated: true, completion: nil)
-        
-        
+        */
+        FIRAuth.auth()?.createUser(withEmail: "rhsu0268@gmail.com", password: "Sponge^123", completion: {
+            
+            (user: FIRUser?, error) in
+            
+            if error != nil
+            
+            {
+                print(error)
+                return
+                
+            }
+            
+            // successfully authenticared user
+        })
         
     }
     
