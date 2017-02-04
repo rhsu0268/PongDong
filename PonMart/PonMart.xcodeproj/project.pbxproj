@@ -24,6 +24,7 @@
 		D11BA21E1E2698BE00222DEC /* UserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D11BA21D1E2698BE00222DEC /* UserProfileViewController.swift */; };
 		D11BA2201E26ADDE00222DEC /* AddPongViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D11BA21F1E26ADDE00222DEC /* AddPongViewController.swift */; };
 		D11BA2221E29229A00222DEC /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D11BA2211E29229A00222DEC /* RegisterViewController.swift */; };
+		D16A6FBB1E456DDD00B848FC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D16A6FBA1E456DDD00B848FC /* GoogleService-Info.plist */; };
 		D173DEA21E31BD53002D1C52 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D173DEA11E31BD53002D1C52 /* EditProfileViewController.swift */; };
 		D173DEA61E331234002D1C52 /* StatisticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D173DEA51E331234002D1C52 /* StatisticsViewController.swift */; };
 		D173DEA91E340E22002D1C52 /* LineChartFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D173DEA81E340E22002D1C52 /* LineChartFormatter.swift */; };
@@ -51,6 +52,7 @@
 		D11BA21D1E2698BE00222DEC /* UserProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfileViewController.swift; sourceTree = "<group>"; };
 		D11BA21F1E26ADDE00222DEC /* AddPongViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddPongViewController.swift; sourceTree = "<group>"; };
 		D11BA2211E29229A00222DEC /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		D16A6FBA1E456DDD00B848FC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D173DEA11E31BD53002D1C52 /* EditProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 		D173DEA51E331234002D1C52 /* StatisticsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatisticsViewController.swift; sourceTree = "<group>"; };
 		D173DEA81E340E22002D1C52 /* LineChartFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineChartFormatter.swift; sourceTree = "<group>"; };
@@ -116,6 +118,7 @@
 				D11BA2051E1C1EBB00222DEC /* LaunchScreen.storyboard */,
 				D11BA2081E1C1EBB00222DEC /* Info.plist */,
 				D11BA2001E1C1EBB00222DEC /* PonMart.xcdatamodeld */,
+				D16A6FBA1E456DDD00B848FC /* GoogleService-Info.plist */,
 			);
 			path = PonMart;
 			sourceTree = "<group>";
@@ -202,6 +205,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D11BA2071E1C1EBB00222DEC /* LaunchScreen.storyboard in Resources */,
+				D16A6FBB1E456DDD00B848FC /* GoogleService-Info.plist in Resources */,
 				D11BA2041E1C1EBB00222DEC /* Assets.xcassets in Resources */,
 				D11BA1FF1E1C1EBB00222DEC /* Main.storyboard in Resources */,
 			);

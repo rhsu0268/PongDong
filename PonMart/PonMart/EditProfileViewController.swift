@@ -8,9 +8,14 @@
 
 import UIKit
 import CoreData
-import SwiftHTTP
+//import Alamofire
+import Firebase
 
 class EditProfileViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+    var photoURL : NSURL? = nil
+    var imageURL : NSURL? = nil
+    var localPath : NSURL? = nil
     
     
     @IBOutlet var imageUploadActivityIndicator: UIActivityIndicatorView!
@@ -36,6 +41,12 @@ class EditProfileViewController: UIViewController, UIPickerViewDataSource, UIPic
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let database = FIRDatabase.database().reference()
+        let storage = FIRStorage.storage().reference()
+        
+        let tempImageRef = storage.child("tmpDir/tmpImage.jpg")
+        
 
         // Do any additional setup after loading the view.
         self.userProfileImage.layer.cornerRadius = self.userProfileImage.frame.size.width / 2
@@ -99,6 +110,29 @@ class EditProfileViewController: UIViewController, UIPickerViewDataSource, UIPic
             // process error
         }
 
+        
+        let image = userProfileImage.image
+        
+        let metaData = FIRStorageMetadata()
+        metaData.contentType = "image/jpeg"
+        
+        tempImageRef.put(UIImageJPEGRepresentation(image!, 0.8)!, metadata: metaData)
+        {
+            (data, error) in
+            
+            if error == nil
+            {
+                print("upload successful!")
+            }
+            else
+            {
+                print(error?.localizedDescription)
+            }
+        }
+        
+        
+        
+        
         
     }
 
@@ -217,64 +251,85 @@ class EditProfileViewController: UIViewController, UIPickerViewDataSource, UIPic
     @IBAction func UploadButtonClicked(_ sender: UIButton) {
         
         print("Uploading image!")
-        uploadImageToServer()
+        uploadImageToServer(url: localPath!)
     }
     
     
     
-    func uploadImageToServer()
+    func uploadImageToServer(url : NSURL)
     {
-        let params = ["name": "Richard Hsu"]
+        //let url = URL("http://localhost:3000/uploadTest")
         
-        do
-        {
-            
-            let opt = try HTTP.POST("http://localhost:3000/uploadTest", parameters: params)
-            opt.start
-            {
-                response in
-                if let err = response.error
-                {
-                    print("error: \(err.localizedDescription)")
-                    return
+        /*
+        let parameters = [
+            "parameter1": "bodrum",
+            "parameter2": "yalikavak"]
+        
+        let headers: HTTPHeaders = [
+            "Content-Type" : "text/html; charset=utf-8"
+        ]
+
+        
+        //let URL = try! URLRequest(url: "http://localhost:3000/post", method: .post)
+        
+        Alamofire.upload(multipartFormData: { multipartFormData in
+            multipartFormData.append(UIImagePNGRepresentation(self.userProfileImage.image!)!, withName: "signImg", fileName: "picture.png", mimeType: "image/png")
+        }, with: URL, encodingCompletion: {
+            encodingResult in
+            print("--- Encoding result ---")
+            print(encodingResult)
+            print("--- ---")
+            switch encodingResult {
+            case .success(let upload, _, _):
+                upload.responseString { response in
+                    debugPrint("SUCCESS RESPONSE: (response)")
                 }
-                print("opt finished: \(response.description)")
+            case .failure(let encodingError):
+                // hide progressbas here
+                print("ERROR RESPONSE: (encodingError)")
             }
-        }
-        catch let error
-        {
-            print("got an error creating the request: \(error)")
-        }
+        })
+        */
+        
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any])
     {
-        let imageUrl          = info[UIImagePickerControllerReferenceURL] as! NSURL
-        let imageName         = imageUrl.lastPathComponent
+        imageURL              = info[UIImagePickerControllerReferenceURL] as! NSURL
+        let imageName         = imageURL?.lastPathComponent
         let documentDirectory = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first!
-        let photoURL          = NSURL(fileURLWithPath: documentDirectory)
-        let localPath         = photoURL.appendingPathComponent(imageName!)
+        photoURL              = NSURL(fileURLWithPath: documentDirectory)
+        localPath         = photoURL?.appendingPathComponent(imageName!) as NSURL?
         let image             = info[UIImagePickerControllerOriginalImage]as! UIImage
         let data              = UIImagePNGRepresentation(image)
         
+        /*
         do
         {
-            try data?.write(to: localPath!, options: Data.WritingOptions.atomic)
+            try data?.write(to: localPath! as URL, options: Data.WritingOptions.atomic)
         }
         catch
         {
             // Catch exception here and act accordingly
         }
         print("--- ---")
-        print(imageUrl)
-        print(photoURL)
+        */
+        
+        print(localPath)
         print("--- ---")
-        userProfileImage.image = info[UIImagePickerControllerOriginalImage] as? UIImage
+        if let image = info[UIImagePickerControllerOriginalImage] as? UIImage
+        {
+            self.userProfileImage.image = image
+        }
+        else
+        {
+            print("Problem with picking image!")
+        }
         
 
 
         self.dismiss(animated: true, completion: nil)
     }
-    
 }
+
 
