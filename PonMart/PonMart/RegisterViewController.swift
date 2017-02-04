@@ -94,6 +94,26 @@ class RegisterViewController: UIViewController {
             }
             
             // successfully authenticared user
+            let ref = FIRDatabase.database().reference(fromURL: "https://pongdong-a73db.firebaseio.com/")
+            
+            let usersReference = ref.child("users")
+            
+            let values = ["email": userEmail]
+            usersReference.updateChildValues(values, withCompletionBlock: {
+                
+                (err, ref) in
+                if err != nil
+                {
+                    print(err)
+                    return
+                }
+                print("Saved user sccessfully into firebase db!")
+                
+                
+            })
+
+            
+            
         })
         
     }
