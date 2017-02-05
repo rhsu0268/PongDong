@@ -154,11 +154,43 @@ class LoginViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         
+        /*
         let isUserLoggedIn = UserDefaults.standard.bool(forKey: "isUserLoggedIn")
         if isUserLoggedIn
         {
             self.performSegue(withIdentifier: "LoginViewToSearchView", sender: self)
         }
+         */
+        checkIfUserIsLoggedIn()
     }
+    
+    func checkIfUserIsLoggedIn()
+    {
+        if FIRAuth.auth()?.currentUser?.uid == nil
+        {
+            //dismiss(animated: true, completion: nil)
+            print("Not logged in ")
+        }
+        else
+        {
+            let uid = FIRAuth.auth()?.currentUser?.uid
+            FIRDatabase.database().reference().child("users").child(uid!).observe(.value, with: {
+                
+                (snapshot) in
+                if let dictionary = snapshot.value as? [String : AnyObject]
+                {
+                    print(dictionary["email"] as? String)
+                }
+                
+                
+            }, withCancel: nil)
+            
+            self.performSegue(withIdentifier: "LoginViewToSearchView", sender: self)
+            
+            
+            
+        }
+    }
+
 
 }
