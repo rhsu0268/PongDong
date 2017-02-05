@@ -110,7 +110,7 @@ class EditProfileViewController: UIViewController, UIPickerViewDataSource, UIPic
             // process error
         }
 
-        
+        /*
         let image = userProfileImage.image
         
         let metaData = FIRStorageMetadata()
@@ -129,7 +129,7 @@ class EditProfileViewController: UIViewController, UIPickerViewDataSource, UIPic
                 print(error?.localizedDescription)
             }
         }
-        
+        */
         
         
         
@@ -191,7 +191,8 @@ class EditProfileViewController: UIViewController, UIPickerViewDataSource, UIPic
         // instantiate a pickerController
         var imagePickerController = UIImagePickerController()
         imagePickerController.delegate = self
-        imagePickerController.sourceType = UIImagePickerControllerSourceType.photoLibrary 
+        //imagePickerController.allowsEditing = true
+        //imagePickerController.sourceType = UIImagePickerControllerSourceType.photoLibrary
         
         self.present(imagePickerController, animated: true, completion: nil)
     }
@@ -251,7 +252,7 @@ class EditProfileViewController: UIViewController, UIPickerViewDataSource, UIPic
     @IBAction func UploadButtonClicked(_ sender: UIButton) {
         
         print("Uploading image!")
-        uploadImageToServer(url: localPath!)
+        //uploadImageToServer(url: localPath!)
     }
     
     
@@ -300,6 +301,7 @@ class EditProfileViewController: UIViewController, UIPickerViewDataSource, UIPic
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any])
     {
+        /*
         imageURL              = info[UIImagePickerControllerReferenceURL] as! NSURL
         let imageName         = imageURL?.lastPathComponent
         let documentDirectory = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first!
@@ -308,7 +310,7 @@ class EditProfileViewController: UIViewController, UIPickerViewDataSource, UIPic
         let image             = info[UIImagePickerControllerOriginalImage]as! UIImage
         let data              = UIImagePNGRepresentation(image)
         
-        /*
+ 
         do
         {
             try data?.write(to: localPath! as URL, options: Data.WritingOptions.atomic)
@@ -318,21 +320,29 @@ class EditProfileViewController: UIViewController, UIPickerViewDataSource, UIPic
             // Catch exception here and act accordingly
         }
         print("--- ---")
-        */
+         */
         
-        print(localPath)
-        print("--- ---")
-        if let image = info[UIImagePickerControllerOriginalImage] as? UIImage
-        {
-            self.userProfileImage.image = image
-        }
-        else
-        {
-            print("Problem with picking image!")
-        }
+        var selectedImageFromPicker: UIImage?
         
-
-
+       
+        if let editedImage = info[UIImagePickerControllerEditedImage] as? UIImage
+        {
+            selectedImageFromPicker = editedImage
+            print(editedImage.size)
+        }
+    
+        if let originalImage = info[UIImagePickerControllerOriginalImage] as? UIImage
+        {
+            print(originalImage.size)
+            self.userProfileImage.image = originalImage
+        }
+ 
+        if let selectedImage = selectedImageFromPicker
+        {
+            self.userProfileImage.image = selectedImage
+        }
+ 
+        
         self.dismiss(animated: true, completion: nil)
     }
     
