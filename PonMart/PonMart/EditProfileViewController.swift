@@ -293,6 +293,11 @@ class EditProfileViewController: UIViewController, UIPickerViewDataSource, UIPic
         
     }
     
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        print("Canceled picker")
+        dismiss(animated: true, completion: nil)
+    }
+    
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any])
     {
         imageURL              = info[UIImagePickerControllerReferenceURL] as! NSURL

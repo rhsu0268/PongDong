@@ -13,6 +13,7 @@ import Firebase
 class SearchItemController: UIViewController {
     
     
+    
     @IBOutlet var textbookOption: UIButton!
     @IBOutlet var furnitureOption: UIButton!
     
@@ -58,6 +59,8 @@ class SearchItemController: UIViewController {
 
         
         checkIfUserIsLoggedIn()
+        
+        getItems()
         
         
     }
@@ -182,7 +185,28 @@ class SearchItemController: UIViewController {
     
     func getItems()
     {
-        
+        // let users = [User]()
+        FIRDatabase.database().reference().child("users").observe(.childAdded, with: { (snapshot) in
+            
+            // if you use this setter, your app will crash if your class properties don't exactly match up with the firebase dictionary keys
+            /*
+            let user = User()
+            if let dictionary = snapshot.value as? [String : AnyObject]
+            
+            {
+             
+                user.setValuesForKeysWithDictionary(dictionary)
+                users.append(user
+             
+                // safer way
+                user.name = dictionary["name"]
+                print(user.email)
+            }
+            */
+            print("User found")
+            print(snapshot)
+            
+        }, withCancel: nil)
     }
 
 }
