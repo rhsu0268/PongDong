@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import Firebase
 
 class SearchItemController: UIViewController {
     
@@ -56,7 +57,7 @@ class SearchItemController: UIViewController {
         super.viewDidLoad()
 
         
-
+        checkIfUserIsLoggedIn()
         
         
     }
@@ -153,5 +154,35 @@ class SearchItemController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    func checkIfUserIsLoggedIn()
+    {
+        if FIRAuth.auth()?.currentUser?.uid == nil
+        {
+            dismiss(animated: true, completion: nil)
+        }
+        else
+        {
+            let uid = FIRAuth.auth()?.currentUser?.uid
+            FIRDatabase.database().reference().child("users").child(uid!).observe(.value, with: {
+                
+                (snapshot) in
+                if let dictionary = snapshot.value as? [String : AnyObject]
+                {
+                    print(dictionary["email"] as? String)
+                }
+                
+                
+            }, withCancel: nil)
+                
+            
+        
+        }
+    }
+    
+    func getItems()
+    {
+        
+    }
 
 }
