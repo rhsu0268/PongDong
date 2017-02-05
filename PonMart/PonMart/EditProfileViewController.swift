@@ -18,6 +18,8 @@ class EditProfileViewController: UIViewController, UIPickerViewDataSource, UIPic
     var localPath : NSURL? = nil
     
     
+  
+    @IBOutlet var uploadProfileImageButton: UIButton!
     @IBOutlet var updateProfileButton: UIButton!
     @IBOutlet var imageUploadActivityIndicator: UIActivityIndicatorView!
     
@@ -241,6 +243,9 @@ class EditProfileViewController: UIViewController, UIPickerViewDataSource, UIPic
     func uploadImageToServer()
     {
         updateProfileButton.isEnabled = false
+        uploadProfileImageButton.isEnabled = false
+        imageUploadActivityIndicator.startAnimating()
+        
         
         // create a random string
         let imageName = NSUUID().uuidString
@@ -259,8 +264,10 @@ class EditProfileViewController: UIViewController, UIPickerViewDataSource, UIPic
                 }
                 
                 print(metadata)
+                self.imageUploadActivityIndicator.stopAnimating()
                 self.displayAlertMessage(userMessage: "You have successfully uploaded a profile Image")
                 self.updateProfileButton.isEnabled = true
+                self.uploadProfileImageButton.isEnabled = true
                 
                 if let profileImageUrl = metadata?.downloadURL()?.absoluteString
                 {
@@ -268,7 +275,7 @@ class EditProfileViewController: UIViewController, UIPickerViewDataSource, UIPic
                     self.saveImageIntoProfile(url: profileImageUrl)
                 }
                 
-                
+               
 
                 
             })

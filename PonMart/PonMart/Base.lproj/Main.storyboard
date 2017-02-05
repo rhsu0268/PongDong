@@ -1234,7 +1234,7 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="QvC-QK-qME">
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="QvC-QK-qME">
                                 <rect key="frame" x="106" y="64" width="20" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </activityIndicatorView>
@@ -1264,6 +1264,7 @@
                         <outlet property="placeNamePicker" destination="hAB-TG-bJS" id="QJL-sE-ZFr"/>
                         <outlet property="stateNameLabel" destination="5oY-9e-hGp" id="xCo-Vb-cki"/>
                         <outlet property="updateProfileButton" destination="vw2-bK-Qf6" id="o3O-gU-zAu"/>
+                        <outlet property="uploadProfileImageButton" destination="fnh-ul-OBq" id="tYN-QI-X1h"/>
                         <outlet property="userProfileImage" destination="ffP-Tv-evh" id="E2D-Kh-A1t"/>
                         <outlet property="usernameTextField" destination="FkS-we-1lv" id="VqH-ic-2t7"/>
                     </connections>
