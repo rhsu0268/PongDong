@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PonMart/EditProfileViewController.swift"
-            timestampString = "507971013.488799"
+            timestampString = "508006858.594864"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "255"
-            endingLineNumber = "255"
+            startingLineNumber = "236"
+            endingLineNumber = "236"
             landmarkName = "UploadButtonClicked(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -80,6 +80,86 @@
             startingLineNumber = "170"
             endingLineNumber = "170"
             landmarkName = "checkIfUserIsLoggedIn()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PonMart/EditProfileViewController.swift"
+            timestampString = "508006947.546524"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "257"
+            endingLineNumber = "257"
+            landmarkName = "uploadImageToServer()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PonMart/EditProfileViewController.swift"
+            timestampString = "508008811.927175"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "268"
+            endingLineNumber = "268"
+            landmarkName = "uploadImageToServer()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PonMart.EditProfileViewController.uploadImageToServer () -&gt; ()"
+                  moduleName = "PonMart"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/richardhsu/Desktop/iOS/soulLife-Final/PonMart/PonMart/EditProfileViewController.swift"
+                  timestampString = "508007024.041594"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "261"
+                  endingLineNumber = "261"
+                  offsetFromSymbolStart = "1413">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PonMart.EditProfileViewController.(uploadImageToServer () -&gt; ()).(closure #1)"
+                  moduleName = "PonMart"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/richardhsu/Desktop/iOS/soulLife-Final/PonMart/PonMart/EditProfileViewController.swift"
+                  timestampString = "508007024.043985"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "261"
+                  endingLineNumber = "261"
+                  offsetFromSymbolStart = "687">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PonMart/EditProfileViewController.swift"
+            timestampString = "508008811.927175"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "260"
+            endingLineNumber = "260"
+            landmarkName = "uploadImageToServer()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

@@ -18,6 +18,7 @@ class EditProfileViewController: UIViewController, UIPickerViewDataSource, UIPic
     var localPath : NSURL? = nil
     
     
+    @IBOutlet var updateProfileButton: UIButton!
     @IBOutlet var imageUploadActivityIndicator: UIActivityIndicatorView!
     
     @IBOutlet var cityNameLabel: UILabel!
@@ -110,26 +111,6 @@ class EditProfileViewController: UIViewController, UIPickerViewDataSource, UIPic
             // process error
         }
 
-        /*
-        let image = userProfileImage.image
-        
-        let metaData = FIRStorageMetadata()
-        metaData.contentType = "image/jpeg"
-        
-        tempImageRef.put(UIImageJPEGRepresentation(image!, 0.8)!, metadata: metaData)
-        {
-            (data, error) in
-            
-            if error == nil
-            {
-                print("upload successful!")
-            }
-            else
-            {
-                print(error?.localizedDescription)
-            }
-        }
-        */
         
         
         
@@ -259,6 +240,7 @@ class EditProfileViewController: UIViewController, UIPickerViewDataSource, UIPic
     
     func uploadImageToServer()
     {
+        updateProfileButton.isEnabled = false
         let storageRef = FIRStorage.storage().reference().child("profile.png")
         
         if let uploadData = UIImagePNGRepresentation(self.userProfileImage.image!)
@@ -273,7 +255,16 @@ class EditProfileViewController: UIViewController, UIPickerViewDataSource, UIPic
                 }
                 
                 print(metadata)
+                self.displayAlertMessage(userMessage: "You have successfully uploaded a profile Image")
+                self.updateProfileButton.isEnabled = true
                 
+                if let profileImageUrl = metadata?.downloadURL()?.absoluteString
+                {
+                    print(profileImageUrl)
+                }
+                self.saveImageIntoProfile()
+                
+
                 
             })
         }
@@ -329,6 +320,27 @@ class EditProfileViewController: UIViewController, UIPickerViewDataSource, UIPic
  
         
         self.dismiss(animated: true, completion: nil)
+    }
+    
+    func displayAlertMessage(userMessage: String)
+    {
+        var myAlert = UIAlertController(title: "Alert", message: userMessage, preferredStyle: UIAlertControllerStyle.alert)
+        
+        let okayAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil)
+        
+        myAlert.addAction(okayAction)
+        
+        self.present(myAlert, animated: true, completion: nil)
+    }
+    
+    func saveImageIntoProfile()
+    {
+        // save it
+        let uid = FIRAuth.auth()?.currentUser?.uid
+        
+        let userReference = FIRDatabase.database().reference().child("users").child(uid!)
+        
+        userReference.updateChildValues(["state": "DC"])
     }
     
 }
