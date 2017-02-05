@@ -241,7 +241,11 @@ class EditProfileViewController: UIViewController, UIPickerViewDataSource, UIPic
     func uploadImageToServer()
     {
         updateProfileButton.isEnabled = false
-        let storageRef = FIRStorage.storage().reference().child("profile.png")
+        
+        // create a random string
+        let imageName = NSUUID().uuidString
+        
+        let storageRef = FIRStorage.storage().reference().child("\(imageName).png")
         
         if let uploadData = UIImagePNGRepresentation(self.userProfileImage.image!)
         {
@@ -261,8 +265,9 @@ class EditProfileViewController: UIViewController, UIPickerViewDataSource, UIPic
                 if let profileImageUrl = metadata?.downloadURL()?.absoluteString
                 {
                     print(profileImageUrl)
+                    self.saveImageIntoProfile(url: profileImageUrl)
                 }
-                self.saveImageIntoProfile()
+                
                 
 
                 
@@ -333,7 +338,7 @@ class EditProfileViewController: UIViewController, UIPickerViewDataSource, UIPic
         self.present(myAlert, animated: true, completion: nil)
     }
     
-    func saveImageIntoProfile()
+    func saveImageIntoProfile(url: String)
     {
         // save it
         let uid = FIRAuth.auth()?.currentUser?.uid
@@ -341,6 +346,7 @@ class EditProfileViewController: UIViewController, UIPickerViewDataSource, UIPic
         let userReference = FIRDatabase.database().reference().child("users").child(uid!)
         
         userReference.updateChildValues(["state": "DC"])
+        userReference.updateChildValues(["profileImageURL": url])
     }
     
 }
