@@ -252,46 +252,31 @@ class EditProfileViewController: UIViewController, UIPickerViewDataSource, UIPic
     @IBAction func UploadButtonClicked(_ sender: UIButton) {
         
         print("Uploading image!")
-        //uploadImageToServer(url: localPath!)
+        uploadImageToServer()
     }
     
     
     
-    func uploadImageToServer(url : NSURL)
+    func uploadImageToServer()
     {
-        //let url = URL("http://localhost:3000/uploadTest")
+        let storageRef = FIRStorage.storage().reference().child("profile.png")
         
-        /*
-        let parameters = [
-            "parameter1": "bodrum",
-            "parameter2": "yalikavak"]
-        
-        let headers: HTTPHeaders = [
-            "Content-Type" : "text/html; charset=utf-8"
-        ]
-
-        
-        //let URL = try! URLRequest(url: "http://localhost:3000/post", method: .post)
-        
-        Alamofire.upload(multipartFormData: { multipartFormData in
-            multipartFormData.append(UIImagePNGRepresentation(self.userProfileImage.image!)!, withName: "signImg", fileName: "picture.png", mimeType: "image/png")
-        }, with: URL, encodingCompletion: {
-            encodingResult in
-            print("--- Encoding result ---")
-            print(encodingResult)
-            print("--- ---")
-            switch encodingResult {
-            case .success(let upload, _, _):
-                upload.responseString { response in
-                    debugPrint("SUCCESS RESPONSE: (response)")
+        if let uploadData = UIImagePNGRepresentation(self.userProfileImage.image!)
+        {
+            storageRef.put(uploadData, metadata: nil, completion: {
+                (metadata, error) in
+                
+                if error != nil
+                {
+                    print(error)
+                    return
                 }
-            case .failure(let encodingError):
-                // hide progressbas here
-                print("ERROR RESPONSE: (encodingError)")
-            }
-        })
-        */
-        
+                
+                print(metadata)
+                
+                
+            })
+        }
     }
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
