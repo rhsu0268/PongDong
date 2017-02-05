@@ -172,7 +172,7 @@ class EditProfileViewController: UIViewController, UIPickerViewDataSource, UIPic
         // instantiate a pickerController
         var imagePickerController = UIImagePickerController()
         imagePickerController.delegate = self
-        //imagePickerController.allowsEditing = true
+        imagePickerController.allowsEditing = true
         //imagePickerController.sourceType = UIImagePickerControllerSourceType.photoLibrary
         
         self.present(imagePickerController, animated: true, completion: nil)
@@ -245,7 +245,7 @@ class EditProfileViewController: UIViewController, UIPickerViewDataSource, UIPic
         // create a random string
         let imageName = NSUUID().uuidString
         
-        let storageRef = FIRStorage.storage().reference().child("\(imageName).png")
+        let storageRef = FIRStorage.storage().reference().child("profile_images").child("\(imageName).png")
         
         if let uploadData = UIImagePNGRepresentation(self.userProfileImage.image!)
         {
