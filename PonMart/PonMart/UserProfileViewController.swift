@@ -24,6 +24,11 @@ class UserProfileViewController: UIViewController {
         self.userProfileImage.layer.cornerRadius = self.userProfileImage.frame.size.width / 2
         self.userProfileImage.clipsToBounds = true
         //self.userProfileImage.layer.cornerRadius = 10.0
+        
+        //if let pr
+        //self.userProfileImage = UIImage(
+        
+        getUserProfileImage()
     }
 
     override func didReceiveMemoryWarning() {
@@ -67,5 +72,41 @@ class UserProfileViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    func getUserProfileImage()
+    {
+        let uid = FIRAuth.auth()?.currentUser?.uid
+        FIRDatabase.database().reference().child("users").child(uid!).observe(.value, with: {
+            
+            (snapshot) in
+            if let dictionary = snapshot.value as? [String : AnyObject]
+            {
+                print(dictionary["profileImageURL"] as? String)
+                
+                let url = NSURL(string: (dictionary["profileImageURL"] as? String)!)
+                URLSession.shared.dataTask(with: url! as URL, completionHandler: {
+                    
+                    (data, response, error) in
+                    
+                    // download hit an error so lets return out
+                    if error != nil
+                    {
+                        print(error)
+                        return
+                    }
+                    
+                    DispatchQueue.main.async(execute: {
+                        
+                        self.userProfileImage.image = UIImage(data: data!)
+                        
+                    })
+                    
+                }).resume()
+            }
+            
+            
+        }, withCancel: nil)
+
+    }
 
 }
