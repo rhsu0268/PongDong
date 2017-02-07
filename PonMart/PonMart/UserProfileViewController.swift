@@ -23,6 +23,7 @@ class UserProfileViewController: UIViewController {
         // Do any additional setup after loading the view.
         self.userProfileImage.layer.cornerRadius = self.userProfileImage.frame.size.width / 2
         self.userProfileImage.clipsToBounds = true
+        self.userProfileImage.image = nil
         //self.userProfileImage.layer.cornerRadius = 10.0
         
         //if let pr
