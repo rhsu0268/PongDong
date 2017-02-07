@@ -35,7 +35,6 @@ class EditProfileViewController: UIViewController, UIPickerViewDataSource, UIPic
     
     @IBOutlet var userProfileImage: UIImageView!
     @IBOutlet var usernameTextField: UITextField!
-    @IBOutlet var emailTextField: UITextField!
     @IBOutlet var phoneNumberTextField: UITextField!
     
     let cityNamePickerData = ["New York", "Washington"]
@@ -129,6 +128,7 @@ class EditProfileViewController: UIViewController, UIPickerViewDataSource, UIPic
     }
     
 
+    
     @IBAction func UpdateButtonClicked(_ sender: UIButton) {
         
         // check and see if image is uploaded
@@ -147,10 +147,7 @@ class EditProfileViewController: UIViewController, UIPickerViewDataSource, UIPic
         {
             return
         }
-        guard let email = emailTextField.text, !email.isEmpty else
-        {
-            return
-        }
+        
         guard let phoneNumber = phoneNumberTextField.text, !phoneNumber.isEmpty else
         {
             return
@@ -163,12 +160,12 @@ class EditProfileViewController: UIViewController, UIPickerViewDataSource, UIPic
         {
             return
         }
-       
-        updateUserProfile(city: cityName, state: stateName, name: username, email: email, phoneNumber: phoneNumber)
-    
         
+        updateUserProfile(city: cityName, state: stateName, name: name, phoneNumber: phoneNumber)
         
+
     }
+    
     
     
     // MARK: -Tap recongizers
@@ -427,7 +424,7 @@ class EditProfileViewController: UIViewController, UIPickerViewDataSource, UIPic
         
     }
     
-    func updateUserProfile(city: String, state: String, name: String, email: String, phoneNumber: String)
+    func updateUserProfile(city: String, state: String, name: String, phoneNumber: String)
     {
         let uid = FIRAuth.auth()?.currentUser?.uid
         
@@ -438,7 +435,7 @@ class EditProfileViewController: UIViewController, UIPickerViewDataSource, UIPic
         userReference.updateChildValues(["city": city])
         userReference.updateChildValues(["state": state])
         userReference.updateChildValues(["name": name])
-        userReference.updateChildValues(["email": email])
+        //userReference.updateChildValues(["email": email])
         userReference.updateChildValues(["phoneNumber": phoneNumber])
         
     }
