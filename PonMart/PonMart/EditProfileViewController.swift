@@ -135,16 +135,37 @@ class EditProfileViewController: UIViewController, UIPickerViewDataSource, UIPic
         
         print("Update button clicked!")
         
-        var username = usernameTextField.text
-        var email = emailTextField.text
-        var phoneNumber = phoneNumberTextField.text
+        //var username = usernameTextField.text
+        //var email = emailTextField.text
+        //var phoneNumber = phoneNumberTextField.text
         
+        //var cityName = cityNameLabel.text
+        //var stateName = stateNameLabel.text
+        
+        
+        guard let name = usernameTextField.text, !name.isEmpty else
+        {
+            return
+        }
+        guard let email = emailTextField.text, !email.isEmpty else
+        {
+            return
+        }
+        guard let phoneNumber = phoneNumberTextField.text, !phoneNumber.isEmpty else
+        {
+            return
+        }
+        guard let cityName = cityNameLabel.text, !cityName.isEmpty else
+        {
+            return
+        }
+        guard let stateName = stateNameLabel.text, !stateName.isEmpty else
+        {
+            return
+        }
        
-        
-        //let user = UserDefaults.standard.object(forKey: "userInfo")
-        //print(user)
-        
-        // find the user
+        updateUserProfile(city: cityName, state: stateName, name: username, email: email, phoneNumber: phoneNumber)
+    
         
         
     }
@@ -403,6 +424,22 @@ class EditProfileViewController: UIViewController, UIPickerViewDataSource, UIPic
             
             
         }, withCancel: nil)
+        
+    }
+    
+    func updateUserProfile(city: String, state: String, name: String, email: String, phoneNumber: String)
+    {
+        let uid = FIRAuth.auth()?.currentUser?.uid
+        
+        let userReference = FIRDatabase.database().reference().child("users").child(uid!)
+        
+        //userReference.updateChildValues(["state": "DC"])
+        //userReference.updateChildValues(["profileImageURL": url])
+        userReference.updateChildValues(["city": city])
+        userReference.updateChildValues(["state": state])
+        userReference.updateChildValues(["name": name])
+        userReference.updateChildValues(["email": email])
+        userReference.updateChildValues(["phoneNumber": phoneNumber])
         
     }
 
