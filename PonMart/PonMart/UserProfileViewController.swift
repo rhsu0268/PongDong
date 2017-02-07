@@ -83,26 +83,35 @@ class UserProfileViewController: UIViewController {
             if let dictionary = snapshot.value as? [String : AnyObject]
             {
                 print(dictionary["profileImageURL"] as? String)
+                // check whether key exists
+                if let keyExists = dictionary["profileImageURL"]
+                {
+                    let url = NSURL(string: (dictionary["profileImageURL"] as? String)!)
                 
-                let url = NSURL(string: (dictionary["profileImageURL"] as? String)!)
-                URLSession.shared.dataTask(with: url! as URL, completionHandler: {
+                    URLSession.shared.dataTask(with: url as! URL, completionHandler: {
                     
-                    (data, response, error) in
+                        (data, response, error) in
                     
-                    // download hit an error so lets return out
-                    if error != nil
-                    {
-                        print(error)
-                        return
-                    }
+                        // download hit an error so lets return out
+                        if error != nil
+                        {
+                            print(error)
+                            return
+                        }
                     
-                    DispatchQueue.main.async(execute: {
+                        DispatchQueue.main.async(execute: {
                         
                         self.userProfileImage.image = UIImage(data: data!)
                         
-                    })
-                    
-                }).resume()
+                        })
+                
+                    }).resume()
+                }
+                else
+                {
+                    // set a placeholder 
+                    self.userProfileImage.image = UIImage(named: "user-profile-placeholder")
+                }
             }
             
             
