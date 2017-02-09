@@ -14,7 +14,8 @@ class UserProfileViewController: UIViewController {
     @IBOutlet var userProfileImage: UIImageView!
     
     
-    
+    @IBOutlet var userEmailLabel: UILabel!
+    @IBOutlet var userPhoneNumberLabel: UILabel!
     
     
     override func viewDidLoad() {
@@ -30,6 +31,8 @@ class UserProfileViewController: UIViewController {
         //self.userProfileImage = UIImage(
         
         getUserProfileImage()
+        
+        getProfileInformation()
     }
 
     override func didReceiveMemoryWarning() {
@@ -112,6 +115,35 @@ class UserProfileViewController: UIViewController {
                     // set a placeholder 
                     self.userProfileImage.image = UIImage(named: "user-profile-placeholder")
                 }
+            }
+            
+            
+        }, withCancel: nil)
+
+    }
+    
+    func getProfileInformation()
+    {
+        let uid = FIRAuth.auth()?.currentUser?.uid
+        FIRDatabase.database().reference().child("users").child(uid!).observe(.value, with: {
+            
+            (snapshot) in
+            if let dictionary = snapshot.value as? [String : AnyObject]
+            {
+                print(dictionary["email"] as? String)
+                // check whether key exists
+                if let email = dictionary["email"]
+                {
+                    self.userEmailLabel.text = email as! String
+                }
+                if let phoneNumber = dictionary["phoneNumber"]
+                {
+                    
+                    
+                    
+                    //self.userPhoneNumberLabel.text = phoneNumber as! String
+                }
+                
             }
             
             

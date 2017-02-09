@@ -50,6 +50,12 @@ PODS:
     - GoogleToolboxForMac/NSString+URLArguments (= 2.1.1)
   - GoogleToolboxForMac/NSString+URLArguments (2.1.1)
   - GTMSessionFetcher/Core (1.1.8)
+  - PhoneNumberKit (1.2.1):
+    - PhoneNumberKit/PhoneNumberKitCore (= 1.2.1)
+    - PhoneNumberKit/UIKit (= 1.2.1)
+  - PhoneNumberKit/PhoneNumberKitCore (1.2.1)
+  - PhoneNumberKit/UIKit (1.2.1):
+    - PhoneNumberKit/PhoneNumberKitCore
 
 DEPENDENCIES:
   - Charts (~> 3.0.1)
@@ -57,6 +63,7 @@ DEPENDENCIES:
   - Firebase/Auth
   - Firebase/Database
   - Firebase/Storage
+  - PhoneNumberKit (~> 1.2)
 
 SPEC CHECKSUMS:
   Charts: 0e84f4418e87dad6a9edde221fba37ebb51d3ba7
@@ -71,7 +78,8 @@ SPEC CHECKSUMS:
   GoogleSymbolUtilities: 631ee17048aa5e9ab133470d768ea997a5ef9b96
   GoogleToolboxForMac: 8e329f1b599f2512c6b10676d45736bcc2cbbeb0
   GTMSessionFetcher: 6f8d8b28b7e345549ac471071608170b31cb4977
+  PhoneNumberKit: 7917d5f1ca21cacce535e9aa9c6d7a4537f25726
 
-PODFILE CHECKSUM: 5090841eb38a321835c7a3ee069bfca81fe83bab
+PODFILE CHECKSUM: 7a4f3ecf84c42cfdca4ac863866ca5f5ff40097d
 
 COCOAPODS: 1.1.1

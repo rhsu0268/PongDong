@@ -551,6 +551,8 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
+                        <outlet property="userEmailLabel" destination="zst-wb-hBe" id="Tkr-Wx-0SN"/>
+                        <outlet property="userPhoneNumberLabel" destination="MBk-rG-Z2f" id="lPz-Aj-HFe"/>
                         <outlet property="userProfileImage" destination="kAm-Hg-i47" id="AnX-51-pJD"/>
                         <segue destination="A14-zg-b4p" kind="show" identifier="profileViewToLoginView" id="xEO-lN-dgF"/>
                         <segue destination="vwi-Lo-XwT" kind="show" identifier="profileViewToSearchView" id="Nya-sh-GOK"/>
@@ -573,7 +575,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="107"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="9tf-VI-UVl" id="8hX-UO-sII">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="106.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="106"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Sofa" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KSn-xi-cDF">
@@ -1262,9 +1264,9 @@
         <image name="used-label-unselected" width="89" height="40"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="eaX-2Z-5tO"/>
-        <segue reference="O1m-vN-OlS"/>
         <segue reference="xEO-lN-dgF"/>
-        <segue reference="Hbl-8n-96l"/>
+        <segue reference="O1m-vN-OlS"/>
+        <segue reference="Nya-sh-GOK"/>
+        <segue reference="Z9O-BM-kTI"/>
     </inferredMetricsTieBreakers>
 </document>

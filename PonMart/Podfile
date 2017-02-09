@@ -11,4 +11,5 @@ target 'PonMart' do
   pod 'Firebase/Database'
   pod 'Firebase/Storage'
   pod 'Firebase/Auth'
+  pod 'PhoneNumberKit', '~> 1.2'
 end
