@@ -22,7 +22,7 @@
 		D11BA21A1E229D5B00222DEC /* ItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D11BA2191E229D5B00222DEC /* ItemCell.swift */; };
 		D11BA21C1E254F2D00222DEC /* ItemDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D11BA21B1E254F2D00222DEC /* ItemDetailViewController.swift */; };
 		D11BA21E1E2698BE00222DEC /* UserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D11BA21D1E2698BE00222DEC /* UserProfileViewController.swift */; };
-		D11BA2201E26ADDE00222DEC /* AddPongViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D11BA21F1E26ADDE00222DEC /* AddPongViewController.swift */; };
+		D11BA2201E26ADDE00222DEC /* AddItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D11BA21F1E26ADDE00222DEC /* AddItemViewController.swift */; };
 		D11BA2221E29229A00222DEC /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D11BA2211E29229A00222DEC /* RegisterViewController.swift */; };
 		D16A6FBB1E456DDD00B848FC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D16A6FBA1E456DDD00B848FC /* GoogleService-Info.plist */; };
 		D173DEA21E31BD53002D1C52 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D173DEA11E31BD53002D1C52 /* EditProfileViewController.swift */; };
@@ -50,7 +50,7 @@
 		D11BA2191E229D5B00222DEC /* ItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemCell.swift; sourceTree = "<group>"; };
 		D11BA21B1E254F2D00222DEC /* ItemDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemDetailViewController.swift; sourceTree = "<group>"; };
 		D11BA21D1E2698BE00222DEC /* UserProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfileViewController.swift; sourceTree = "<group>"; };
-		D11BA21F1E26ADDE00222DEC /* AddPongViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddPongViewController.swift; sourceTree = "<group>"; };
+		D11BA21F1E26ADDE00222DEC /* AddItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddItemViewController.swift; sourceTree = "<group>"; };
 		D11BA2211E29229A00222DEC /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		D16A6FBA1E456DDD00B848FC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D173DEA11E31BD53002D1C52 /* EditProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
@@ -107,7 +107,7 @@
 				D173DEA51E331234002D1C52 /* StatisticsViewController.swift */,
 				D173DEA11E31BD53002D1C52 /* EditProfileViewController.swift */,
 				D11BA2211E29229A00222DEC /* RegisterViewController.swift */,
-				D11BA21F1E26ADDE00222DEC /* AddPongViewController.swift */,
+				D11BA21F1E26ADDE00222DEC /* AddItemViewController.swift */,
 				D11BA21D1E2698BE00222DEC /* UserProfileViewController.swift */,
 				D11BA2191E229D5B00222DEC /* ItemCell.swift */,
 				D11BA2101E21895600222DEC /* SearchItemController.swift */,
@@ -280,7 +280,7 @@
 				D11BA2111E21895600222DEC /* SearchItemController.swift in Sources */,
 				D11BA21E1E2698BE00222DEC /* UserProfileViewController.swift in Sources */,
 				D11BA2221E29229A00222DEC /* RegisterViewController.swift in Sources */,
-				D11BA2201E26ADDE00222DEC /* AddPongViewController.swift in Sources */,
+				D11BA2201E26ADDE00222DEC /* AddItemViewController.swift in Sources */,
 				D11BA1FA1E1C1EBB00222DEC /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

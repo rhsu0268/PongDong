@@ -8,8 +8,9 @@
 
 import UIKit
 import CoreData
+import Firebase
 
-class AddPongViewController: UIViewController {
+class AddItemViewController: UIViewController {
 
   
     
@@ -60,6 +61,7 @@ class AddPongViewController: UIViewController {
         //var item : Item = Item(name: itemNameText, description: itemDescriptionText, type: "Furniture", condition: "Used", price: 12.00, itemImage: UIImage(named:"sofa.jpeg")!)
         //print(item)
         
+        /*
         let context = appDelegate.persistentContainer.viewContext
         
         let newItem = NSEntityDescription.insertNewObject(forEntityName: "Items", into: context)
@@ -85,6 +87,8 @@ class AddPongViewController: UIViewController {
         {
             
         }
+         */
+        addItem(itemName: "Sofa")
 
         
     }
@@ -153,7 +157,16 @@ class AddPongViewController: UIViewController {
         performSegue(withIdentifier: "addPongViewToSearchView", sender: self)
     }
     
-
+    
+    
+    func addItem(itemName : String)
+    {
+        let uid = FIRAuth.auth()?.currentUser?.uid
+        
+        let userItemsReference = FIRDatabase.database().reference().child("userItems").child(uid!)
+        
+        userItemsReference.updateChildValues(["itemName": itemName])
+    }
     /*
     // MARK: - Navigation
 

@@ -703,10 +703,10 @@
             </objects>
             <point key="canvasLocation" x="3085.5999999999999" y="-31.03448275862069"/>
         </scene>
-        <!--Add Pong View Controller-->
+        <!--Add Item View Controller-->
         <scene sceneID="xYf-9j-zAd">
             <objects>
-                <viewController id="m4K-5q-gse" customClass="AddPongViewController" customModule="PonMart" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="m4K-5q-gse" customClass="AddItemViewController" customModule="PonMart" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="MpD-c7-nn6"/>
                         <viewControllerLayoutGuide type="bottom" id="a7T-bH-T84"/>
@@ -1266,7 +1266,7 @@
     <inferredMetricsTieBreakers>
         <segue reference="xEO-lN-dgF"/>
         <segue reference="O1m-vN-OlS"/>
-        <segue reference="Nya-sh-GOK"/>
         <segue reference="Z9O-BM-kTI"/>
+        <segue reference="lQs-vo-Evf"/>
     </inferredMetricsTieBreakers>
 </document>
