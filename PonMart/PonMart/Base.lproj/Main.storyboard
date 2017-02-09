@@ -918,6 +918,22 @@
                                     <action selector="usedOptionClicked:" destination="m4K-5q-gse" eventType="touchUpInside" id="c36-rf-SwF"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="item-image-placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="6Pp-aG-KPn">
+                                <rect key="frame" x="18" y="282" width="96" height="70"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xmX-GM-fJ0">
+                                <rect key="frame" x="135" y="297" width="45" height="45"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="upload-profile-photo-button"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Upload" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C4u-bB-oaq">
+                                <rect key="frame" x="140" y="309" width="55" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -934,7 +950,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Q1b-24-gWs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2838" y="748"/>
+            <point key="canvasLocation" x="2837.5999999999999" y="747.9760119940031"/>
         </scene>
         <!--Statistics View Controller-->
         <scene sceneID="EaK-Yv-dyK">
@@ -1239,6 +1255,7 @@
         <image name="edit-block" width="750" height="562"/>
         <image name="furniture-button-selected" width="375" height="100"/>
         <image name="furniture-label-unselected" width="126" height="40"/>
+        <image name="item-image-placeholder" width="1500" height="1500"/>
         <image name="log-in" width="750" height="562"/>
         <image name="new-button-selected" width="375" height="100"/>
         <image name="new-label" width="89" height="40"/>
