@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import PhoneNumberKit
 
 class UserProfileViewController: UIViewController {
 
@@ -138,10 +139,20 @@ class UserProfileViewController: UIViewController {
                 }
                 if let phoneNumber = dictionary["phoneNumber"]
                 {
+                    let phoneNumberString = phoneNumber as! String
+                   
+                    var index = phoneNumberString.index(phoneNumberString.startIndex, offsetBy: 3)
                     
+                    let areaCode = phoneNumberString.substring(to: index)
+                    print(areaCode)
                     
+                    let start = phoneNumberString.index(phoneNumberString.startIndex, offsetBy: 3)
+                    let end = phoneNumberString.index(phoneNumberString.endIndex, offsetBy: 0)
+                    let range = start..<end
                     
-                    //self.userPhoneNumberLabel.text = phoneNumber as! String
+                    let number = phoneNumberString.substring(with: range)
+                    print("(\(areaCode))-\(number)")
+                    self.userPhoneNumberLabel.text = "(\(areaCode))-\(number)"
                 }
                 
             }
