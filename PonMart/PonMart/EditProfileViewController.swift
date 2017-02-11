@@ -374,7 +374,7 @@ class EditProfileViewController: UIViewController, UIPickerViewDataSource, UIPic
         
         let userReference = FIRDatabase.database().reference().child("users").child(uid!)
         
-        userReference.updateChildValues(["state": "DC"])
+        //userReference.updateChildValues(["state": "DC"])
         userReference.updateChildValues(["profileImageURL": url])
     }
     

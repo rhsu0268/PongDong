@@ -926,9 +926,12 @@
                                 <rect key="frame" x="135" y="297" width="45" height="45"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="upload-profile-photo-button"/>
+                                <connections>
+                                    <action selector="UploadItemImageButtonClicked:" destination="m4K-5q-gse" eventType="touchUpInside" id="S88-jm-zHm"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Upload" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C4u-bB-oaq">
-                                <rect key="frame" x="140" y="309" width="55" height="21"/>
+                                <rect key="frame" x="140" y="309" width="40" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                 <nil key="textColor"/>
@@ -945,6 +948,7 @@
                         <outlet property="itemPriceTextField" destination="dXZ-Ao-P1b" id="nY0-t9-0wT"/>
                         <outlet property="newOption" destination="682-SL-0ce" id="sqR-xg-HRq"/>
                         <outlet property="textbookOption" destination="7ss-Xl-UZB" id="FvF-NR-uPn"/>
+                        <outlet property="uploadItemImageButton" destination="xmX-GM-fJ0" id="hTZ-3h-g3F"/>
                         <outlet property="usedOption" destination="4gn-7D-rAE" id="8mS-Yy-kd2"/>
                         <outlet property="userProfileImage" destination="GZI-RA-T2K" id="AaT-ay-OEc"/>
                     </connections>

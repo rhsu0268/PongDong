@@ -24,6 +24,9 @@ class AddItemViewController: UIViewController,  UIImagePickerControllerDelegate,
     
     @IBOutlet var itemImage: UIImageView!
     
+    @IBOutlet var uploadItemImageButton: UIButton!
+    
+    
     var itemNameText : String = ""
     var itemDescriptionText : String = ""
     var itemPriceDouble : Double = 0.0
@@ -209,7 +212,7 @@ class AddItemViewController: UIViewController,  UIImagePickerControllerDelegate,
         if let editedImage = info[UIImagePickerControllerEditedImage] as? UIImage
         {
             selectedImageFromPicker = editedImage
-            print(editedImage.size)
+            //print(editedImage.size)
         }
         
         if let originalImage = info[UIImagePickerControllerOriginalImage] as? UIImage
@@ -221,5 +224,66 @@ class AddItemViewController: UIViewController,  UIImagePickerControllerDelegate,
         self.dismiss(animated: true, completion: nil)
 
     }
+    
+    
+    @IBAction func UploadItemImageButtonClicked(_ sender: UIButton) {
+        print("Upload")
+        
+        uploadItemImageButton.isEnabled = false
+        
+        // create a random string
+        let imageName = NSUUID().uuidString
+        
+        let storageRef = FIRStorage.storage().reference().child("item_images").child("\(imageName).png")
+        
+        if let uploadData = UIImagePNGRepresentation(self.itemImage.image!)
+        {
+            storageRef.put(uploadData, metadata: nil, completion: {
+                (metadata, error) in
+                
+                if error != nil
+                {
+                    print(error)
+                    return
+                }
+                
+                print(metadata)
+                
+                self.displayAlertMessage(userMessage: "You have successfully uploaded a profile Image")
+                
+                self.uploadItemImageButton.isEnabled = true
+                
+                if let itemImageUrl = metadata?.downloadURL()?.absoluteString
+                {
+                    self.saveImageToItem(url: itemImageUrl)
+                }
+            })
+            
+        }
+        
+    }
+    
+    func saveImageToItem(url: String)
+    {
+        // save it
+        let uid = FIRAuth.auth()?.currentUser?.uid
+        
+        let itemReference = FIRDatabase.database().reference().child("userItems").child(uid!)
+        
+        itemReference.updateChildValues(["profileImageURL": url])
+    }
+    
+    func displayAlertMessage(userMessage: String)
+    {
+        var myAlert = UIAlertController(title: "Alert", message: userMessage, preferredStyle: UIAlertControllerStyle.alert)
+        
+        let okayAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil)
+        
+        myAlert.addAction(okayAction)
+        
+        self.present(myAlert, animated: true, completion: nil)
+    }
+
+        
 
 }
