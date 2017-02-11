@@ -74,11 +74,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PonMart/SearchItemController.swift"
-            timestampString = "507967120.447812"
+            timestampString = "508540658.128987"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "170"
-            endingLineNumber = "170"
+            startingLineNumber = "172"
+            endingLineNumber = "172"
             landmarkName = "checkIfUserIsLoggedIn()"
             landmarkType = "7">
          </BreakpointContent>
