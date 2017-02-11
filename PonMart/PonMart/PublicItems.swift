@@ -24,6 +24,13 @@ class PublicItems
         publicItemReference.updateChildValues(["itemType": "Furniture"])
         publicItemReference.updateChildValues(["itemCondition": "Used"])
         publicItemReference.updateChildValues(["itemPrice": "6.99"])
+        publicItemReference.updateChildValues(["userId": uid])
+        
+        let date = Foundation.Date()
+        let formatedDate = date.dashedStringFromDate()
+        print("Date")
+        print(formatedDate)
+        publicItemReference.updateChildValues(["date": formatedDate])
         
         let key = publicItemReference.key
         print(key)
@@ -60,4 +67,14 @@ class PublicItems
         }
     }
     
+}
+
+extension Foundation.Date {
+    
+    func dashedStringFromDate() -> String {
+        let dateFormatter = DateFormatter()
+        let date = self
+        dateFormatter.dateFormat = "MM-dd-yyyy HH:mm"
+        return dateFormatter.string(from: date)
+    }
 }
