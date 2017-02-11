@@ -26,6 +26,7 @@ class AddItemViewController: UIViewController,  UIImagePickerControllerDelegate,
     
     @IBOutlet var uploadItemImageButton: UIButton!
     
+    @IBOutlet var addItemButton: UIButton!
     
     var itemNameText : String = ""
     var itemDescriptionText : String = ""
@@ -49,6 +50,7 @@ class AddItemViewController: UIViewController,  UIImagePickerControllerDelegate,
     
     @IBAction func AddItemClicked(_ sender: UIButton) {
         print("Adding item!")
+        addItemButton.isEnabled = false
    
         // create a new item
         
@@ -199,7 +201,7 @@ class AddItemViewController: UIViewController,  UIImagePickerControllerDelegate,
         userItemReference.updateChildValues(["itemCondition": itemCondition])
         userItemReference.updateChildValues(["itemDescription": itemDescription])
         
-        uploadImage(key: key)
+            uploadImage(key: key)
     }
     /*
     // MARK: - Navigation
@@ -334,6 +336,8 @@ class AddItemViewController: UIViewController,  UIImagePickerControllerDelegate,
 
         
         itemReference.updateChildValues(["profileImageURL": url])
+        
+         addItemButton.isEnabled = true
     }
     
     func displayAlertMessage(userMessage: String)
