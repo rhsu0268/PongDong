@@ -24,7 +24,7 @@ class AddItemViewController: UIViewController,  UIImagePickerControllerDelegate,
     
     @IBOutlet var itemImage: UIImageView!
     
-    @IBOutlet var uploadItemImageButton: UIButton!
+    
     
     @IBOutlet var addItemButton: UIButton!
     
@@ -44,12 +44,18 @@ class AddItemViewController: UIViewController,  UIImagePickerControllerDelegate,
     @IBOutlet var newOption: UIButton!
     @IBOutlet var usedOption: UIButton!
     
+    
+    @IBOutlet var uploadItemActivityIndicator: UIActivityIndicatorView!
+    
+    
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     
     
     
     @IBAction func AddItemClicked(_ sender: UIButton) {
         print("Adding item!")
+        
+        uploadItemActivityIndicator.startAnimating()
         addItemButton.isEnabled = false
    
         // create a new item
@@ -149,6 +155,8 @@ class AddItemViewController: UIViewController,  UIImagePickerControllerDelegate,
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //itemDescriptionText.placeholder = "Please enter a description for the item..."
         
         self.userProfileImage.image = nil
         // Do any additional setup after loading the view.
@@ -255,7 +263,7 @@ class AddItemViewController: UIViewController,  UIImagePickerControllerDelegate,
     {
         print("Upload")
         
-        uploadItemImageButton.isEnabled = false
+        //uploadItemButton.isEnabled = false
         
         // create a random string
         let imageName = NSUUID().uuidString
@@ -277,57 +285,22 @@ class AddItemViewController: UIViewController,  UIImagePickerControllerDelegate,
                 
                 self.displayAlertMessage(userMessage: "You have successfully uploaded a profile Image")
                 
-                self.uploadItemImageButton.isEnabled = true
+               
                 
                 if let itemImageUrl = metadata?.downloadURL()?.absoluteString
                 {
                     self.saveImageToItem(url: itemImageUrl, key: key)
                 }
+                
+                self.addItemButton.isEnabled = true
+                self.uploadItemActivityIndicator.stopAnimating()
             })
             
         }
 
     }
     
-    /*
-    @IBAction func UploadItemImageButtonClicked(_ sender: UIButton) {
-        print("Upload")
-        
-        uploadItemImageButton.isEnabled = false
-        
-        // create a random string
-        let imageName = NSUUID().uuidString
-        
-        let storageRef = FIRStorage.storage().reference().child("item_images").child("\(imageName).png")
-        
-        if let uploadData = UIImagePNGRepresentation(self.itemImage.image!)
-        {
-            storageRef.put(uploadData, metadata: nil, completion: {
-                (metadata, error) in
-                
-                if error != nil
-                {
-                    print(error)
-                    return
-                }
-                
-                print(metadata)
-                
-                self.displayAlertMessage(userMessage: "You have successfully uploaded a profile Image")
-                
-                self.uploadItemImageButton.isEnabled = true
-                
-                if let itemImageUrl = metadata?.downloadURL()?.absoluteString
-                {
-                    self.saveImageToItem(url: itemImageUrl, key: )
-                }
-            })
-            
-        }
-        
-    }
-    */
-    func saveImageToItem(url: String, key: String)
+        func saveImageToItem(url: String, key: String)
     {
         // save it
         let uid = FIRAuth.auth()?.currentUser?.uid
