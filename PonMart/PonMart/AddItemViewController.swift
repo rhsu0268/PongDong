@@ -1,5 +1,5 @@
 //
-//  AddPongViewController.swift
+//  AddItemViewController.swift
 //  PonMart
 //
 //  Created by Richard Hsu on 1/11/17.
@@ -45,60 +45,72 @@ class AddItemViewController: UIViewController,  UIImagePickerControllerDelegate,
     
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     
-    @IBAction func AddPongClicked(_ sender: UIButton) {
-        
+    
+    
+    @IBAction func AddItemClicked(_ sender: UIButton) {
         print("Adding item!")
-        
+   
         // create a new item
         
-        if let itemName = itemName.text
-        {
-            itemNameText = itemName
+        
+        guard let itemNameText = itemName.text, !itemNameText.isEmpty else {
+            return
         }
-        if let itemDescription = itemDescription.text
-        {
-            itemDescriptionText = itemDescription
+        
+        guard let itemDescriptionText = itemDescription.text, !itemDescriptionText.isEmpty else {
+            return
         }
-        if let itemPrice = Double(itemPriceTextField.text!)
-        {
-            itemPriceDouble = itemPrice
+        
+        guard let itemPriceValue = itemPriceTextField.text, !itemPriceValue.isEmpty else {
+            return
         }
+        
+        if itemCategory.isEmpty
+        {
+            return
+        }
+        if itemCondition.isEmpty
+        {
+            return
+        }
+        
         
         
         //var item : Item = Item(name: itemNameText, description: itemDescriptionText, type: "Furniture", condition: "Used", price: 12.00, itemImage: UIImage(named:"sofa.jpeg")!)
         //print(item)
         
         /*
-        let context = appDelegate.persistentContainer.viewContext
-        
-        let newItem = NSEntityDescription.insertNewObject(forEntityName: "Items", into: context)
-        
-        newItem.setValue("rhsu0268", forKey: "username")
-        newItem.setValue(itemNameText, forKey: "itemName")
-        newItem.setValue(itemCategory, forKey: "itemCategory")
-        newItem.setValue(itemCondition, forKey: "itemCondition")
-        newItem.setValue(itemPriceDouble, forKey: "itemPrice")
-        newItem.setValue(itemDescriptionText, forKey: "itemDescription")
-        
-        
-        let imageData : NSData = UIImagePNGRepresentation(UIImage(named: "sofa.jpeg")!)! as NSData
-        newItem.setValue(imageData, forKey: "itemImage")
-        
-        
-        do
-        {
-            try context.save()
-            print("SAVED!")
-        }
-        catch
-        {
-            
-        }
+         let context = appDelegate.persistentContainer.viewContext
+         
+         let newItem = NSEntityDescription.insertNewObject(forEntityName: "Items", into: context)
+         
+         newItem.setValue("rhsu0268", forKey: "username")
+         newItem.setValue(itemNameText, forKey: "itemName")
+         newItem.setValue(itemCategory, forKey: "itemCategory")
+         newItem.setValue(itemCondition, forKey: "itemCondition")
+         newItem.setValue(itemPriceDouble, forKey: "itemPrice")
+         newItem.setValue(itemDescriptionText, forKey: "itemDescription")
+         
+         
+         let imageData : NSData = UIImagePNGRepresentation(UIImage(named: "sofa.jpeg")!)! as NSData
+         newItem.setValue(imageData, forKey: "itemImage")
+         
+         
+         do
+         {
+         try context.save()
+         print("SAVED!")
+         }
+         catch
+         {
+         
+         }
          */
-        addItem(itemName: "Sofa")
-
+        addItem(itemName: itemNameText, itemDescription: itemDescriptionText, itemPrice: itemPriceValue, itemCategory: itemCategory, itemCondition: itemCondition)
         
     }
+    
+
     
     
     @IBAction func furnitureOptionClicked(_ sender: UIButton) {
@@ -172,13 +184,17 @@ class AddItemViewController: UIViewController,  UIImagePickerControllerDelegate,
     
     
     
-    func addItem(itemName : String)
+    func addItem(itemName : String, itemDescription : String, itemPrice : String, itemCategory : String, itemCondition : String)
     {
         let uid = FIRAuth.auth()?.currentUser?.uid
         
-        let userItemsReference = FIRDatabase.database().reference().child("userItems").child(uid!)
+        let userItemReference = FIRDatabase.database().reference().child("userItems").child(uid!)
         
-        userItemsReference.updateChildValues(["itemName": itemName])
+        userItemReference.updateChildValues(["itemName": itemName])
+        userItemReference.updateChildValues(["itemPrice": itemPrice])
+        userItemReference.updateChildValues(["itemCategory": itemCategory])
+        userItemReference.updateChildValues(["itemCondition": itemCondition])
+        userItemReference.updateChildValues(["itemDescription": itemDescription])
     }
     /*
     // MARK: - Navigation
