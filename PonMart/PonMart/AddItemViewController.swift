@@ -188,7 +188,7 @@ class AddItemViewController: UIViewController,  UIImagePickerControllerDelegate,
     {
         let uid = FIRAuth.auth()?.currentUser?.uid
         
-        let userItemReference = FIRDatabase.database().reference().child("userItems").child(uid!)
+        let userItemReference = FIRDatabase.database().reference().child("userItems").child(uid!).childByAutoId()
         
         userItemReference.updateChildValues(["itemName": itemName])
         userItemReference.updateChildValues(["itemPrice": itemPrice])
