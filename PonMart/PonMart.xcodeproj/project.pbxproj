@@ -28,6 +28,8 @@
 		D173DEA21E31BD53002D1C52 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D173DEA11E31BD53002D1C52 /* EditProfileViewController.swift */; };
 		D173DEA61E331234002D1C52 /* StatisticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D173DEA51E331234002D1C52 /* StatisticsViewController.swift */; };
 		D173DEA91E340E22002D1C52 /* LineChartFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D173DEA81E340E22002D1C52 /* LineChartFormatter.swift */; };
+		D18059261E4FAD01007213CE /* PublicItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18059251E4FAD01007213CE /* PublicItems.swift */; };
+		D18059281E4FAD6C007213CE /* PublicItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18059271E4FAD6C007213CE /* PublicItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +58,8 @@
 		D173DEA11E31BD53002D1C52 /* EditProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 		D173DEA51E331234002D1C52 /* StatisticsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatisticsViewController.swift; sourceTree = "<group>"; };
 		D173DEA81E340E22002D1C52 /* LineChartFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineChartFormatter.swift; sourceTree = "<group>"; };
+		D18059251E4FAD01007213CE /* PublicItems.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PublicItems.swift; sourceTree = "<group>"; };
+		D18059271E4FAD6C007213CE /* PublicItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PublicItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +133,8 @@
 				D11BA20E1E21881800222DEC /* Item.swift */,
 				D173DEA81E340E22002D1C52 /* LineChartFormatter.swift */,
 				D11BA2141E21989F00222DEC /* SampleItemData.swift */,
+				D18059251E4FAD01007213CE /* PublicItems.swift */,
+				D18059271E4FAD6C007213CE /* PublicItem.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -281,6 +287,8 @@
 				D11BA21E1E2698BE00222DEC /* UserProfileViewController.swift in Sources */,
 				D11BA2221E29229A00222DEC /* RegisterViewController.swift in Sources */,
 				D11BA2201E26ADDE00222DEC /* AddItemViewController.swift in Sources */,
+				D18059281E4FAD6C007213CE /* PublicItem.swift in Sources */,
+				D18059261E4FAD01007213CE /* PublicItems.swift in Sources */,
 				D11BA1FA1E1C1EBB00222DEC /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

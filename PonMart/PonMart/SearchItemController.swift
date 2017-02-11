@@ -60,7 +60,8 @@ class SearchItemController: UIViewController {
         
         checkIfUserIsLoggedIn()
         
-        getItems()
+        //getItems()
+        
         
         
     }
