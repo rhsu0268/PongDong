@@ -198,6 +198,8 @@ class AddItemViewController: UIViewController,  UIImagePickerControllerDelegate,
         userItemReference.updateChildValues(["itemCategory": itemCategory])
         userItemReference.updateChildValues(["itemCondition": itemCondition])
         userItemReference.updateChildValues(["itemDescription": itemDescription])
+        
+        uploadImage(key: key)
     }
     /*
     // MARK: - Navigation
@@ -247,7 +249,45 @@ class AddItemViewController: UIViewController,  UIImagePickerControllerDelegate,
 
     }
     
+    func uploadImage(key : String)
+    {
+        print("Upload")
+        
+        uploadItemImageButton.isEnabled = false
+        
+        // create a random string
+        let imageName = NSUUID().uuidString
+        
+        let storageRef = FIRStorage.storage().reference().child("item_images").child("\(imageName).png")
+        
+        if let uploadData = UIImagePNGRepresentation(self.itemImage.image!)
+        {
+            storageRef.put(uploadData, metadata: nil, completion: {
+                (metadata, error) in
+                
+                if error != nil
+                {
+                    print(error)
+                    return
+                }
+                
+                print(metadata)
+                
+                self.displayAlertMessage(userMessage: "You have successfully uploaded a profile Image")
+                
+                self.uploadItemImageButton.isEnabled = true
+                
+                if let itemImageUrl = metadata?.downloadURL()?.absoluteString
+                {
+                    self.saveImageToItem(url: itemImageUrl, key: key)
+                }
+            })
+            
+        }
+
+    }
     
+    /*
     @IBAction func UploadItemImageButtonClicked(_ sender: UIButton) {
         print("Upload")
         
@@ -277,20 +317,21 @@ class AddItemViewController: UIViewController,  UIImagePickerControllerDelegate,
                 
                 if let itemImageUrl = metadata?.downloadURL()?.absoluteString
                 {
-                    self.saveImageToItem(url: itemImageUrl)
+                    self.saveImageToItem(url: itemImageUrl, key: )
                 }
             })
             
         }
         
     }
-    
-    func saveImageToItem(url: String)
+    */
+    func saveImageToItem(url: String, key: String)
     {
         // save it
         let uid = FIRAuth.auth()?.currentUser?.uid
         
-        let itemReference = FIRDatabase.database().reference().child("userItems").child(uid!)
+        let itemReference = FIRDatabase.database().reference().child("userItems").child(uid!).child(key)
+
         
         itemReference.updateChildValues(["profileImageURL": url])
     }
