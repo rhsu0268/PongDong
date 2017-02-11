@@ -10,7 +10,8 @@ import UIKit
 import CoreData
 import Firebase
 
-class AddItemViewController: UIViewController {
+class AddItemViewController: UIViewController,  UIImagePickerControllerDelegate, UINavigationControllerDelegate
+{
 
   
     
@@ -19,6 +20,9 @@ class AddItemViewController: UIViewController {
     @IBOutlet var itemPriceTextField: UITextField!
     
     @IBOutlet var userProfileImage: UIImageView!
+    
+    
+    @IBOutlet var itemImage: UIImageView!
     
     var itemNameText : String = ""
     var itemDescriptionText : String = ""
@@ -135,6 +139,9 @@ class AddItemViewController: UIViewController {
         
         // storing core data
         
+        let itemImageTap = UITapGestureRecognizer(target: self, action: #selector(AddItemViewController.itemImageTapFunction))
+        
+        itemImage.addGestureRecognizer(itemImageTap)
         
         
         
@@ -176,5 +183,43 @@ class AddItemViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    func itemImageTapFunction(sender: UITapGestureRecognizer)
+    {
+        print("You tapped item")
+        var imagePickerController = UIImagePickerController()
+            imagePickerController.delegate = self
+        
+            imagePickerController.allowsEditing = true
+        //imagePickerController.sourceType = UIImagePickerControllerSourceType.photoLibrary
+        
+        self.present(imagePickerController, animated: true, completion: nil)
+    }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        print("Canceled picker")
+        dismiss(animated: true, completion: nil)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any])
+    {
+        var selectedImageFromPicker: UIImage?
+        
+        
+        if let editedImage = info[UIImagePickerControllerEditedImage] as? UIImage
+        {
+            selectedImageFromPicker = editedImage
+            print(editedImage.size)
+        }
+        
+        if let originalImage = info[UIImagePickerControllerOriginalImage] as? UIImage
+        {
+            print(originalImage.size)
+            self.itemImage.image = originalImage
+        }
+        
+        self.dismiss(animated: true, completion: nil)
+
+    }
 
 }

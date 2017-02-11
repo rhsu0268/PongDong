@@ -918,7 +918,7 @@
                                     <action selector="usedOptionClicked:" destination="m4K-5q-gse" eventType="touchUpInside" id="c36-rf-SwF"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="item-image-placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="6Pp-aG-KPn">
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="item-image-placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="6Pp-aG-KPn">
                                 <rect key="frame" x="18" y="282" width="96" height="70"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -940,6 +940,7 @@
                     <connections>
                         <outlet property="furnitureOption" destination="Srv-qu-P1x" id="c3S-Vq-qVL"/>
                         <outlet property="itemDescription" destination="Jr4-8t-bzh" id="Ogm-gx-tvZ"/>
+                        <outlet property="itemImage" destination="6Pp-aG-KPn" id="TaM-mK-8bk"/>
                         <outlet property="itemName" destination="Hym-Dw-wz9" id="ONm-ZH-7u6"/>
                         <outlet property="itemPriceTextField" destination="dXZ-Ao-P1b" id="nY0-t9-0wT"/>
                         <outlet property="newOption" destination="682-SL-0ce" id="sqR-xg-HRq"/>
