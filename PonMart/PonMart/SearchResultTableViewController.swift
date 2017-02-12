@@ -36,7 +36,7 @@ class SearchResultTableViewController: UITableViewController {
             itemIndex = tableView.indexPathForSelectedRow?.row
             
             print("--- Item ---")
-            print(items[itemIndex!])
+            //print(items[itemIndex!])
             print("--- ---")
             itemDetailViewController.item = items[itemIndex!]
             
@@ -91,6 +91,41 @@ class SearchResultTableViewController: UITableViewController {
         cell.itemNameLabel.text = publicItem.name
         cell.priceLabel.text = "$\(publicItem.price)"
         
+       
+        if publicItem.condition == "New"
+        {
+            cell.conditionImage.image = UIImage(named: "new-label.png")!
+        }
+        else
+        {
+            //cell.conditionImage.image.frame.size.width = 100
+            cell.conditionImage.image = UIImage(named: "used-label.png")!
+            
+        }
+        
+        let itemImageUrl = publicItem.itemImageUrl
+        
+        
+        let url = NSURL(string: itemImageUrl)
+        URLSession.shared.dataTask(with: url! as URL, completionHandler: {
+            (data, response, error) in
+            
+            // download hit an error so we will return 
+            if error != nil
+            {
+                print(error)
+                return
+            }
+            
+            DispatchQueue.main.async( execute: {
+                 cell.itemImage.image = UIImage(data: data!)
+            })
+            
+            
+        }).resume()
+        
+
+        
         /*
         for result in results as! [NSManagedObject]
         {
@@ -124,21 +159,7 @@ class SearchResultTableViewController: UITableViewController {
         print("--- ---")
         */
         
-        if let itemCondition = (item as AnyObject).value(forKey: "itemCondition") as? String
-        {
-            if itemCondition == "New"
-            {
-                cell.conditionImage.image = UIImage(named: "new-label.png")!
-            }
-            else
-            {
-                //cell.conditionImage.image.frame.size.width = 100
-                cell.conditionImage.image = UIImage(named: "used-label.png")!
-                
-            }
-
-        }
-        
+         
         if let itemPrice = (item as AnyObject).value(forKey: "itemPrice") as? Double
         {
             cell.priceLabel.text = "$\(itemPrice)"
