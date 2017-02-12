@@ -10,7 +10,9 @@ import UIKit
 
 class ItemDetailViewController: UIViewController {
     
-    var item : Any? = nil
+    //var item : Any? = nil
+    
+    var item : PublicItem? = nil
     
     @IBOutlet var itemImage: UIImageView!
     @IBOutlet var itemName: UILabel!
@@ -22,7 +24,10 @@ class ItemDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         //print(item?.name)
-        
+        if let itemName = item?.name 
+        {
+            print(itemName)
+        }
         
         /*
         if let itemName = (item as AnyObject).value(forKey: "itemName") as? String
