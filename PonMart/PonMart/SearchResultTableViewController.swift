@@ -76,7 +76,7 @@ class SearchResultTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return items.count
+        return publicItems.count
     }
 
     
@@ -86,7 +86,10 @@ class SearchResultTableViewController: UITableViewController {
         // Configure the cell...
         //itemNameLabel.text = items[0].name
         
-        let item = items[indexPath.row]
+        let publicItem = publicItems[indexPath.row]
+        
+        cell.itemNameLabel.text = publicItem.name
+        cell.priceLabel.text = "$\(publicItem.price)"
         
         /*
         for result in results as! [NSManagedObject]
@@ -104,7 +107,7 @@ class SearchResultTableViewController: UITableViewController {
 
         }
          */
-        
+        /*
         if let itemName = (item as AnyObject).value(forKey: "itemName") as? String
         {
             print(itemName)
@@ -142,7 +145,7 @@ class SearchResultTableViewController: UITableViewController {
         }
         
     
-        
+        */
         
         //cell.priceLabel.text = "$\(item.price)"
         
@@ -229,6 +232,13 @@ class SearchResultTableViewController: UITableViewController {
                 publicItem.createdDate = dictionary["createdDate"] as! String
                 
                 print(publicItem)
+               
+                self.publicItems.append(publicItem)
+                
+                DispatchQueue.main.async(execute: {
+                    
+                    self.tableView.reloadData()
+                })
                 
             }
         

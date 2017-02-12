@@ -104,6 +104,7 @@
 		D11BA1F81E1C1EBB00222DEC /* PonMart */ = {
 			isa = PBXGroup;
 			children = (
+				D18059291E50CF7B007213CE /* Cell */,
 				D11BA2181E220B8D00222DEC /* Model */,
 				D11BA1F91E1C1EBB00222DEC /* AppDelegate.swift */,
 				D11BA1FB1E1C1EBB00222DEC /* ViewController.swift */,
@@ -113,7 +114,6 @@
 				D11BA2211E29229A00222DEC /* RegisterViewController.swift */,
 				D11BA21F1E26ADDE00222DEC /* AddItemViewController.swift */,
 				D11BA21D1E2698BE00222DEC /* UserProfileViewController.swift */,
-				D11BA2191E229D5B00222DEC /* ItemCell.swift */,
 				D11BA2101E21895600222DEC /* SearchItemController.swift */,
 				D11BA2121E21899500222DEC /* SearchResultTableViewController.swift */,
 				D11BA21B1E254F2D00222DEC /* ItemDetailViewController.swift */,
@@ -137,6 +137,14 @@
 				D18059271E4FAD6C007213CE /* PublicItem.swift */,
 			);
 			name = Model;
+			sourceTree = "<group>";
+		};
+		D18059291E50CF7B007213CE /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				D11BA2191E229D5B00222DEC /* ItemCell.swift */,
+			);
+			name = Cell;
 			sourceTree = "<group>";
 		};
 		E9D4C8B23004F8120E130098 /* Frameworks */ = {
