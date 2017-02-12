@@ -9,16 +9,19 @@
 import Foundation
 import UIKit
 
-class PublicItem
+class PublicItem : NSObject
 {
     public var name : String
-    public var description : String
+    public var itemDescription : String
     public var type : String
     public var condition : String
     public var price : Double
     public var itemImageUrl : String
     public var userId : String
+    public var createdDate : String
     
+ 
+    /*
     init(name : String, description : String, type : String, condition : String, price : Double, itemImage : String, userId : String) {
         
         self.name = name
@@ -30,6 +33,19 @@ class PublicItem
         self.userId = userId
         
     }
+    */
+    
+    override init()
+    {
+        name = ""
+        itemDescription = ""
+        type = ""
+        condition = ""
+        price = 0
+        itemImageUrl = ""
+        userId = ""
+        createdDate = ""
 
+    }
 
 }

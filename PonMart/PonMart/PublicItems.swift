@@ -55,11 +55,12 @@ class PublicItems
                 if let profileImageUrl = metadata?.downloadURL()?.absoluteString
                 {
                     print(profileImageUrl)
+                    print(type(of: profileImageUrl))
                     
                     let itemReference = FIRDatabase.database().reference().child("publicItems").child(key)
                     
                     
-                    itemReference.updateChildValues(["profileImageURL": profileImageUrl])
+                    itemReference.updateChildValues(["itemImageUrl": profileImageUrl])
                 }
                 
                 

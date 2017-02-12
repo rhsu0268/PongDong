@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PonMart/SearchResultTableViewController.swift"
-            timestampString = "507007255.10596"
+            timestampString = "508565904.057429"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "117"
-            endingLineNumber = "117"
+            startingLineNumber = "120"
+            endingLineNumber = "120"
             landmarkName = "tableView(_:cellForRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -209,6 +209,102 @@
             endingLineNumber = "59"
             landmarkName = "AddItemClicked(_:)"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PonMart/PublicItem.swift"
+            timestampString = "508564454.692401"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "12"
+            endingLineNumber = "12"
+            landmarkName = "PublicItem"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PonMart.PublicItem.__deallocating_deinit"
+                  moduleName = "PonMart"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/richardhsu/Desktop/iOS/soulLife-Final/PonMart/PonMart/PublicItem.swift"
+                  timestampString = "508564454.907835"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "4">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PonMart.PublicItem.deinit"
+                  moduleName = "PonMart"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/richardhsu/Desktop/iOS/soulLife-Final/PonMart/PonMart/PublicItem.swift"
+                  timestampString = "508564454.909245"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "4">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PonMart/PublicItem.swift"
+            timestampString = "508564741.06798"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "15"
+            endingLineNumber = "15"
+            landmarkName = "PublicItem"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PonMart.PublicItem.description.getter : Swift.String"
+                  moduleName = "PonMart"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/richardhsu/Desktop/iOS/soulLife-Final/PonMart/PonMart/PublicItem.swift"
+                  timestampString = "508564741.279863"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "41">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PonMart.PublicItem.description.setter : Swift.String"
+                  moduleName = "PonMart"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/richardhsu/Desktop/iOS/soulLife-Final/PonMart/PonMart/PublicItem.swift"
+                  timestampString = "508564741.28136"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "85">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

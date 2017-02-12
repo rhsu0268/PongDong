@@ -8,10 +8,12 @@
 
 import UIKit
 import CoreData
+import Firebase
 
 class SearchResultTableViewController: UITableViewController {
     
     
+    var publicItems = [PublicItem]()
     
     @IBAction func backToSearchController(_ sender: Any) {
         
@@ -57,6 +59,7 @@ class SearchResultTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        fetchPublicItems()
     }
 
     override func didReceiveMemoryWarning() {
@@ -204,6 +207,45 @@ class SearchResultTableViewController: UITableViewController {
         
     }
      */
+    
+    
+    func fetchPublicItems()
+    {
+        FIRDatabase.database().reference().child("publicItems").observe(.childAdded, with: {
+            (snapshot) in
+            
+            if let dictionary = snapshot.value as? [String : AnyObject]
+            {
+                let publicItem = PublicItem()
+                
+                // crashes if the key does not match those in firebase
+                publicItem.name = dictionary["itemName"] as! String
+                publicItem.itemDescription = dictionary["itemDescription"] as! String
+                publicItem.type = dictionary["itemType"] as! String
+                publicItem.condition = dictionary["itemCondition"] as! String
+                publicItem.price = Double(dictionary["itemPrice"] as! String)!
+                publicItem.itemImageUrl = dictionary["itemImageUrl"] as! String
+                publicItem.userId = dictionary["userId"] as! String
+                publicItem.createdDate = dictionary["createdDate"] as! String
+                
+                print(publicItem)
+                
+            }
+        
+            print(snapshot)
+                
+        }, withCancel: nil)
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
  
 
 }
