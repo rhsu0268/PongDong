@@ -30,7 +30,7 @@ class PublicItems
         let formatedDate = date.dashedStringFromDate()
         print("Date")
         print(formatedDate)
-        publicItemReference.updateChildValues(["date": formatedDate])
+        publicItemReference.updateChildValues(["createdDate": formatedDate])
         
         let key = publicItemReference.key
         print(key)
