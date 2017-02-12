@@ -24,6 +24,7 @@ class ItemDetailViewController: UIViewController {
         //print(item?.name)
         
         
+        /*
         if let itemName = (item as AnyObject).value(forKey: "itemName") as? String
         {
             self.itemName.text = itemName
@@ -68,6 +69,7 @@ class ItemDetailViewController: UIViewController {
         }
     
         // Do any additional setup after loading the view.
+        */
     }
 
     override func didReceiveMemoryWarning() {

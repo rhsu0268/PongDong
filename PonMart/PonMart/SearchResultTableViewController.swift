@@ -38,7 +38,7 @@ class SearchResultTableViewController: UITableViewController {
             print("--- Item ---")
             //print(items[itemIndex!])
             print("--- ---")
-            itemDetailViewController.item = items[itemIndex!]
+            itemDetailViewController.item = publicItems[itemIndex!]
             
         }
         else
