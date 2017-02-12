@@ -24,10 +24,64 @@ class ItemDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         //print(item?.name)
-        if let itemName = item?.name 
+        if let itemName = item?.name
         {
             print(itemName)
+            self.itemName.text = itemName
         }
+        
+        if let imageUrl = item?.itemImageUrl
+        {
+            let url = NSURL(string: imageUrl)
+            URLSession.shared.dataTask(with: url! as URL, completionHandler: {
+                (data, response, error) in
+                
+                // download hit an error so we will return
+                if error != nil
+                {
+                    print(error)
+                    return
+                }
+                
+                DispatchQueue.main.async( execute: {
+                    self.itemImage.image = UIImage(data: data!)
+                })
+                
+                
+            }).resume()
+        }
+        
+        if let itemCategory = item?.type 
+        {
+            if itemCategory == "Furniture"
+            {
+                self.itemCategory.image = UIImage(named: "furniture-label.png")
+            }
+            else
+            {
+                self.itemCategory.image = UIImage(named: "textbook-label.png")
+            }
+
+        }
+        
+        if let itemCondition = item?.condition
+        {
+            if itemCondition == "New"
+            {
+                self.itemCondition.image = UIImage(named: "new-label.png")
+            }
+            else
+            {
+                self.itemCondition.image = UIImage(named: "used-label.png")
+            }
+            
+        }
+        
+        if let itemDescription = item?.itemDescription
+        {
+            self.itemDescription.text = itemDescription
+        }
+
         
         /*
         if let itemName = (item as AnyObject).value(forKey: "itemName") as? String
