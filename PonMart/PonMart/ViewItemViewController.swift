@@ -19,8 +19,10 @@ class ViewItemViewController: UIViewController, UITableViewDelegate, UITableView
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
-
+        //self.tableView.rowHeight = UITableViewAutomaticDimension;
+        
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = 140
         // Do any additional setup after loading the view.
     }
 
@@ -46,7 +48,7 @@ class ViewItemViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print(3)
+        //print(3)
         return self.items.count
     }
     
@@ -61,8 +63,14 @@ class ViewItemViewController: UIViewController, UITableViewDelegate, UITableView
         return cell
     }
     
+    
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         //
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 200
     }
 
 }
