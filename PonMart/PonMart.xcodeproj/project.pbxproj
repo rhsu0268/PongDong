@@ -30,6 +30,9 @@
 		D173DEA91E340E22002D1C52 /* LineChartFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D173DEA81E340E22002D1C52 /* LineChartFormatter.swift */; };
 		D18059261E4FAD01007213CE /* PublicItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18059251E4FAD01007213CE /* PublicItems.swift */; };
 		D18059281E4FAD6C007213CE /* PublicItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18059271E4FAD6C007213CE /* PublicItem.swift */; };
+		D180592B1E5117E4007213CE /* ViewItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D180592A1E5117E4007213CE /* ViewItemViewController.swift */; };
+		D180592D1E5118EB007213CE /* UserItemTableTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D180592C1E5118EB007213CE /* UserItemTableTableViewController.swift */; };
+		D180592F1E515731007213CE /* UserItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D180592E1E515731007213CE /* UserItemCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +63,9 @@
 		D173DEA81E340E22002D1C52 /* LineChartFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineChartFormatter.swift; sourceTree = "<group>"; };
 		D18059251E4FAD01007213CE /* PublicItems.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PublicItems.swift; sourceTree = "<group>"; };
 		D18059271E4FAD6C007213CE /* PublicItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PublicItem.swift; sourceTree = "<group>"; };
+		D180592A1E5117E4007213CE /* ViewItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewItemViewController.swift; sourceTree = "<group>"; };
+		D180592C1E5118EB007213CE /* UserItemTableTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserItemTableTableViewController.swift; sourceTree = "<group>"; };
+		D180592E1E515731007213CE /* UserItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserItemCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +124,8 @@
 				D11BA2121E21899500222DEC /* SearchResultTableViewController.swift */,
 				D11BA21B1E254F2D00222DEC /* ItemDetailViewController.swift */,
 				D11BA2161E21AF7E00222DEC /* LoginViewController.swift */,
+				D180592A1E5117E4007213CE /* ViewItemViewController.swift */,
+				D180592C1E5118EB007213CE /* UserItemTableTableViewController.swift */,
 				D11BA2031E1C1EBB00222DEC /* Assets.xcassets */,
 				D11BA2051E1C1EBB00222DEC /* LaunchScreen.storyboard */,
 				D11BA2081E1C1EBB00222DEC /* Info.plist */,
@@ -143,6 +151,7 @@
 			isa = PBXGroup;
 			children = (
 				D11BA2191E229D5B00222DEC /* ItemCell.swift */,
+				D180592E1E515731007213CE /* UserItemCell.swift */,
 			);
 			name = Cell;
 			sourceTree = "<group>";
@@ -290,9 +299,12 @@
 				D173DEA61E331234002D1C52 /* StatisticsViewController.swift in Sources */,
 				D173DEA21E31BD53002D1C52 /* EditProfileViewController.swift in Sources */,
 				D11BA2021E1C1EBB00222DEC /* PonMart.xcdatamodeld in Sources */,
+				D180592F1E515731007213CE /* UserItemCell.swift in Sources */,
 				D11BA21C1E254F2D00222DEC /* ItemDetailViewController.swift in Sources */,
 				D11BA2111E21895600222DEC /* SearchItemController.swift in Sources */,
+				D180592B1E5117E4007213CE /* ViewItemViewController.swift in Sources */,
 				D11BA21E1E2698BE00222DEC /* UserProfileViewController.swift in Sources */,
+				D180592D1E5118EB007213CE /* UserItemTableTableViewController.swift in Sources */,
 				D11BA2221E29229A00222DEC /* RegisterViewController.swift in Sources */,
 				D11BA2201E26ADDE00222DEC /* AddItemViewController.swift in Sources */,
 				D18059281E4FAD6C007213CE /* PublicItem.swift in Sources */,
