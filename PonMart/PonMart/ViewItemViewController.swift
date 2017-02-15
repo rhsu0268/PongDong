@@ -12,7 +12,8 @@ import Firebase
 class ViewItemViewController: UIViewController, UITableViewDelegate, UITableViewDataSource
 {
     @IBOutlet var userProfileImage: UIImageView!
-
+    
+    var userItems = [UserItem]()
     
     var items: [String] = ["We", "Heart", "Swift"]
     
@@ -59,16 +60,22 @@ class ViewItemViewController: UIViewController, UITableViewDelegate, UITableView
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         //print(3)
-        return self.items.count
+        return self.userItems.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! UserItemCell
         
-        let item = items[indexPath.row]
-        print(item)
-        cell.itemName.text = item
+        let item = userItems[indexPath.row]
+        //print(item)
+        cell.itemName.text = item.itemName
+        cell.itemType.text = item.itemCategory
+        cell.itemCondition.text = item.itemCondition
+        cell.itemPrice.text = "$\(item.itemPrice)"
+        cell.itemDescription.text = item.itemDescription
+        
+
         
         return cell
     }
@@ -115,20 +122,20 @@ class ViewItemViewController: UIViewController, UITableViewDelegate, UITableView
                 // crashes if the key does not match those in firebase
                 userItem.itemName = dictionary["itemName"] as! String
                 userItem.itemDescription = dictionary["itemDescription"] as! String
-                userItem.itemType = dictionary["itemType"] as! String
+                userItem.itemCategory = dictionary["itemCategory"] as! String
                 userItem.itemCondition = dictionary["itemCondition"] as! String
-                userItem.price = Double(dictionary["itemPrice"] as! String)!
-                userItem.itemImageUrl = dictionary["itemImageUrl"] as! String
+                userItem.itemPrice = Double(dictionary["itemPrice"] as! String)!
+                userItem.itemImageUrl = dictionary["profileImageURL"] as! String
                 //publicItem.userId = dictionary["userId"] as! String
                 //publicItem.createdDate = dictionary["createdDate"] as! String
                 
                 print(userItem)
                 
-                //self.publicItems.append(publicItem)
+                self.userItems.append(userItem)
                 
                 DispatchQueue.main.async(execute: {
                     
-                    //self.tableView.reloadData()
+                    self.tableView.reloadData()
                 })
                 
             }
