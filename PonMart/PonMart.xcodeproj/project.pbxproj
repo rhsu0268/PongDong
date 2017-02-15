@@ -33,6 +33,7 @@
 		D180592B1E5117E4007213CE /* ViewItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D180592A1E5117E4007213CE /* ViewItemViewController.swift */; };
 		D180592D1E5118EB007213CE /* UserItemTableTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D180592C1E5118EB007213CE /* UserItemTableTableViewController.swift */; };
 		D180592F1E515731007213CE /* UserItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D180592E1E515731007213CE /* UserItemCell.swift */; };
+		D1FDAE891E54D3B900EC4AD9 /* UserItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1FDAE881E54D3B900EC4AD9 /* UserItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,6 +67,7 @@
 		D180592A1E5117E4007213CE /* ViewItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewItemViewController.swift; sourceTree = "<group>"; };
 		D180592C1E5118EB007213CE /* UserItemTableTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserItemTableTableViewController.swift; sourceTree = "<group>"; };
 		D180592E1E515731007213CE /* UserItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserItemCell.swift; sourceTree = "<group>"; };
+		D1FDAE881E54D3B900EC4AD9 /* UserItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +145,7 @@
 				D11BA2141E21989F00222DEC /* SampleItemData.swift */,
 				D18059251E4FAD01007213CE /* PublicItems.swift */,
 				D18059271E4FAD6C007213CE /* PublicItem.swift */,
+				D1FDAE881E54D3B900EC4AD9 /* UserItem.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -296,6 +299,7 @@
 				D11BA2131E21899500222DEC /* SearchResultTableViewController.swift in Sources */,
 				D11BA2151E21989F00222DEC /* SampleItemData.swift in Sources */,
 				D11BA2171E21AF7E00222DEC /* LoginViewController.swift in Sources */,
+				D1FDAE891E54D3B900EC4AD9 /* UserItem.swift in Sources */,
 				D173DEA61E331234002D1C52 /* StatisticsViewController.swift in Sources */,
 				D173DEA21E31BD53002D1C52 /* EditProfileViewController.swift in Sources */,
 				D11BA2021E1C1EBB00222DEC /* PonMart.xcdatamodeld in Sources */,

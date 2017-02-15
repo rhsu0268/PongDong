@@ -7,9 +7,11 @@
 //
 
 import UIKit
+import Firebase
 
 class ViewItemViewController: UIViewController, UITableViewDelegate, UITableViewDataSource
 {
+    @IBOutlet var userProfileImage: UIImageView!
 
     
     var items: [String] = ["We", "Heart", "Swift"]
@@ -23,7 +25,15 @@ class ViewItemViewController: UIViewController, UITableViewDelegate, UITableView
         
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 140
+        
+        
+        self.userProfileImage.layer.cornerRadius = self.userProfileImage.frame.size.width / 2
+        self.userProfileImage.clipsToBounds = true
+        self.userProfileImage.image = nil
+        
         // Do any additional setup after loading the view.
+        
+        fetchUserItems()
     }
 
     override func didReceiveMemoryWarning() {
@@ -89,6 +99,44 @@ class ViewItemViewController: UIViewController, UITableViewDelegate, UITableView
         delete.backgroundColor = .red
         
         return [edit, delete]
+    }
+    
+    func fetchUserItems()
+    {
+        let uid = FIRAuth.auth()?.currentUser?.uid
+        FIRDatabase.database().reference().child("userItems").child(uid!).observe(.childAdded, with: {
+            (snapshot) in
+            
+            if let dictionary = snapshot.value as? [String : AnyObject]
+            {
+                print(dictionary)
+                let userItem = UserItem()
+                
+                // crashes if the key does not match those in firebase
+                userItem.itemName = dictionary["itemName"] as! String
+                userItem.itemDescription = dictionary["itemDescription"] as! String
+                userItem.itemType = dictionary["itemType"] as! String
+                userItem.itemCondition = dictionary["itemCondition"] as! String
+                userItem.price = Double(dictionary["itemPrice"] as! String)!
+                userItem.itemImageUrl = dictionary["itemImageUrl"] as! String
+                //publicItem.userId = dictionary["userId"] as! String
+                //publicItem.createdDate = dictionary["createdDate"] as! String
+                
+                print(userItem)
+                
+                //self.publicItems.append(publicItem)
+                
+                DispatchQueue.main.async(execute: {
+                    
+                    //self.tableView.reloadData()
+                })
+                
+            }
+            
+            //print(snapshot)
+            
+        }, withCancel: nil)
+
     }
     
     

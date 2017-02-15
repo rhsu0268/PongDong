@@ -1424,7 +1424,11 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="itemCondition" destination="AeG-ne-Sdq" id="QoA-Ab-epp"/>
+                                            <outlet property="itemDescription" destination="imk-ea-6Z1" id="jIf-Nd-xSE"/>
                                             <outlet property="itemName" destination="DMl-Zo-lx6" id="Cte-c4-5zb"/>
+                                            <outlet property="itemPrice" destination="c5D-Zu-76O" id="k2R-LV-uJh"/>
+                                            <outlet property="itemType" destination="fng-uq-blz" id="739-UX-kq3"/>
                                             <outlet property="makePublicButton" destination="hE1-Vl-Q0W" id="PkL-kN-nJg"/>
                                         </connections>
                                     </tableViewCell>
@@ -1439,6 +1443,7 @@
                     </view>
                     <connections>
                         <outlet property="tableView" destination="CJb-tg-PZz" id="Qsh-HR-3Fn"/>
+                        <outlet property="userProfileImage" destination="9Js-3D-Tpx" id="FMA-uV-gXD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7OZ-gN-3J1" userLabel="First Responder" sceneMemberID="firstResponder"/>

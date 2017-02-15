@@ -12,6 +12,10 @@ class UserItemCell: UITableViewCell {
 
     
     @IBOutlet var itemName: UILabel!
+    @IBOutlet var itemCondition: UILabel!
+    @IBOutlet var itemPrice: UILabel!
+    @IBOutlet var itemType: UILabel!
+    @IBOutlet var itemDescription: UILabel!
     
     
     @IBOutlet var makePublicButton: UIButton!
@@ -19,6 +23,9 @@ class UserItemCell: UITableViewCell {
     @IBAction func MakePublicButtonClicked(_ sender: UIButton) {
         print("Make public clicked")
     }
+    
+    
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()
