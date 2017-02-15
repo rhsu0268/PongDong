@@ -14,6 +14,12 @@ class UserItemCell: UITableViewCell {
     @IBOutlet var itemName: UILabel!
     
     
+    @IBOutlet var makePublicButton: UIButton!
+    
+    @IBAction func MakePublicButtonClicked(_ sender: UIButton) {
+        print("Make public clicked")
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

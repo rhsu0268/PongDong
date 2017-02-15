@@ -1417,11 +1417,15 @@
                                                     <rect key="frame" x="14" y="91" width="83" height="30"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <state key="normal" title="Make Public"/>
+                                                    <connections>
+                                                        <action selector="MakePublicButtonClicked:" destination="av0-Dn-LYB" eventType="touchUpInside" id="nqD-Aa-MmF"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="itemName" destination="DMl-Zo-lx6" id="Cte-c4-5zb"/>
+                                            <outlet property="makePublicButton" destination="hE1-Vl-Q0W" id="PkL-kN-nJg"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
