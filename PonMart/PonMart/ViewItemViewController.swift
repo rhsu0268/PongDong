@@ -73,6 +73,24 @@ class ViewItemViewController: UIViewController, UITableViewDelegate, UITableView
         return 200
     }
     
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        let edit = UITableViewRowAction(style: .normal, title: "Edit")
+        {
+            action, index in
+            print("Edit button tapped")
+        }
+        edit.backgroundColor = .orange
+        
+        let delete = UITableViewRowAction(style: .normal, title: "Delete")
+        {
+            action, index in
+            print("Delete button tapped")
+        }
+        delete.backgroundColor = .red
+        
+        return [edit, delete]
+    }
+    
     
    
     
