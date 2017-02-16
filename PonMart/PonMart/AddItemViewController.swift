@@ -116,6 +116,8 @@ class AddItemViewController: UIViewController,  UIImagePickerControllerDelegate,
          */
         addItem(itemName: itemNameText, itemDescription: itemDescriptionText, itemPrice: itemPriceValue, itemCategory: itemCategory, itemCondition: itemCondition)
         
+       
+        
     }
     
 
@@ -209,7 +211,9 @@ class AddItemViewController: UIViewController,  UIImagePickerControllerDelegate,
         userItemReference.updateChildValues(["itemCondition": itemCondition])
         userItemReference.updateChildValues(["itemDescription": itemDescription])
         
-            uploadImage(key: key)
+        uploadImage(key: key)
+        
+        
     }
     /*
     // MARK: - Navigation
@@ -283,7 +287,7 @@ class AddItemViewController: UIViewController,  UIImagePickerControllerDelegate,
                 
                 print(metadata)
                 
-                self.displayAlertMessage(userMessage: "You have successfully uploaded a profile Image")
+                //self.displayAlertMessage(userMessage: "You have successfully uploaded a profile Image")
                 
                
                 
@@ -294,9 +298,13 @@ class AddItemViewController: UIViewController,  UIImagePickerControllerDelegate,
                 
                 self.addItemButton.isEnabled = true
                 self.uploadItemActivityIndicator.stopAnimating()
+                
+            
+                
             })
             
         }
+        
 
     }
     
@@ -310,7 +318,9 @@ class AddItemViewController: UIViewController,  UIImagePickerControllerDelegate,
         
         itemReference.updateChildValues(["profileImageURL": url])
         
-         addItemButton.isEnabled = true
+        addItemButton.isEnabled = true
+        self.performSegue(withIdentifier: "addItemViewToUserItemView", sender: self)
+
     }
     
     func displayAlertMessage(userMessage: String)

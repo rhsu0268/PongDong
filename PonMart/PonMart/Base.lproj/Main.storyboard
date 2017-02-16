@@ -944,6 +944,7 @@
                         <outlet property="uploadItemActivityIndicator" destination="FRL-fc-mDB" id="0nz-xd-okJ"/>
                         <outlet property="usedOption" destination="4gn-7D-rAE" id="8mS-Yy-kd2"/>
                         <outlet property="userProfileImage" destination="GZI-RA-T2K" id="AaT-ay-OEc"/>
+                        <segue destination="Mrl-Fo-eXf" kind="show" identifier="addItemViewToUserItemView" id="I32-x4-A6K"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Q1b-24-gWs" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1414,7 +1415,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hE1-Vl-Q0W">
-                                                    <rect key="frame" x="14" y="91" width="83" height="30"/>
+                                                    <rect key="frame" x="14" y="95" width="83" height="30"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <state key="normal" title="Make Public"/>
                                                     <connections>
@@ -1426,6 +1427,7 @@
                                         <connections>
                                             <outlet property="itemCondition" destination="AeG-ne-Sdq" id="QoA-Ab-epp"/>
                                             <outlet property="itemDescription" destination="imk-ea-6Z1" id="jIf-Nd-xSE"/>
+                                            <outlet property="itemImage" destination="fYN-Ta-drU" id="n5g-36-PTm"/>
                                             <outlet property="itemName" destination="DMl-Zo-lx6" id="Cte-c4-5zb"/>
                                             <outlet property="itemPrice" destination="c5D-Zu-76O" id="k2R-LV-uJh"/>
                                             <outlet property="itemType" destination="fng-uq-blz" id="739-UX-kq3"/>
@@ -1482,9 +1484,10 @@
         <image name="used-label-unselected" width="89" height="40"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Z9O-BM-kTI"/>
+        <segue reference="I32-x4-A6K"/>
         <segue reference="vnC-iW-7vP"/>
+        <segue reference="Z9O-BM-kTI"/>
         <segue reference="xEO-lN-dgF"/>
-        <segue reference="atc-AP-sJL"/>
+        <segue reference="lQs-vo-Evf"/>
     </inferredMetricsTieBreakers>
 </document>

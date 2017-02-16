@@ -75,6 +75,28 @@ class ViewItemViewController: UIViewController, UITableViewDelegate, UITableView
         cell.itemPrice.text = "$\(item.itemPrice)"
         cell.itemDescription.text = item.itemDescription
         
+        let itemImageUrl = item.itemImageUrl
+        
+        
+        let url = NSURL(string: itemImageUrl)
+        URLSession.shared.dataTask(with: url! as URL, completionHandler: {
+            (data, response, error) in
+            
+            // download hit an error so we will return
+            if error != nil
+            {
+                print(error)
+                return
+            }
+            
+            DispatchQueue.main.async( execute: {
+                cell.itemImage.image = UIImage(data: data!)
+            })
+            
+            
+        }).resume()
+
+        
 
         
         return cell
