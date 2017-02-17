@@ -32,6 +32,8 @@ class ViewItemViewController: UIViewController, UITableViewDelegate, UITableView
         self.userProfileImage.clipsToBounds = true
         self.userProfileImage.image = nil
         
+        getUserProfileImage()
+        
         // Do any additional setup after loading the view.
         
         fetchUserItems()
@@ -106,6 +108,7 @@ class ViewItemViewController: UIViewController, UITableViewDelegate, UITableView
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         //
+        
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -167,6 +170,52 @@ class ViewItemViewController: UIViewController, UITableViewDelegate, UITableView
         }, withCancel: nil)
 
     }
+    
+    func getUserProfileImage()
+    {
+        let uid = FIRAuth.auth()?.currentUser?.uid
+        FIRDatabase.database().reference().child("users").child(uid!).observe(.value, with: {
+            
+            (snapshot) in
+            if let dictionary = snapshot.value as? [String : AnyObject]
+            {
+                print(dictionary["profileImageURL"] as? String)
+                // check whether key exists
+                if let keyExists = dictionary["profileImageURL"]
+                {
+                    let url = NSURL(string: (dictionary["profileImageURL"] as? String)!)
+                    
+                    URLSession.shared.dataTask(with: url as! URL, completionHandler: {
+                        
+                        (data, response, error) in
+                        
+                        // download hit an error so lets return out
+                        if error != nil
+                        {
+                            print(error)
+                            return
+                        }
+                        
+                        DispatchQueue.main.async(execute: {
+                            
+                            self.userProfileImage.image = UIImage(data: data!)
+                            
+                        })
+                        
+                    }).resume()
+                }
+                else
+                {
+                    // set a placeholder
+                    self.userProfileImage.image = UIImage(named: "user-profile-placeholder")
+                }
+            }
+            
+            
+        }, withCancel: nil)
+        
+    }
+
     
     
    
