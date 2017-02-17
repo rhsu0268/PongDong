@@ -210,6 +210,7 @@ class AddItemViewController: UIViewController,  UIImagePickerControllerDelegate,
         userItemReference.updateChildValues(["itemCategory": itemCategory])
         userItemReference.updateChildValues(["itemCondition": itemCondition])
         userItemReference.updateChildValues(["itemDescription": itemDescription])
+        userItemReference.updateChildValues(["publicOrPrivate": false])
         
         uploadImage(key: key)
         
@@ -316,7 +317,7 @@ class AddItemViewController: UIViewController,  UIImagePickerControllerDelegate,
         let itemReference = FIRDatabase.database().reference().child("userItems").child(uid!).child(key)
 
         
-        itemReference.updateChildValues(["profileImageURL": url])
+        itemReference.updateChildValues(["itemImageURL": url])
         
         addItemButton.isEnabled = true
         self.performSegue(withIdentifier: "addItemViewToUserItemView", sender: self)

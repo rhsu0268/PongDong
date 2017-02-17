@@ -150,7 +150,8 @@ class ViewItemViewController: UIViewController, UITableViewDelegate, UITableView
                 userItem.itemCategory = dictionary["itemCategory"] as! String
                 userItem.itemCondition = dictionary["itemCondition"] as! String
                 userItem.itemPrice = Double(dictionary["itemPrice"] as! String)!
-                userItem.itemImageUrl = dictionary["profileImageURL"] as! String
+                userItem.itemImageUrl = dictionary["itemImageURL"] as! String
+                print(userItem.publicOrPrivate)
                 //publicItem.userId = dictionary["userId"] as! String
                 //publicItem.createdDate = dictionary["createdDate"] as! String
                 
