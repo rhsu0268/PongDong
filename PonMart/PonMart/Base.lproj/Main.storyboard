@@ -1407,14 +1407,6 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hE1-Vl-Q0W">
-                                                    <rect key="frame" x="255" y="60" width="83" height="30"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <state key="normal" title="Make Public"/>
-                                                    <connections>
-                                                        <action selector="MakePublicButtonClicked:" destination="av0-Dn-LYB" eventType="touchUpInside" id="nqD-Aa-MmF"/>
-                                                    </connections>
-                                                </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Private" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qqu-V4-mB5">
                                                     <rect key="frame" x="155" y="66" width="53" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -1429,6 +1421,14 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hE1-Vl-Q0W">
+                                                    <rect key="frame" x="255" y="60" width="103" height="32"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <state key="normal" image="makePublicButton"/>
+                                                    <connections>
+                                                        <action selector="MakePublicButtonClicked:" destination="av0-Dn-LYB" eventType="touchUpInside" id="nqD-Aa-MmF"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
@@ -1468,6 +1468,7 @@
         <image name="get-started-button" width="750" height="130"/>
         <image name="item-image-placeholder" width="1500" height="1500"/>
         <image name="log-in" width="750" height="562"/>
+        <image name="makePublicButton" width="126" height="40"/>
         <image name="new-button-selected" width="375" height="100"/>
         <image name="new-label" width="89" height="40"/>
         <image name="new-label-unselected" width="89" height="40"/>
