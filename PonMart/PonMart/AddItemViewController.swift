@@ -212,6 +212,13 @@ class AddItemViewController: UIViewController,  UIImagePickerControllerDelegate,
         userItemReference.updateChildValues(["itemDescription": itemDescription])
         userItemReference.updateChildValues(["publicOrPrivate": false])
         
+        let date = Foundation.Date()
+        let formatedDate = date.dateToString()
+        print("Date")
+        print(formatedDate)
+        userItemReference.updateChildValues(["createdDate": formatedDate])
+        userItemReference.updateChildValues(["updatedDate": formatedDate])
+        
         uploadImage(key: key)
         
         
@@ -383,4 +390,14 @@ class AddItemViewController: UIViewController,  UIImagePickerControllerDelegate,
 
         
 
+}
+
+extension Foundation.Date {
+    
+    func dateToString() -> String {
+        let dateFormatter = DateFormatter()
+        let date = self
+        dateFormatter.dateFormat = "MM-dd-yyyy HH:mm"
+        return dateFormatter.string(from: date)
+    }
 }
