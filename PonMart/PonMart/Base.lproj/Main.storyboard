@@ -21,14 +21,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="richard-shopping-cropped" translatesAutoresizingMaskIntoConstraints="NO" id="7Ow-vw-PEG">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="opening-image" translatesAutoresizingMaskIntoConstraints="NO" id="7Ow-vw-PEG">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PLD-Na-7bW">
-                                <rect key="frame" x="138" y="538" width="98" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PLD-Na-7bW">
+                                <rect key="frame" x="0.0" y="599" width="375" height="68"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Start Poinging">
+                                <state key="normal" image="get-started-button">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -1372,7 +1372,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="130"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="av0-Dn-LYB" id="2Cf-fw-vWu">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="129"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="129.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="sofa" translatesAutoresizingMaskIntoConstraints="NO" id="fYN-Ta-drU">
@@ -1465,18 +1465,19 @@
         <image name="edit-block" width="750" height="562"/>
         <image name="furniture-button-selected" width="375" height="100"/>
         <image name="furniture-label-unselected" width="126" height="40"/>
+        <image name="get-started-button" width="750" height="130"/>
         <image name="item-image-placeholder" width="1500" height="1500"/>
         <image name="log-in" width="750" height="562"/>
         <image name="new-button-selected" width="375" height="100"/>
         <image name="new-label" width="89" height="40"/>
         <image name="new-label-unselected" width="89" height="40"/>
+        <image name="opening-image" width="530" height="854"/>
         <image name="pong-block" width="750" height="563"/>
         <image name="profile-block" width="750" height="563"/>
         <image name="profile-button" width="45" height="45"/>
         <image name="profile-button-block" width="375" height="118"/>
         <image name="profile-line-divider" width="684" height="6"/>
         <image name="rating-button" width="49" height="48"/>
-        <image name="richard-shopping-cropped" width="530" height="854"/>
         <image name="search-button" width="40" height="39"/>
         <image name="search-item-button" width="748" height="130"/>
         <image name="sign-up-1" width="750" height="562"/>
@@ -1491,10 +1492,10 @@
         <image name="used-label-unselected" width="89" height="40"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="I32-x4-A6K"/>
+        <segue reference="lQs-vo-Evf"/>
         <segue reference="vnC-iW-7vP"/>
         <segue reference="Z9O-BM-kTI"/>
-        <segue reference="xEO-lN-dgF"/>
-        <segue reference="lQs-vo-Evf"/>
+        <segue reference="I32-x4-A6K"/>
+        <segue reference="VhL-Yy-arc"/>
     </inferredMetricsTieBreakers>
 </document>
