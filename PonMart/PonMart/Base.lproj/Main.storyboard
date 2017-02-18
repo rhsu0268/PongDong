@@ -1425,6 +1425,9 @@
                                                     <rect key="frame" x="255" y="61" width="99" height="30"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <state key="normal" image="make-public-button"/>
+                                                    <connections>
+                                                        <action selector="MakePublicButtonClicked:" destination="Mrl-Fo-eXf" eventType="touchUpInside" id="JX5-52-kKD"/>
+                                                    </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Make Public" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8fe-x2-gkr">
                                                     <rect key="frame" x="275" y="66" width="59" height="21"/>

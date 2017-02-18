@@ -26,7 +26,7 @@ class ViewItemViewController: UIViewController, UITableViewDelegate, UITableView
         
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 140
-        
+        tableView.allowsSelection = false 
         
         self.userProfileImage.layer.cornerRadius = self.userProfileImage.frame.size.width / 2
         self.userProfileImage.clipsToBounds = true
@@ -218,6 +218,10 @@ class ViewItemViewController: UIViewController, UITableViewDelegate, UITableView
     }
 
     
+    
+    @IBAction func MakePublicButtonClicked(_ sender: UIButton) {
+        print("Make Public")
+    }
     
    
     
