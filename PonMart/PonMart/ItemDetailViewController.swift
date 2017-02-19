@@ -83,52 +83,6 @@ class ItemDetailViewController: UIViewController {
         }
 
         
-        /*
-        if let itemName = (item as AnyObject).value(forKey: "itemName") as? String
-        {
-            self.itemName.text = itemName
-        }
-        
-        if let itemImage = (item as AnyObject).value(forKey: "itemImage") as? NSData
-        {
-            print("Set image")
-            self.itemImage.image = UIImage(data: itemImage as Data)
-        }
-        
-        if let itemCategory = (item as AnyObject).value(forKey: "itemCategory") as? String
-        {
-            print(itemCategory)
-            if itemCategory == "Furniture"
-            {
-                self.itemCategory.image = UIImage(named: "furniture-label.png")
-            }
-            else
-            {
-                self.itemCategory.image = UIImage(named: "textbook-label.png")
-            }
-
-        }
-        
-        if let itemCondition = (item as AnyObject).value(forKey: "itemCondition") as? String
-        {
-            if itemCondition == "New"
-            {
-                self.itemCondition.image = UIImage(named: "new-label.png")
-            }
-            else
-            {
-                self.itemCondition.image = UIImage(named: "used-label.png")
-            }
-
-        }
-        
-        if let itemDescription = (item as AnyObject).value(forKey: "itemDescription") as? String
-        {
-            self.itemDescription.text = itemDescription
-        }
-    
-        // Do any additional setup after loading the view.
-        */
     }
 
     override func didReceiveMemoryWarning() {
