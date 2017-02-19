@@ -88,10 +88,11 @@ class SearchResultTableViewController: UITableViewController {
         
         let publicItem = publicItems[indexPath.row]
         
+        
         cell.itemNameLabel.text = publicItem.name
         cell.priceLabel.text = "$\(publicItem.price)"
         
-       
+        
         if publicItem.condition == "New"
         {
             cell.conditionImage.image = UIImage(named: "new-label.png")!
@@ -102,6 +103,7 @@ class SearchResultTableViewController: UITableViewController {
             cell.conditionImage.image = UIImage(named: "used-label.png")!
             
         }
+        
         
         let itemImageUrl = publicItem.itemImageUrl
         
@@ -256,6 +258,7 @@ class SearchResultTableViewController: UITableViewController {
                
                 self.publicItems.append(publicItem)
                 
+                print(self.publicItems)
                 DispatchQueue.main.async(execute: {
                     
                     self.tableView.reloadData()
