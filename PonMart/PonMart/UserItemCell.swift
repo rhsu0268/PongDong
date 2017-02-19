@@ -16,7 +16,7 @@ class UserItemCell: UITableViewCell {
     @IBOutlet var itemPrice: UILabel!
     @IBOutlet var itemType: UILabel!
     @IBOutlet var itemDescription: UILabel!
-    
+    @IBOutlet var itemStatus: UILabel!
 
     
     

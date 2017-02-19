@@ -18,7 +18,7 @@ class UserItem
     public var itemImageUrl : String
     public var createdDate : String
     public var updatedDate : String 
-    public var publicOrPrivate : DarwinBoolean
+    public var publicOrPrivate : BooleanLiteralType
     public var itemId : String
     
     init()

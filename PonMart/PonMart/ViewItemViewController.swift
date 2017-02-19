@@ -77,6 +77,19 @@ class ViewItemViewController: UIViewController, UITableViewDelegate, UITableView
         cell.itemPrice.text = "$\(item.itemPrice)"
         cell.itemDescription.text = item.itemDescription
         
+        print("---")
+        print(item.publicOrPrivate)
+        print("---")
+        if (item.publicOrPrivate)
+        {
+            // public
+            cell.itemStatus.text = "Public"
+        }
+        else
+        {
+            cell.itemStatus.text = "Private"
+        }
+        
         let itemImageUrl = item.itemImageUrl
         
         
@@ -111,16 +124,38 @@ class ViewItemViewController: UIViewController, UITableViewDelegate, UITableView
         
         print("You selected cell #\(indexPath.row)!")
         let item = userItems[indexPath.row]
-        print(item)
-        print(item.itemId)
         
-        print("----createdDate----")
+        print(item.publicOrPrivate)
+        if (item.publicOrPrivate)
+        {
+            // make item private
+            displayMakePublicAlertMessage(userMessage: "Would you like to make this item Private?", createdDate: item.createdDate, itemCondition: item.itemCondition, itemDescription: item.itemDescription, itemImageUrl: item.itemImageUrl, itemName: item.itemName, itemPrice: String(item.itemPrice), itemType: item.itemCategory, itemId: item.itemId, itemStatus: item.publicOrPrivate)
+            
+            DispatchQueue.main.async(execute: {
+                
+                DispatchQueue.main.async(execute: {
+                    
+                    //self.tableView.reloadData()
+                    let indexPath = tableView.indexPathForSelectedRow
+                    let currentCell = tableView.cellForRow(at: indexPath!)! as! UserItemCell
+                    currentCell.itemStatus.text = "Private"
+                })
+            })
+            
+        }
+        else
+        {
+            displayMakePublicAlertMessage(userMessage: "Would you like to make this item Public?", createdDate: item.createdDate, itemCondition: item.itemCondition, itemDescription: item.itemDescription, itemImageUrl: item.itemImageUrl, itemName: item.itemName, itemPrice: String(item.itemPrice), itemType: item.itemCategory, itemId: item.itemId, itemStatus: item.publicOrPrivate)
+            
+            DispatchQueue.main.async(execute: {
+                
+                let indexPath = tableView.indexPathForSelectedRow
+                let currentCell = tableView.cellForRow(at: indexPath!)! as! UserItemCell
+                currentCell.itemStatus.text = "Public"
+            })
+        }
         
-        print(item.createdDate)
-        
-        
-        print("--- ---")
-        displayMakePublicAlertMessage(userMessage: "Would you like to make this item Public?", createdDate: item.createdDate, itemCondition: item.itemCondition, itemDescription: item.itemDescription, itemImageUrl: item.itemImageUrl, itemName: item.itemName, itemPrice: String(item.itemPrice), itemType: item.itemCategory, itemId: item.itemId)
+
         
         
         
@@ -171,7 +206,7 @@ class ViewItemViewController: UIViewController, UITableViewDelegate, UITableView
                 userItem.createdDate = dictionary["createdDate"] as! String
                 userItem.updatedDate = dictionary["updatedDate"] as! String
                 userItem.itemId = snapshot.key
-                print(userItem.publicOrPrivate)
+                userItem.publicOrPrivate = dictionary["publicOrPrivate"] as! BooleanLiteralType
                 //publicItem.userId = dictionary["userId"] as! String
                 //publicItem.createdDate = dictionary["createdDate"] as! String
                 
@@ -246,9 +281,10 @@ class ViewItemViewController: UIViewController, UITableViewDelegate, UITableView
         // get the cell number clicked
     }
     
-    func displayMakePublicAlertMessage(userMessage: String, createdDate : String, itemCondition : String, itemDescription : String, itemImageUrl : String, itemName : String, itemPrice : String, itemType : String, itemId : String)
+    func displayMakePublicAlertMessage(userMessage: String, createdDate : String, itemCondition : String, itemDescription : String, itemImageUrl : String, itemName : String, itemPrice : String, itemType : String, itemId : String, itemStatus : BooleanLiteralType)
     {
         //print(createdDate)
+        
         
         var myAlert = UIAlertController(title: "Alert", message: userMessage, preferredStyle: UIAlertControllerStyle.alert)
         
@@ -257,18 +293,32 @@ class ViewItemViewController: UIViewController, UITableViewDelegate, UITableView
         {
             (action) in
             print("Making item public")
-            print(createdDate)
+        
+            if (itemStatus)
+            {
+                // make item private
+                
+                
+                // update the status of the item
+                let uid = FIRAuth.auth()?.currentUser?.uid
+                FIRDatabase.database().reference().child("userItems").child(uid!).child(itemId).updateChildValues(["publicOrPrivate": false])
+                
+                self.displayAlertMessage(userMessage: "You successfully made the item private!")
+            }
+            else
+            {
+                self.makeItemPublic(createdDate: createdDate, itemCondition: itemCondition, itemDescription: itemDescription, itemImageUrl: itemImageUrl, itemName: itemName, itemPrice: itemPrice, itemType: itemType)
+                
+                // update the status of the item
+                let uid = FIRAuth.auth()?.currentUser?.uid
+                FIRDatabase.database().reference().child("userItems").child(uid!).child(itemId).updateChildValues(["publicOrPrivate": true])
+                
+                self.displayAlertMessage(userMessage: "You successfully made the item public!")
+            }
+           
             
-            //makeItemPublic()
             
-            self.makeItemPublic(createdDate: createdDate, itemCondition: itemCondition, itemDescription: itemDescription, itemImageUrl: itemImageUrl, itemName: itemName, itemPrice: itemPrice, itemType: itemType)
-            
-            
-            // update the status of the item 
-            let uid = FIRAuth.auth()?.currentUser?.uid
-            FIRDatabase.database().reference().child("userItems").child(uid!).child(itemId).updateChildValues(["publicOrPrivate": true])
-            
-            self.displayAlertMessage(userMessage: "You successfully made the item public!")
+           
         }
         
         let noAction = UIAlertAction(title: "No", style: UIAlertActionStyle.default, handler: nil)
