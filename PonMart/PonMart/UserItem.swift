@@ -17,7 +17,9 @@ class UserItem
     public var itemPrice : Double
     public var itemImageUrl : String
     public var createdDate : String
+    public var updatedDate : String 
     public var publicOrPrivate : DarwinBoolean
+    public var itemId : String
     
     init()
     {
@@ -28,6 +30,8 @@ class UserItem
         itemPrice = 0
         itemImageUrl = ""
         createdDate = ""
+        updatedDate = ""
+        itemId = ""
         publicOrPrivate = false
     }
     

@@ -108,11 +108,19 @@ class ViewItemViewController: UIViewController, UITableViewDelegate, UITableView
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         //
+        
         print("You selected cell #\(indexPath.row)!")
         let item = userItems[indexPath.row]
         print(item)
+        print(item.itemId)
         
-        displayMakePublicAlertMessage(userMessage: "Would you like to make this item Public?", createdDate: item.createdDate, itemCondition: item.itemCondition, itemDescription: item.itemDescription, itemImageUrl: item.itemImageUrl, itemName: item.itemName, itemPrice: String(item.itemPrice), itemType: item.itemCategory)
+        print("----createdDate----")
+        
+        print(item.createdDate)
+        
+        
+        print("--- ---")
+        displayMakePublicAlertMessage(userMessage: "Would you like to make this item Public?", createdDate: item.createdDate, itemCondition: item.itemCondition, itemDescription: item.itemDescription, itemImageUrl: item.itemImageUrl, itemName: item.itemName, itemPrice: String(item.itemPrice), itemType: item.itemCategory, itemId: item.itemId)
         
         
         
@@ -146,10 +154,11 @@ class ViewItemViewController: UIViewController, UITableViewDelegate, UITableView
         let uid = FIRAuth.auth()?.currentUser?.uid
         FIRDatabase.database().reference().child("userItems").child(uid!).observe(.childAdded, with: {
             (snapshot) in
-            
+            print(snapshot.key)
             if let dictionary = snapshot.value as? [String : AnyObject]
             {
                 print(dictionary)
+            
                 let userItem = UserItem()
                 
                 // crashes if the key does not match those in firebase
@@ -159,6 +168,9 @@ class ViewItemViewController: UIViewController, UITableViewDelegate, UITableView
                 userItem.itemCondition = dictionary["itemCondition"] as! String
                 userItem.itemPrice = Double(dictionary["itemPrice"] as! String)!
                 userItem.itemImageUrl = dictionary["itemImageURL"] as! String
+                userItem.createdDate = dictionary["createdDate"] as! String
+                userItem.updatedDate = dictionary["updatedDate"] as! String
+                userItem.itemId = snapshot.key
                 print(userItem.publicOrPrivate)
                 //publicItem.userId = dictionary["userId"] as! String
                 //publicItem.createdDate = dictionary["createdDate"] as! String
@@ -234,18 +246,27 @@ class ViewItemViewController: UIViewController, UITableViewDelegate, UITableView
         // get the cell number clicked
     }
     
-    func displayMakePublicAlertMessage(userMessage: String, createdDate : String, itemCondition : String, itemDescription : String, itemImageUrl : String, itemName : String, itemPrice : String, itemType : String)
+    func displayMakePublicAlertMessage(userMessage: String, createdDate : String, itemCondition : String, itemDescription : String, itemImageUrl : String, itemName : String, itemPrice : String, itemType : String, itemId : String)
     {
+        //print(createdDate)
+        
         var myAlert = UIAlertController(title: "Alert", message: userMessage, preferredStyle: UIAlertControllerStyle.alert)
+        
         
         let okayAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.default)
         {
             (action) in
             print("Making item public")
+            print(createdDate)
             
             //makeItemPublic()
             
             self.makeItemPublic(createdDate: createdDate, itemCondition: itemCondition, itemDescription: itemDescription, itemImageUrl: itemImageUrl, itemName: itemName, itemPrice: itemPrice, itemType: itemType)
+            
+            
+            // update the status of the item 
+            let uid = FIRAuth.auth()?.currentUser?.uid
+            FIRDatabase.database().reference().child("userItems").child(uid!).child(itemId).updateChildValues(["publicOrPrivate": true])
             
             self.displayAlertMessage(userMessage: "You successfully made the item public!")
         }
@@ -262,6 +283,7 @@ class ViewItemViewController: UIViewController, UITableViewDelegate, UITableView
     
     func makeItemPublic(createdDate : String, itemCondition : String, itemDescription : String, itemImageUrl: String, itemName: String, itemPrice: String, itemType: String)
     {
+        print(createdDate)
         let uid = FIRAuth.auth()?.currentUser?.uid
 
         let publicItemReference = FIRDatabase.database().reference().child("publicItems").childByAutoId()
@@ -276,11 +298,11 @@ class ViewItemViewController: UIViewController, UITableViewDelegate, UITableView
         publicItemReference.updateChildValues(["userId": uid])
             
         let date = Foundation.Date()
-        let formatedDate = date.dashedStringFromDate()
+        let updatedDate = date.dateToString()
         print("Date")
-        print(formatedDate)
+        print(updatedDate)
             
-        publicItemReference.updateChildValues(["updatedDate": formatedDate])
+        publicItemReference.updateChildValues(["updatedDate": updatedDate])
         publicItemReference.updateChildValues(["itemImageUrl": itemImageUrl])
         
         
@@ -309,7 +331,11 @@ class ViewItemViewController: UIViewController, UITableViewDelegate, UITableView
 
 
     
-   
+    func updateItemStatus()
+    {
+        // find the item 
+        
+    }
     
 
 }
