@@ -112,21 +112,15 @@
 		D11BA1F81E1C1EBB00222DEC /* PonMart */ = {
 			isa = PBXGroup;
 			children = (
+				D1DE45D51E5A426200C5FD39 /* Profile */,
+				D1DE45D61E5A429900C5FD39 /* Statistics */,
+				D1DE45D41E5A424E00C5FD39 /* Authentication */,
+				D1DE45D31E5A423400C5FD39 /* Search */,
 				D18059291E50CF7B007213CE /* Cell */,
 				D11BA2181E220B8D00222DEC /* Model */,
 				D11BA1F91E1C1EBB00222DEC /* AppDelegate.swift */,
 				D11BA1FB1E1C1EBB00222DEC /* ViewController.swift */,
 				D11BA1FD1E1C1EBB00222DEC /* Main.storyboard */,
-				D173DEA51E331234002D1C52 /* StatisticsViewController.swift */,
-				D173DEA11E31BD53002D1C52 /* EditProfileViewController.swift */,
-				D11BA2211E29229A00222DEC /* RegisterViewController.swift */,
-				D11BA21F1E26ADDE00222DEC /* AddItemViewController.swift */,
-				D11BA21D1E2698BE00222DEC /* UserProfileViewController.swift */,
-				D11BA2101E21895600222DEC /* SearchItemController.swift */,
-				D11BA2121E21899500222DEC /* SearchResultTableViewController.swift */,
-				D11BA21B1E254F2D00222DEC /* ItemDetailViewController.swift */,
-				D11BA2161E21AF7E00222DEC /* LoginViewController.swift */,
-				D180592A1E5117E4007213CE /* ViewItemViewController.swift */,
 				D180592C1E5118EB007213CE /* UserItemTableTableViewController.swift */,
 				D11BA2031E1C1EBB00222DEC /* Assets.xcassets */,
 				D11BA2051E1C1EBB00222DEC /* LaunchScreen.storyboard */,
@@ -157,6 +151,44 @@
 				D180592E1E515731007213CE /* UserItemCell.swift */,
 			);
 			name = Cell;
+			sourceTree = "<group>";
+		};
+		D1DE45D31E5A423400C5FD39 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				D11BA2121E21899500222DEC /* SearchResultTableViewController.swift */,
+				D11BA2101E21895600222DEC /* SearchItemController.swift */,
+				D11BA21B1E254F2D00222DEC /* ItemDetailViewController.swift */,
+			);
+			name = Search;
+			sourceTree = "<group>";
+		};
+		D1DE45D41E5A424E00C5FD39 /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				D11BA2161E21AF7E00222DEC /* LoginViewController.swift */,
+				D11BA2211E29229A00222DEC /* RegisterViewController.swift */,
+			);
+			name = Authentication;
+			sourceTree = "<group>";
+		};
+		D1DE45D51E5A426200C5FD39 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				D11BA21D1E2698BE00222DEC /* UserProfileViewController.swift */,
+				D11BA21F1E26ADDE00222DEC /* AddItemViewController.swift */,
+				D173DEA11E31BD53002D1C52 /* EditProfileViewController.swift */,
+				D180592A1E5117E4007213CE /* ViewItemViewController.swift */,
+			);
+			name = Profile;
+			sourceTree = "<group>";
+		};
+		D1DE45D61E5A429900C5FD39 /* Statistics */ = {
+			isa = PBXGroup;
+			children = (
+				D173DEA51E331234002D1C52 /* StatisticsViewController.swift */,
+			);
+			name = Statistics;
 			sourceTree = "<group>";
 		};
 		E9D4C8B23004F8120E130098 /* Frameworks */ = {
