@@ -1421,21 +1421,6 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ci1-ov-sLm">
-                                                    <rect key="frame" x="255" y="61" width="99" height="30"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <state key="normal" image="make-public-button"/>
-                                                    <connections>
-                                                        <action selector="MakePublicButtonClicked:" destination="Mrl-Fo-eXf" eventType="touchUpInside" id="JX5-52-kKD"/>
-                                                    </connections>
-                                                </button>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Make Public" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8fe-x2-gkr">
-                                                    <rect key="frame" x="275" y="66" width="59" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
-                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
@@ -1475,7 +1460,6 @@
         <image name="get-started-button" width="750" height="130"/>
         <image name="item-image-placeholder" width="1500" height="1500"/>
         <image name="log-in" width="750" height="562"/>
-        <image name="make-public-button" width="126" height="40"/>
         <image name="new-button-selected" width="375" height="100"/>
         <image name="new-label" width="89" height="40"/>
         <image name="new-label-unselected" width="89" height="40"/>
