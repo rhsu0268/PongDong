@@ -17,17 +17,13 @@ class UserItemCell: UITableViewCell {
     @IBOutlet var itemType: UILabel!
     @IBOutlet var itemDescription: UILabel!
     
-    
-    @IBOutlet var makePublicButton: UIButton!
+
     
     
     @IBOutlet var itemImage: UIImageView!
     
     
     
-    @IBAction func MakePublicButtonClicked(_ sender: UIButton) {
-        print("Make public clicked")
-    }
     
     
     

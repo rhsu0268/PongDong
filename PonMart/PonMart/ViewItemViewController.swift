@@ -26,7 +26,7 @@ class ViewItemViewController: UIViewController, UITableViewDelegate, UITableView
         
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 140
-        tableView.allowsSelection = false 
+        //tableView.allowsSelection = false
         
         self.userProfileImage.layer.cornerRadius = self.userProfileImage.frame.size.width / 2
         self.userProfileImage.clipsToBounds = true
@@ -108,6 +108,14 @@ class ViewItemViewController: UIViewController, UITableViewDelegate, UITableView
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         //
+        print("You selected cell #\(indexPath.row)!")
+        let item = userItems[indexPath.row]
+        print(item)
+        
+        displayMakePublicAlertMessage(userMessage: "Would you like to make this item Public?", createdDate: item.createdDate, itemCondition: item.itemCondition, itemDescription: item.itemDescription, itemImageUrl: item.itemImageUrl, itemName: item.itemName, itemPrice: String(item.itemPrice), itemType: item.itemCategory)
+        
+        
+        
         
     }
     
@@ -221,7 +229,85 @@ class ViewItemViewController: UIViewController, UITableViewDelegate, UITableView
     
     @IBAction func MakePublicButtonClicked(_ sender: UIButton) {
         print("Make Public")
+        
+        
+        // get the cell number clicked
     }
+    
+    func displayMakePublicAlertMessage(userMessage: String, createdDate : String, itemCondition : String, itemDescription : String, itemImageUrl : String, itemName : String, itemPrice : String, itemType : String)
+    {
+        var myAlert = UIAlertController(title: "Alert", message: userMessage, preferredStyle: UIAlertControllerStyle.alert)
+        
+        let okayAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.default)
+        {
+            (action) in
+            print("Making item public")
+            
+            //makeItemPublic()
+            
+            self.makeItemPublic(createdDate: createdDate, itemCondition: itemCondition, itemDescription: itemDescription, itemImageUrl: itemImageUrl, itemName: itemName, itemPrice: itemPrice, itemType: itemType)
+            
+            self.displayAlertMessage(userMessage: "You successfully made the item public!")
+        }
+        
+        let noAction = UIAlertAction(title: "No", style: UIAlertActionStyle.default, handler: nil)
+
+        
+        myAlert.addAction(noAction)
+        myAlert.addAction(okayAction)
+        
+        
+        self.present(myAlert, animated: true, completion: nil)
+    }
+    
+    func makeItemPublic(createdDate : String, itemCondition : String, itemDescription : String, itemImageUrl: String, itemName: String, itemPrice: String, itemType: String)
+    {
+        let uid = FIRAuth.auth()?.currentUser?.uid
+
+        let publicItemReference = FIRDatabase.database().reference().child("publicItems").childByAutoId()
+        
+        publicItemReference.updateChildValues(["itemName": itemName])
+        publicItemReference.updateChildValues(["itemDescription": itemDescription])
+        publicItemReference.updateChildValues(["itemType": itemType])
+        publicItemReference.updateChildValues(["itemCondition": itemCondition])
+        publicItemReference.updateChildValues(["itemPrice": itemPrice])
+        publicItemReference.updateChildValues(["createdDate": createdDate])
+            
+        publicItemReference.updateChildValues(["userId": uid])
+            
+        let date = Foundation.Date()
+        let formatedDate = date.dashedStringFromDate()
+        print("Date")
+        print(formatedDate)
+            
+        publicItemReference.updateChildValues(["updatedDate": formatedDate])
+        publicItemReference.updateChildValues(["itemImageUrl": itemImageUrl])
+        
+        
+    }
+    
+    func displayAlertMessage(userMessage: String)
+    {
+        var myAlert = UIAlertController(title: "Alert", message: userMessage, preferredStyle: UIAlertControllerStyle.alert)
+        
+        let okayAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.default)
+        {
+            (action) in
+            print("Success")
+            
+            //makeItemPublic()
+            
+          
+        }
+        
+       
+        myAlert.addAction(okayAction)
+        
+        
+        self.present(myAlert, animated: true, completion: nil)
+    }
+
+
     
    
     
