@@ -19,6 +19,7 @@ class PublicItem : NSObject
     public var itemImageUrl : String
     public var userId : String
     public var createdDate : String
+    public var userItemId : String
     
  
     /*
@@ -45,6 +46,7 @@ class PublicItem : NSObject
         itemImageUrl = ""
         userId = ""
         createdDate = ""
+        userItemId = ""
 
     }
 

@@ -173,6 +173,7 @@ class ViewItemViewController: UIViewController, UITableViewDelegate, UITableView
     
     func fetchUserItems()
     {
+        userItems = []
         let uid = FIRAuth.auth()?.currentUser?.uid
         FIRDatabase.database().reference().child("userItems").child(uid!).observe(.childAdded, with: {
             (snapshot) in
@@ -287,17 +288,17 @@ class ViewItemViewController: UIViewController, UITableViewDelegate, UITableView
                 
                 DispatchQueue.main.async(execute: {
                     
-                    
-                    self.tableView.reloadData()
+                    self.fetchUserItems()
+                    //self.tableView.reloadData()
                     //let indexPath = self.tableView.indexPathForSelectedRow
-                    let currentCell = self.tableView.cellForRow(at: indexPath) as! UserItemCell
-                    currentCell.itemStatus.text = "Private"
+                    //let currentCell = self.tableView.cellForRow(at: indexPath) as! UserItemCell
+                    //currentCell.itemStatus.text = "Private"
                     
                 })
             }
             else
             {
-                self.makeItemPublic(createdDate: createdDate, itemCondition: itemCondition, itemDescription: itemDescription, itemImageUrl: itemImageUrl, itemName: itemName, itemPrice: itemPrice, itemType: itemType)
+                self.makeItemPublic(createdDate: createdDate, itemCondition: itemCondition, itemDescription: itemDescription, itemImageUrl: itemImageUrl, itemName: itemName, itemPrice: itemPrice, itemType: itemType, itemId : itemId)
                 
                 // update the status of the item
                 let uid = FIRAuth.auth()?.currentUser?.uid
@@ -307,12 +308,12 @@ class ViewItemViewController: UIViewController, UITableViewDelegate, UITableView
                 
                 DispatchQueue.main.async(execute: {
                     
-                    
-                    self.tableView.reloadData()
+                    self.fetchUserItems()
+                    //self.tableView.reloadData()
                     //let indexPath = self.tableView.indexPathForSelectedRow
                     
-                    let currentCell = self.tableView.cellForRow(at: indexPath) as! UserItemCell
-                    currentCell.itemStatus.text = "Public"
+                    //let currentCell = self.tableView.cellForRow(at: indexPath) as! UserItemCell
+                    //currentCell.itemStatus.text = "Public"
                     
                 })
 
@@ -333,12 +334,12 @@ class ViewItemViewController: UIViewController, UITableViewDelegate, UITableView
         self.present(myAlert, animated: true, completion: nil)
     }
     
-    func makeItemPublic(createdDate : String, itemCondition : String, itemDescription : String, itemImageUrl: String, itemName: String, itemPrice: String, itemType: String)
+    func makeItemPublic(createdDate : String, itemCondition : String, itemDescription : String, itemImageUrl: String, itemName: String, itemPrice: String, itemType: String, itemId: String)
     {
         print(createdDate)
         let uid = FIRAuth.auth()?.currentUser?.uid
 
-        let publicItemReference = FIRDatabase.database().reference().child("publicItems").childByAutoId()
+        let publicItemReference = FIRDatabase.database().reference().child("publicItems").child(itemId)
         
         publicItemReference.updateChildValues(["itemName": itemName])
         publicItemReference.updateChildValues(["itemDescription": itemDescription])
@@ -356,6 +357,7 @@ class ViewItemViewController: UIViewController, UITableViewDelegate, UITableView
             
         publicItemReference.updateChildValues(["updatedDate": updatedDate])
         publicItemReference.updateChildValues(["itemImageUrl": itemImageUrl])
+        //publicItemReference.updateChildValues(["userItemId": itemId])
         
         
     }
@@ -391,7 +393,20 @@ class ViewItemViewController: UIViewController, UITableViewDelegate, UITableView
     
     func deletePublicItem(itemId : String)
     {
-        FIRDatabase.database().reference().child("publicItems").child(itemId).removeValue()
+        print(itemId)
+        let itemRef = FIRDatabase.database().reference()
+        
+        itemRef.child("publicItems").child(itemId).removeValue(
+        completionBlock: {
+            (error, ref) in
+            
+            if error != nil
+            
+            {
+                print(error)
+            }
+        })
+        print(itemRef)
         print("Public item removed!")
     }
     

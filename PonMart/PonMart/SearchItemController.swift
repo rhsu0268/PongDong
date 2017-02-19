@@ -61,7 +61,7 @@ class SearchItemController: UIViewController {
         checkIfUserIsLoggedIn()
         
         //getItems()
-        var publicItems = PublicItems()
+        //var publicItems = PublicItems()
         
         
         
