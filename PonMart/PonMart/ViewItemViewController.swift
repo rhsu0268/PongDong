@@ -92,8 +92,19 @@ class ViewItemViewController: UIViewController, UITableViewDelegate, UITableView
         
         let itemImageUrl = item.itemImageUrl
         
+        cell.itemImage.loadImageUsingCacheWithUrlString(urlString: itemImageUrl)
+    
+        
+        /*
+        let itemImageUrl = item.itemImageUrl
+        
+        
+        
+        
         
         let url = NSURL(string: itemImageUrl)
+        
+        
         URLSession.shared.dataTask(with: url! as URL, completionHandler: {
             (data, response, error) in
             
@@ -110,7 +121,7 @@ class ViewItemViewController: UIViewController, UITableViewDelegate, UITableView
             
             
         }).resume()
-
+        */
         
 
         
