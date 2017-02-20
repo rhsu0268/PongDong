@@ -17,7 +17,7 @@ extension UIImageView
     func loadImageUsingCacheWithUrlString(urlString: String)
     {
         
-        
+        self.image = nil
         
         // check cache for image first
         
@@ -29,7 +29,7 @@ extension UIImageView
         }
         
         // otherwise fire off a new download
-         let url = NSURL(string: urlString)
+        let url = NSURL(string: urlString)
         URLSession.shared.dataTask(with: url as! URL, completionHandler: {
             
             (data, response, error) in

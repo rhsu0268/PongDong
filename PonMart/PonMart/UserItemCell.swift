@@ -31,6 +31,9 @@ class UserItemCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        //itemImage.heightAnchor.constraint(equalToConstant: 40).isActive = true
+        itemImage.frame = CGRect(x: 10, y: 10, width: 120, height: 80)
+        //itemImage.contentMode = .scaleAspectFill
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
