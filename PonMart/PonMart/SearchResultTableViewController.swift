@@ -237,32 +237,41 @@ class SearchResultTableViewController: UITableViewController {
     
     func fetchPublicItems()
     {
+        let uid = FIRAuth.auth()?.currentUser?.uid
         FIRDatabase.database().reference().child("publicItems").observe(.childAdded, with: {
             (snapshot) in
             
+            
             if let dictionary = snapshot.value as? [String : AnyObject]
             {
+                
+                
                 let publicItem = PublicItem()
-                
-                // crashes if the key does not match those in firebase
-                publicItem.name = dictionary["itemName"] as! String
-                publicItem.itemDescription = dictionary["itemDescription"] as! String
-                publicItem.type = dictionary["itemType"] as! String
-                publicItem.condition = dictionary["itemCondition"] as! String
-                publicItem.price = Double(dictionary["itemPrice"] as! String)!
-                publicItem.itemImageUrl = dictionary["itemImageUrl"] as! String
                 publicItem.userId = dictionary["userId"] as! String
-                publicItem.createdDate = dictionary["createdDate"] as! String
                 
-                print(publicItem)
-               
-                self.publicItems.append(publicItem)
+                if uid != publicItem.userId
+                {
                 
-                print(self.publicItems)
-                DispatchQueue.main.async(execute: {
+                    // crashes if the key does not match those in firebase
+                    publicItem.name = dictionary["itemName"] as! String
+                    publicItem.itemDescription = dictionary["itemDescription"] as! String
+                    publicItem.type = dictionary["itemType"] as! String
+                    publicItem.condition = dictionary["itemCondition"] as! String
+                    publicItem.price = Double(dictionary["itemPrice"] as! String)!
+                    publicItem.itemImageUrl = dictionary["itemImageUrl"] as! String
+                  
+                    publicItem.createdDate = dictionary["createdDate"] as! String
                     
-                    self.tableView.reloadData()
-                })
+                    print(publicItem)
+                   
+                    self.publicItems.append(publicItem)
+                    
+                    print(self.publicItems)
+                    DispatchQueue.main.async(execute: {
+                        
+                        self.tableView.reloadData()
+                    })
+                }
                 
             }
         

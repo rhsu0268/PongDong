@@ -710,10 +710,10 @@
             </objects>
             <point key="canvasLocation" x="4597.6000000000004" y="-31.03448275862069"/>
         </scene>
-        <!--View Controller-->
+        <!--Send Message View Controller-->
         <scene sceneID="aOk-QN-8Nv">
             <objects>
-                <viewController id="BDN-8g-dXq" sceneMemberID="viewController">
+                <viewController id="BDN-8g-dXq" customClass="SendMessageViewController" customModule="PonMart" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="EkN-el-370"/>
                         <viewControllerLayoutGuide type="bottom" id="rRI-Kd-N0u"/>
@@ -722,20 +722,29 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Message" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fGd-y2-KLp">
-                                <rect key="frame" x="16" y="356" width="79" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="13"/>
-                                <color key="textColor" red="0.015686274510000001" green="0.43137254899999999" blue="0.01176470588" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="aAI-f3-q1t">
-                                <rect key="frame" x="16" y="385" width="343" height="262"/>
+                                <rect key="frame" x="24" y="432" width="335" height="145"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4lu-zQ-Jg4">
+                                <rect key="frame" x="0.0" y="604" width="375" height="63"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="send-button"/>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MFf-Wp-5UH">
+                                <rect key="frame" x="0.0" y="64" width="375" height="268"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Message" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fGd-y2-KLp">
+                                <rect key="frame" x="24" y="403" width="79" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="13"/>
+                                <color key="textColor" red="0.015686274510000001" green="0.43137254899999999" blue="0.01176470588" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -1529,6 +1538,7 @@
         <image name="rating-button" width="49" height="48"/>
         <image name="search-button" width="40" height="39"/>
         <image name="search-item-button" width="748" height="130"/>
+        <image name="send-button" width="750" height="130"/>
         <image name="sign-up-1" width="750" height="562"/>
         <image name="sofa" width="450" height="450"/>
         <image name="stat-panel-bar" width="750" height="145"/>
