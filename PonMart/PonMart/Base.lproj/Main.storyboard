@@ -684,6 +684,9 @@
                                 <rect key="frame" x="0.0" y="604" width="375" height="63"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button" image="buy-button"/>
+                                <connections>
+                                    <segue destination="BDN-8g-dXq" kind="show" id="h69-wg-fn6"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="$39.99" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XtS-cD-URz">
                                 <rect key="frame" x="290" y="386" width="56" height="21"/>
@@ -706,6 +709,40 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IZc-Cu-Ut4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4597.6000000000004" y="-31.03448275862069"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="aOk-QN-8Nv">
+            <objects>
+                <viewController id="BDN-8g-dXq" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="EkN-el-370"/>
+                        <viewControllerLayoutGuide type="bottom" id="rRI-Kd-N0u"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="dZD-ab-HXD">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Message" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fGd-y2-KLp">
+                                <rect key="frame" x="16" y="356" width="79" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="13"/>
+                                <color key="textColor" red="0.015686274510000001" green="0.43137254899999999" blue="0.01176470588" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="aAI-f3-q1t">
+                                <rect key="frame" x="16" y="385" width="343" height="262"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ddi-Iv-Ofw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5293.6000000000004" y="-31.03448275862069"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="SqL-Mc-V1v">

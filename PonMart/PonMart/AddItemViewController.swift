@@ -282,9 +282,10 @@ class AddItemViewController: UIViewController,  UIImagePickerControllerDelegate,
         
         let storageRef = FIRStorage.storage().reference().child("userItem_images").child("\(imageName).jpg")
         
-        if let uploadData = UIImageJPEGRepresentation(self.itemImage.image!, 0.1)
+        //if let uploadData = UIImageJPEGRepresentation(self.itemImage.image!, 0.1)
         
         //if let uploadData = UIImagePNGRepresentation(self.itemImage.image!)
+        if let itemImage = self.itemImage.image, let uploadData = UIImageJPEGRepresentation(itemImage, 0.1)
         {
             storageRef.put(uploadData, metadata: nil, completion: {
                 (metadata, error) in
