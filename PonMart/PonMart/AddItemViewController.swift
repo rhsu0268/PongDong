@@ -280,9 +280,11 @@ class AddItemViewController: UIViewController,  UIImagePickerControllerDelegate,
         // create a random string
         let imageName = NSUUID().uuidString
         
-        let storageRef = FIRStorage.storage().reference().child("item_images").child("\(imageName).png")
+        let storageRef = FIRStorage.storage().reference().child("userItem_images").child("\(imageName).jpg")
         
-        if let uploadData = UIImagePNGRepresentation(self.itemImage.image!)
+        if let uploadData = UIImageJPEGRepresentation(self.itemImage.image!, 0.1)
+        
+        //if let uploadData = UIImagePNGRepresentation(self.itemImage.image!)
         {
             storageRef.put(uploadData, metadata: nil, completion: {
                 (metadata, error) in

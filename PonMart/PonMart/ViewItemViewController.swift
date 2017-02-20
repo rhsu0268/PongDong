@@ -176,6 +176,8 @@ class ViewItemViewController: UIViewController, UITableViewDelegate, UITableView
         {
             action, index in
             print("Delete button tapped")
+            
+            
         }
         delete.backgroundColor = .red
         
@@ -419,6 +421,12 @@ class ViewItemViewController: UIViewController, UITableViewDelegate, UITableView
         })
         print(itemRef)
         print("Public item removed!")
+    }
+    
+    func deleteUserItem(itemId : String)
+    {
+        print(itemId)
+        
     }
     
 
