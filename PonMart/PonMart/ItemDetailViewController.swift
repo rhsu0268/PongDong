@@ -14,6 +14,7 @@ class ItemDetailViewController: UIViewController {
     
     var item : PublicItem? = nil
     
+    
     @IBOutlet var itemImage: UIImageView!
     @IBOutlet var itemName: UILabel!
     @IBOutlet var itemCategory: UIImageView!
@@ -90,6 +91,14 @@ class ItemDetailViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "DetailViewToSendMessageView")
+        {
+            var sendMessageViewController = segue.destination as! SendMessageViewController
+            sendMessageViewController.purchaseItem = item
+            print("Sending Item")
+        }
+    }
 
     /*
     // MARK: - Navigation

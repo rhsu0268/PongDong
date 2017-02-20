@@ -161,8 +161,8 @@
 		D1DE45D31E5A423400C5FD39 /* Search */ = {
 			isa = PBXGroup;
 			children = (
-				D11BA2121E21899500222DEC /* SearchResultTableViewController.swift */,
 				D11BA2101E21895600222DEC /* SearchItemController.swift */,
+				D11BA2121E21899500222DEC /* SearchResultTableViewController.swift */,
 				D11BA21B1E254F2D00222DEC /* ItemDetailViewController.swift */,
 				D1A64AE81E5B8A10000BC32C /* SendMessageViewController.swift */,
 			);

@@ -7,15 +7,31 @@
 //
 
 import UIKit
+import Firebase
 
 class SendMessageViewController: UIViewController {
 
+    @IBOutlet var itemImageView: UIImageView!
+    @IBOutlet var messageTextView: UITextView!
+    
+    var purchaseItem : PublicItem? = nil
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        print(purchaseItem?.name)
 
         // Do any additional setup after loading the view.
     }
 
+    @IBAction func SendMessageButtonClicked(_ sender: UIButton) {
+        
+        print("Sending message")
+        
+        
+        // get the text of the message
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
