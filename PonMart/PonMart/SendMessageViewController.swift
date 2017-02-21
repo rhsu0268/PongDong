@@ -21,13 +21,24 @@ class SendMessageViewController: UIViewController {
         super.viewDidLoad()
         
         print(purchaseItem?.name)
+        
+        if let userId = purchaseItem?.userId
+        {
+            print(userId)
+        }
 
         // Do any additional setup after loading the view.
     }
 
     @IBAction func SendMessageButtonClicked(_ sender: UIButton) {
         
+        guard let textFieldValue = messageTextView.text, !textFieldValue.isEmpty else {
+            return
+        }
+        
         print("Sending message")
+        
+        sendMessage(textFieldText: textFieldValue)
         
         
         // get the text of the message
@@ -47,5 +58,16 @@ class SendMessageViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    
+    func sendMessage(textFieldText : String)
+    {
+        let uid = FIRAuth.auth()?.currentUser?.uid
+        let messageRef = FIRDatabase.database().reference().child("messages")
+      
+        let values = ["messages": textFieldText]
+        messageRef.child(uid!).updateChildValues(values)
+        
+    }
 
 }

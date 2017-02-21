@@ -1500,6 +1500,13 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Not Sold" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dJM-AJ-GmI">
+                                                    <rect key="frame" x="255" y="66" width="67" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
@@ -1565,10 +1572,10 @@
         <image name="used-label-unselected" width="89" height="40"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="ute-SD-HoJ"/>
         <segue reference="lQs-vo-Evf"/>
+        <segue reference="ute-SD-HoJ"/>
+        <segue reference="KNf-fj-Y4G"/>
         <segue reference="0K2-We-KYH"/>
-        <segue reference="I32-x4-A6K"/>
         <segue reference="VhL-Yy-arc"/>
     </inferredMetricsTieBreakers>
 </document>
