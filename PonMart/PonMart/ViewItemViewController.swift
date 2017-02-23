@@ -429,5 +429,13 @@ class ViewItemViewController: UIViewController, UITableViewDelegate, UITableView
         
     }
     
+    
+    
+    @IBAction func MessagesButtonClicked(_ sender: UIButton) {
+        
+        performSegue(withIdentifier: "ViewItemViewToMessageView", sender: self)
+    }
+    
+    
 
 }
