@@ -10,10 +10,9 @@ import UIKit
 
 class UserCell: UITableViewCell {
 
-    @IBOutlet var userImage: UIImageView!
+
     
     @IBOutlet var userName: UILabel!
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
