@@ -36,6 +36,7 @@
 		D1A64AE91E5B8A10000BC32C /* SendMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A64AE81E5B8A10000BC32C /* SendMessageViewController.swift */; };
 		D1A64AEB1E5F52EA000BC32C /* UserMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A64AEA1E5F52EA000BC32C /* UserMessageViewController.swift */; };
 		D1A64AED1E5F567A000BC32C /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A64AEC1E5F567A000BC32C /* UserCell.swift */; };
+		D1A64AEF1E5F80FE000BC32C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A64AEE1E5F80FE000BC32C /* User.swift */; };
 		D1DE45D91E5A6F6800C5FD39 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1DE45D81E5A6F6800C5FD39 /* Extensions.swift */; };
 		D1FDAE891E54D3B900EC4AD9 /* UserItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1FDAE881E54D3B900EC4AD9 /* UserItem.swift */; };
 /* End PBXBuildFile section */
@@ -74,6 +75,7 @@
 		D1A64AE81E5B8A10000BC32C /* SendMessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendMessageViewController.swift; sourceTree = "<group>"; };
 		D1A64AEA1E5F52EA000BC32C /* UserMessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserMessageViewController.swift; sourceTree = "<group>"; };
 		D1A64AEC1E5F567A000BC32C /* UserCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
+		D1A64AEE1E5F80FE000BC32C /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		D1DE45D81E5A6F6800C5FD39 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		D1FDAE881E54D3B900EC4AD9 /* UserItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -149,6 +151,7 @@
 				D18059251E4FAD01007213CE /* PublicItems.swift */,
 				D18059271E4FAD6C007213CE /* PublicItem.swift */,
 				D1FDAE881E54D3B900EC4AD9 /* UserItem.swift */,
+				D1A64AEE1E5F80FE000BC32C /* User.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -349,6 +352,7 @@
 				D11BA20F1E21881800222DEC /* Item.swift in Sources */,
 				D173DEA91E340E22002D1C52 /* LineChartFormatter.swift in Sources */,
 				D1A64AEB1E5F52EA000BC32C /* UserMessageViewController.swift in Sources */,
+				D1A64AEF1E5F80FE000BC32C /* User.swift in Sources */,
 				D11BA1FC1E1C1EBB00222DEC /* ViewController.swift in Sources */,
 				D11BA21A1E229D5B00222DEC /* ItemCell.swift in Sources */,
 				D11BA2131E21899500222DEC /* SearchResultTableViewController.swift in Sources */,

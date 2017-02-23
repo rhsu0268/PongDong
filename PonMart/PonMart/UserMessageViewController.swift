@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class UserMessageViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
@@ -53,6 +54,52 @@ class UserMessageViewController: UIViewController, UITableViewDelegate, UITableV
         cell.userName.text = user
         
         return cell
+    }
+    
+    func fetchChatUsers()
+    {
+        let uid = FIRAuth.auth()?.currentUser?.uid
+        FIRDatabase.database().reference().child("users").observe(.childAdded, with: {
+            (snapshot) in
+            
+            
+            if let dictionary = snapshot.value as? [String : AnyObject]
+            {
+                
+                
+                let publicItem = PublicItem()
+                publicItem.userId = dictionary["userId"] as! String
+                
+                if uid != publicItem.userId
+                {
+                    
+                    // crashes if the key does not match those in firebase
+                    publicItem.name = dictionary["itemName"] as! String
+                    publicItem.itemDescription = dictionary["itemDescription"] as! String
+                    publicItem.type = dictionary["itemType"] as! String
+                    publicItem.condition = dictionary["itemCondition"] as! String
+                    publicItem.price = Double(dictionary["itemPrice"] as! String)!
+                    publicItem.itemImageUrl = dictionary["itemImageUrl"] as! String
+                    
+                    publicItem.createdDate = dictionary["createdDate"] as! String
+                    
+                    print(publicItem)
+                    
+                    self.publicItems.append(publicItem)
+                    
+                    print(self.publicItems)
+                    DispatchQueue.main.async(execute: {
+                        
+                        self.tableView.reloadData()
+                    })
+                }
+                
+            }
+            
+            print(snapshot)
+            
+        }, withCancel: nil)
+
     }
 
 }
