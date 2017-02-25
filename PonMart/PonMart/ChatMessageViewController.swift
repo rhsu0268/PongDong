@@ -21,6 +21,11 @@ class ChatMessageViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    
+    @IBAction func BackButtonClicked(_ sender: Any) {
+        
+        performSegue(withIdentifier: "ChatViewToUserMessageView", sender: self)
+    }
 
     /*
     // MARK: - Navigation

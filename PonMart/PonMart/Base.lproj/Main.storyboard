@@ -1707,7 +1707,12 @@
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="qVI-hm-4R4">
-                        <barButtonItem key="leftBarButtonItem" title="Back" id="uGP-bt-PE1" userLabel="Back"/>
+                        <barButtonItem key="leftBarButtonItem" title="Back" id="uGP-bt-PE1" userLabel="Back">
+                            <connections>
+                                <action selector="BackButtonClicked:" destination="rI1-Wd-mxz" id="AGD-hA-h2H"/>
+                                <segue destination="TF2-uv-UJ7" kind="showDetail" identifier="ChatViewToUserMessageView" id="0Pd-Ix-xbo"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <nil key="simulatedBottomBarMetrics"/>
                 </viewController>
@@ -1768,10 +1773,11 @@
         <image name="used-label-unselected" width="89" height="40"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="KNf-fj-Y4G"/>
-        <segue reference="vnC-iW-7vP"/>
-        <segue reference="0K2-We-KYH"/>
         <segue reference="atc-AP-sJL"/>
+        <segue reference="0K2-We-KYH"/>
+        <segue reference="vnC-iW-7vP"/>
+        <segue reference="KNf-fj-Y4G"/>
         <segue reference="VhL-Yy-arc"/>
+        <segue reference="0Pd-Ix-xbo"/>
     </inferredMetricsTieBreakers>
 </document>
