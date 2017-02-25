@@ -122,5 +122,9 @@ class UserMessageViewController: UIViewController, UITableViewDelegate, UITableV
         }, withCancel: nil)
 
     }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 60
+    }
 
 }
