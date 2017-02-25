@@ -7,8 +7,24 @@
 //
 
 import UIKit
+import Firebase
 
 class ChatMessageViewController: UIViewController {
+    
+    /*
+    let inputTextField = UITextField()
+    inputTextField.placeholder = "Enter message..."
+    inputTextField.translatesAutoresizingMaskIntoConstraints = false
+    containerView.addSubview(inputTextField)
+    */
+    
+    let inputTextField: UITextField = {
+        
+        let textField = UITextField()
+        textField.placeholder = "Enter message..."
+        textField.translatesAutoresizingMaskIntoConstraints = false
+        return textField
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,7 +59,7 @@ class ChatMessageViewController: UIViewController {
     func setupInputComponents()
     {
         let containerView = UIView()
-        containerView.backgroundColor = UIColor.red
+        //containerView.backgroundColor = UIColor.red
         containerView.translatesAutoresizingMaskIntoConstraints = false
         
         view.addSubview(containerView)
@@ -58,9 +74,12 @@ class ChatMessageViewController: UIViewController {
         containerView.heightAnchor.constraint(equalToConstant: 50).isActive = true
         
         
-        let sendButton = UIButton()
+        let sendButton = UIButton(type: .system)
         sendButton.setTitle("Send", for: .normal)
         sendButton.translatesAutoresizingMaskIntoConstraints = false
+        
+        
+        sendButton.addTarget(self, action: #selector(handleSend), for: .touchUpInside)
         containerView.addSubview(sendButton)
         
         //x, y, w, h
@@ -68,6 +87,44 @@ class ChatMessageViewController: UIViewController {
         sendButton.centerYAnchor.constraint(equalTo: containerView.centerYAnchor).isActive = true
         sendButton.widthAnchor.constraint(equalToConstant: 80).isActive = true
         sendButton.heightAnchor.constraint(equalTo: containerView.heightAnchor).isActive = true
+        
+        
+        
+
+        containerView.addSubview(inputTextField)
+        //x, y, w, h
+        inputTextField.leftAnchor.constraint(equalTo: containerView.leftAnchor, constant: 8).isActive = true
+        inputTextField.centerYAnchor.constraint(equalTo: containerView.centerYAnchor).isActive = true
+        //inputTextField.widthAnchor.constraint(equalToConstant: 100).isActive = true
+        
+        inputTextField.rightAnchor.constraint(equalTo: sendButton.leftAnchor).isActive = true
+        inputTextField.heightAnchor.constraint(equalTo: containerView.heightAnchor).isActive = true
+        
+        
+        
+        // seperator 
+        let separatorLineView = UIView()
+        separatorLineView.backgroundColor = UIColor.black
+        separatorLineView.translatesAutoresizingMaskIntoConstraints = false
+        containerView.addSubview(separatorLineView)
+        
+        // x, y, w, h
+        separatorLineView.leftAnchor.constraint(equalTo: containerView.leftAnchor).isActive = true
+        separatorLineView.topAnchor.constraint(equalTo: containerView.topAnchor).isActive = true
+        separatorLineView.widthAnchor.constraint(equalTo: containerView.widthAnchor).isActive = true
+        separatorLineView.heightAnchor.constraint(equalToConstant: 1).isActive = true
+        
+    }
+    
+    func handleSend()
+    {
+        print(inputTextField.text)
+        
+        let uid = FIRAuth.auth()?.currentUser?.uid
+        let messageRef = FIRDatabase.database().reference().child("messages")
+        
+        let values = ["messages": inputTextField.text!]
+        messageRef.child(uid!).updateChildValues(values)
     }
 
 }
