@@ -14,6 +14,7 @@ class ChatMessageViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        setupInputComponents()
     }
 
     override func didReceiveMemoryWarning() {
@@ -36,5 +37,37 @@ class ChatMessageViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    
+    
+    func setupInputComponents()
+    {
+        let containerView = UIView()
+        containerView.backgroundColor = UIColor.red
+        containerView.translatesAutoresizingMaskIntoConstraints = false
+        
+        view.addSubview(containerView)
+        
+        
+        // ios9 containt anchors
+        // x, y, w, h
+        
+        containerView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
+        containerView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        containerView.widthAnchor.constraint(equalTo: view.widthAnchor).isActive = true
+        containerView.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        
+        
+        let sendButton = UIButton()
+        sendButton.setTitle("Send", for: .normal)
+        sendButton.translatesAutoresizingMaskIntoConstraints = false
+        containerView.addSubview(sendButton)
+        
+        //x, y, w, h
+        sendButton.rightAnchor.constraint(equalTo: containerView.rightAnchor).isActive = true
+        sendButton.centerYAnchor.constraint(equalTo: containerView.centerYAnchor).isActive = true
+        sendButton.widthAnchor.constraint(equalToConstant: 80).isActive = true
+        sendButton.heightAnchor.constraint(equalTo: containerView.heightAnchor).isActive = true
+    }
 
 }
