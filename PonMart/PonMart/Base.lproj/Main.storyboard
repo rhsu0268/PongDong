@@ -563,7 +563,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Do-Q7-dik" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1553" y="732"/>
+            <point key="canvasLocation" x="2492" y="731.78410794602701"/>
         </scene>
         <!--Results-->
         <scene sceneID="YDn-ja-fA1">
@@ -1028,7 +1028,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Q1b-24-gWs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2837.5999999999999" y="747.9760119940031"/>
+            <point key="canvasLocation" x="3776.8000000000002" y="747.9760119940031"/>
         </scene>
         <!--Statistics View Controller-->
         <scene sceneID="EaK-Yv-dyK">
@@ -1311,7 +1311,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Sx3-nT-omZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2576.8000000000002" y="1576.4617691154424"/>
+            <point key="canvasLocation" x="3516" y="1576.4617691154424"/>
         </scene>
         <!--View Item View Controller-->
         <scene sceneID="fU7-cR-ReL">
@@ -1521,12 +1521,12 @@
                     <connections>
                         <outlet property="tableView" destination="CJb-tg-PZz" id="Qsh-HR-3Fn"/>
                         <outlet property="userProfileImage" destination="9Js-3D-Tpx" id="FMA-uV-gXD"/>
-                        <segue destination="TF2-uv-UJ7" kind="show" identifier="ViewItemViewToMessageView" id="fm2-Yd-MWf"/>
+                        <segue destination="TF2-uv-UJ7" kind="show" identifier="ViewItemViewToMessageView" id="9eH-ln-0rD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7OZ-gN-3J1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="608.79999999999995" y="804.64767616191909"/>
+            <point key="canvasLocation" x="1548" y="804.64767616191909"/>
         </scene>
         <!--User Message View Controller-->
         <scene sceneID="7Vt-Dn-e0Q">
@@ -1682,13 +1682,35 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" id="eBO-TV-41E"/>
                     <connections>
                         <outlet property="tableView" destination="h5b-qd-ipA" id="eF5-rk-dzG"/>
+                        <segue destination="rI1-Wd-mxz" kind="showDetail" identifier="UserMessageViewToChatView" id="eAh-Q1-N3t"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WSF-tx-z2r" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-82.400000000000006" y="998.95052473763121"/>
+            <point key="canvasLocation" x="856.79999999999995" y="998.95052473763121"/>
+        </scene>
+        <!--Chat Message View Controller-->
+        <scene sceneID="uhH-dF-986">
+            <objects>
+                <viewController id="rI1-Wd-mxz" customClass="ChatMessageViewController" customModule="PonMart" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="oJZ-oz-yAN"/>
+                        <viewControllerLayoutGuide type="bottom" id="6Nh-Rm-ByP"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="gEw-bn-NIb">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <toolbarItems/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MJ6-35-0Eo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-111" y="999"/>
         </scene>
     </scenes>
     <resources>

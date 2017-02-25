@@ -66,6 +66,16 @@ class UserMessageViewController: UIViewController, UITableViewDelegate, UITableV
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
+    {
+        //
+        
+        print("You selected cell #\(indexPath.row)!")
+        //let item = userItems[indexPath.row]
+        performSegue(withIdentifier: "UserMessageViewToChatView", sender: self)
+        
+    }
+    
     func fetchChatUsers()
     {
         let uid = FIRAuth.auth()?.currentUser?.uid

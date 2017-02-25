@@ -24,6 +24,7 @@
 		D11BA21E1E2698BE00222DEC /* UserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D11BA21D1E2698BE00222DEC /* UserProfileViewController.swift */; };
 		D11BA2201E26ADDE00222DEC /* AddItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D11BA21F1E26ADDE00222DEC /* AddItemViewController.swift */; };
 		D11BA2221E29229A00222DEC /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D11BA2211E29229A00222DEC /* RegisterViewController.swift */; };
+		D156587E1E611C9C0048D55B /* ChatMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D156587D1E611C9C0048D55B /* ChatMessageViewController.swift */; };
 		D16A6FBB1E456DDD00B848FC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D16A6FBA1E456DDD00B848FC /* GoogleService-Info.plist */; };
 		D173DEA21E31BD53002D1C52 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D173DEA11E31BD53002D1C52 /* EditProfileViewController.swift */; };
 		D173DEA61E331234002D1C52 /* StatisticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D173DEA51E331234002D1C52 /* StatisticsViewController.swift */; };
@@ -63,6 +64,7 @@
 		D11BA21D1E2698BE00222DEC /* UserProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfileViewController.swift; sourceTree = "<group>"; };
 		D11BA21F1E26ADDE00222DEC /* AddItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddItemViewController.swift; sourceTree = "<group>"; };
 		D11BA2211E29229A00222DEC /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		D156587D1E611C9C0048D55B /* ChatMessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatMessageViewController.swift; sourceTree = "<group>"; };
 		D16A6FBA1E456DDD00B848FC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D173DEA11E31BD53002D1C52 /* EditProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 		D173DEA51E331234002D1C52 /* StatisticsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatisticsViewController.swift; sourceTree = "<group>"; };
@@ -194,6 +196,7 @@
 				D173DEA11E31BD53002D1C52 /* EditProfileViewController.swift */,
 				D180592A1E5117E4007213CE /* ViewItemViewController.swift */,
 				D1A64AEA1E5F52EA000BC32C /* UserMessageViewController.swift */,
+				D156587D1E611C9C0048D55B /* ChatMessageViewController.swift */,
 			);
 			name = Profile;
 			sourceTree = "<group>";
@@ -373,6 +376,7 @@
 				D11BA2201E26ADDE00222DEC /* AddItemViewController.swift in Sources */,
 				D18059281E4FAD6C007213CE /* PublicItem.swift in Sources */,
 				D18059261E4FAD01007213CE /* PublicItems.swift in Sources */,
+				D156587E1E611C9C0048D55B /* ChatMessageViewController.swift in Sources */,
 				D11BA1FA1E1C1EBB00222DEC /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
