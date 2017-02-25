@@ -58,6 +58,11 @@ class UserMessageViewController: UIViewController, UITableViewDelegate, UITableV
         print(user.userEmail)
         cell.userName.text = user.userEmail
         
+        if user.userImage == "nil"
+        {
+            cell.userImage.image = UIImage(named: "user-profile-placeholder")
+        }
+        
         return cell
     }
     
