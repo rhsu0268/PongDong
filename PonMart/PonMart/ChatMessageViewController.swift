@@ -11,6 +11,7 @@ import Firebase
 
 class ChatMessageViewController: UIViewController {
     
+    var user : User? = nil
     /*
     let inputTextField = UITextField()
     inputTextField.placeholder = "Enter message..."
@@ -28,6 +29,8 @@ class ChatMessageViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        print(user?.userEmail)
 
         // Do any additional setup after loading the view.
         setupInputComponents()

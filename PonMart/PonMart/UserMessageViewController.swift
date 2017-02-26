@@ -136,5 +136,24 @@ class UserMessageViewController: UIViewController, UITableViewDelegate, UITableV
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 60
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // UserMessageViewToChatView"
+        if (segue.identifier == "UserMessageViewToChatView")
+        {
+            var navigationController = segue.destination as! UINavigationController
+            
+            
+            var chatMessageViewControler = navigationController.topViewController as! ChatMessageViewController
+            
+            var userIndex = tableView.indexPathForSelectedRow?.row
+            
+           
+            //print(items[itemIndex!])
+            chatMessageViewControler.user = users[userIndex!]
+            
+        }
+
+    }
 
 }
