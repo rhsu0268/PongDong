@@ -426,11 +426,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PonMart/ChatMessageViewController.swift"
-            timestampString = "509773437.683076"
+            timestampString = "509774069.607522"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "129"
-            endingLineNumber = "129"
+            startingLineNumber = "130"
+            endingLineNumber = "130"
             landmarkName = "setupInputComponents()"
             landmarkType = "7">
          </BreakpointContent>
@@ -442,13 +442,29 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PonMart/ChatMessageViewController.swift"
-            timestampString = "509773437.683076"
+            timestampString = "509774069.607522"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "141"
-            endingLineNumber = "141"
+            startingLineNumber = "160"
+            endingLineNumber = "160"
             landmarkName = "handleSend()"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PonMart/ChatMessageViewController.swift"
+            timestampString = "509773974.363965"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "17"
+            endingLineNumber = "17"
+            landmarkName = "ChatMessageViewController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

@@ -13,6 +13,7 @@ class ChatMessageViewController: UIViewController, UITableViewDelegate, UITableV
     
     //var user : User? = nil
     
+    var messages = [Message]()
     @IBOutlet var tableview: UITableView!
     var user: User?
     {
@@ -130,6 +131,24 @@ class ChatMessageViewController: UIViewController, UITableViewDelegate, UITableV
         
     }
     
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return messages.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = UITableViewCell(style: .subtitle, reuseIdentifier: "cellId")
+        
+        let message = messages[indexPath.row]
+        cell.textLabel?.text = message.text
+        
+        return cell
+    }
+
+    
     func handleSend()
     {
         print(inputTextField.text)
@@ -152,33 +171,28 @@ class ChatMessageViewController: UIViewController, UITableViewDelegate, UITableV
         messageRef.observe(.childAdded, with: {
             (snapshot) in
             
-            print(snapshot)
+            //print(snapshot)
             if let dictionary = snapshot.value as? [String : AnyObject]
             {
                 let message = Message()
                 message.text = dictionary["text"] as! String?
                 
-                print(message.text)
+                //print(message.text)
+                self.messages.append(message)
+                
+                
+                DispatchQueue.main.async(execute: {
+                    
+                    self.tableview.reloadData()
+                })
+
             }
+        
             
             
         }, withCancel: nil)
-    }
-    
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell(style: .subtitle, reuseIdentifier: "cellId")
         
-        cell.textLabel?.text = "SAMPLE"
-        
-        return cell
     }
-
+    
+    
 }
