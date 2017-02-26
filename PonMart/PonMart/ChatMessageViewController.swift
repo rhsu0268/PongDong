@@ -143,7 +143,21 @@ class ChatMessageViewController: UIViewController, UITableViewDelegate, UITableV
         let cell = UITableViewCell(style: .subtitle, reuseIdentifier: "cellId")
         
         let message = messages[indexPath.row]
-        cell.textLabel?.text = message.text
+        
+        if let toId = message.toId  {
+            
+            
+            let toUserRef = FIRDatabase.database().reference().child("users").child(toId)
+            
+            toUserRef.observe(.value, with: {
+                (snapshot) in
+                if let dictionary = snapshot.value as? [String : AnyObject]
+                {
+                    cell.textLabel?.text = dictionary["email"] as? String
+                }
+            }, withCancel: nil)
+        }
+        cell.detailTextLabel?.text = message.text
         
         return cell
     }
@@ -175,6 +189,7 @@ class ChatMessageViewController: UIViewController, UITableViewDelegate, UITableV
             if let dictionary = snapshot.value as? [String : AnyObject]
             {
                 let message = Message()
+                message.toId = dictionary["toId"] as! String?
                 message.text = dictionary["text"] as! String?
                 
                 //print(message.text)

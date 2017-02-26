@@ -442,11 +442,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PonMart/ChatMessageViewController.swift"
-            timestampString = "509774069.607522"
+            timestampString = "509819588.628516"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "160"
-            endingLineNumber = "160"
+            startingLineNumber = "174"
+            endingLineNumber = "174"
             landmarkName = "handleSend()"
             landmarkType = "7">
          </BreakpointContent>
