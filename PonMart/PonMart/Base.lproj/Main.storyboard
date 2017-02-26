@@ -1727,7 +1727,7 @@
                     </navigationItem>
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="tableview" destination="Fjg-AC-7kg" id="f2t-0Y-F1a"/>
+                        <outlet property="tableView" destination="Fjg-AC-7kg" id="Xrf-eu-FQA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MJ6-35-0Eo" userLabel="First Responder" sceneMemberID="firstResponder"/>

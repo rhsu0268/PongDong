@@ -426,11 +426,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PonMart/ChatMessageViewController.swift"
-            timestampString = "509774069.607522"
+            timestampString = "509823761.690293"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "130"
-            endingLineNumber = "130"
+            startingLineNumber = "137"
+            endingLineNumber = "137"
             landmarkName = "setupInputComponents()"
             landmarkType = "7">
          </BreakpointContent>
@@ -442,11 +442,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PonMart/ChatMessageViewController.swift"
-            timestampString = "509819588.628516"
+            timestampString = "509823761.690293"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "174"
-            endingLineNumber = "174"
+            startingLineNumber = "183"
+            endingLineNumber = "183"
             landmarkName = "handleSend()"
             landmarkType = "7">
          </BreakpointContent>
@@ -458,11 +458,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PonMart/ChatMessageViewController.swift"
-            timestampString = "509773974.363965"
+            timestampString = "509822659.733294"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "17"
-            endingLineNumber = "17"
+            startingLineNumber = "20"
+            endingLineNumber = "20"
             landmarkName = "ChatMessageViewController"
             landmarkType = "3">
          </BreakpointContent>

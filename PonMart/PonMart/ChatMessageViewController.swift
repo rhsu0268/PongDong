@@ -14,7 +14,12 @@ class ChatMessageViewController: UIViewController, UITableViewDelegate, UITableV
     //var user : User? = nil
     
     var messages = [Message]()
-    @IBOutlet var tableview: UITableView!
+    
+    let cellId = "cellId"
+    
+    
+    @IBOutlet var tableView: UITableView!
+    
     var user: User?
     {
         didSet
@@ -44,6 +49,8 @@ class ChatMessageViewController: UIViewController, UITableViewDelegate, UITableV
 
         // Do any additional setup after loading the view.
         setupInputComponents()
+        
+        tableView.register(ChatUserCell.self, forCellReuseIdentifier: cellId)
         
         observeMessage()
     }
@@ -140,7 +147,9 @@ class ChatMessageViewController: UIViewController, UITableViewDelegate, UITableV
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell(style: .subtitle, reuseIdentifier: "cellId")
+        //let cell = UITableViewCell(style: .subtitle, reuseIdentifier: "cellId")
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath)
         
         let message = messages[indexPath.row]
         
@@ -198,7 +207,7 @@ class ChatMessageViewController: UIViewController, UITableViewDelegate, UITableV
                 
                 DispatchQueue.main.async(execute: {
                     
-                    self.tableview.reloadData()
+                    self.tableView.reloadData();
                 })
 
             }
