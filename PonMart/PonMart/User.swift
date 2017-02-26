@@ -13,6 +13,7 @@ class User
     public var userEmail : String
     public var userName : String
     public var userImage : String
+    public var toId : String
     
     
     init()
@@ -20,5 +21,6 @@ class User
         userEmail = ""
         userName = ""
         userImage = ""
+        toId = ""
     }
 }

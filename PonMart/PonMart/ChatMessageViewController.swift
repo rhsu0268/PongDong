@@ -11,7 +11,15 @@ import Firebase
 
 class ChatMessageViewController: UIViewController {
     
-    var user : User? = nil
+    //var user : User? = nil
+    
+    var user: User?
+    {
+        didSet
+        {
+            navigationItem.title = user?.userEmail
+        }
+    }
     /*
     let inputTextField = UITextField()
     inputTextField.placeholder = "Enter message..."
@@ -124,10 +132,12 @@ class ChatMessageViewController: UIViewController {
         print(inputTextField.text)
         
         let uid = FIRAuth.auth()?.currentUser?.uid
-        let messageRef = FIRDatabase.database().reference().child("messages")
+        let messageRef = FIRDatabase.database().reference().child("messages").childByAutoId()
         
-        let values = ["messages": inputTextField.text!]
-        messageRef.child(uid!).updateChildValues(values)
+        let toId = user?.toId
+        let values = ["messages": inputTextField.text!, "toId": toId]
+        //messageRef.child(uid!).updateChildValues(values)
+        messageRef.updateChildValues(values)
     }
 
 }

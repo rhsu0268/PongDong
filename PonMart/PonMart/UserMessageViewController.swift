@@ -82,7 +82,9 @@ class UserMessageViewController: UIViewController, UITableViewDelegate, UITableV
         FIRDatabase.database().reference().child("users").observe(.childAdded, with: {
             (snapshot) in
             
-            
+            print("---snapshot---")
+            print(snapshot.key)
+            print("--- ---")
             if let dictionary = snapshot.value as? [String : AnyObject]
             {
                 
@@ -106,6 +108,7 @@ class UserMessageViewController: UIViewController, UITableViewDelegate, UITableV
                     {
                         user.userImage = "nil"
                     }
+                    user.toId = snapshot.key
                     //publicItem.itemDescription = dictionary["itemDescription"] as! String
                     //publicItem.type = dictionary["itemType"] as! String
                     //publicItem.condition = dictionary["itemCondition"] as! String
