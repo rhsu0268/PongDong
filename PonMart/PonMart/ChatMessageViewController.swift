@@ -135,7 +135,9 @@ class ChatMessageViewController: UIViewController {
         let messageRef = FIRDatabase.database().reference().child("messages").childByAutoId()
         
         let toId = user?.toId
-        let values = ["messages": inputTextField.text!, "toId": toId]
+        let date = Foundation.Date()
+        let formatedDate = date.dateToString()
+        let values = ["messages": inputTextField.text!, "toId": toId, "fromId": uid, "timestamp": formatedDate]
         //messageRef.child(uid!).updateChildValues(values)
         messageRef.updateChildValues(values)
     }
