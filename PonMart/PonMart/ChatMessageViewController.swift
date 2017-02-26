@@ -141,5 +141,17 @@ class ChatMessageViewController: UIViewController {
         //messageRef.child(uid!).updateChildValues(values)
         messageRef.updateChildValues(values)
     }
+    
+    
+    func observeMessage()
+    {
+        let messageRef = FIRDatabase.database().reference().child("messages")
+        messageRef.observe(.childAdded, with: {
+            (snapshot) in
+            
+            print(snapshot)
+            
+        }, withCancel: nil)
+    }
 
 }
