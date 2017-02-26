@@ -9,10 +9,11 @@
 import UIKit
 import Firebase
 
-class ChatMessageViewController: UIViewController {
+class ChatMessageViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     //var user : User? = nil
     
+    @IBOutlet var tableview: UITableView!
     var user: User?
     {
         didSet
@@ -42,6 +43,8 @@ class ChatMessageViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         setupInputComponents()
+        
+        observeMessage()
     }
 
     override func didReceiveMemoryWarning() {
@@ -137,7 +140,7 @@ class ChatMessageViewController: UIViewController {
         let toId = user?.toId
         let date = Foundation.Date()
         let formatedDate = date.dateToString()
-        let values = ["messages": inputTextField.text!, "toId": toId, "fromId": uid, "timestamp": formatedDate]
+        let values = ["text": inputTextField.text!, "toId": toId, "fromId": uid, "timestamp": formatedDate]
         //messageRef.child(uid!).updateChildValues(values)
         messageRef.updateChildValues(values)
     }
@@ -150,8 +153,32 @@ class ChatMessageViewController: UIViewController {
             (snapshot) in
             
             print(snapshot)
+            if let dictionary = snapshot.value as? [String : AnyObject]
+            {
+                let message = Message()
+                message.text = dictionary["text"] as! String?
+                
+                print(message.text)
+            }
+            
             
         }, withCancel: nil)
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 5
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = UITableViewCell(style: .subtitle, reuseIdentifier: "cellId")
+        
+        cell.textLabel?.text = "SAMPLE"
+        
+        return cell
     }
 
 }
