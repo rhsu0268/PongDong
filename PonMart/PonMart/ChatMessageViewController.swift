@@ -166,10 +166,11 @@ class ChatMessageViewController: UIViewController, UITableViewDelegate, UITableV
                     
                     
                     
-                    if let image = dictionary["userImage"] as? String
+                    if let profileImageUrl = dictionary["userImage"] as? String
                     {
                         //user.userImage = image
                         print("image exsits")
+                        cell.profileImageView.loadImageUsingCacheWithUrlString(urlString: profileImageUrl)
                         
                     }
                     else
