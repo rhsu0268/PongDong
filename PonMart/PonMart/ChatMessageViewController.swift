@@ -149,7 +149,7 @@ class ChatMessageViewController: UIViewController, UITableViewDelegate, UITableV
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         //let cell = UITableViewCell(style: .subtitle, reuseIdentifier: "cellId")
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! ChatUserCell
         
         let message = messages[indexPath.row]
         
@@ -163,12 +163,33 @@ class ChatMessageViewController: UIViewController, UITableViewDelegate, UITableV
                 if let dictionary = snapshot.value as? [String : AnyObject]
                 {
                     cell.textLabel?.text = dictionary["email"] as? String
+                    
+                    
+                    
+                    if let image = dictionary["userImage"] as? String
+                    {
+                        //user.userImage = image
+                        print("image exsits")
+                        
+                    }
+                    else
+                    {
+                        print("image does not exist!")
+                        cell.profileImageView.image = UIImage(named: "user-profile-placeholder")
+                    }
+
                 }
+                
+                
             }, withCancel: nil)
         }
         cell.detailTextLabel?.text = message.text
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 72
     }
 
     
