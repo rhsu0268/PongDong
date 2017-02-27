@@ -150,42 +150,10 @@ class ChatMessageViewController: UIViewController, UITableViewDelegate, UITableV
         //let cell = UITableViewCell(style: .subtitle, reuseIdentifier: "cellId")
         
         let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! ChatUserCell
-        
         let message = messages[indexPath.row]
         
-        if let toId = message.toId  {
-            
-            
-            let toUserRef = FIRDatabase.database().reference().child("users").child(toId)
-            
-            toUserRef.observe(.value, with: {
-                (snapshot) in
-                if let dictionary = snapshot.value as? [String : AnyObject]
-                {
-                    cell.textLabel?.text = dictionary["email"] as? String
-                    
-                    
-                    
-                    if let profileImageUrl = dictionary["userImage"] as? String
-                    {
-                        //user.userImage = image
-                        print("image exsits")
-                        cell.profileImageView.loadImageUsingCacheWithUrlString(urlString: profileImageUrl)
-                        
-                    }
-                    else
-                    {
-                        print("image does not exist!")
-                        cell.profileImageView.image = UIImage(named: "user-profile-placeholder")
-                    }
+        cell.message = message
 
-                }
-                
-                
-            }, withCancel: nil)
-        }
-        cell.detailTextLabel?.text = message.text
-        
         return cell
     }
     

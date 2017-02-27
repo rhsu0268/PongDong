@@ -8,9 +8,10 @@
 
 import UIKit
 
+
 class UserCell: UITableViewCell {
 
-
+    
     
     @IBOutlet var userName: UILabel!
     @IBOutlet var userImage: UIImageView!

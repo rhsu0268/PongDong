@@ -8,9 +8,51 @@
 
 import UIKit
 import Foundation
+import Firebase
 
 class ChatUserCell: UITableViewCell {
     
+    var message : Message?
+    {
+        didSet
+        {
+            
+            
+            if let toId = message?.toId  {
+                
+                
+                let toUserRef = FIRDatabase.database().reference().child("users").child(toId)
+                
+                toUserRef.observe(.value, with: {
+                    (snapshot) in
+                    if let dictionary = snapshot.value as? [String : AnyObject]
+                    {
+                        self.textLabel?.text = dictionary["email"] as? String
+                        
+                        
+                        
+                        if let profileImageUrl = dictionary["userImage"] as? String
+                        {
+                            //user.userImage = image
+                            print("image exsits")
+                            self.profileImageView.loadImageUsingCacheWithUrlString(urlString: profileImageUrl )
+                            
+                        }
+                        else
+                        {
+                            print("image does not exist!")
+                            self.profileImageView.image = UIImage(named: "user-profile-placeholder")
+                        }
+                        
+                    }
+                    
+                    
+                }, withCancel: nil)
+            }
+            detailTextLabel?.text = message?.text
+            
+        }
+    }
     
     override func layoutSubviews() {
         super.layoutSubviews()
