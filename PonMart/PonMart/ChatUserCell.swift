@@ -51,6 +51,8 @@ class ChatUserCell: UITableViewCell {
             }
             detailTextLabel?.text = message?.text
             
+            timeLabel.text = message?.timestamp
+            
         }
     }
     
@@ -71,6 +73,17 @@ class ChatUserCell: UITableViewCell {
         imageView.contentMode = .scaleToFill
         return imageView
     }()
+    
+    
+    let timeLabel : UILabel = {
+        let label = UILabel()
+        label.text = "HH:MM:SS"
+        label.font = UIFont.systemFont(ofSize: 12)
+        label.textColor = UIColor.darkGray
+        
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -86,11 +99,19 @@ class ChatUserCell: UITableViewCell {
         
         // Configure the view for the selected state
         addSubview(profileImageView)
+        addSubview(timeLabel)
         
         profileImageView.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 8).isActive = true
         profileImageView.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
         profileImageView.widthAnchor.constraint(equalToConstant: 48).isActive = true
         profileImageView.heightAnchor.constraint(equalToConstant: 48).isActive = true
+        
+        // need x, y, width, height, anchors
+        timeLabel.rightAnchor.constraint(equalTo: self.rightAnchor).isActive = true
+        timeLabel.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
+        timeLabel.widthAnchor.constraint(equalToConstant: 100).isActive = true
+        timeLabel.heightAnchor.constraint(equalTo: (textLabel?.heightAnchor)!).isActive = true
+        
     }
     
     required init?(coder aDecoder: NSCoder) {

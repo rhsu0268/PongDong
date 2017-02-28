@@ -190,6 +190,7 @@ class ChatMessageViewController: UIViewController, UITableViewDelegate, UITableV
                 let message = Message()
                 message.toId = dictionary["toId"] as! String?
                 message.text = dictionary["text"] as! String?
+                message.timestamp = dictionary["timestamp"] as! String?
                 
                 //print(message.text)
                 self.messages.append(message)
