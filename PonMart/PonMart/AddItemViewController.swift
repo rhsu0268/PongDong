@@ -395,12 +395,4 @@ class AddItemViewController: UIViewController,  UIImagePickerControllerDelegate,
 
 }
 
-extension Foundation.Date {
-    
-    func dateToString() -> String {
-        let dateFormatter = DateFormatter()
-        let date = self
-        dateFormatter.dateFormat = "MM-dd-yyyy HH:mm"
-        return dateFormatter.string(from: date)
-    }
-}
+

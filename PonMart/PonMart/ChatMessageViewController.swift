@@ -14,6 +14,7 @@ class ChatMessageViewController: UIViewController, UITableViewDelegate, UITableV
     //var user : User? = nil
     
     var messages = [Message]()
+    var messageDictionary = [String : Message]()
     
     let cellId = "cellId"
     
@@ -171,7 +172,10 @@ class ChatMessageViewController: UIViewController, UITableViewDelegate, UITableV
         
         let toId = user?.toId
         let date = Foundation.Date()
-        let formatedDate = date.dateToString()
+        let formatedDate = date.chatDateToString()
+        //let formattedDate = String(NSDate().timeIntervalSince1970)
+        
+        
         let values = ["text": inputTextField.text!, "toId": toId, "fromId": uid, "timestamp": formatedDate]
         //messageRef.child(uid!).updateChildValues(values)
         messageRef.updateChildValues(values)
@@ -195,6 +199,10 @@ class ChatMessageViewController: UIViewController, UITableViewDelegate, UITableV
                 //print(message.text)
                 self.messages.append(message)
                 
+                if let toId = message.toId
+                {
+                    self.messageDictionary[toId] = message
+                }
                 
                 DispatchQueue.main.async(execute: {
                     

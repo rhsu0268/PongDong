@@ -17,11 +17,20 @@ class UserMessageViewController: UIViewController, UITableViewDelegate, UITableV
     
     var users: [User] = []
     
+    var messages = [Message]()
+    var messageDictionary = [String : Message]()
+    
+    let cellId = "cellId"
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        fetchChatUsers()
+        //fetchChatUsers()
+        
+        tableView.register(ChatUserCell.self, forCellReuseIdentifier: cellId)
+        observeMessage()
     }
 
     override func didReceiveMemoryWarning() {
@@ -46,12 +55,13 @@ class UserMessageViewController: UIViewController, UITableViewDelegate, UITableV
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.users.count
+        return self.messages.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "userCell", for: indexPath) as! UserCell
+        //let cell = tableView.dequeueReusableCell(withIdentifier: "userCell", for: indexPath) as! UserCell
         
+        /*
         let user = users[indexPath.row]
         //print(user)
         print(user.userImage)
@@ -62,6 +72,11 @@ class UserMessageViewController: UIViewController, UITableViewDelegate, UITableV
         {
             cell.userImage.image = UIImage(named: "user-profile-placeholder")
         }
+        */
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! ChatUserCell
+        let message = messages[indexPath.row]
+        
+        cell.message = message
         
         return cell
     }
@@ -153,10 +168,46 @@ class UserMessageViewController: UIViewController, UITableViewDelegate, UITableV
             
            
             //print(items[itemIndex!])
-            chatMessageViewControler.user = users[userIndex!]
+            //chatMessageViewControler.user = messages[userIndex!]
             
         }
 
     }
+    
+    func observeMessage()
+    {
+        let messageRef = FIRDatabase.database().reference().child("messages")
+        messageRef.observe(.childAdded, with: {
+            (snapshot) in
+            
+            //print(snapshot)
+            if let dictionary = snapshot.value as? [String : AnyObject]
+            {
+                let message = Message()
+                message.toId = dictionary["toId"] as! String?
+                message.text = dictionary["text"] as! String?
+                message.timestamp = dictionary["timestamp"] as! String?
+                
+                //print(message.text)
+                self.messages.append(message)
+                
+                if let toId = message.toId
+                {
+                    self.messageDictionary[toId] = message
+                }
+                
+                DispatchQueue.main.async(execute: {
+                    
+                    self.tableView.reloadData();
+                })
+                
+            }
+            
+            
+            
+        }, withCancel: nil)
+        
+    }
+
 
 }

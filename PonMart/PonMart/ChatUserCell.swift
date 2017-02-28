@@ -51,8 +51,9 @@ class ChatUserCell: UITableViewCell {
             }
             detailTextLabel?.text = message?.text
             
-            timeLabel.text = message?.timestamp
             
+            timeLabel.text = message?.timestamp
+
         }
     }
     

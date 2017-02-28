@@ -59,3 +59,22 @@ extension UIImageView
         }).resume()
     }
 }
+
+extension Foundation.Date {
+    
+    func dateToString() -> String {
+        let dateFormatter = DateFormatter()
+        let date = self
+        dateFormatter.dateFormat = "MM-dd-yyyy HH:mm"
+        return dateFormatter.string(from: date)
+    }
+    
+    func chatDateToString() -> String {
+        let dateFormatter = DateFormatter()
+        //dateFormatter.dateStyle = .short
+        dateFormatter.timeStyle = .short 
+        let date = self
+        
+        return dateFormatter.string(from: date)
+    }
+}
