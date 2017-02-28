@@ -18,7 +18,7 @@ class UserMessageViewController: UIViewController, UITableViewDelegate, UITableV
     var users: [User] = []
     
     var messages = [Message]()
-    var messageDictionary = [String : Message]()
+    var messagesDictionary = [String : Message]()
     
     let cellId = "cellId"
 
@@ -30,7 +30,8 @@ class UserMessageViewController: UIViewController, UITableViewDelegate, UITableV
         //fetchChatUsers()
         
         tableView.register(ChatUserCell.self, forCellReuseIdentifier: cellId)
-        observeMessage()
+        addMessage()
+        groupMessage()
     }
 
     override func didReceiveMemoryWarning() {
@@ -174,7 +175,7 @@ class UserMessageViewController: UIViewController, UITableViewDelegate, UITableV
 
     }
     
-    func observeMessage()
+    func groupMessage()
     {
         let messageRef = FIRDatabase.database().reference().child("messages")
         messageRef.observe(.childAdded, with: {
@@ -193,7 +194,8 @@ class UserMessageViewController: UIViewController, UITableViewDelegate, UITableV
                 
                 if let toId = message.toId
                 {
-                    self.messageDictionary[toId] = message
+                    self.messagesDictionary[toId] = message
+                    self.messages = Array(self.messagesDictionary.values)
                 }
                 
                 DispatchQueue.main.async(execute: {
@@ -206,6 +208,19 @@ class UserMessageViewController: UIViewController, UITableViewDelegate, UITableV
             
             
         }, withCancel: nil)
+        
+    }
+    
+    func addMessage()
+    {
+        let uid = FIRAuth.auth()?.currentUser?.uid
+        
+        let messageRef = FIRDatabase.database().reference().child("messages").childByAutoId()
+        
+        messageRef.updateChildValues(["toId": "VhY2lsIbUmd5363xHKvMvf9nBww1"])
+        messageRef.updateChildValues(["fromId": "VhY2lsIbUmd5363xHKvMvf9nBww1"])
+        messageRef.updateChildValues(["text": "HELLO!"])
+        messageRef.updateChildValues(["timestamp": "12:36 PM"])
         
     }
 
