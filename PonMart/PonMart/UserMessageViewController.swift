@@ -169,7 +169,7 @@ class UserMessageViewController: UIViewController, UITableViewDelegate, UITableV
             
            
             //print(items[itemIndex!])
-            //chatMessageViewControler.user = messages[userIndex!]
+            chatMessageViewControler.message = messages[userIndex!]
             
         }
 
@@ -188,6 +188,7 @@ class UserMessageViewController: UIViewController, UITableViewDelegate, UITableV
                 message.toId = dictionary["toId"] as! String?
                 message.text = dictionary["text"] as! String?
                 message.timestamp = dictionary["timestamp"] as! String?
+                message.fromId = dictionary["fromId"] as! String?
                 
                 //print(message.text)
                 self.messages.append(message)

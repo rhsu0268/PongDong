@@ -12,9 +12,10 @@ import Firebase
 class ChatMessageViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     //var user : User? = nil
+    var message : Message? = nil
     
     var messages = [Message]()
-    var messageDictionary = [String : Message]()
+    //var messageDictionary = [String : Message]()
     
     let cellId = "cellId"
     
@@ -170,7 +171,7 @@ class ChatMessageViewController: UIViewController, UITableViewDelegate, UITableV
         let uid = FIRAuth.auth()?.currentUser?.uid
         let messageRef = FIRDatabase.database().reference().child("messages").childByAutoId()
         
-        let toId = user?.toId
+        let toId = message?.toId
         let date = Foundation.Date()
         let formatedDate = date.chatDateToString()
         //let formattedDate = String(NSDate().timeIntervalSince1970)
@@ -194,15 +195,12 @@ class ChatMessageViewController: UIViewController, UITableViewDelegate, UITableV
                 let message = Message()
                 message.toId = dictionary["toId"] as! String?
                 message.text = dictionary["text"] as! String?
+                message.fromId = dictionary["fromId"] as! String?
                 message.timestamp = dictionary["timestamp"] as! String?
                 
                 //print(message.text)
                 self.messages.append(message)
                 
-                if let toId = message.toId
-                {
-                    self.messageDictionary[toId] = message
-                }
                 
                 DispatchQueue.main.async(execute: {
                     
