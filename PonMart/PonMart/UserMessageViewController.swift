@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import Foundation
 
 class UserMessageViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
@@ -197,6 +198,19 @@ class UserMessageViewController: UIViewController, UITableViewDelegate, UITableV
                 {
                     self.messagesDictionary[toId] = message
                     self.messages = Array(self.messagesDictionary.values)
+                    self.messages.sort(by: { (message1, message2) -> Bool in
+                        
+                        
+                            let dateFormatter = DateFormatter()
+                            //dateFormatter.dateStyle = .short
+                            dateFormatter.timeStyle = .short
+                            let date1 = dateFormatter.date(from: message1.timestamp!)
+                            print(date1?.timeIntervalSince1970)
+                            let date2 = dateFormatter.date(from: message2.timestamp!)
+                            print(date2?.timeIntervalSince1970)
+                            return Int((date1?.timeIntervalSince1970)!) > Int((date2?.timeIntervalSince1970)!)
+                        }
+                    )
                 }
                 
                 DispatchQueue.main.async(execute: {
@@ -222,6 +236,13 @@ class UserMessageViewController: UIViewController, UITableViewDelegate, UITableV
         messageRef.updateChildValues(["fromId": "VhY2lsIbUmd5363xHKvMvf9nBww1"])
         messageRef.updateChildValues(["text": "HELLO!"])
         messageRef.updateChildValues(["timestamp": "12:36 PM"])
+        
+        let newMessageRef = FIRDatabase.database().reference().child("messages").childByAutoId()
+        
+        newMessageRef.updateChildValues(["toId": "1M5qiinnz6V85JPPgie7Yyjwt3E3"])
+        newMessageRef.updateChildValues(["fromId": "1M5qiinnz6V85JPPgie7Yyjwt3E3"])
+        newMessageRef.updateChildValues(["text": "HELLO!"])
+        newMessageRef.updateChildValues(["timestamp": "1:29 PM"])
         
     }
 
