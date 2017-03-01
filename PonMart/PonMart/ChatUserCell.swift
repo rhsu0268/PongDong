@@ -18,10 +18,18 @@ class ChatUserCell: UITableViewCell {
         {
             
             
-            if let toId = message?.toId  {
+            // check the message and make sure that you are using the right person 
+            
+            let uid = FIRAuth.auth()?.currentUser?.uid
+            let fromId = message?.fromId
+            let toId = message?.toId
+            
+            
+            
+            if uid == fromId  {
                 
                 
-                let toUserRef = FIRDatabase.database().reference().child("users").child(toId)
+                let toUserRef = FIRDatabase.database().reference().child("users").child(toId!)
                 
                 toUserRef.observe(.value, with: {
                     (snapshot) in
@@ -48,6 +56,38 @@ class ChatUserCell: UITableViewCell {
                     
                     
                 }, withCancel: nil)
+            }
+            
+            else
+            {
+                let toUserRef = FIRDatabase.database().reference().child("users").child(fromId!)
+                
+                toUserRef.observe(.value, with: {
+                    (snapshot) in
+                    if let dictionary = snapshot.value as? [String : AnyObject]
+                    {
+                        self.textLabel?.text = dictionary["email"] as? String
+                        
+                        
+                        
+                        if let profileImageUrl = dictionary["userImage"] as? String
+                        {
+                            //user.userImage = image
+                            print("image exsits")
+                            self.profileImageView.loadImageUsingCacheWithUrlString(urlString: profileImageUrl )
+                            
+                        }
+                        else
+                        {
+                            print("image does not exist!")
+                            self.profileImageView.image = UIImage(named: "user-profile-placeholder")
+                        }
+                        
+                    }
+                    
+                    
+                }, withCancel: nil)
+
             }
             detailTextLabel?.text = message?.text
             
