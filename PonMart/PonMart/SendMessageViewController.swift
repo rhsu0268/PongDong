@@ -62,11 +62,16 @@ class SendMessageViewController: UIViewController {
     
     func sendMessage(textFieldText : String)
     {
-        let uid = FIRAuth.auth()?.currentUser?.uid
-        let messageRef = FIRDatabase.database().reference().child("messages")
-      
-        let values = ["messages": textFieldText]
-        messageRef.child(uid!).updateChildValues(values)
+        let fromId = FIRAuth.auth()?.currentUser?.uid
+        let toId = purchaseItem?.userId
+        let messageFromRef = FIRDatabase.database().reference().child("messages").childByAutoId()
+        
+        let date = Foundation.Date()
+        let formattedDate = date.chatDateToString()
+        
+        let values = ["text": textFieldText, "toId": toId, "fromId": fromId, "timestamp": formattedDate]
+        messageFromRef.updateChildValues(values)
+        self.dismiss(animated: true, completion: nil)
         
     }
 

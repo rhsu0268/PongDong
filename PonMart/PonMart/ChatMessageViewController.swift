@@ -52,9 +52,11 @@ class ChatMessageViewController: UIViewController, UITableViewDelegate, UITableV
         // Do any additional setup after loading the view.
         setupInputComponents()
         
-        tableView.register(ChatUserCell.self, forCellReuseIdentifier: cellId)
+        tableView.register(ChatUserLogCell.self, forCellReuseIdentifier: cellId)
         
         observeMessage()
+        
+        observeUserMessages()
     }
 
     override func didReceiveMemoryWarning() {
@@ -151,7 +153,7 @@ class ChatMessageViewController: UIViewController, UITableViewDelegate, UITableV
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         //let cell = UITableViewCell(style: .subtitle, reuseIdentifier: "cellId")
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! ChatUserCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! ChatUserLogCell
         let message = messages[indexPath.row]
         
         cell.message = message
@@ -179,7 +181,22 @@ class ChatMessageViewController: UIViewController, UITableViewDelegate, UITableV
         
         let values = ["text": inputTextField.text!, "toId": toId, "fromId": uid, "timestamp": formatedDate]
         //messageRef.child(uid!).updateChildValues(values)
-        messageRef.updateChildValues(values)
+        messageRef.updateChildValues(values) { (error, ref) in
+            if error != nil
+            {
+                print(error)
+                return
+            }
+            
+            let userMessagesRef = FIRDatabase.database().reference().child("user-messages").child(uid!)
+            
+            let messageId = messageRef.key
+            userMessagesRef.updateChildValues([messageId: 1])
+            
+            
+            
+        }
+        
     }
     
     
@@ -215,6 +232,28 @@ class ChatMessageViewController: UIViewController, UITableViewDelegate, UITableV
         
     }
     
+    func observeUserMessages()
+    {
+        guard let uid = FIRAuth.auth()?.currentUser?.uid else
+        {
+            return
+        }
+        
+        let ref = FIRDatabase.database().reference().child("user-messages").child(uid)
+        ref.observe(.childAdded, with: { (snapshot) in
+            
+            print(snapshot)
+            
+            let messageId = snapshot.key
+            let messageReference = FIRDatabase.database().reference().child("messages").child(messageId)
+            
+            messageReference.observeSingleEvent(of: .value, with: { (snapshot) in
+                print(snapshot)
+                
+            }, withCancel: nil)
+            
+        }, withCancel: nil)
+    }
 
 
     

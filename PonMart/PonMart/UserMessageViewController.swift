@@ -31,7 +31,7 @@ class UserMessageViewController: UIViewController, UITableViewDelegate, UITableV
         //fetchChatUsers()
         
         tableView.register(ChatUserCell.self, forCellReuseIdentifier: cellId)
-        addMessage()
+        //addMessage()
         groupMessage()
     }
 
@@ -196,6 +196,9 @@ class UserMessageViewController: UIViewController, UITableViewDelegate, UITableV
                 
                 if let toId = message.toId
                 {
+                    print("---Messages---")
+                    print(self.messages)
+                    print("--- ---")
                     self.messagesDictionary[toId] = message
                     self.messages = Array(self.messagesDictionary.values)
                     self.messages.sort(by: { (message1, message2) -> Bool in
@@ -205,9 +208,10 @@ class UserMessageViewController: UIViewController, UITableViewDelegate, UITableV
                             //dateFormatter.dateStyle = .short
                             dateFormatter.timeStyle = .short
                             let date1 = dateFormatter.date(from: message1.timestamp!)
-                            print(date1?.timeIntervalSince1970)
+                            //print(date1?.timeIntervalSince1970)
+                            print(message2)
                             let date2 = dateFormatter.date(from: message2.timestamp!)
-                            print(date2?.timeIntervalSince1970)
+                            //print(date2?.timeIntervalSince1970)
                             return Int((date1?.timeIntervalSince1970)!) > Int((date2?.timeIntervalSince1970)!)
                         }
                     )
@@ -232,7 +236,7 @@ class UserMessageViewController: UIViewController, UITableViewDelegate, UITableV
         
         let messageRef = FIRDatabase.database().reference().child("messages").childByAutoId()
         
-        messageRef.updateChildValues(["toId": "VhY2lsIbUmd5363xHKvMvf9nBww1"])
+        messageRef.updateChildValues(["toId": "1M5qiinnz6V85JPPgie7Yyjwt3E3"])
         messageRef.updateChildValues(["fromId": "VhY2lsIbUmd5363xHKvMvf9nBww1"])
         messageRef.updateChildValues(["text": "HELLO!"])
         messageRef.updateChildValues(["timestamp": "12:36 PM"])
@@ -240,9 +244,16 @@ class UserMessageViewController: UIViewController, UITableViewDelegate, UITableV
         let newMessageRef = FIRDatabase.database().reference().child("messages").childByAutoId()
         
         newMessageRef.updateChildValues(["toId": "1M5qiinnz6V85JPPgie7Yyjwt3E3"])
-        newMessageRef.updateChildValues(["fromId": "1M5qiinnz6V85JPPgie7Yyjwt3E3"])
+        newMessageRef.updateChildValues(["fromId": "VhY2lsIbUmd5363xHKvMvf9nBww1"])
         newMessageRef.updateChildValues(["text": "HELLO!"])
         newMessageRef.updateChildValues(["timestamp": "1:29 PM"])
+        
+        let newMessageRef2 = FIRDatabase.database().reference().child("messages").childByAutoId()
+        
+        newMessageRef2.updateChildValues(["toId": "mpmxEUz4xwXvxXuzl0OF1kiOW4m2"])
+        newMessageRef2.updateChildValues(["fromId": "VhY2lsIbUmd5363xHKvMvf9nBww1"])
+        newMessageRef2.updateChildValues(["text": "HELLO!"])
+        newMessageRef2.updateChildValues(["timestamp": "9:03 PM"])
         
     }
 
