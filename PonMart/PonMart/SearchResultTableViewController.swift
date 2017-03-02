@@ -262,6 +262,7 @@ class SearchResultTableViewController: UITableViewController {
                     publicItem.itemImageUrl = dictionary["itemImageUrl"] as! String
                   
                     publicItem.createdDate = dictionary["createdDate"] as! String
+                    publicItem.userItemId = snapshot.key 
                     
                     //print(publicItem)
                    

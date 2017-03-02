@@ -218,6 +218,7 @@ class AddItemViewController: UIViewController,  UIImagePickerControllerDelegate,
         print(formatedDate)
         userItemReference.updateChildValues(["createdDate": formatedDate])
         userItemReference.updateChildValues(["updatedDate": formatedDate])
+        //userItemReference.updateChildValues(["userItemId": key])
         
         uploadImage(key: key)
         

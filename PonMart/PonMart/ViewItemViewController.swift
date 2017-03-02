@@ -370,7 +370,7 @@ class ViewItemViewController: UIViewController, UITableViewDelegate, UITableView
             
         publicItemReference.updateChildValues(["updatedDate": updatedDate])
         publicItemReference.updateChildValues(["itemImageUrl": itemImageUrl])
-        //publicItemReference.updateChildValues(["userItemId": itemId])
+        publicItemReference.updateChildValues(["userItemId": itemId])
         
         
     }

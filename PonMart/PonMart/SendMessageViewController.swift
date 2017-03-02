@@ -69,7 +69,9 @@ class SendMessageViewController: UIViewController {
         let date = Foundation.Date()
         let formattedDate = date.chatDateToString()
         
-        let values = ["text": textFieldText, "toId": toId, "fromId": fromId, "timestamp": formattedDate]
+        let itemId = purchaseItem?.userItemId
+        
+        let values = ["text": textFieldText, "toId": toId, "fromId": fromId, "timestamp": formattedDate, "itemId": itemId]
         messageFromRef.updateChildValues(values)
         self.dismiss(animated: true, completion: nil)
         

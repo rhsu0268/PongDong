@@ -220,17 +220,18 @@ class UserMessageViewController: UIViewController, UITableViewDelegate, UITableV
                 // ensure that the user is a sender or reciever
                 if (toId! == uid! || fromId! == uid!)
                 {
-                    self.messages.append(message)
+                    
                 
                 
-                
-                
-                    //print("---Messages---")
-                    //print(self.messages)
-                    //print("--- ---")
-                    self.messagesDictionary[toId!] = message
-                    self.messages = Array(self.messagesDictionary.values)
-                    self.messages.sort(by: { (message1, message2) -> Bool in
+                    // only show the messages from other people
+                    if fromId! != uid
+                    {
+                        //print("---Messages---")
+                        //print(self.messages)
+                        //print("--- ---")
+                        self.messagesDictionary[toId!] = message
+                        self.messages = Array(self.messagesDictionary.values)
+                        self.messages.sort(by: { (message1, message2) -> Bool in
                         
                         
                             let dateFormatter = DateFormatter()
@@ -242,8 +243,8 @@ class UserMessageViewController: UIViewController, UITableViewDelegate, UITableV
                             let date2 = dateFormatter.date(from: message2.timestamp!)
                             //print(date2?.timeIntervalSince1970)
                             return Int((date1?.timeIntervalSince1970)!) > Int((date2?.timeIntervalSince1970)!)
-                        }
-                    )
+                        })
+                    }
                 }
                 
                 DispatchQueue.main.async(execute: {
