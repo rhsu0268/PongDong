@@ -192,14 +192,43 @@ class UserMessageViewController: UIViewController, UITableViewDelegate, UITableV
                 message.fromId = dictionary["fromId"] as! String?
                 
                 //print(message.text)
-                self.messages.append(message)
+                let uid = FIRAuth.auth()?.currentUser?.uid
+                print("---uid---")
+                print(uid)
+                print("--- ---")
+                let toId = message.toId
+                print("---toId---")
+                print(toId)
+                print("--- ---")
+                let fromId = message.fromId
+                print("---fromId---")
+                print(fromId)
+                print("--- ---")
                 
+                
+                /*
                 if let toId = message.toId
                 {
-                    print("---Messages---")
-                    print(self.messages)
-                    print("--- ---")
-                    self.messagesDictionary[toId] = message
+                    print(toId)
+                }
+                if let fromId = message.fromId
+                {
+                    print(fromId)
+                }
+                */
+                
+                // ensure that the user is a sender or reciever
+                if (toId! == uid! || fromId! == uid!)
+                {
+                    self.messages.append(message)
+                
+                
+                
+                
+                    //print("---Messages---")
+                    //print(self.messages)
+                    //print("--- ---")
+                    self.messagesDictionary[toId!] = message
                     self.messages = Array(self.messagesDictionary.values)
                     self.messages.sort(by: { (message1, message2) -> Bool in
                         

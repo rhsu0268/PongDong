@@ -90,6 +90,7 @@ class SearchResultTableViewController: UITableViewController {
         
         
         cell.itemNameLabel.text = publicItem.name
+        print(cell.itemNameLabel.text)
         cell.priceLabel.text = "$\(publicItem.price)"
         
         
@@ -262,11 +263,11 @@ class SearchResultTableViewController: UITableViewController {
                   
                     publicItem.createdDate = dictionary["createdDate"] as! String
                     
-                    print(publicItem)
+                    //print(publicItem)
                    
                     self.publicItems.append(publicItem)
                     
-                    print(self.publicItems)
+                    //print(self.publicItems)
                     DispatchQueue.main.async(execute: {
                         
                         self.tableView.reloadData()

@@ -361,7 +361,7 @@ class ViewItemViewController: UIViewController, UITableViewDelegate, UITableView
         publicItemReference.updateChildValues(["itemPrice": itemPrice])
         publicItemReference.updateChildValues(["createdDate": createdDate])
             
-        publicItemReference.updateChildValues(["userId": uid])
+        publicItemReference.updateChildValues(["userId": uid!])
             
         let date = Foundation.Date()
         let updatedDate = date.dateToString()
