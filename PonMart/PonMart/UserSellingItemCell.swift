@@ -131,24 +131,47 @@ class UserSellingItemCell: UITableViewCell {
             
             
             //timeLabel.text = message?.timestamp
+            if let profileUrl = userItem?.itemImageUrl
+            {
+                let url = NSURL(string: (profileUrl as? String)!)
+                
+                URLSession.shared.dataTask(with: url as! URL, completionHandler: {
+                    
+                    (data, response, error) in
+                    
+                    // download hit an error so lets return out
+                    if error != nil
+                    {
+                        print(error)
+                        return
+                    }
+                    
+                    DispatchQueue.main.async(execute: {
+                        
+                        self.itemImageView.image = UIImage(data: data!)
+                        
+                    })
+                    
+                }).resume()
+            }
 
         }
     }
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        textLabel?.frame = CGRect(x: 64, y: textLabel!.frame.origin.y - 1, width: textLabel!.frame.width, height: textLabel!.frame.height)
+        textLabel?.frame = CGRect(x: 90, y: textLabel!.frame.origin.y - 1, width: textLabel!.frame.width, height: textLabel!.frame.height)
         
         detailTextLabel?.frame = CGRect(x: 64, y: detailTextLabel!.frame.origin.y + 2, width: detailTextLabel!.frame.width, height: detailTextLabel!.frame.height)
         
     }
     
-    let profileImageView: UIImageView = {
+    let itemImageView: UIImageView = {
         
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.layer.cornerRadius = 24
-        imageView.layer.masksToBounds = true
+        //imageView.layer.cornerRadius = 24
+        //imageView.layer.masksToBounds = true
         imageView.contentMode = .scaleToFill
         return imageView
     }()
@@ -177,13 +200,13 @@ class UserSellingItemCell: UITableViewCell {
         super.init(style: .subtitle, reuseIdentifier: reuseIdentifier)
         
         // Configure the view for the selected state
-        addSubview(profileImageView)
+        addSubview(itemImageView)
         addSubview(timeLabel)
         
-        profileImageView.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 8).isActive = true
-        profileImageView.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
-        profileImageView.widthAnchor.constraint(equalToConstant: 48).isActive = true
-        profileImageView.heightAnchor.constraint(equalToConstant: 48).isActive = true
+        itemImageView.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 20).isActive = true
+        itemImageView.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
+        itemImageView.widthAnchor.constraint(equalToConstant: 60).isActive = true
+        itemImageView.heightAnchor.constraint(equalToConstant: 48).isActive = true
         
         // need x, y, width, height, anchors
         timeLabel.rightAnchor.constraint(equalTo: self.rightAnchor).isActive = true
