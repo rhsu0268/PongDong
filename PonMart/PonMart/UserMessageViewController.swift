@@ -18,8 +18,8 @@ class UserMessageViewController: UIViewController, UITableViewDelegate, UITableV
     
     var users: [User] = []
     
-    var messages = [Message]()
-    var messagesDictionary = [String : Message]()
+    var userItems = [UserItem]()
+    
     
     let cellId = "cellId"
 
@@ -31,8 +31,7 @@ class UserMessageViewController: UIViewController, UITableViewDelegate, UITableV
         //fetchChatUsers()
         
         tableView.register(UserSellingItemCell.self, forCellReuseIdentifier: cellId)
-        //addMessage()
-        groupMessage()
+        fetchUserItems()
     }
 
     override func didReceiveMemoryWarning() {
@@ -57,7 +56,7 @@ class UserMessageViewController: UIViewController, UITableViewDelegate, UITableV
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.messages.count
+        return self.userItems.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -76,9 +75,9 @@ class UserMessageViewController: UIViewController, UITableViewDelegate, UITableV
         }
         */
         let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! UserSellingItemCell
-        let message = messages[indexPath.row]
+        let userItem = userItems[indexPath.row]
         
-        cell.message = message
+        cell.userItem = userItem
         
         return cell
     }
@@ -93,64 +92,47 @@ class UserMessageViewController: UIViewController, UITableViewDelegate, UITableV
         
     }
     
-    func fetchChatUsers()
+    func fetchUserItems()
     {
         let uid = FIRAuth.auth()?.currentUser?.uid
-        FIRDatabase.database().reference().child("users").observe(.childAdded, with: {
+        //let fromId = message?.fromId
+        //let toId = message?.toId
+        
+        
+        // get the user's items
+        FIRDatabase.database().reference().child("userItems").child(uid!).observe(.childAdded, with: {
             (snapshot) in
-            
-            print("---snapshot---")
             print(snapshot.key)
-            print("--- ---")
             if let dictionary = snapshot.value as? [String : AnyObject]
             {
+                print(dictionary)
                 
+                let userItem = UserItem()
                 
-                let user = User()
+                // crashes if the key does not match those in firebase
+                userItem.itemName = dictionary["itemName"] as! String
+                userItem.itemDescription = dictionary["itemDescription"] as! String
+                userItem.itemCategory = dictionary["itemCategory"] as! String
+                userItem.itemCondition = dictionary["itemCondition"] as! String
+                userItem.itemPrice = Double(dictionary["itemPrice"] as! String)!
+                userItem.itemImageUrl = dictionary["itemImageURL"] as! String
+                userItem.createdDate = dictionary["createdDate"] as! String
+                userItem.updatedDate = dictionary["updatedDate"] as! String
+                userItem.itemId = snapshot.key
+                userItem.publicOrPrivate = dictionary["publicOrPrivate"] as! BooleanLiteralType
                 //publicItem.userId = dictionary["userId"] as! String
+                //publicItem.createdDate = dictionary["createdDate"] as! String
                 
-                //if uid != publicItem.userId
-                //{
-                    
-                    // crashes if the key does not match those in firebase
-                    user.userEmail = dictionary["email"] as! String
+                print(userItem)
                 
+                self.userItems.append(userItem)
                 
-                    // get the image if it exists
-                    if let image = dictionary["userImage"] as? String
-                    {
-                        user.userImage = image
-                    }
-                    else
-                    {
-                        user.userImage = "nil"
-                    }
-                    user.toId = snapshot.key
-                    //publicItem.itemDescription = dictionary["itemDescription"] as! String
-                    //publicItem.type = dictionary["itemType"] as! String
-                    //publicItem.condition = dictionary["itemCondition"] as! String
-                    //publicItem.price = Double(dictionary["itemPrice"] as! String)!
-                    //publicItem.itemImageUrl = dictionary["itemImageUrl"] as! String
-                    
-                    //publicItem.createdDate = dictionary["createdDate"] as! String
-                    
-                    //print(publicItem)
-                    
-                    self.users.append(user)
-                    
-                    //print(self.publicItems)
-                    DispatchQueue.main.async(execute: {
-                        
-                        self.tableView.reloadData()
-                    })
-                }
-                
-            //}
+                //self.textLabel?.text = userItem.itemName
+            }
             
-            print(snapshot)
+            //print(snapshot)
             
         }, withCancel: nil)
-
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -170,95 +152,13 @@ class UserMessageViewController: UIViewController, UITableViewDelegate, UITableV
             
            
             //print(items[itemIndex!])
-            chatMessageViewControler.message = messages[userIndex!]
+            //chatMessageViewControler.message = userItems[userIndex!]
             
         }
 
     }
     
-    func groupMessage()
-    {
-        let messageRef = FIRDatabase.database().reference().child("messages")
-        messageRef.observe(.childAdded, with: {
-            (snapshot) in
-            
-            //print(snapshot)
-            if let dictionary = snapshot.value as? [String : AnyObject]
-            {
-                let message = Message()
-                message.toId = dictionary["toId"] as! String?
-                message.text = dictionary["text"] as! String?
-                message.timestamp = dictionary["timestamp"] as! String?
-                message.fromId = dictionary["fromId"] as! String?
-                
-                //print(message.text)
-                let uid = FIRAuth.auth()?.currentUser?.uid
-                print("---uid---")
-                print(uid)
-                print("--- ---")
-                let toId = message.toId
-                print("---toId---")
-                print(toId)
-                print("--- ---")
-                let fromId = message.fromId
-                print("---fromId---")
-                print(fromId)
-                print("--- ---")
-                
-                
-                /*
-                if let toId = message.toId
-                {
-                    print(toId)
-                }
-                if let fromId = message.fromId
-                {
-                    print(fromId)
-                }
-                */
-                
-                // ensure that the user is a sender or reciever
-                if (toId! == uid! || fromId! == uid!)
-                {
-                    
-                
-                
-                    // only show the messages from other people
-                    if fromId! != uid
-                    {
-                        //print("---Messages---")
-                        //print(self.messages)
-                        //print("--- ---")
-                        self.messagesDictionary[toId!] = message
-                        self.messages = Array(self.messagesDictionary.values)
-                        self.messages.sort(by: { (message1, message2) -> Bool in
-                        
-                        
-                            let dateFormatter = DateFormatter()
-                            //dateFormatter.dateStyle = .short
-                            dateFormatter.timeStyle = .short
-                            let date1 = dateFormatter.date(from: message1.timestamp!)
-                            //print(date1?.timeIntervalSince1970)
-                            print(message2)
-                            let date2 = dateFormatter.date(from: message2.timestamp!)
-                            //print(date2?.timeIntervalSince1970)
-                            return Int((date1?.timeIntervalSince1970)!) > Int((date2?.timeIntervalSince1970)!)
-                        })
-                    }
-                }
-                
-                DispatchQueue.main.async(execute: {
-                    
-                    self.tableView.reloadData();
-                })
-                
-            }
-            
-            
-            
-        }, withCancel: nil)
-        
-    }
+
     
     func addMessage()
     {

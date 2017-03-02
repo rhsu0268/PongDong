@@ -12,7 +12,7 @@ import Firebase
 
 class UserSellingItemCell: UITableViewCell {
     
-    var message : Message?
+    var userItem : UserItem?
     {
         didSet
         {
@@ -21,10 +21,12 @@ class UserSellingItemCell: UITableViewCell {
             // check the message and make sure that you are using the right person 
             
             let uid = FIRAuth.auth()?.currentUser?.uid
-            let fromId = message?.fromId
-            let toId = message?.toId
+            //let fromId = message?.fromId
+            //let toId = message?.toId
             
+            self.textLabel?.text = userItem?.itemName
             
+            /*
             // get the user's items
             FIRDatabase.database().reference().child("userItems").child(uid!).observe(.childAdded, with: {
                 (snapshot) in
@@ -59,7 +61,7 @@ class UserSellingItemCell: UITableViewCell {
                 //print(snapshot)
                 
             }, withCancel: nil)
-            
+            */
             /*
             if uid == fromId  {
                 
@@ -154,7 +156,7 @@ class UserSellingItemCell: UITableViewCell {
     
     let timeLabel : UILabel = {
         let label = UILabel()
-        label.text = "HH:MM:SS"
+        //label.text = "HH:MM:SS"
         label.font = UIFont.systemFont(ofSize: 12)
         label.textColor = UIColor.darkGray
         
