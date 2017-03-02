@@ -152,7 +152,7 @@ class UserMessageViewController: UIViewController, UITableViewDelegate, UITableV
             
            
             //print(items[itemIndex!])
-            //chatMessageViewControler.message = userItems[userIndex!]
+            chatMessageViewControler.userItem = userItems[userIndex!]
             
         }
 

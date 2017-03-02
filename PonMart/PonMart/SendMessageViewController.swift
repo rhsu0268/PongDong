@@ -20,7 +20,7 @@ class SendMessageViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print(purchaseItem?.name)
+        //print(purchaseItem?.name)
         
         if let userId = purchaseItem?.userId
         {

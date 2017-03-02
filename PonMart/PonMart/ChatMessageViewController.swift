@@ -12,7 +12,7 @@ import Firebase
 class ChatMessageViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     //var user : User? = nil
-    var message : Message? = nil
+    var userItem : UserItem? = nil
     
     var messages = [Message]()
     //var messageDictionary = [String : Message]()
@@ -47,7 +47,7 @@ class ChatMessageViewController: UIViewController, UITableViewDelegate, UITableV
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print(user?.userEmail)
+        //print(user?.userEmail)
 
         // Do any additional setup after loading the view.
         setupInputComponents()
@@ -56,7 +56,7 @@ class ChatMessageViewController: UIViewController, UITableViewDelegate, UITableV
         
         observeMessage()
         
-        observeUserMessages()
+        //observeUserMessages()
     }
 
     override func didReceiveMemoryWarning() {
@@ -173,13 +173,13 @@ class ChatMessageViewController: UIViewController, UITableViewDelegate, UITableV
         let uid = FIRAuth.auth()?.currentUser?.uid
         let messageRef = FIRDatabase.database().reference().child("messages").childByAutoId()
         
-        let toId = message?.toId
+        //let toId = message?.toId
         let date = Foundation.Date()
         let formatedDate = date.chatDateToString()
         //let formattedDate = String(NSDate().timeIntervalSince1970)
         
         
-        let values = ["text": inputTextField.text!, "toId": toId, "fromId": uid, "timestamp": formatedDate]
+        let values = ["text": inputTextField.text!, "fromId": uid, "timestamp": formatedDate, "itemId": self.userItem?.itemId]
         //messageRef.child(uid!).updateChildValues(values)
         messageRef.updateChildValues(values) { (error, ref) in
             if error != nil
@@ -188,11 +188,12 @@ class ChatMessageViewController: UIViewController, UITableViewDelegate, UITableV
                 return
             }
             
+            /*
             let userMessagesRef = FIRDatabase.database().reference().child("user-messages").child(uid!)
             
             let messageId = messageRef.key
             userMessagesRef.updateChildValues([messageId: 1])
-            
+            */
             
             
         }
@@ -209,15 +210,20 @@ class ChatMessageViewController: UIViewController, UITableViewDelegate, UITableV
             //print(snapshot)
             if let dictionary = snapshot.value as? [String : AnyObject]
             {
-                let message = Message()
-                message.toId = dictionary["toId"] as! String?
-                message.text = dictionary["text"] as! String?
-                message.fromId = dictionary["fromId"] as! String?
-                message.timestamp = dictionary["timestamp"] as! String?
+                let itemId = dictionary["itemId"] as! String?
+                print(itemId)
+                print(self.userItem?.itemId)
+                if (itemId! == self.userItem?.itemId)
+                {
+                    let message = Message()
+                    //message.toId = dictionary["toId"] as! String?
+                    message.text = dictionary["text"] as! String?
+                    message.fromId = dictionary["fromId"] as! String?
+                    message.timestamp = dictionary["timestamp"] as! String?
                 
-                //print(message.text)
-                self.messages.append(message)
-                
+                    //print(message.text)
+                    self.messages.append(message)
+                }
                 
                 DispatchQueue.main.async(execute: {
                     
@@ -232,30 +238,6 @@ class ChatMessageViewController: UIViewController, UITableViewDelegate, UITableV
         
     }
     
-    func observeUserMessages()
-    {
-        guard let uid = FIRAuth.auth()?.currentUser?.uid else
-        {
-            return
-        }
-        
-        let ref = FIRDatabase.database().reference().child("user-messages").child(uid)
-        ref.observe(.childAdded, with: { (snapshot) in
-            
-            print(snapshot)
-            
-            let messageId = snapshot.key
-            let messageReference = FIRDatabase.database().reference().child("messages").child(messageId)
-            
-            messageReference.observeSingleEvent(of: .value, with: { (snapshot) in
-                print(snapshot)
-                
-            }, withCancel: nil)
-            
-        }, withCancel: nil)
-    }
-
-
-    
+       
     
 }
