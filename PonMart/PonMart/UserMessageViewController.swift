@@ -30,7 +30,7 @@ class UserMessageViewController: UIViewController, UITableViewDelegate, UITableV
         // Do any additional setup after loading the view.
         //fetchChatUsers()
         
-        tableView.register(ChatUserCell.self, forCellReuseIdentifier: cellId)
+        tableView.register(UserSellingItemCell.self, forCellReuseIdentifier: cellId)
         //addMessage()
         groupMessage()
     }
@@ -75,7 +75,7 @@ class UserMessageViewController: UIViewController, UITableViewDelegate, UITableV
             cell.userImage.image = UIImage(named: "user-profile-placeholder")
         }
         */
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! ChatUserCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! UserSellingItemCell
         let message = messages[indexPath.row]
         
         cell.message = message

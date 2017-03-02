@@ -10,7 +10,7 @@ import UIKit
 import Foundation
 import Firebase
 
-class ChatUserCell: UITableViewCell {
+class UserSellingItemCell: UITableViewCell {
     
     var message : Message?
     {
@@ -25,7 +25,42 @@ class ChatUserCell: UITableViewCell {
             let toId = message?.toId
             
             
+            // get the user's items
+            FIRDatabase.database().reference().child("userItems").child(uid!).observe(.childAdded, with: {
+                (snapshot) in
+                print(snapshot.key)
+                if let dictionary = snapshot.value as? [String : AnyObject]
+                {
+                    print(dictionary)
+                    
+                    let userItem = UserItem()
+                    
+                    // crashes if the key does not match those in firebase
+                    userItem.itemName = dictionary["itemName"] as! String
+                    userItem.itemDescription = dictionary["itemDescription"] as! String
+                    userItem.itemCategory = dictionary["itemCategory"] as! String
+                    userItem.itemCondition = dictionary["itemCondition"] as! String
+                    userItem.itemPrice = Double(dictionary["itemPrice"] as! String)!
+                    userItem.itemImageUrl = dictionary["itemImageURL"] as! String
+                    userItem.createdDate = dictionary["createdDate"] as! String
+                    userItem.updatedDate = dictionary["updatedDate"] as! String
+                    userItem.itemId = snapshot.key
+                    userItem.publicOrPrivate = dictionary["publicOrPrivate"] as! BooleanLiteralType
+                    //publicItem.userId = dictionary["userId"] as! String
+                    //publicItem.createdDate = dictionary["createdDate"] as! String
+                    
+                    print(userItem)
+                    
+                    //self.userItems.append(userItem)
+                    
+                    self.textLabel?.text = userItem.itemName
+                }
+                
+                //print(snapshot)
+                
+            }, withCancel: nil)
             
+            /*
             if uid == fromId  {
                 
                 
@@ -89,10 +124,11 @@ class ChatUserCell: UITableViewCell {
                 }, withCancel: nil)
 
             }
-            detailTextLabel?.text = message?.text
+             */
+            //detailTextLabel?.text = message?.text
             
             
-            timeLabel.text = message?.timestamp
+            //timeLabel.text = message?.timestamp
 
         }
     }
