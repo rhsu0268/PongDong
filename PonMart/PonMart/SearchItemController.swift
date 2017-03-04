@@ -12,7 +12,7 @@ import Firebase
 
 class SearchItemController: UIViewController {
     
-    
+    var publicItems = [PublicItem]()
     
     @IBOutlet var textbookOption: UIButton!
     @IBOutlet var furnitureOption: UIButton!
@@ -20,11 +20,16 @@ class SearchItemController: UIViewController {
     @IBOutlet var newOption: UIButton!
     @IBOutlet var usedOption: UIButton!
     
+    var itemCategorySelected : String = ""
+    var itemConditionSelected : String = ""
+    
+    
     @IBAction func textbookOptionClicked(_ sender: UIButton) {
         
         print("TextBook selected!")
         textbookOption.setImage(UIImage(named: "textbook-button-selected.png"), for: .normal)
         furnitureOption.setImage(UIImage(named: "furniture-button-unselected.png"), for: .normal)
+        itemCategorySelected = "textbook"
     }
     
     
@@ -32,6 +37,7 @@ class SearchItemController: UIViewController {
         
         furnitureOption.setImage(UIImage(named: "furniture-button-selected.png"), for: .normal)
         textbookOption.setImage(UIImage(named: "textbook-button-unselected.png"), for: .normal)
+        itemCategorySelected = "furniture"
         
     }
     
@@ -39,6 +45,7 @@ class SearchItemController: UIViewController {
         
         newOption.setImage(UIImage(named: "new-button-selected.png"), for: .normal)
         usedOption.setImage(UIImage(named: "used-button-unselected.png"), for: .normal)
+        itemConditionSelected = "new"
     }
     
     
@@ -46,6 +53,7 @@ class SearchItemController: UIViewController {
         
         usedOption.setImage(UIImage(named: "used-button-selected.png"), for: .normal)
         newOption.setImage(UIImage(named: "new-button-unselected.png"), for: .normal)
+        itemConditionSelected = "used"
     }
     
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
@@ -62,7 +70,7 @@ class SearchItemController: UIViewController {
         
         //getItems()
         //var publicItems = PublicItems()
-        
+        fetchPublicItems()
         
         
     }
@@ -78,7 +86,8 @@ class SearchItemController: UIViewController {
         
         //print(sampleItemData.items)
         
-       
+        //getSearchedItems()
+        fetchPublicItems()
         
         
     }
@@ -96,13 +105,13 @@ class SearchItemController: UIViewController {
             let navigationController = segue.destination as! UINavigationController
             let searchResultTableViewController = navigationController.topViewController as! SearchResultTableViewController
             
-            let searchResults = fetchData()
+            //let searchResults = fetchData()
             
             //print("--- Passing data---")
             //print(searchResults)
             //print("--- ---")
         
-            searchResultTableViewController.items = searchResults
+            searchResultTableViewController.publicItems = publicItems
         }
     }
 
@@ -190,22 +199,55 @@ class SearchItemController: UIViewController {
         // let users = [User]()
         FIRDatabase.database().reference().child("users").observe(.childAdded, with: { (snapshot) in
             
-            // if you use this setter, your app will crash if your class properties don't exactly match up with the firebase dictionary keys
-            /*
-            let user = User()
-            if let dictionary = snapshot.value as? [String : AnyObject]
-            
-            {
-             
-                user.setValuesForKeysWithDictionary(dictionary)
-                users.append(user
-             
-                // safer way
-                user.name = dictionary["name"]
-                print(user.email)
-            }
-            */
             print("User found")
+            print(snapshot)
+            
+        }, withCancel: nil)
+    }
+    
+    func fetchPublicItems()
+    {
+        let uid = FIRAuth.auth()?.currentUser?.uid
+        FIRDatabase.database().reference().child("publicItems").observe(.childAdded, with: {
+            (snapshot) in
+            
+            
+            if let dictionary = snapshot.value as? [String : AnyObject]
+            {
+                
+                
+                let publicItem = PublicItem()
+                publicItem.userId = dictionary["userId"] as! String
+                
+                if uid != publicItem.userId
+                {
+                    
+                    // crashes if the key does not match those in firebase
+                    publicItem.name = dictionary["itemName"] as! String
+                    publicItem.itemDescription = dictionary["itemDescription"] as! String
+                    publicItem.type = dictionary["itemType"] as! String
+                    publicItem.condition = dictionary["itemCondition"] as! String
+                    publicItem.price = Double(dictionary["itemPrice"] as! String)!
+                    publicItem.itemImageUrl = dictionary["itemImageUrl"] as! String
+                    
+                    publicItem.createdDate = dictionary["createdDate"] as! String
+                    publicItem.userItemId = snapshot.key
+                    
+                    //print(publicItem)
+                    
+                    self.publicItems.append(publicItem)
+                    
+                    //print(self.publicItems)
+                    /*
+                    DispatchQueue.main.async(execute: {
+                        
+                        self.tableView.reloadData()
+                    })
+                    */
+                }
+                
+            }
+            
             print(snapshot)
             
         }, withCancel: nil)

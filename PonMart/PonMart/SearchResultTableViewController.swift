@@ -52,14 +52,16 @@ class SearchResultTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //print(items)
+        print("---Public Items---")
+        print(publicItems)
+        print("------")
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
-        fetchPublicItems()
+        //fetchPublicItems()
     }
 
     override func didReceiveMemoryWarning() {
@@ -236,52 +238,7 @@ class SearchResultTableViewController: UITableViewController {
      */
     
     
-    func fetchPublicItems()
-    {
-        let uid = FIRAuth.auth()?.currentUser?.uid
-        FIRDatabase.database().reference().child("publicItems").observe(.childAdded, with: {
-            (snapshot) in
-            
-            
-            if let dictionary = snapshot.value as? [String : AnyObject]
-            {
-                
-                
-                let publicItem = PublicItem()
-                publicItem.userId = dictionary["userId"] as! String
-                
-                if uid != publicItem.userId
-                {
-                
-                    // crashes if the key does not match those in firebase
-                    publicItem.name = dictionary["itemName"] as! String
-                    publicItem.itemDescription = dictionary["itemDescription"] as! String
-                    publicItem.type = dictionary["itemType"] as! String
-                    publicItem.condition = dictionary["itemCondition"] as! String
-                    publicItem.price = Double(dictionary["itemPrice"] as! String)!
-                    publicItem.itemImageUrl = dictionary["itemImageUrl"] as! String
-                  
-                    publicItem.createdDate = dictionary["createdDate"] as! String
-                    publicItem.userItemId = snapshot.key 
-                    
-                    //print(publicItem)
-                   
-                    self.publicItems.append(publicItem)
-                    
-                    //print(self.publicItems)
-                    DispatchQueue.main.async(execute: {
-                        
-                        self.tableView.reloadData()
-                    })
-                }
-                
-            }
         
-            print(snapshot)
-                
-        }, withCancel: nil)
-    }
-    
     
     
     
