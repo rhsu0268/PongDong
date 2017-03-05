@@ -348,17 +348,28 @@
                                     <segue destination="mZh-ox-faG" kind="show" identifier="SearchItemViewToResultsTableView" id="oWT-Mv-U2f"/>
                                 </connections>
                             </button>
-                            <searchBar contentMode="redraw" fixedFrame="YES" placeholder="Search for a specific item..." translatesAutoresizingMaskIntoConstraints="NO" id="iCY-b2-iLl">
+                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="lB2-sj-cYU">
                                 <rect key="frame" x="0.0" y="46" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </searchBar>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="7Vk-dL-sZA">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                        <subviews>
+                                            <searchBar contentMode="redraw" ambiguous="YES" placeholder="Search for a specific item..." translatesAutoresizingMaskIntoConstraints="NO" id="iCY-b2-iLl">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </searchBar>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
                         <outlet property="furnitureOption" destination="TYn-l8-02r" id="CR0-8D-Tpi"/>
                         <outlet property="newOption" destination="0tt-3Y-ORS" id="zTr-bm-4fS"/>
+                        <outlet property="searchTextBox" destination="iCY-b2-iLl" id="efe-Aj-Ln8"/>
                         <outlet property="textbookOption" destination="doZ-Gy-yxF" id="vjd-uk-GIX"/>
                         <outlet property="usedOption" destination="Yym-or-zh2" id="PkP-xO-08C"/>
                     </connections>

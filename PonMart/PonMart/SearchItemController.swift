@@ -24,6 +24,11 @@ class SearchItemController: UIViewController {
     var itemConditionSelected : String = ""
     
     
+    @IBOutlet var searchTextBox: UISearchBar!
+    
+    var searchText : String = ""
+    
+    
     @IBAction func textbookOptionClicked(_ sender: UIButton) {
         
         print("TextBook selected!")
@@ -85,6 +90,7 @@ class SearchItemController: UIViewController {
     @IBAction func searchButtonClicked(_ sender: UIButton) {
         
         print("searchButton clicked!")
+        
         
         //print(sampleItemData.items)
         
@@ -219,64 +225,109 @@ class SearchItemController: UIViewController {
         print(itemCondition)
         print("GETTING RESULT")
         
+        var searchTextItems = [PublicItem]()
+        
+        let searchInput = searchTextBox.text!
+        
+        
+        
+        
+        
+        
         
         var resultItems = [PublicItem]()
         
+        var searchBuffer = [PublicItem]()
         
+        // if search text is present, find all the items that match
         
-        // handle the case that we have itemCategory only
-        if !itemCategory.isEmpty && itemCondition.isEmpty
+        if !searchInput.isEmpty
         {
             for item in publicItems
+            {
+                if item.name == searchInput
+                {
+                    searchBuffer.append(item)
+                }
+            }
+            
+            for item in searchBuffer
+            {
+                if !itemCategory.isEmpty && itemCondition.isEmpty
+                {
+                    if item.type == itemCategory
+                    {
+                        print(item.name)
+                        resultItems.append(item)
+                    }
+                    
+                }
+                else if itemCategory.isEmpty && !itemCondition.isEmpty
+                {
+                    if item.condition == itemCondition
+                    {
+                        print(item.name)
+                        resultItems.append(item)
+                    }
+                    
+                }
+                else if !itemCategory.isEmpty && !itemCondition.isEmpty
+                {
+                    if item.type == itemCategory && item.condition == itemCondition
+                    {
+                        print(item.name)
+                        resultItems.append(item)
+                    }
+                    
+                }
+                else
+                {
+                    return searchBuffer
+                }
+            }
+            return resultItems
+        }
+            
+            
+            
+        for item in publicItems
+        {
+            if !itemCategory.isEmpty && itemCondition.isEmpty
             {
                 if item.type == itemCategory
                 {
                     print(item.name)
                     resultItems.append(item)
                 }
-                
-            }
-            return resultItems
 
-        }
-        
-        // handle the case that we have itemCondition 
-        else if itemCategory.isEmpty && !itemCondition.isEmpty
-        {
-            for item in publicItems
+            }
+            else if itemCategory.isEmpty && !itemCondition.isEmpty
             {
                 if item.condition == itemCondition
                 {
                     print(item.name)
                     resultItems.append(item)
                 }
-                
+
             }
-            return resultItems
-            
-        }
-        
-        // handle the case that we have both
-        else if !itemCategory.isEmpty && !itemCondition.isEmpty
-        {
-            for item in publicItems
+            else if !itemCategory.isEmpty && !itemCondition.isEmpty
             {
                 if item.type == itemCategory && item.condition == itemCondition
                 {
                     print(item.name)
                     resultItems.append(item)
                 }
-                
+
             }
-            return resultItems
+            else
+            {
+                return self.publicItems
+            }
+            //return resultItems
         }
-        // handle the case that we have neither
-        else
-        {
-            
-            return self.publicItems
-        }
+
         
+        return resultItems
         print("--- ---")
     }
 
