@@ -245,7 +245,7 @@ class SearchItemController: UIViewController {
         {
             for item in publicItems
             {
-                if item.type == itemCondition
+                if item.condition == itemCondition
                 {
                     print(item.name)
                     resultItems.append(item)
