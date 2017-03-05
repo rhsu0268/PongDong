@@ -354,25 +354,35 @@ class ViewItemViewController: UIViewController, UITableViewDelegate, UITableView
 
         let publicItemReference = FIRDatabase.database().reference().child("publicItems").child(itemId)
         
-        publicItemReference.updateChildValues(["itemName": itemName])
-        publicItemReference.updateChildValues(["itemDescription": itemDescription])
-        publicItemReference.updateChildValues(["itemType": itemType])
-        publicItemReference.updateChildValues(["itemCondition": itemCondition])
-        publicItemReference.updateChildValues(["itemPrice": itemPrice])
-        publicItemReference.updateChildValues(["createdDate": createdDate])
+        //publicItemReference.updateChildValues(["itemName": itemName])
+        //publicItemReference.updateChildValues(["itemDescription": itemDescription])
+        //publicItemReference.updateChildValues(["itemType": itemType])
+        //publicItemReference.updateChildValues(["itemCondition": itemCondition])
+        //publicItemReference.updateChildValues(["itemPrice": itemPrice])
+        //publicItemReference.updateChildValues(["createdDate": createdDate])
             
-        publicItemReference.updateChildValues(["userId": uid!])
+        //publicItemReference.updateChildValues(["userId": uid!])
             
         let date = Foundation.Date()
         let updatedDate = date.dateToString()
         print("Date")
         print(updatedDate)
             
-        publicItemReference.updateChildValues(["updatedDate": updatedDate])
-        publicItemReference.updateChildValues(["itemImageUrl": itemImageUrl])
-        publicItemReference.updateChildValues(["userItemId": itemId])
+        //publicItemReference.updateChildValues(["updatedDate": updatedDate])
+        //publicItemReference.updateChildValues(["itemImageUrl": itemImageUrl])
+        //publicItemReference.updateChildValues(["userItemId": itemId])
         
         
+        let values = ["itemName": itemName, "itemDescription": itemDescription, "itemType": itemType, "itemCondition": itemCondition, "itemPrice": itemPrice, "createdDate": createdDate, "userId": uid!, "updatedDate": updatedDate, "itemImageUrl": itemImageUrl, "userItemId": itemId ]
+        
+        publicItemReference.updateChildValues(values) { (error, ref) in
+            if error != nil
+            {
+                print(error)
+                return
+            }
+        }
+
     }
     
     func displayAlertMessage(userMessage: String)

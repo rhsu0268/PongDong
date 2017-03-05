@@ -73,9 +73,9 @@ class SearchItemController: UIViewController {
         
         checkIfUserIsLoggedIn()
         
-        //getItems()
+       
         //var publicItems = PublicItems()
-        fetchPublicItems()
+        //fetchPublicItems()
         
         
         
@@ -160,30 +160,25 @@ class SearchItemController: UIViewController {
         }
     }
     
+    
     func getItems()
     {
-        // let users = [User]()
-        FIRDatabase.database().reference().child("users").observe(.childAdded, with: { (snapshot) in
-            
-            print("User found")
-            print(snapshot)
-            
-        }, withCancel: nil)
-    }
-    
-    func fetchPublicItems()
-    {
         let uid = FIRAuth.auth()?.currentUser?.uid
-        FIRDatabase.database().reference().child("publicItems").observe(.childAdded, with: {
+        let publicItemsRef = FIRDatabase.database().reference().child("publicItems")
+        publicItemsRef.observe(.childAdded, with: {
             (snapshot) in
             
             
+            print("SNAPSHOT")
+            print(snapshot)
             if let dictionary = snapshot.value as? [String : AnyObject]
             {
                 
                 
                 let publicItem = PublicItem()
+                
                 publicItem.userId = dictionary["userId"] as! String
+                print(publicItem.userId)
                 
                 if uid != publicItem.userId
                 {
@@ -198,6 +193,8 @@ class SearchItemController: UIViewController {
                     
                     publicItem.createdDate = dictionary["createdDate"] as! String
                     publicItem.userItemId = snapshot.key
+                    
+                    
                     
                     //print(publicItem)
                     
@@ -329,6 +326,12 @@ class SearchItemController: UIViewController {
         
         return resultItems
         print("--- ---")
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated) // No need for semicolon
+        
+         getItems()
     }
 
 }
