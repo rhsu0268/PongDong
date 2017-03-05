@@ -280,7 +280,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="8Ag-AW-fhi">
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="15" minValue="0.0" maxValue="30" translatesAutoresizingMaskIntoConstraints="NO" id="8Ag-AW-fhi">
                                 <rect key="frame" x="14" y="425" width="347" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="minimumTrackTintColor" red="0.015686274510000001" green="0.43137254899999999" blue="0.01176470588" alpha="1" colorSpace="calibratedRGB"/>
@@ -292,7 +292,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="$20" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eah-bS-qAw">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="$15" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eah-bS-qAw">
                                 <rect key="frame" x="170" y="400" width="27" height="17"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Symbol" family="Symbol" pointSize="15"/>
@@ -365,7 +365,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kwq-Vm-BiL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2289" y="-31"/>
+            <point key="canvasLocation" x="2288.8000000000002" y="-31.03448275862069"/>
         </scene>
         <!--User Profile View Controller-->
         <scene sceneID="2Hr-Es-5gv">
@@ -1787,11 +1787,11 @@
         <image name="used-label-unselected" width="89" height="40"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="VhL-Yy-arc"/>
         <segue reference="atc-AP-sJL"/>
         <segue reference="0K2-We-KYH"/>
-        <segue reference="vnC-iW-7vP"/>
+        <segue reference="ute-SD-HoJ"/>
         <segue reference="KNf-fj-Y4G"/>
-        <segue reference="VhL-Yy-arc"/>
         <segue reference="0Pd-Ix-xbo"/>
     </inferredMetricsTieBreakers>
 </document>

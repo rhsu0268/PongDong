@@ -221,24 +221,62 @@ class SearchItemController: UIViewController {
         
         
         var resultItems = [PublicItem]()
-        // make sure we have a value
-        if !itemCategory.isEmpty || !itemCondition.isEmpty
+        
+        
+        
+        // handle the case that we have itemCategory only
+        if !itemCategory.isEmpty && itemCondition.isEmpty
         {
             for item in publicItems
             {
-                if item.type == itemCategory || item.condition == itemCondition
+                if item.type == itemCategory
                 {
                     print(item.name)
                     resultItems.append(item)
                 }
                 
             }
-            
-            
-            
+            return resultItems
 
         }
-        return resultItems
+        
+        // handle the case that we have itemCondition 
+        else if itemCategory.isEmpty && !itemCondition.isEmpty
+        {
+            for item in publicItems
+            {
+                if item.type == itemCondition
+                {
+                    print(item.name)
+                    resultItems.append(item)
+                }
+                
+            }
+            return resultItems
+            
+        }
+        
+        // handle the case that we have both
+        else if !itemCategory.isEmpty && !itemCondition.isEmpty
+        {
+            for item in publicItems
+            {
+                if item.type == itemCategory && item.condition == itemCondition
+                {
+                    print(item.name)
+                    resultItems.append(item)
+                }
+                
+            }
+            return resultItems
+        }
+        // handle the case that we have neither
+        else
+        {
+            
+            return self.publicItems
+        }
+        
         print("--- ---")
     }
 
