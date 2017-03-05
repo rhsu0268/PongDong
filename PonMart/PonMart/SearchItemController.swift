@@ -233,7 +233,7 @@ class SearchItemController: UIViewController {
                 }
                 
             }
-            r
+            
             
             
 
