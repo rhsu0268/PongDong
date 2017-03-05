@@ -73,6 +73,8 @@ class SearchItemController: UIViewController {
         fetchPublicItems()
         
         
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -87,7 +89,7 @@ class SearchItemController: UIViewController {
         //print(sampleItemData.items)
         
         //getSearchedItems()
-        fetchPublicItems()
+        getSearchResults(itemCategory: itemCategorySelected, itemCondition: itemConditionSelected)
         
         
     }
@@ -251,6 +253,19 @@ class SearchItemController: UIViewController {
             print(snapshot)
             
         }, withCancel: nil)
+    }
+    
+    func getSearchResults(itemCategory : String, itemCondition : String)
+    {
+        print(itemCategory)
+        print(itemCondition)
+        print("GETTING RESULT")
+        for item in publicItems
+        {
+            print(item.name)
+          
+        }
+        print("--- ---")
     }
 
 }
