@@ -29,7 +29,7 @@ class SearchItemController: UIViewController {
         print("TextBook selected!")
         textbookOption.setImage(UIImage(named: "textbook-button-selected.png"), for: .normal)
         furnitureOption.setImage(UIImage(named: "furniture-button-unselected.png"), for: .normal)
-        itemCategorySelected = "textbook"
+        itemCategorySelected = "Textbook"
     }
     
     
@@ -37,7 +37,7 @@ class SearchItemController: UIViewController {
         
         furnitureOption.setImage(UIImage(named: "furniture-button-selected.png"), for: .normal)
         textbookOption.setImage(UIImage(named: "textbook-button-unselected.png"), for: .normal)
-        itemCategorySelected = "furniture"
+        itemCategorySelected = "Furniture"
         
     }
     
@@ -45,7 +45,7 @@ class SearchItemController: UIViewController {
         
         newOption.setImage(UIImage(named: "new-button-selected.png"), for: .normal)
         usedOption.setImage(UIImage(named: "used-button-unselected.png"), for: .normal)
-        itemConditionSelected = "new"
+        itemConditionSelected = "New"
     }
     
     
@@ -53,7 +53,7 @@ class SearchItemController: UIViewController {
         
         usedOption.setImage(UIImage(named: "used-button-selected.png"), for: .normal)
         newOption.setImage(UIImage(named: "new-button-unselected.png"), for: .normal)
-        itemConditionSelected = "used"
+        itemConditionSelected = "Used"
     }
     
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
@@ -89,7 +89,7 @@ class SearchItemController: UIViewController {
         //print(sampleItemData.items)
         
         //getSearchedItems()
-        getSearchResults(itemCategory: itemCategorySelected, itemCondition: itemConditionSelected)
+        //getSearchResults(itemCategory: itemCategorySelected, itemCondition: itemConditionSelected)
         
         
     }
@@ -113,55 +113,13 @@ class SearchItemController: UIViewController {
             //print(searchResults)
             //print("--- ---")
         
-            searchResultTableViewController.publicItems = publicItems
+            searchResultTableViewController.publicItems = getSearchResults(itemCategory: itemCategorySelected, itemCondition: itemConditionSelected)
         }
     }
 
     
     
-    func fetchData() -> [Any]
-    {
-        // Do any additional setup after loading the view.
-        let context = appDelegate.persistentContainer.viewContext
-        
-        
-        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Items")
-        
-        request.returnsObjectsAsFaults = false
-        
-        do
-        {
-            let results = try context.fetch(request)
-            if results.count > 0
-            {
-                sampleItemData.storedItems = results
-                //print(sampleItemData.storedItems)
-                /*
-                 for result in results as! [NSManagedObject]
-                 {
-                 print(result)
-                 if let itemName = result.value(forKey: "itemName") as? String
-                 {
-                 print(itemName)
-                 }
-                 
-                 if let itemPrice = result.value(forKey: "itemPrice") as? Double
-                 {
-                 print(itemPrice)
-                 }
-                 }
-                 */
-            }
-            
-        }
-        catch
-        {
-            // process error
-        }
-        return sampleItemData.storedItems
-
-    }
-    /*
+       /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -255,16 +213,32 @@ class SearchItemController: UIViewController {
         }, withCancel: nil)
     }
     
-    func getSearchResults(itemCategory : String, itemCondition : String)
+    func getSearchResults(itemCategory : String, itemCondition : String) -> [PublicItem]
     {
         print(itemCategory)
         print(itemCondition)
         print("GETTING RESULT")
-        for item in publicItems
+        
+        
+        var resultItems = [PublicItem]()
+        // make sure we have a value
+        if !itemCategory.isEmpty || !itemCondition.isEmpty
         {
-            print(item.name)
-          
+            for item in publicItems
+            {
+                if item.type == itemCategory || item.condition == itemCondition
+                {
+                    print(item.name)
+                    resultItems.append(item)
+                }
+                
+            }
+            r
+            
+            
+
         }
+        return resultItems
         print("--- ---")
     }
 
