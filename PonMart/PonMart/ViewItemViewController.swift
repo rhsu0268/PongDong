@@ -168,6 +168,10 @@ class ViewItemViewController: UIViewController, UITableViewDelegate, UITableView
         let edit = UITableViewRowAction(style: .normal, title: "Edit")
         {
             action, index in
+            
+            
+           
+            self.performSegue(withIdentifier: "ViewItemToEditItemView", sender: self)
             print("Edit button tapped")
         }
         edit.backgroundColor = .orange
