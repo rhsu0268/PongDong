@@ -1492,7 +1492,6 @@
                                             <outlet property="itemPrice" destination="c5D-Zu-76O" id="k2R-LV-uJh"/>
                                             <outlet property="itemStatus" destination="Qqu-V4-mB5" id="WMS-NX-5ss"/>
                                             <outlet property="itemType" destination="fng-uq-blz" id="739-UX-kq3"/>
-                                            <segue destination="eF2-Bl-BWS" kind="show" identifier="ViewItemToEditItemView" id="8zo-pQ-rjQ"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -1507,6 +1506,7 @@
                     <connections>
                         <outlet property="tableView" destination="CJb-tg-PZz" id="Qsh-HR-3Fn"/>
                         <outlet property="userProfileImage" destination="9Js-3D-Tpx" id="FMA-uV-gXD"/>
+                        <segue destination="eF2-Bl-BWS" kind="show" identifier="ViewItemViewToEditItemView" id="sWZ-5X-VXn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7OZ-gN-3J1" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1981,10 +1981,10 @@
         <image name="used-label-unselected" width="89" height="40"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="lQs-vo-Evf"/>
-        <segue reference="ute-SD-HoJ"/>
-        <segue reference="UDK-QR-hVH"/>
+        <segue reference="vnC-iW-7vP"/>
         <segue reference="0K2-We-KYH"/>
+        <segue reference="lQs-vo-Evf"/>
+        <segue reference="UDK-QR-hVH"/>
         <segue reference="VhL-Yy-arc"/>
     </inferredMetricsTieBreakers>
 </document>

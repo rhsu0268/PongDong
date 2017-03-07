@@ -171,7 +171,7 @@ class ViewItemViewController: UIViewController, UITableViewDelegate, UITableView
             
             
            
-            self.performSegue(withIdentifier: "ViewItemToEditItemView", sender: self)
+            self.performSegue(withIdentifier: "ViewItemViewToEditItemView", sender: self)
             print("Edit button tapped")
         }
         edit.backgroundColor = .orange
