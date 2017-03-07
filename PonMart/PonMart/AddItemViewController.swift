@@ -320,7 +320,7 @@ class AddItemViewController: UIViewController,  UIImagePickerControllerDelegate,
 
     }
     
-        func saveImageToItem(url: String, key: String)
+    func saveImageToItem(url: String, key: String)
     {
         // save it
         let uid = FIRAuth.auth()?.currentUser?.uid

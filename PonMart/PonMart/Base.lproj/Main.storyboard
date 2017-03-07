@@ -1957,6 +1957,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
+                        <outlet property="editButton" destination="1Bk-5u-v8e" id="mQM-lT-Yad"/>
                         <outlet property="editItemActivityIndicator" destination="WU9-LR-k61" id="kTg-rN-v9J"/>
                         <outlet property="furnitureButton" destination="dr0-TX-Wlh" id="27V-FJ-ll4"/>
                         <outlet property="itemDescription" destination="AFc-6y-3tp" id="rhL-e2-Tix"/>

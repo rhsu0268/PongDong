@@ -20,6 +20,7 @@ class UserItem
     public var updatedDate : String 
     public var publicOrPrivate : BooleanLiteralType
     public var itemId : String
+    public var userItemId : String
     
     init()
     {
@@ -33,6 +34,7 @@ class UserItem
         updatedDate = ""
         itemId = ""
         publicOrPrivate = false
+        userItemId = ""
     }
     
 }
