@@ -83,6 +83,22 @@ class EditItemViewController: UIViewController {
         {
             textbookButton.setImage(UIImage(named: "textbook-label-selected"), for: .normal)
         }
+        
+        
+        if userItem?.itemCondition == "Used"
+        {
+            usedButton.setImage(UIImage(named: "used-label-selected"), for: .normal)
+        }
+        else
+        {
+            newButton.setImage(UIImage(named: "new-label-selected"), for: .normal)
+        }
+        
+        itemDescription.text = userItem?.itemDescription
+        
+        
+        // load the image
+        itemImage.loadImageUsingCacheWithUrlString(urlString: (userItem?.itemImageUrl)!)
     }
     
     
