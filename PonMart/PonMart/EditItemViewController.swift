@@ -70,7 +70,8 @@ class EditItemViewController: UIViewController {
         
         if let price = userItem?.itemPrice
         {
-            itemPrice.text = "\(itemPrice)"
+            print(price)
+            itemPrice.text = "\(price)"
         }
         
         
