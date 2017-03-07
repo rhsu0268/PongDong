@@ -1895,6 +1895,9 @@
                                 <rect key="frame" x="186" y="282" width="189" height="70"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="profile-button-block"/>
+                                <connections>
+                                    <action selector="EditItemButtonClicked:" destination="eF2-Bl-BWS" eventType="touchUpInside" id="Sof-xV-zE3"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Edit Item" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SaL-oN-Y38">
                                 <rect key="frame" x="233" y="304" width="83" height="24"/>

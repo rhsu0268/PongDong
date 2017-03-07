@@ -8,7 +8,7 @@
 
 import UIKit
 
-class EditItemViewController: UIViewController {
+class EditItemViewController: UIViewController,UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     var userItem : UserItem? = nil
     
@@ -35,21 +35,31 @@ class EditItemViewController: UIViewController {
     var itemCondition : String = ""
     
     @IBAction func FurnitureButtonClicked(_ sender: UIButton) {
+        furnitureButton.setImage(UIImage(named: "furniture-label-selected"), for: .normal)
+        textbookButton.setImage(UIImage(named: "textbook-label-unselected"), for: .normal)
         itemCategory = "Furniture"
     }
     
     
     
     @IBAction func TextBookButtonClicked(_ sender: UIButton) {
+        textbookButton.setImage(UIImage(named: "furniture-label-selected"), for: .normal)
+        furnitureButton.setImage(UIImage(named: "textbook-label-unselected"), for: .normal)
         itemCategory = "Textbook"
     }
     
     @IBAction func NewButtonClicked(_ sender: UIButton) {
         
+        newButton.setImage(UIImage(named: "new-label-selected"), for: .normal)
+        usedButton.setImage(UIImage(named: "used-label-unselected"), for: .normal)
         itemCondition = "New"
     }
     
     @IBAction func UsedButtonClicked(_ sender: UIButton) {
+        
+        usedButton.setImage(UIImage(named: "used-label-selected"), for: .normal)
+        newButton.setImage(UIImage(named: "new-label-unselected"), for: .normal)
+        
         itemCondition = "Used"
     }
     
@@ -99,6 +109,12 @@ class EditItemViewController: UIViewController {
         
         // load the image
         itemImage.loadImageUsingCacheWithUrlString(urlString: (userItem?.itemImageUrl)!)
+        
+        
+        let itemImageTap = UITapGestureRecognizer(target: self, action: #selector(EditItemViewController.itemImageTapFunction))
+        
+        itemImage.addGestureRecognizer(itemImageTap)
+
     }
     
     
@@ -108,6 +124,43 @@ class EditItemViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    func itemImageTapFunction(sender: UITapGestureRecognizer)
+    {
+        print("You tapped item")
+        var imagePickerController = UIImagePickerController()
+        imagePickerController.delegate = self
+        
+        imagePickerController.allowsEditing = true
+        //imagePickerController.sourceType = UIImagePickerControllerSourceType.photoLibrary
+        
+        self.present(imagePickerController, animated: true, completion: nil)
+    }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        print("Canceled picker")
+        dismiss(animated: true, completion: nil)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any])
+    {
+        var selectedImageFromPicker: UIImage?
+        
+        
+        if let editedImage = info[UIImagePickerControllerEditedImage] as? UIImage
+        {
+            selectedImageFromPicker = editedImage
+            //print(editedImage.size)
+        }
+        
+        if let originalImage = info[UIImagePickerControllerOriginalImage] as? UIImage
+        {
+            print(originalImage.size)
+            self.itemImage.image = originalImage
+        }
+        
+        self.dismiss(animated: true, completion: nil)
+        
+    }
 
     /*
     // MARK: - Navigation
@@ -118,5 +171,22 @@ class EditItemViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    
+    @IBAction func EditItemButtonClicked(_ sender: UIButton) {
+        
+        // get all the fields
+        
+        var editedItemName = itemName.text
+        var editedItemprice = itemPrice.text
+        var editedCategory = itemCategory
+        var editedCondition = itemCondition
+        var editedDescription = itemDescription
+        
+        
+        
+        
+    }
+    
 
 }
