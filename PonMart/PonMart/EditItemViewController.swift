@@ -37,6 +37,8 @@ class EditItemViewController: UIViewController,UIImagePickerControllerDelegate, 
     
     @IBOutlet var editButton: UIButton!
     
+    var newImageUploaded : Bool = false
+    
     
     
     @IBAction func FurnitureButtonClicked(_ sender: UIButton) {
@@ -165,6 +167,7 @@ class EditItemViewController: UIViewController,UIImagePickerControllerDelegate, 
         {
             print(originalImage.size)
             self.itemImage.image = originalImage
+            self.newImageUploaded = true
         }
         
         self.dismiss(animated: true, completion: nil)
@@ -220,6 +223,11 @@ class EditItemViewController: UIViewController,UIImagePickerControllerDelegate, 
         let formatedDate = date.dateToString()
         
         itemRef.updateChildValues(["updatedDate": formatedDate])
+        
+        if (newImageUploaded)
+        {
+            uploadImage(key: itemId!)
+        }
         
     }
     
