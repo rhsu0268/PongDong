@@ -43,6 +43,7 @@
 		D1D742511E6737B300F18E13 /* ChatUserLogCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D742501E6737B300F18E13 /* ChatUserLogCell.swift */; };
 		D1DE45D91E5A6F6800C5FD39 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1DE45D81E5A6F6800C5FD39 /* Extensions.swift */; };
 		D1FDAE891E54D3B900EC4AD9 /* UserItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1FDAE881E54D3B900EC4AD9 /* UserItem.swift */; };
+		D1FE0B481E6E3556009A7292 /* EditItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1FE0B471E6E3556009A7292 /* EditItemViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -86,6 +87,7 @@
 		D1D742501E6737B300F18E13 /* ChatUserLogCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatUserLogCell.swift; sourceTree = "<group>"; };
 		D1DE45D81E5A6F6800C5FD39 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		D1FDAE881E54D3B900EC4AD9 /* UserItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserItem.swift; sourceTree = "<group>"; };
+		D1FE0B471E6E3556009A7292 /* EditItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditItemViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -206,6 +208,7 @@
 				D180592A1E5117E4007213CE /* ViewItemViewController.swift */,
 				D1A64AEA1E5F52EA000BC32C /* UserMessageViewController.swift */,
 				D156587D1E611C9C0048D55B /* ChatMessageViewController.swift */,
+				D1FE0B471E6E3556009A7292 /* EditItemViewController.swift */,
 			);
 			name = Profile;
 			sourceTree = "<group>";
@@ -370,6 +373,7 @@
 				D11BA1FC1E1C1EBB00222DEC /* ViewController.swift in Sources */,
 				D11BA21A1E229D5B00222DEC /* ItemCell.swift in Sources */,
 				D11BA2131E21899500222DEC /* SearchResultTableViewController.swift in Sources */,
+				D1FE0B481E6E3556009A7292 /* EditItemViewController.swift in Sources */,
 				D11BA2151E21989F00222DEC /* SampleItemData.swift in Sources */,
 				D11BA2171E21AF7E00222DEC /* LoginViewController.swift in Sources */,
 				D1FDAE891E54D3B900EC4AD9 /* UserItem.swift in Sources */,

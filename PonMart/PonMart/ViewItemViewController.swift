@@ -17,6 +17,8 @@ class ViewItemViewController: UIViewController, UITableViewDelegate, UITableView
     
     var items: [String] = ["We", "Heart", "Swift"]
     
+    var selectedEditItem : UserItem? = nil
+    
     @IBOutlet var tableView: UITableView!
     
     override func viewDidLoad() {
@@ -169,7 +171,7 @@ class ViewItemViewController: UIViewController, UITableViewDelegate, UITableView
         {
             action, index in
             
-            
+            self.selectedEditItem = self.userItems[indexPath.row]
            
             self.performSegue(withIdentifier: "ViewItemViewToEditItemView", sender: self)
             print("Edit button tapped")
@@ -450,6 +452,21 @@ class ViewItemViewController: UIViewController, UITableViewDelegate, UITableView
         performSegue(withIdentifier: "ViewItemViewToMessageView", sender: self)
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if (segue.identifier == "ViewItemViewToEditItemView")
+        {
+            // create a variable to send
+            //var sampleItemData = SampleItemData()
+            
+            
+            let editItemViewController = segue.destination as! EditItemViewController
+            
+            editItemViewController.userItem = self.selectedEditItem
+        }
+
+        
+    }
     
 
 }

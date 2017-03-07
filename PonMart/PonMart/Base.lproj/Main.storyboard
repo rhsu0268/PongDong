@@ -1737,10 +1737,10 @@
             </objects>
             <point key="canvasLocation" x="1004" y="901.79910044977521"/>
         </scene>
-        <!--View Controller-->
+        <!--Edit Item View Controller-->
         <scene sceneID="jbx-HB-bv2">
             <objects>
-                <viewController id="eF2-Bl-BWS" sceneMemberID="viewController">
+                <viewController id="eF2-Bl-BWS" customClass="EditItemViewController" customModule="PonMart" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="HBY-qu-s19"/>
                         <viewControllerLayoutGuide type="bottom" id="4nM-1g-ACT"/>
@@ -1914,21 +1914,33 @@
                                 <rect key="frame" x="85" y="482" width="67" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="textbook-label-unselected"/>
+                                <connections>
+                                    <action selector="TextBookButtonClicked:" destination="eF2-Bl-BWS" eventType="touchUpInside" id="C58-sL-V9v"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dr0-TX-Wlh">
                                 <rect key="frame" x="18" y="482" width="67" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="furniture-label-unselected"/>
+                                <connections>
+                                    <action selector="FurnitureButtonClicked:" destination="eF2-Bl-BWS" eventType="touchUpInside" id="jKt-4D-q2q"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fhg-Nk-Ats">
                                 <rect key="frame" x="185" y="482" width="48" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="new-label-unselected"/>
+                                <connections>
+                                    <action selector="NewButtonClicked:" destination="eF2-Bl-BWS" eventType="touchUpInside" id="Yz9-lW-JYC"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NOA-xY-Sow">
                                 <rect key="frame" x="233" y="482" width="48" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="used-label-unselected"/>
+                                <connections>
+                                    <action selector="UsedButtonClicked:" destination="eF2-Bl-BWS" eventType="touchUpInside" id="cGd-I4-x1S"/>
+                                </connections>
                             </button>
                             <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="item-image-placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="Hpe-6F-X8v">
                                 <rect key="frame" x="18" y="282" width="125" height="88"/>
@@ -1941,6 +1953,17 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="editItemActivityIndicator" destination="WU9-LR-k61" id="kTg-rN-v9J"/>
+                        <outlet property="furnitureButton" destination="dr0-TX-Wlh" id="27V-FJ-ll4"/>
+                        <outlet property="itemDescription" destination="AFc-6y-3tp" id="rhL-e2-Tix"/>
+                        <outlet property="itemImage" destination="Hpe-6F-X8v" id="TUJ-sK-UH3"/>
+                        <outlet property="itemName" destination="xrW-SM-in7" id="mWn-sx-Dp1"/>
+                        <outlet property="itemPrice" destination="NF6-aT-ST2" id="esq-yu-qLO"/>
+                        <outlet property="newButton" destination="fhg-Nk-Ats" id="IQJ-Jz-qmt"/>
+                        <outlet property="textbookButton" destination="QR0-j2-m4M" id="Jbo-HP-Rbs"/>
+                        <outlet property="usedButton" destination="NOA-xY-Sow" id="hsW-VW-9PI"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HCE-mF-dFK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
