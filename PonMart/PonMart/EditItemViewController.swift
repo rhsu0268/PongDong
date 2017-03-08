@@ -301,6 +301,34 @@ class EditItemViewController: UIViewController,UIImagePickerControllerDelegate, 
         self.performSegue(withIdentifier: "editItemViewToUserItemView", sender: self)
         
     }
+    
+    
+    @IBAction func DeleteItemButtonClicked(_ sender: UIButton) {
+        
+        print("Deleting item")
+        let key = userItem?.itemId
+        deleteItem(key: key!)
+    }
+    
+    func deleteItem(key: String)
+    {
+        let uid = FIRAuth.auth()?.currentUser?.uid
+        let itemRef = FIRDatabase.database().reference().child("userItems").child(uid!).child(key)
+        
+        itemRef.removeValue  {
+            
+            (error, ref) in
+            if error != nil
+            {
+                print("error \(error)")
+            }
+            
+            //self.dismiss(animated: true, completion: nil)
+            
+            self.performSegue(withIdentifier: "editItemViewToUserItemView", sender: self)
+            
+        }
+    }
 
     
 
