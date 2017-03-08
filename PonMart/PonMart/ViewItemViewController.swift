@@ -178,16 +178,16 @@ class ViewItemViewController: UIViewController, UITableViewDelegate, UITableView
         }
         edit.backgroundColor = .orange
         
-        let delete = UITableViewRowAction(style: .normal, title: "Delete")
+        let sold = UITableViewRowAction(style: .normal, title: "Sold")
         {
             action, index in
-            print("Delete button tapped")
+            print("Sold button tapped")
             
             
         }
-        delete.backgroundColor = .red
+        sold.backgroundColor = .red
         
-        return [edit, delete]
+        return [edit, sold]
     }
     
     func fetchUserItems()

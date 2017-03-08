@@ -187,6 +187,8 @@ class EditItemViewController: UIViewController,UIImagePickerControllerDelegate, 
     
     @IBAction func EditItemButtonClicked(_ sender: UIButton) {
         
+        editItemActivityIndicator.startAnimating()
+        editButton.isEnabled = false
         // get all the fields
         
         var editedItemName = itemName.text
@@ -270,7 +272,7 @@ class EditItemViewController: UIViewController,UIImagePickerControllerDelegate, 
                 
                 self.editButton.isEnabled = true
                 self.editItemActivityIndicator.stopAnimating()
-                
+                self.dismiss(animated: true, completion: nil)
                 
                 
             })
