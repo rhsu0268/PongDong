@@ -1008,6 +1008,7 @@
                         <outlet property="uploadItemActivityIndicator" destination="FRL-fc-mDB" id="0nz-xd-okJ"/>
                         <outlet property="usedOption" destination="4gn-7D-rAE" id="8mS-Yy-kd2"/>
                         <outlet property="userProfileImage" destination="GZI-RA-T2K" id="AaT-ay-OEc"/>
+                        <segue destination="Mrl-Fo-eXf" kind="show" identifier="addItemViewToUserItemView" id="h4e-qr-fRx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Q1b-24-gWs" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2020,8 +2021,8 @@
         <segue reference="vnC-iW-7vP"/>
         <segue reference="0K2-We-KYH"/>
         <segue reference="lQs-vo-Evf"/>
-        <segue reference="VhL-Yy-arc"/>
+        <segue reference="h4e-qr-fRx"/>
         <segue reference="UDK-QR-hVH"/>
-        <segue reference="ViA-jW-6Af"/>
+        <segue reference="VhL-Yy-arc"/>
     </inferredMetricsTieBreakers>
 </document>
