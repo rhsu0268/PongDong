@@ -1967,6 +1967,7 @@
                         <outlet property="newButton" destination="fhg-Nk-Ats" id="IQJ-Jz-qmt"/>
                         <outlet property="textbookButton" destination="QR0-j2-m4M" id="Jbo-HP-Rbs"/>
                         <outlet property="usedButton" destination="NOA-xY-Sow" id="hsW-VW-9PI"/>
+                        <segue destination="Mrl-Fo-eXf" kind="show" identifier="editItemViewToUserItemView" id="ViA-jW-6Af"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HCE-mF-dFK" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2011,7 +2012,8 @@
         <segue reference="vnC-iW-7vP"/>
         <segue reference="0K2-We-KYH"/>
         <segue reference="lQs-vo-Evf"/>
-        <segue reference="UDK-QR-hVH"/>
         <segue reference="VhL-Yy-arc"/>
+        <segue reference="UDK-QR-hVH"/>
+        <segue reference="ViA-jW-6Af"/>
     </inferredMetricsTieBreakers>
 </document>

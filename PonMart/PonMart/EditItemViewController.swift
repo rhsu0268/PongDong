@@ -230,6 +230,11 @@ class EditItemViewController: UIViewController,UIImagePickerControllerDelegate, 
         {
             uploadImage(key: itemId!)
         }
+        else
+        {
+            editButton.isEnabled = true
+            self.performSegue(withIdentifier: "editItemViewToUserItemView", sender: self)
+        }
         
     }
     
@@ -270,9 +275,9 @@ class EditItemViewController: UIViewController,UIImagePickerControllerDelegate, 
                     self.saveImageToItem(url: itemImageUrl, key: key)
                 }
                 
-                self.editButton.isEnabled = true
-                self.editItemActivityIndicator.stopAnimating()
-                self.dismiss(animated: true, completion: nil)
+                //self.editButton.isEnabled = true
+                //self.editItemActivityIndicator.stopAnimating()
+                //self.dismiss(animated: true, completion: nil)
                 
                 
             })
@@ -293,7 +298,7 @@ class EditItemViewController: UIViewController,UIImagePickerControllerDelegate, 
         itemReference.updateChildValues(["itemImageURL": url])
         
         editButton.isEnabled = true
-        //self.performSegue(withIdentifier: "addItemViewToUserItemView", sender: self)
+        self.performSegue(withIdentifier: "editItemViewToUserItemView", sender: self)
         
     }
 
