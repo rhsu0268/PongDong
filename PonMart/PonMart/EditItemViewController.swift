@@ -325,9 +325,27 @@ class EditItemViewController: UIViewController,UIImagePickerControllerDelegate, 
             
             //self.dismiss(animated: true, completion: nil)
             
-            self.performSegue(withIdentifier: "editItemViewToUserItemView", sender: self)
+           
             
         }
+        
+        
+        // if the item is public, delete the public item
+        if (userItem?.publicOrPrivate)!
+        {
+            let publicItemRef = FIRDatabase.database().reference().child("publicItems").child(key)
+            publicItemRef.removeValue {
+                
+                (error, ref) in
+                if error != nil
+                {
+                    print("error \(error)")
+                }
+                
+            }
+        }
+        
+        self.performSegue(withIdentifier: "editItemViewToUserItemView", sender: self)
     }
 
     
