@@ -22,6 +22,8 @@ class UserItem
     public var itemId : String
     public var userItemId : String
     
+    public var itemSold : Bool
+    
     init()
     {
         itemName = ""
@@ -35,6 +37,8 @@ class UserItem
         itemId = ""
         publicOrPrivate = false
         userItemId = ""
+        itemSold = false
+        
     }
     
 }

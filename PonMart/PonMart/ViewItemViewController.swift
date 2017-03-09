@@ -79,6 +79,15 @@ class ViewItemViewController: UIViewController, UITableViewDelegate, UITableView
         cell.itemPrice.text = "$\(item.itemPrice)"
         cell.itemDescription.text = item.itemDescription
         
+        if item.itemSold
+        {
+            cell.itemSold.text = "Sold"
+        }
+        else
+        {
+            cell.itemSold.text = "Not Sold"
+        }
+        
         print("---")
         print(item.publicOrPrivate)
         print("---")
@@ -183,6 +192,14 @@ class ViewItemViewController: UIViewController, UITableViewDelegate, UITableView
             action, index in
             print("Sold button tapped")
             
+            var selectedSoldItem = self.userItems[indexPath.row]
+            
+            var itemId = selectedSoldItem.itemId
+            self.markItemSold(itemId: itemId)
+            
+            
+            // mark the item as sold 
+            
             
         }
         sold.backgroundColor = .red
@@ -214,6 +231,7 @@ class ViewItemViewController: UIViewController, UITableViewDelegate, UITableView
                 userItem.updatedDate = dictionary["updatedDate"] as! String
                 userItem.itemId = snapshot.key
                 userItem.publicOrPrivate = dictionary["publicOrPrivate"] as! BooleanLiteralType
+                userItem.itemSold = dictionary["itemSold"] as! Bool
                 //publicItem.userId = dictionary["userId"] as! String
                 //publicItem.createdDate = dictionary["createdDate"] as! String
                 
@@ -388,6 +406,21 @@ class ViewItemViewController: UIViewController, UITableViewDelegate, UITableView
                 return
             }
         }
+
+    }
+    
+    func markItemSold(itemId : String)
+    {
+        let uid = FIRAuth.auth()?.currentUser?.uid
+        
+        
+
+    FIRDatabase.database().reference().child("userItems").child(uid!).child(itemId).updateChildValues(["itemSold": true])
+
+        DispatchQueue.main.async(execute: {
+            
+            self.fetchUserItems()
+        })
 
     }
     

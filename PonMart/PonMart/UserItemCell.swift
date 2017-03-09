@@ -19,6 +19,7 @@ class UserItemCell: UITableViewCell {
     @IBOutlet var itemStatus: UILabel!
 
     
+    @IBOutlet var itemSold: UILabel!
     
     @IBOutlet var itemImage: UIImageView!
     
