@@ -195,10 +195,24 @@ class ViewItemViewController: UIViewController, UITableViewDelegate, UITableView
             var selectedSoldItem = self.userItems[indexPath.row]
             
             var itemId = selectedSoldItem.itemId
-            self.markItemSold(itemId: itemId)
             
+            var itemStatus = selectedSoldItem.publicOrPrivate
+            
+            if itemStatus
+            {
+                self.markItemSold(itemId: itemId)
+                
+                // delete the item from public Items
+                self.deleteItem(key: itemId)
+            }
+            else
+            {
+                print("Your item must be public!")
+                self.displayAlertMessage(userMessage: "Your item must be public!")
+            }
             
             // mark the item as sold 
+            
             
             
         }
@@ -412,8 +426,6 @@ class ViewItemViewController: UIViewController, UITableViewDelegate, UITableView
     func markItemSold(itemId : String)
     {
         let uid = FIRAuth.auth()?.currentUser?.uid
-        
-        
 
     FIRDatabase.database().reference().child("userItems").child(uid!).child(itemId).updateChildValues(["itemSold": true])
 
@@ -500,6 +512,29 @@ class ViewItemViewController: UIViewController, UITableViewDelegate, UITableView
 
         
     }
+    
+    func deleteItem(key: String)
+    {
+        let uid = FIRAuth.auth()?.currentUser?.uid
+        let itemRef = FIRDatabase.database().reference().child("publicItems").child(key)
+        
+        itemRef.removeValue  {
+            
+            (error, ref) in
+            if error != nil
+            {
+                print("error \(error)")
+            }
+            
+            //self.dismiss(animated: true, completion: nil)
+            
+            
+            
+        }
+        
+    }
+    
+   
     
 
 }

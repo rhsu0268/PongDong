@@ -378,12 +378,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PonMart/ViewItemViewController.swift"
-            timestampString = "510788718.995516"
+            timestampString = "510806933.134342"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "462"
-            endingLineNumber = "462"
-            landmarkName = "deletePublicItem(itemId:)"
+            startingLineNumber = "465"
+            endingLineNumber = "465"
+            landmarkName = "updateItemStatus()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -639,6 +639,54 @@
             endingLineNumber = "317"
             landmarkName = "deleteItem(key:)"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PonMart/ViewItemViewController.swift"
+            timestampString = "510806305.697596"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "201"
+            endingLineNumber = "201"
+            landmarkName = "tableView(_:editActionsForRowAt:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PonMart.ViewItemViewController.tableView (__ObjC.UITableView, editActionsForRowAt : Foundation.IndexPath) -&gt; Swift.Optional&lt;Swift.Array&lt;__ObjC.UITableViewRowAction&gt;&gt;"
+                  moduleName = "PonMart"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/richardhsu/Desktop/iOS/soulLife-Final/PonMart/PonMart/ViewItemViewController.swift"
+                  timestampString = "510806306.498731"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "204"
+                  endingLineNumber = "204"
+                  offsetFromSymbolStart = "514">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PonMart.ViewItemViewController.(tableView (__ObjC.UITableView, editActionsForRowAt : Foundation.IndexPath) -&gt; Swift.Optional&lt;Swift.Array&lt;__ObjC.UITableViewRowAction&gt;&gt;).(closure #2)"
+                  moduleName = "PonMart"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/richardhsu/Desktop/iOS/soulLife-Final/PonMart/PonMart/ViewItemViewController.swift"
+                  timestampString = "510806306.500437"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "204"
+                  endingLineNumber = "204"
+                  offsetFromSymbolStart = "496">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
